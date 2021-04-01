@@ -25,5 +25,10 @@ public class Skill : ScriptableObject
     [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float speedBoost;
 
     [UnityEngine.Header("Defense (not sure)")]
-    [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float defBoost;   
+    [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float defBoost;
+
+    public void ActivatedSkill()
+    {
+
+    }
 }

@@ -4,12 +4,20 @@ using UnityEngine;
 
 public abstract class Element : MonoBehaviour
 {
-    public int HP;
-    public float strength;
-    public float attackSpeed;
-    public float moveSpeed;
-    public CharacterStatus element;
-    public Skill[] skills;
+    protected int def;
+    protected int strength;
+    protected float attackSpeed;
+    protected float moveSpeed;
+    public CharacterStatus elementStats;
+    protected Skill[] skills;
 
+    private void Awake()
+    {
+        def = elementStats.baseDef;
+        strength = elementStats.baseStr;
+        attackSpeed = elementStats.attackSpeed;
+        moveSpeed = elementStats.moveSpeed;
+        skills = elementStats.skills;
+    }
 
 }

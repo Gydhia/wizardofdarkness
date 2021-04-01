@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd97c3a68d089041b62711a8d4abc11, type: 3}
   m_Name: Void
   m_EditorClassIdentifier: 
-  charName: name
-  baseHp: 0
-  baseStr: 0
-  baseDef: 0
-  moveSpeed: 1
+  baseDef: 30
+  baseStr: 15
   attackSpeed: 1
+  moveSpeed: 1.15
+  skills:
+  - {fileID: 11400000, guid: 934066d102e29fe48a0ce69a28dea4ac, type: 2}
+  - {fileID: 11400000, guid: 34ae1245622181b488325990ccf5d16b, type: 2}
+  - {fileID: 11400000, guid: 9bafd704300220d47be1c419d3da4c90, type: 2}
+  - {fileID: 11400000, guid: ee07b721b7ea3744692368cc98af87fc, type: 2}
+  - {fileID: 11400000, guid: dfd270044a2f16041bce70dc1dfa578d, type: 2}
