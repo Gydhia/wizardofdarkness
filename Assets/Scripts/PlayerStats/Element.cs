@@ -19,5 +19,12 @@ public abstract class Element : MonoBehaviour
         moveSpeed = elementStats.moveSpeed;
         skills = elementStats.skills;
     }
-
+    public void UpdateStats(PlayerStats player)
+    {
+        player.def = def;
+        player.str = strength;
+        player.atqSpeed = attackSpeed;
+        player.moveSpeed = moveSpeed;
+        player.actualSkills = skills;
+    }
 }
