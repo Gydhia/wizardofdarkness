@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Variables For All Elements")]
     public static PlayerStats Instance;
     public enum EElements { Void = 0, Wind = 1, Earth = 2 }
     public EElements actualEElement;
@@ -15,6 +16,9 @@ public class PlayerStats : MonoBehaviour
     public int actualElement;
     public Element[] elements;
     public Skill[] actualSkills;
+
+    [Header("Wind Variables")]
+    public GameObject[] activeArrows;
 
     private void Awake()
     {
