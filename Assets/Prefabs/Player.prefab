@@ -108,7 +108,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5364935973111343199}
   - component: {fileID: 5364935973111343184}
-  - component: {fileID: 5364935973111343198}
   - component: {fileID: 843827727732602771}
   - component: {fileID: 4241692663036605778}
   - component: {fileID: 7292754955086848938}
@@ -157,27 +156,6 @@ CharacterController:
   m_SkinWidth: 0.05
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5364935973111343198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5364935973111343185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197cb69a5e1aa984d8f5284a47c42617, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 5364935973111343184}
-  speed: 18
-  gravity: -38
-  jumpHeight: 6
-  groundCheck: {fileID: 5364935974038200029}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &843827727732602771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +181,7 @@ MonoBehaviour:
   - {fileID: 7334276174275570524}
   actualSkills: []
   activeArrows: []
+  arrowSpawn: {fileID: 0}
 --- !u!114 &4241692663036605778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72c8f93732bd86948b02c3b87ec6bfba, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
