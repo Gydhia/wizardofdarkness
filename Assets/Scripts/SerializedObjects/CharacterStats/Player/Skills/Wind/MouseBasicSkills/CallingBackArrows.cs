@@ -7,9 +7,9 @@ public class CallingBackArrows : Skill
 
     public override void ActivatedSkill()
     {
-        foreach(GameObject a in PlayerStats.Instance.activeArrows)
+        foreach(ArrowScript a in PlayerStats.Instance.activeArrows)
         {
-
+            a.isBeingCalledBack = true;
         }
     }
 }

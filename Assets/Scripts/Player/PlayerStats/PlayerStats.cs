@@ -18,7 +18,8 @@ public class PlayerStats : MonoBehaviour
     public Skill[] actualSkills;
 
     [Header("Wind Variables")]
-    public GameObject[] activeArrows;
+    public List<ArrowScript> activeArrows = new List<ArrowScript>();
+    public Transform arrowSpawn;
 
     private void Awake()
     {
