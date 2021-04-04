@@ -1,8 +1,7 @@
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "CharacterSkill", menuName = "StatusObjects/Skill", order = 2)]
-public class Skill : ScriptableObject
+public abstract class Skill : MonoBehaviour
 {
     public enum ESkillType
     {
@@ -27,8 +26,5 @@ public class Skill : ScriptableObject
     [UnityEngine.Header("Defense (not sure)")]
     [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float defBoost;
 
-    public void ActivatedSkill()
-    {
-
-    }
+    public abstract void ActivatedSkill();
 }
