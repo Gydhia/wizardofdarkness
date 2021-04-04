@@ -216,6 +216,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 76.082, y: 20.061, z: 37.651}
+--- !u!1 &1692292486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6989825271654974052, guid: 2571dd823492c7848bab388cabec6abc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6989825273211738082}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1692292490
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692292486}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: a177b0e6ff26a894180468c168e802cc, type: 3}
+  m_Controller: {fileID: 9100000, guid: d0775d0d8090baa4984fa9939058f323, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2154479311624191567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -290,87 +315,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c860828db2a75c849885bd3de2db50ce, type: 3}
---- !u!1001 &8217604467457114477
+--- !u!1001 &6989825273211738082
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8217604466166596243, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974052, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 395ec026a414d624887800fdb77bcfdf, type: 2}
-    - target: {fileID: 8217604466166596243, guid: 2571dd823492c7848bab388cabec6abc,
-        type: 3}
-      propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Root'\n\tTransform 'IndexFinger_02'\n\tTransform
-        'Elbow_R'\n\tTransform 'Finger_02'\n\tTransform 'Ball_L'\n\tTransform 'Ball_R'\n\tTransform
-        'Clavicle_L'\n\tTransform 'Finger_01'\n\tTransform 'Neck'\n\tTransform 'Elbow_L'\n\tand
-        more ...\n\tFrom animation clip 'Walking'"
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.53
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.664
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -119.509
+      value: -119.421
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422197, guid: 2571dd823492c7848bab388cabec6abc,
+    - target: {fileID: 6989825271654974059, guid: 2571dd823492c7848bab388cabec6abc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217604466292422203, guid: 2571dd823492c7848bab388cabec6abc,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2571dd823492c7848bab388cabec6abc, type: 3}
