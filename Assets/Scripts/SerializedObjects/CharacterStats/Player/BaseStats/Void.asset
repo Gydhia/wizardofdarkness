@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd97c3a68d089041b62711a8d4abc11, type: 3}
+  m_Name: Void
+  m_EditorClassIdentifier: 
+  baseDef: 30
+  baseStr: 15
+  attackSpeed: 1
+  moveSpeed: 1.15
+  skills:
+  - {fileID: 390133056823755414, guid: c354934ebe81af243ae11813a1546f0a, type: 3}
+  - {fileID: 8918480564777524976, guid: 1050b8fcf45a5974693ae64afa73262e, type: 3}
+  - {fileID: 677911884096836513, guid: 0a6154851f31d1a4fb2f75a42a4c6799, type: 3}
+  - {fileID: 1058576541300858130, guid: 05aeaca0c9b98fa46a296e46610d4170, type: 3}
+  - {fileID: 3152636396088878898, guid: e33565bd84bf2654bb5ab7ec5a1665be, type: 3}
