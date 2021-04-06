@@ -1680,6 +1680,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 478230883}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &32008474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1798,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 20.694, y: 0, z: 0}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!4 &32197016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464738, guid: 352d37cf490a80045b4736575b648af4,
@@ -9516,6 +9519,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 861767949}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &213795669
 GameObject:
   m_ObjectHideFlags: 0
@@ -9617,6 +9621,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: -29.248, y: 180, z: 14.2}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!4 &213979846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464738, guid: 352d37cf490a80045b4736575b648af4,
@@ -11298,6 +11304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 352d37cf490a80045b4736575b648af4, type: 3}
+<<<<<<< HEAD
 --- !u!1 &253213522
 GameObject:
   m_ObjectHideFlags: 0
@@ -11399,6 +11406,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 113.04, y: 0, z: 0}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!1001 &253391369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12432,6 +12441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 352d37cf490a80045b4736575b648af4, type: 3}
+<<<<<<< HEAD
 --- !u!1 &270375392
 GameObject:
   m_ObjectHideFlags: 0
@@ -12533,6 +12543,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: -90, y: 9.3, z: 0}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!4 &271372057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464738, guid: 352d37cf490a80045b4736575b648af4,
@@ -25535,6 +25547,113 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 352d37cf490a80045b4736575b648af4, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Dungeon_WOD_13
+--- !u!1 &581145535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581145538}
+  - component: {fileID: 581145537}
+  - component: {fileID: 581145536}
+  - component: {fileID: 581145539}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &581145536
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581145535}
+  m_Enabled: 1
+--- !u!20 &581145537
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581145535}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &581145538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581145535}
+  m_LocalRotation: {x: 0.002726819, y: -0, z: -0, w: 0.9999963}
+  m_LocalPosition: {x: 0, y: 1.5299997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1567897432}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.312, y: 0, z: 0}
+--- !u!114 &581145539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581145535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8dade3591f0948ab950e5d12ee36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 500
+  playerBody: {fileID: 1567897432}
+<<<<<<< HEAD
+=======
+>>>>>>> PlayerSpells
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!4 &581585393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464738, guid: 352d37cf490a80045b4736575b648af4,
@@ -32443,6 +32562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25e618ad9977daf44a684be7ffc5046b, type: 3}
+<<<<<<< HEAD
 --- !u!1 &756172084
 GameObject:
   m_ObjectHideFlags: 0
@@ -32544,6 +32664,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!1001 &756673913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66770,6 +66892,89 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74be190b95c3d294b8ec26fa7513fbb4, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Dungeon_WOD_13
+--- !u!1 &1567897430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567897432}
+  - component: {fileID: 1567897431}
+  - component: {fileID: 1567897433}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!143 &1567897431
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567897430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 3.8
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 1
+  m_SkinWidth: 0.05
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1567897432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567897430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.55, y: 0.94, z: -118.24}
+  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_Children:
+  - {fileID: 581145538}
+  - {fileID: 2074453352}
+  - {fileID: 1781711322}
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567897433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567897430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197cb69a5e1aa984d8f5284a47c42617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1567897431}
+  speed: 18
+  gravity: -38
+  jumpHeight: 6
+  groundCheck: {fileID: 1781711322}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+<<<<<<< HEAD
+=======
+>>>>>>> PlayerSpells
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!1001 &1568058955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68606,6 +68811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 352d37cf490a80045b4736575b648af4, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1605187394
 GameObject:
   m_ObjectHideFlags: 0
@@ -68707,6 +68913,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!4 &1606926791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 454800, guid: e3722a3c340f7334ba1c2605218cbbb7,
@@ -75476,6 +75684,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bddcfc563a36b24f9dc4f0ce3bbb138, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Dungeon_WOD_13
+--- !u!1 &1781711321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1781711322}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1781711322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781711321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1567897432}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+>>>>>>> PlayerSpells
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!1001 &1781949127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83690,6 +83937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74be190b95c3d294b8ec26fa7513fbb4, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1983568410
 GameObject:
   m_ObjectHideFlags: 0
@@ -83791,6 +84039,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!1001 &1984776166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85164,6 +85414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe79f78336a9bcc428e0e03b61836802, type: 3}
+<<<<<<< HEAD
 --- !u!1 &2013714928
 GameObject:
   m_ObjectHideFlags: 0
@@ -85265,6 +85516,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 1.172, y: 43.952, z: 89.837}
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!1001 &2015097814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87534,6 +87787,96 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1922830817}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Dungeon_WOD_13
+--- !u!1 &2074453351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074453352}
+  - component: {fileID: 2074453354}
+  - component: {fileID: 2074453353}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074453352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074453351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.53, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.8, z: 1.2}
+  m_Children: []
+  m_Father: {fileID: 1567897432}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2074453353
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074453351}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 72c8f93732bd86948b02c3b87ec6bfba, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2074453354
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074453351}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
+=======
+>>>>>>> PlayerSpells
+=======
+>>>>>>> Dungeon_WOD_13
 --- !u!1001 &2074809067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91167,6 +91510,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 352d37cf490a80045b4736575b648af4, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 --- !u!1001 &5364935972262780679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91236,3 +91582,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 938333f69f2339e4db1ed810ef958ae0, type: 3}
+>>>>>>> PlayerSpells
+=======
+>>>>>>> Dungeon_WOD_13
