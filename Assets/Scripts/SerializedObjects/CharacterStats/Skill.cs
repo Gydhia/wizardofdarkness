@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public abstract class Skill : MonoBehaviour
+public class Skill : MonoBehaviour
 {
     public enum ESkillType
     {
@@ -26,5 +26,8 @@ public abstract class Skill : MonoBehaviour
     [UnityEngine.Header("Defense (not sure)")]
     [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float defBoost;
 
-    public abstract void ActivatedSkill();
+    public virtual void ActivatedSkill()
+    {
+
+    }
 }

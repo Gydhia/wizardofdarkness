@@ -17,8 +17,8 @@ MonoBehaviour:
   attackSpeed: 0.9
   moveSpeed: 1
   skills:
-  - {fileID: 11400000, guid: c2cc99995149c6846a0d0d6f24a0f4a8, type: 2}
-  - {fileID: 11400000, guid: d39b62fcb2cd8c141867f353f83d5172, type: 2}
-  - {fileID: 11400000, guid: d417b9d7e04212c4ab4f394d86d28b71, type: 2}
-  - {fileID: 11400000, guid: 7c35177b68077ec40b1ee9a42972311b, type: 2}
-  - {fileID: 11400000, guid: a819015653cbb9e4d81b88b2f9aa4656, type: 2}
+  - {fileID: 8088945180519989215, guid: 4dc27d8e877e5b2458a37c8a4d535f05, type: 3}
+  - {fileID: 2731655470680012994, guid: c87f53acdeed01b42a04975d3767ac1e, type: 3}
+  - {fileID: 7234721607321596985, guid: 7e733879d6a2487419c2c1ff382390dd, type: 3}
+  - {fileID: 8605922945751723803, guid: cf5f05bc12b4da84fa4de23dceec9bdc, type: 3}
+  - {fileID: 8793978721631998871, guid: f8575ef7bac0d8542ae616b7aa0df78e, type: 3}

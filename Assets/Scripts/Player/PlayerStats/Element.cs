@@ -17,7 +17,7 @@ public abstract class Element : MonoBehaviour
         strength = elementStats.baseStr;
         attackSpeed = elementStats.attackSpeed;
         moveSpeed = elementStats.moveSpeed;
-        skills = elementStats.skills;
+        skills = elementStats.skills.ToArray();     
     }
     public void UpdateStats(PlayerStats player)
     {

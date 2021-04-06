@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterStatusData", menuName = "StatusObjects/CharacterData", order = 1)]
@@ -9,7 +10,7 @@ public class CharacterStatus : ScriptableObject
     public int baseStr = 0;
     public float attackSpeed = 1;
     public float moveSpeed = 1;
-    public Skill[] skills;
+    public List<Skill> skills = new List<Skill>();
     //0: clic gauche
     //1:clic droit
     //2:a
