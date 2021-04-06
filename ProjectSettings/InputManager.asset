@@ -54,16 +54,16 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: SecondKeyboardSpell
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: e
+    m_Name: Sprint
+    descriptiveName: aad
+    descriptiveNegativeName: ada
+    negativeButton: left shift
     positiveButton: left shift
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
+    altNegativeButton: left shift
+    altPositiveButton: left shift
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
+    sensitivity: 3
     snap: 0
     invert: 0
     type: 0
