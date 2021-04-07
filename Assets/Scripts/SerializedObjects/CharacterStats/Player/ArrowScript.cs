@@ -11,7 +11,8 @@ public class ArrowScript : MonoBehaviour
     private Rigidbody arrowRb;
     private GameObject player;
     private Vector3 dir;
-    bool secondCollisonWithPlayer;
+    private CapsuleCollider arrowCollider;
+
     private float lifeTimer = 10f;
     private float timer;
     private bool hitSthg;
@@ -21,18 +22,18 @@ public class ArrowScript : MonoBehaviour
         player = PlayerStats.Instance.gameObject;
         arrowRb = GetComponent<Rigidbody>();
         transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
+        arrowCollider = GetComponent<CapsuleCollider>();
     }
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= lifeTimer)
+        if (timer >= lifeTimer)
         {
             Destroy(gameObject);
         }
         if (!hitSthg)
         {
             transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
-
         }
         if (isBeingCalledBack)
         {
@@ -48,11 +49,16 @@ public class ArrowScript : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && secondCollisonWithPlayer)
+        if (collision.gameObject.CompareTag("Player") && isBeingCalledBack)
         {
             Destroy(gameObject);
+            //Debug.Log("OY");
         }
-        else if (collision.gameObject.CompareTag("Player") && !secondCollisonWithPlayer) secondCollisonWithPlayer = true;
+        else if (!isBeingCalledBack)
+        {
+            //Physics.IgnoreCollision(collision.collider, arrowCollider);
+            //faudrait qu'on passe a travers, non? :/ 
+        }
         else if (!collision.gameObject.CompareTag("Player"))
         {
             hitSthg = true;
@@ -61,7 +67,6 @@ public class ArrowScript : MonoBehaviour
     }
     public void Stick()
     {
-
         arrowRb.constraints = RigidbodyConstraints.FreezeAll;
 
     }

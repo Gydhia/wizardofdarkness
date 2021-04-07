@@ -15,7 +15,6 @@ public class PlayerStatsController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             PlayerStats.Instance.ChangeElement(PlayerStats.EElements.Wind);
-            Debug.Log("ag");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {

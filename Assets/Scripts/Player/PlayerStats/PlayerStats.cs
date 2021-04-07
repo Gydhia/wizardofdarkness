@@ -24,9 +24,14 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        foreach(Element e in elements)
+        {
+            e.Init();
+        }
     }
     private void Start()
     {
+        //Debug.Log("wsh?");
         elements[actualElement].UpdateStats(this);
     }
     public void ChangeElement(EElements newElement)
@@ -36,6 +41,7 @@ public class PlayerStats : MonoBehaviour
             actualEElement = newElement;
             actualElement = (int)actualEElement;
             elements[actualElement].UpdateStats(this);
+
         }
     }
 
