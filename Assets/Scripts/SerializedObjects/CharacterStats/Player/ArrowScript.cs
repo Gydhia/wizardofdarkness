@@ -42,22 +42,18 @@ public class ArrowScript : MonoBehaviour
                 arrowRb.constraints = RigidbodyConstraints.None;
             }
             dir = (player.transform.position - transform.position).normalized;
-            arrowRb.AddForce(dir * arrowSpeed);
+            arrowRb.AddForce(dir * arrowSpeed*10);
             transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
         }
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && isBeingCalledBack)
-        {
-            Destroy(gameObject);
-        }
         /*else if (!isBeingCalledBack)
         {
             Physics.IgnoreCollision(collision.collider, arrowCollider);
             faudrait qu'on passe a travers, non? :/ 
         }*/
-        else if (!collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Player"))
         {
             hitSthg = true;
             Stick();
