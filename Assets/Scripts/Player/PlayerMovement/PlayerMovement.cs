@@ -13,39 +13,23 @@ public class PlayerMovement : MonoBehaviour
     public float Currentspeed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
-    public float stamina = 100f;
     public float maxStamina = 100f;
-    public float nb;
+    [Range(0,100)]public float stamina = 100f;
     public Slider slider;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
-    
-
-  
-    
-
-
     Vector3 velocity;
     bool isGrounded;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        nb = speedSprint;
-    }
 
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-            UseStamina(true);
-        else
-        {
-            UseStamina(false);
-        }
+        UseStamina(Input.GetKey(KeyCode.LeftShift));
+        slider.value = stamina;
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0) 
@@ -58,36 +42,43 @@ public class PlayerMovement : MonoBehaviour
       
         controller.Move(move * Currentspeed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded) 
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
         
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
     }
+
     public void UseStamina(bool isRunning)
     {
         if (isRunning)
         {
-            UseStamina(Input.GetKey(KeyCode.LeftShift));
-            Currentspeed = speedSprint;
-
             if (stamina > 0f)
+            {
                 stamina -= 15f * Time.deltaTime;
-            if (stamina <= 0f)
-                speedSprint = speed;
-
-            slider.value = stamina;
+                Currentspeed = speedSprint;
+            }
+            else
+            {
+                Currentspeed = speed;
+            }
         }
         else
         {
-            if (stamina <= maxStamina)
-                stamina += 6f * Time.deltaTime;
             if (stamina <= 30f)
+            {
                 stamina += 9f * Time.deltaTime;
+            }
 
+            else if (stamina < maxStamina)
+            {
+                stamina += 6f * Time.deltaTime;
+            }
             Currentspeed = speed;
-            slider.value = stamina;
+
         }
     }
 
