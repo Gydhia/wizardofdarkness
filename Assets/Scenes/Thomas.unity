@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 429098924414531073, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1770926876427669906, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
         type: 3}
       propertyPath: m_Name
@@ -336,10 +341,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1170299662}
-    - target: {fileID: 8982305487353235125, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
+    - target: {fileID: 5005436121805075344, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 3
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e0bb4b7785ac6948af78e85e3d541b9, type: 3}
@@ -361,7 +366,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 933347553}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1421872471
+--- !u!136 &1421872474
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -41,7 +41,6 @@ public class ArrowScript : MonoBehaviour
             {
                 arrowRb.constraints = RigidbodyConstraints.None;
             }
-
             dir = (player.transform.position - transform.position).normalized;
             arrowRb.AddForce(dir * arrowSpeed);
             transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
@@ -52,13 +51,12 @@ public class ArrowScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && isBeingCalledBack)
         {
             Destroy(gameObject);
-            //Debug.Log("OY");
         }
-        else if (!isBeingCalledBack)
+        /*else if (!isBeingCalledBack)
         {
-            //Physics.IgnoreCollision(collision.collider, arrowCollider);
-            //faudrait qu'on passe a travers, non? :/ 
-        }
+            Physics.IgnoreCollision(collision.collider, arrowCollider);
+            faudrait qu'on passe a travers, non? :/ 
+        }*/
         else if (!collision.gameObject.CompareTag("Player"))
         {
             hitSthg = true;
@@ -68,7 +66,6 @@ public class ArrowScript : MonoBehaviour
     public void Stick()
     {
         arrowRb.constraints = RigidbodyConstraints.FreezeAll;
-
     }
     private void OnDestroy()
     {

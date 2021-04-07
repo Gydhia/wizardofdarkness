@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public int actualElement;
     public Element[] elements;
     public Skill[] actualSkills;
+    public GameObject[] elementsWeapons;
 
     [Header("Wind Variables")]
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
@@ -38,12 +39,11 @@ public class PlayerStats : MonoBehaviour
     {
         if (actualEElement != newElement)
         {
+            elementsWeapons[actualElement].SetActive(false);
             actualEElement = newElement;
             actualElement = (int)actualEElement;
             elements[actualElement].UpdateStats(this);
-
+            elementsWeapons[actualElement].SetActive(true);
         }
     }
-
-
 }
