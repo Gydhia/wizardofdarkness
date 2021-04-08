@@ -25,6 +25,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Void Variables")]
     public Transform ballSpawnSpot;
     public GameObject ballPrefab;
+    public GameObject blackHolePrefab;
 
     private void Awake()
     {
