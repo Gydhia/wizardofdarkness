@@ -109,6 +109,8 @@ MonoBehaviour:
     type: 3}
   teleportPointPrefab: {fileID: 8125175264758840427, guid: 655502fff45b08142adb07f75391efd2,
     type: 3}
+  actualTPPoint: {fileID: 0}
+  actualSlowTot: {fileID: 0}
 --- !u!143 &1770926876427669907
 CharacterController:
   m_ObjectHideFlags: 0
@@ -462,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4018576897928806205
 Transform:
   m_ObjectHideFlags: 0

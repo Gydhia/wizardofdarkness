@@ -6,18 +6,17 @@ public class SummonSlownessTotem : Skill
 {
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
+        if (PlayerStats.Instance.actualSlowTot == null)
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+            LayerMask mask = LayerMask.GetMask("Ground");
+            if (Physics.Raycast(ray, out hit, mask))
+            {
+                GameObject tot = Instantiate(PlayerStats.Instance.slowTotemPrefab, hit.point, Quaternion.identity);
+                PlayerStats.Instance.actualSlowTot = tot.GetComponent<SlowTotScript>();
+            }
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

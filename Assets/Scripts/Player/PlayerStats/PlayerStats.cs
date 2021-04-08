@@ -29,6 +29,10 @@ public class PlayerStats : MonoBehaviour
     public GameObject teleportPointPrefab;
     public TPPointScript actualTPPoint;
 
+    [Header("Earth Variables")]
+    public GameObject slowTotemPrefab;
+    public SlowTotScript actualSlowTot;
+    public GameObject earthquakePrefab;
     private void Awake()
     {
         Instance = this;
