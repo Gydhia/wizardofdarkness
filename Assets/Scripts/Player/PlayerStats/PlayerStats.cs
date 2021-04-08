@@ -26,6 +26,8 @@ public class PlayerStats : MonoBehaviour
     public Transform ballSpawnSpot;
     public GameObject ballPrefab;
     public GameObject blackHolePrefab;
+    public GameObject teleportPointPrefab;
+    public TPPointScript actualTPPoint;
 
     private void Awake()
     {

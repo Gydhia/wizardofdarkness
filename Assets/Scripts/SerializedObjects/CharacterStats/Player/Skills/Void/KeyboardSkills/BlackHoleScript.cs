@@ -20,7 +20,6 @@ public class BlackHoleScript : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
-        Debug.Log("A");
         if (other.CompareTag("Enemy"))
         {
             other.transform.Translate((center.position - other.transform.position)*Time.deltaTime*attractForce);
