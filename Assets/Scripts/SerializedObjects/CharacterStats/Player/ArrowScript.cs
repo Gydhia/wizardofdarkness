@@ -54,7 +54,7 @@ public class ArrowScript : MonoBehaviour
         /*else if (!isBeingCalledBack)
         {
             Physics.IgnoreCollision(collision.collider, arrowCollider);
-            faudrait qu'on passe a travers, non? :/ 
+            faudrait qu'on passe a travers, non? :/ edit: non là c'est insane en vrai
         }*/
         if (!collision.gameObject.CompareTag("Player"))
         {

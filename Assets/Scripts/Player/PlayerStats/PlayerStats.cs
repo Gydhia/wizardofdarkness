@@ -22,6 +22,10 @@ public class PlayerStats : MonoBehaviour
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
     public Transform arrowSpawn;
 
+    [Header("Void Variables")]
+    public Transform ballSpawnSpot;
+    public GameObject ballPrefab;
+
     private void Awake()
     {
         Instance = this;

@@ -26,6 +26,9 @@ public class Skill : MonoBehaviour
     [UnityEngine.Header("Defense (not sure)")]
     [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float defBoost;
 
+    [Header("Specificities to this skill:")]
+    [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] private float PH;
+
     public virtual void ActivatedSkill()
     {
 

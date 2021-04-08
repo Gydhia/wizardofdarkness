@@ -47,6 +47,9 @@ MonoBehaviour:
   skillCD: 0
   AOERadius: 0
   castTime: 0
-  state: 0
+  state: 2
   speedBoost: 0
   defBoost: 0
+  ballMoveSpeed: 5
+  ballGrowSpeed: 0.3
+  maxScale: {x: 1.5, y: 1.5, z: 1.5}
