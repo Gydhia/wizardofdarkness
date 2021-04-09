@@ -555,6 +555,16 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1170299662}
+    - target: {fileID: 1770926876427669917, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
+        type: 3}
+      propertyPath: isGrounded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770926876427669917, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
+        type: 3}
+      propertyPath: groundDistance
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4018576897928806205, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
         type: 3}
       propertyPath: m_RootOrder
