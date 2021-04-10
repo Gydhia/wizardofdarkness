@@ -34,18 +34,13 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nb = speedSprint;
+       
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-            UseStamina(true);
-        else
-        {
-            UseStamina(false);
-        }
+        UseStamina(Input.GetKey(KeyCode.LeftShift));
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0) 
@@ -69,26 +64,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isRunning)
         {
-            UseStamina(Input.GetKey(KeyCode.LeftShift));
+            
             Currentspeed = speedSprint;
 
             if (stamina > 0f)
                 stamina -= 15f * Time.deltaTime;
-            if (stamina <= 0f)
+            else 
                 speedSprint = speed;
-
-            slider.value = stamina;
+          
         }
         else
-        {
-            if (stamina <= maxStamina)
-                stamina += 6f * Time.deltaTime;
+        {   
             if (stamina <= 30f)
                 stamina += 9f * Time.deltaTime;
-
+            else if (stamina <= maxStamina)
+                stamina += 6f * Time.deltaTime;
             Currentspeed = speed;
-            slider.value = stamina;
+
         }
+        slider.value = stamina;
+        Debug.Log(stamina);
     }
 
 
