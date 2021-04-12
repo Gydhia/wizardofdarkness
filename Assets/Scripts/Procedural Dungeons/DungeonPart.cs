@@ -7,14 +7,12 @@ using UnityEngine;
 public class DungeonPart
 {
     public string id;
-    public List<Vector2> doors;
     public string prefabPath;
+    public string roomShape;
     public DungeonRooms roomType;
-    public List<Orientation> doorsOrientation;
+    public Dictionary<Orientation, Vector2> doorsOrientation;
     public int width, height;
     public Vector2 position;
-
-
 }
 public class DungeonParts : IEnumerable<DungeonPart>
 {
@@ -52,13 +50,56 @@ public class DungeonParts : IEnumerable<DungeonPart>
     /// </summary>
     /// <param name="constraints">Doors orientation constraints. The first is for the doors that it HAS to have, and the second for the doors that it SHOULDN'T have</param>
     /// <returns></returns>
-    public DungeonPart GetSpecificPart(DungeonRooms type, Tuple<List<Orientation>, List<Orientation>> constraints)
+    public DungeonPart GetSpecificPart(DungeonRooms type, string shape)
     {
         return dungeonParts.Where(room => room.roomType == type)
-            .Where(room => room.doorsOrientation == constraints.Item1)
-            .Where(room => (room.doorsOrientation.Select(orientation => constraints.Item2.Contains(orientation)).Contains(true)))
+            .Where(room => room.roomShape == shape)
             .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
     }
+
+    public float? GetPartRotation(DungeonPart part, List<Orientation> orientations)
+    {
+        float? rotation = 0f;
+        // Part orientations different from given orientations to get
+        if (part.doorsOrientation.Keys.Count() != orientations.Count){
+            Debug.LogError("This part (" + part.id + ") doesn't fit the orientations passed");
+            return null;
+        }
+        // Already the good rotation
+        if (Enumerable.SequenceEqual(part.doorsOrientation.Keys.ToList().OrderBy(e => e), orientations.OrderBy(e => e)))
+            return rotation;
+
+        // Turn until we get the right orientations
+        List<Orientation> newOrientations = new List<Orientation>();
+        for (int i = 1; i < 4; i++) {
+            foreach(Orientation or in orientations) {
+                newOrientations.Add(RotateOrientation(or));
+            }
+            rotation += 90f;
+            if (Enumerable.SequenceEqual(newOrientations.OrderBy(e => e), orientations.OrderBy(e => e))){
+                return rotation;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Rotate the passed orientation clockwise
+    /// </summary>
+    public Orientation RotateOrientation(Orientation orientation) {
+
+        return orientation switch
+        {
+            Orientation.Top => Orientation.Right,
+            Orientation.Right => Orientation.Bottom,
+            Orientation.Bottom => Orientation.Left,
+            Orientation.Left => Orientation.Top,
+            _ => orientation,
+        };
+    }
+
+
 
     public IEnumerator<DungeonPart> GetEnumerator()
     {
