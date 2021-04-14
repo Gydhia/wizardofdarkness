@@ -6,18 +6,7 @@ public class Blocking : Skill
 {
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Faire autrement? Il suffit de mettre dans un update:
+        //blocking = Input.GetKey("RightClickSpell");
     }
 }

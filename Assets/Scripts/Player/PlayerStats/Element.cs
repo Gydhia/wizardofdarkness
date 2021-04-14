@@ -11,13 +11,15 @@ public abstract class Element : MonoBehaviour
     public CharacterStatus elementStats;
     protected Skill[] skills;
 
-    private void Awake()
+    public void Init()
     {
         def = elementStats.baseDef;
         strength = elementStats.baseStr;
         attackSpeed = elementStats.attackSpeed;
         moveSpeed = elementStats.moveSpeed;
-        skills = elementStats.skills.ToArray();     
+        skills = elementStats.skills.ToArray();    
+        //Debug.Log(def);
+
     }
     public void UpdateStats(PlayerStats player)
     {

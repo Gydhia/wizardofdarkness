@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("RightClickSpell"))
         {
             PlayerStats.Instance.actualSkills[1].ActivatedSkill();
-
         }
         if (Input.GetButtonDown("FirstKeyboardSpell"))
         {

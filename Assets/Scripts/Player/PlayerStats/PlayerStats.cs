@@ -17,28 +17,43 @@ public class PlayerStats : MonoBehaviour
     public Element[] elements;
     [HideInInspector]public Skill[] actualSkills;
     public bool canOpenDoors;
+    public GameObject[] elementsWeapons;
 
     [Header("Wind Variables")]
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
     public Transform arrowSpawn;
 
+    [Header("Void Variables")]
+    public Transform ballSpawnSpot;
+    public GameObject ballPrefab;
+    public GameObject blackHolePrefab;
+    public GameObject teleportPointPrefab;
+    public TPPointScript actualTPPoint;
+
+    [Header("Earth Variables")]
+    public GameObject earthquakePrefab;
     private void Awake()
     {
         Instance = this;
+        foreach(Element e in elements)
+        {
+            e.Init();
+        }
     }
     private void Start()
     {
+        //Debug.Log("wsh?");
         elements[actualElement].UpdateStats(this);
     }
     public void ChangeElement(EElements newElement)
     {
         if (actualEElement != newElement)
         {
+            elementsWeapons[actualElement].SetActive(false);
             actualEElement = newElement;
             actualElement = (int)actualEElement;
             elements[actualElement].UpdateStats(this);
+            elementsWeapons[actualElement].SetActive(true);
         }
     }
-
-
 }

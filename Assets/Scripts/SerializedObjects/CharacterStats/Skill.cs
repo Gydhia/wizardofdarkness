@@ -17,7 +17,7 @@ public class Skill : MonoBehaviour
     [UnityEngine.Header("Damages")]
     [UnityEngine.Tooltip("Skill damage based on THIS % of base strength.")]public float dmgPercent = 100;
     [UnityEngine.Tooltip("Skill cooldown.")] public float skillCD;
-    [UnityEngine.Tooltip("The skill's areaOfEffect radius.")] public float AOERadius;
+    [UnityEngine.Tooltip("The skill's areaOfEffect radius.")] public GameObject AOERadius;
     [UnityEngine.Tooltip("Duration the skill has to be casted in order to be released.")] public float castTime;
     public ESkillType state;
     [UnityEngine.Header("Movement (not sure)")]
@@ -25,6 +25,9 @@ public class Skill : MonoBehaviour
 
     [UnityEngine.Header("Defense (not sure)")]
     [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float defBoost;
+
+    [Header("Specificities to this skill:")]
+    [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] private float PH;
 
     public virtual void ActivatedSkill()
     {

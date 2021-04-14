@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
+    public static PlayerMovement Instance;
+
     public float speedSprint = 12f;
     public float speed = 12f;
     public float Currentspeed = 12f;
@@ -18,14 +20,23 @@ public class PlayerMovement : MonoBehaviour
     public Slider slider;
 
     public Transform groundCheck;
-    public float groundDistance = 0.4f;
+    public float groundDistance = 0.5f;
     public LayerMask groundMask;
+<<<<<<< HEAD
     Vector3 velocity;
     bool isGrounded;
     public float airControl;
     float control;
     
+=======
+    public Vector3 velocity;
+    public bool isGrounded;
+>>>>>>> WindSpells
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Update is called once per frame
     public void Update()
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WindArrow : Skill
 {
-    [Header("Specificities to this skill:")]
     public GameObject arrowPrefab;
     public Transform arrowSpawn;
     public float shootForce = 20f;

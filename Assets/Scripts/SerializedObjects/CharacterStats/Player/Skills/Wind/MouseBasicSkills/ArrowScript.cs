@@ -11,7 +11,8 @@ public class ArrowScript : MonoBehaviour
     private Rigidbody arrowRb;
     private GameObject player;
     private Vector3 dir;
-    bool secondCollisonWithPlayer;
+    private CapsuleCollider arrowCollider;
+
     private float lifeTimer = 10f;
     private float timer;
     private bool hitSthg;
@@ -21,18 +22,18 @@ public class ArrowScript : MonoBehaviour
         player = PlayerStats.Instance.gameObject;
         arrowRb = GetComponent<Rigidbody>();
         transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
+        arrowCollider = GetComponent<CapsuleCollider>();
     }
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= lifeTimer)
+        if (timer >= lifeTimer)
         {
             Destroy(gameObject);
         }
         if (!hitSthg)
         {
             transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
-
         }
         if (isBeingCalledBack)
         {
@@ -40,20 +41,22 @@ public class ArrowScript : MonoBehaviour
             {
                 arrowRb.constraints = RigidbodyConstraints.None;
             }
-
-            dir = (player.transform.position - transform.position).normalized;
-            arrowRb.AddForce(dir * arrowSpeed);
+            var pos = player.transform.position;
+            pos.y += 1.5f;
+            dir = (pos - transform.position).normalized;
+            arrowRb.AddForce(dir * arrowSpeed*10);
             transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
         }
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && secondCollisonWithPlayer)
+        if (isBeingCalledBack && collision.gameObject.CompareTag("Player")) Destroy(gameObject);
+        /*else if (!isBeingCalledBack)
         {
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.CompareTag("Player") && !secondCollisonWithPlayer) secondCollisonWithPlayer = true;
-        else if (!collision.gameObject.CompareTag("Player"))
+            Physics.IgnoreCollision(collision.collider, arrowCollider);
+            faudrait qu'on passe a travers, non? :/ edit: non là c'est insane en vrai
+        }*/
+        if (!collision.gameObject.CompareTag("Player"))
         {
             hitSthg = true;
             Stick();
@@ -61,9 +64,7 @@ public class ArrowScript : MonoBehaviour
     }
     public void Stick()
     {
-
         arrowRb.constraints = RigidbodyConstraints.FreezeAll;
-
     }
     private void OnDestroy()
     {
