@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6341008304990496949}
   - component: {fileID: 6341008304991646807}
   - component: {fileID: 6341008306412558611}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grinder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 6341008304991646569}
   - component: {fileID: 6341008304984097821}
   - component: {fileID: 6276456094377631545}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FloorGrinder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6341008304990521245}
   - component: {fileID: 6341008304991608017}
   - component: {fileID: 6341008304882724323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grinder_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 6341008304990492341}
   - component: {fileID: 6341008304991575025}
   - component: {fileID: 6341008305861840960}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grinder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

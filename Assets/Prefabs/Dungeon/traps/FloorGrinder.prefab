@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 625257247372085867}
   - component: {fileID: 625257247365101807}
   - component: {fileID: 596728035771647105}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FloorGrinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 625257247371294037}
   - component: {fileID: 625257247372133003}
   - component: {fileID: 625257246445348242}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grinder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

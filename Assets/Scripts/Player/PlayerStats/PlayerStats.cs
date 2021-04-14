@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public int actualElement;
     public Element[] elements;
     public Skill[] actualSkills;
+    public bool canOpenDoors;
 
     [Header("Wind Variables")]
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
