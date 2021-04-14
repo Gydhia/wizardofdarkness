@@ -123,7 +123,7 @@ public class DungeonManager : MonoBehaviour
 
     private void GenerateDungeonPath() // 4x4
     {
-        DungeonSpecification[,] dungeonPath = new DungeonSpecification[size, size];
+        dungeonPath = new DungeonSpecification[size, size];
 
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++) {
