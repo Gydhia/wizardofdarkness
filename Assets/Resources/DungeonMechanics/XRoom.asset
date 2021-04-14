@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22736a606763a0d4c88aed57c09bf3af, type: 3}
+  m_Name: XRoom
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 8312051717600229546, guid: b61b36ac46dab104c9e8910bad3b302f, type: 3}
+  RoomID: XRoom
+  RoomType: 0
+  RoomShape: XShape
+  doorsPositions:
+  - {x: 17.3, y: 20}
+  - {x: 0, y: 2.4}
+  - {x: 12.3, y: -15.4}
+  - {x: 35, y: -15.4}
+  doorsOrientations: 00000000030000000100000002000000
+  Width: 4
+  Height: 4

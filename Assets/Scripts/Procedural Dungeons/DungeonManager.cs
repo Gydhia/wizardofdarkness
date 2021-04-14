@@ -41,6 +41,13 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
+<<<<<<< Updated upstream
+=======
+
+    public DungeonParts DungeonParts;
+    public DungeonPart[,] GeneratedDungeon;
+
+>>>>>>> Stashed changes
     public int size = 4;
     public DungeonParts dungeonParts;
     private int maxLinkedRooms = 3;
@@ -74,32 +81,36 @@ public class DungeonManager : MonoBehaviour
         else
             Destroy(this.gameObject);
 
-        //LoadDungeonParts();
+        DungeonParts = new DungeonParts();
     }
 
     public void Start()
     {
+        LoadDungeonParts();
         SetupNbOfRooms();
         GenerateDungeonPath();
     }
 
-    //private void LoadDungeonParts()
-    //{
-    //    DungeonParts parts = JsonUtility.FromJson<DungeonParts>(DungeonJSON.text);
+    private void LoadDungeonParts()
+    {
+        DungeonParts.dungeonParts = new List<DungeonPart>();
 
-    //    foreach (DungeonPart part in parts.dungeonParts)
-    //    {
-    //        foreach (Vector2 door in part.doors)
-    //        {
-    //            if (Mathf.Abs(door.x) == part.width) {
-    //                part.doorsOrientation.Add(door.x < 0 ? Orientation.Left : Orientation.Right);
-    //            } else {
-    //                part.doorsOrientation.Add(door.y < 0 ? Orientation.Bottom : Orientation.Top);
-    //            }
-    //        }
-    //    }
-    //    dungeonParts = parts;
-    //}
+        var partsPreset = Resources.LoadAll("DungeonMechanics", typeof(DungeonPartPreset));
+        foreach(DungeonPartPreset preset in partsPreset) {
+            DungeonPart part = new DungeonPart();
+
+            part.doorsOrientation = new Dictionary<Orientation, Vector2>();
+            for (int i = 0; i < preset.doorsPositions.Count; i++)
+                part.doorsOrientation.Add(preset.doorsOrientations[i], preset.doorsPositions[i]);
+
+            part.id = preset.RoomID;
+            part.Prefab = preset.Prefab;
+            part.roomType = preset.RoomType;
+            part.roomShape = preset.RoomShape;
+            
+            DungeonParts.dungeonParts.Add(part);
+        }
+    }
 
     public void SetupNbOfRooms()
     {
@@ -208,7 +219,27 @@ public class DungeonManager : MonoBehaviour
 
     public void GenerateDungeonPrefab()
     {
+<<<<<<< Updated upstream
 
+=======
+        GeneratedDungeon = new DungeonPart[size, size];
+
+        DungeonPart actualPart = new DungeonPart();
+        foreach(DungeonSpecification spec in dungeonPath) {
+            string shape = GetShapeFromOrientations(spec.orientations);
+            actualPart = shape != null ? DungeonParts.GetSpecificPart(spec.roomType, shape) : null;
+            GeneratedDungeon[(int)spec.position.x, (int)spec.position.y] = actualPart;
+        }
+
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if(GeneratedDungeon[i, j] != null)
+                    Instantiate(GeneratedDungeon[i, j].Prefab, new Vector3(i * 50, 0, j * 50), Quaternion.identity);
+            }
+        }
+>>>>>>> Stashed changes
     }
 
     /// <summary>
@@ -350,6 +381,30 @@ public class DungeonManager : MonoBehaviour
         };
     }
 
+<<<<<<< Updated upstream
+=======
+    public string GetShapeFromOrientations(List<Orientation> orientations)
+    {
+        if (orientations.Count == 0) return null;
+
+        List<Orientation> horizontalList = new List<Orientation> { Orientation.Left, Orientation.Right };
+        List<Orientation> verticalList = new List<Orientation> { Orientation.Top, Orientation.Bottom};
+
+        if (orientations.Count == 1)
+            return "MonoShape";
+        else if (orientations.Count == 3)
+            return "TShape";
+        else if (orientations.Count == 4)
+            return "XShape";
+        else if (orientations.Count == 2 && 
+            (horizontalList.Contains(orientations[0]) && verticalList.Contains(orientations[1])) ||
+            (horizontalList.Contains(orientations[1]) && verticalList.Contains(orientations[0])))
+            return "LShape";
+        else
+            return "IShape";
+    }
+
+>>>>>>> Stashed changes
     private Vector2 GenerateMainRoom(Orientation orientation, DungeonRooms roomType,DungeonSpecification[,] dungeon)
     {
         int column = orientation == Orientation.Left ? 0 : size - 1;
