@@ -216,9 +216,9 @@ public class DungeonManager : MonoBehaviour
     public void GenerateDungeonPrefab()
     {
         
-        foreach(DungeonSpecification spec in dungeonPath) {
+        /*foreach(DungeonSpecification spec in dungeonPath) {
             dungeonParts.GetSpecificPart(spec.roomType, );
-        }
+        }*/
     }
 
     /// <summary>
@@ -350,22 +350,24 @@ public class DungeonManager : MonoBehaviour
     }
     private Orientation GetOppositeOrientation(Orientation orientation)
     {
-        return orientation switch
+        /*return orientation switch
         {
             Orientation.Top => Orientation.Bottom,
             Orientation.Bottom => Orientation.Top,
             Orientation.Left => Orientation.Right,
             Orientation.Right => Orientation.Left,
             _ => orientation,
-        };
+        };*/
+        return (Orientation)0;
     }
 
     public string GetShapeFromOrientations(List<Orientation> orientations)
     {
-        switch (orientations)
+       /* switch (orientations)
         {
 
-        }
+        }*/
+        return null;
     }
 
     private Vector2 GenerateMainRoom(Orientation orientation, DungeonRooms roomType,DungeonSpecification[,] dungeon)

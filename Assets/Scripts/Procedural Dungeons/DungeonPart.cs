@@ -14,7 +14,7 @@ public class DungeonPart
     public int width, height;
     public Vector2 position;
 }
-public class DungeonParts : IEnumerable<DungeonPart>
+public class DungeonParts// : IEnumerable<DungeonPart>
 {
     public List<DungeonPart> dungeonParts;
 
@@ -29,9 +29,9 @@ public class DungeonParts : IEnumerable<DungeonPart>
     /// <param name="orientations">The doors' orientation that will be returned</param>
     public DungeonPart GetRandomPartPerDoors(DungeonRooms type, List<Orientation> orientations)
     {
-        return dungeonParts.Where(room => room.roomType == type)
+        return null;/* dungeonParts.Where(room => room.roomType == type)
             .Where(room => room.doorsOrientation == orientations)
-            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
+            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));*/
     }
     /// <summary>
     /// Return a room that hasN'T the doors that we passed in parameter
@@ -40,9 +40,9 @@ public class DungeonParts : IEnumerable<DungeonPart>
     /// <param name="orientations">The doors' orientation that will not be returned</param>
     public DungeonPart GetRandomPartPerDoorsConstraint(DungeonRooms type, List<Orientation> orientations)
     {
-        return dungeonParts.Where(room => room.roomType == type)
+        return null;/* dungeonParts.Where(room => room.roomType == type)
             .Where(room => (room.doorsOrientation.Select(orientation => orientations.Contains(orientation)).Contains(true)))
-            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
+            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));*/
     }
 
     /// <summary>
@@ -89,14 +89,15 @@ public class DungeonParts : IEnumerable<DungeonPart>
     /// </summary>
     public Orientation RotateOrientation(Orientation orientation) {
 
-        return orientation switch
+        /*return orientation switch
         {
             Orientation.Top => Orientation.Right,
             Orientation.Right => Orientation.Bottom,
             Orientation.Bottom => Orientation.Left,
             Orientation.Left => Orientation.Top,
             _ => orientation,
-        };
+        };*/
+        return 0;
     }
 
 
@@ -107,8 +108,8 @@ public class DungeonParts : IEnumerable<DungeonPart>
             yield return dungeonPart;
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
+    /*IEnumerator IEnumerable.GetEnumerator()
     {
         return dungeonParts.GetEnumerator();
-    }
+    }*/
 }
