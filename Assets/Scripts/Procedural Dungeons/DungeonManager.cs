@@ -41,10 +41,16 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
-    public int size = 4;
+
     public DungeonParts dungeonParts;
+    public DungeonPart[] GeneratedDungeon;
+
+    public int size = 4;
+    DungeonSpecification[,] dungeonPath;
     private int maxLinkedRooms = 3;
     private int emptyRooms = 2;
+
+
 
     public Dictionary<DungeonRooms, int> NbOfRoomsType = new Dictionary<DungeonRooms, int>();
 
@@ -114,7 +120,7 @@ public class DungeonManager : MonoBehaviour
 
     private void GenerateDungeonPath() // 4x4
     {
-        DungeonSpecification[,] dungeonPath = new DungeonSpecification[size, size];
+        dungeonPath = new DungeonSpecification[size, size];
 
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++) {
@@ -206,9 +212,13 @@ public class DungeonManager : MonoBehaviour
         GenerateDungeonPrefab();
     }
 
+    // PREFAB GENERATOR
     public void GenerateDungeonPrefab()
     {
-
+        
+        foreach(DungeonSpecification spec in dungeonPath) {
+            dungeonParts.GetSpecificPart(spec.roomType, );
+        }
     }
 
     /// <summary>
@@ -350,6 +360,14 @@ public class DungeonManager : MonoBehaviour
         };
     }
 
+    public string GetShapeFromOrientations(List<Orientation> orientations)
+    {
+        switch (orientations)
+        {
+
+        }
+    }
+
     private Vector2 GenerateMainRoom(Orientation orientation, DungeonRooms roomType,DungeonSpecification[,] dungeon)
     {
         int column = orientation == Orientation.Left ? 0 : size - 1;
@@ -362,5 +380,8 @@ public class DungeonManager : MonoBehaviour
         
         return new Vector2(column, 0);
     }
+
+
+    
 }
 
