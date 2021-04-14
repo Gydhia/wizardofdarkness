@@ -15,7 +15,7 @@ public class DungeonPart
     public int width, height;
     public Vector2 position;
 }
-public class DungeonParts : IEnumerable<DungeonPart>
+public class DungeonParts// : IEnumerable<DungeonPart>
 {
     public List<DungeonPart> dungeonParts;
 
@@ -60,14 +60,59 @@ public class DungeonParts : IEnumerable<DungeonPart>
         // .Where(room => room.roomType == type)
     }
 
+    public float? GetPartRotation(DungeonPart part, List<Orientation> orientations)
+    {
+        float? rotation = 0f;
+        // Part orientations different from given orientations to get
+        if (part.doorsOrientation.Keys.Count() != orientations.Count){
+            Debug.LogError("This part (" + part.id + ") doesn't fit the orientations passed");
+            return null;
+        }
+        // Already the good rotation
+        if (Enumerable.SequenceEqual(part.doorsOrientation.Keys.ToList().OrderBy(e => e), orientations.OrderBy(e => e)))
+            return rotation;
+
+        // Turn until we get the right orientations
+        List<Orientation> newOrientations = new List<Orientation>();
+        for (int i = 1; i < 4; i++) {
+            foreach(Orientation or in orientations) {
+                newOrientations.Add(RotateOrientation(or));
+            }
+            rotation += 90f;
+            if (Enumerable.SequenceEqual(newOrientations.OrderBy(e => e), orientations.OrderBy(e => e))){
+                return rotation;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Rotate the passed orientation clockwise
+    /// </summary>
+    public Orientation RotateOrientation(Orientation orientation) {
+
+        /*return orientation switch
+        {
+            Orientation.Top => Orientation.Right,
+            Orientation.Right => Orientation.Bottom,
+            Orientation.Bottom => Orientation.Left,
+            Orientation.Left => Orientation.Top,
+            _ => orientation,
+        };*/
+        return 0;
+    }
+
+
+
     public IEnumerator<DungeonPart> GetEnumerator()
     {
         foreach (DungeonPart dungeonPart in dungeonParts)
             yield return dungeonPart;
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
+    /*IEnumerator IEnumerable.GetEnumerator()
     {
         return dungeonParts.GetEnumerator();
-    }
+    }*/
 }

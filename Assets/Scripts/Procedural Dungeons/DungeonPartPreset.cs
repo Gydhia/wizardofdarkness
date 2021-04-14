@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New DungeonPart", menuName = "WOD/Dungeon Part")]
+[CreateAssetMenu(fileName = "New Dungeon Part", menuName = "WOD/Dungeon Part")]
 public class DungeonPartPreset : ScriptableObject
 {
     public GameObject Prefab;
@@ -10,6 +10,8 @@ public class DungeonPartPreset : ScriptableObject
     public string RoomID;
     public DungeonRooms RoomType;
     public string RoomShape;
-    public List<Orientation> DoorsOrientations;
-    public List<Vector2> DoorsPositions;
+
+    public List<Vector2> doorsPositions = new List<Vector2>();
+    public List<Orientation> doorsOrientations = new List<Orientation>();
+    public int Width, Height;
 }
