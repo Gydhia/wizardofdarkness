@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
     public float moveSpeed;
     public int actualElement;
     public Element[] elements;
-    public Skill[] actualSkills;
+    [HideInInspector]public Skill[] actualSkills;
     public bool canOpenDoors;
 
     [Header("Wind Variables")]
