@@ -6,7 +6,7 @@ public class ProjectileBarrier : Skill
 {
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Bro on a même pas encore inventé de projectiles");
     }
 
     // Start is called before the first frame update

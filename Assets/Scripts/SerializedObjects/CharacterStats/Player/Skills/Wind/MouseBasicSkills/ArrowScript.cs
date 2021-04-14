@@ -41,17 +41,20 @@ public class ArrowScript : MonoBehaviour
             {
                 arrowRb.constraints = RigidbodyConstraints.None;
             }
-            dir = (player.transform.position - transform.position).normalized;
+            var pos = player.transform.position;
+            pos.y += 1.5f;
+            dir = (pos - transform.position).normalized;
             arrowRb.AddForce(dir * arrowSpeed*10);
             transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
         }
     }
     public void OnCollisionEnter(Collision collision)
     {
+        if (isBeingCalledBack && collision.gameObject.CompareTag("Player")) Destroy(gameObject);
         /*else if (!isBeingCalledBack)
         {
             Physics.IgnoreCollision(collision.collider, arrowCollider);
-            faudrait qu'on passe a travers, non? :/ 
+            faudrait qu'on passe a travers, non? :/ edit: non là c'est insane en vrai
         }*/
         if (!collision.gameObject.CompareTag("Player"))
         {

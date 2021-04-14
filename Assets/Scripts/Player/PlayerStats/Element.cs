@@ -18,7 +18,7 @@ public abstract class Element : MonoBehaviour
         attackSpeed = elementStats.attackSpeed;
         moveSpeed = elementStats.moveSpeed;
         skills = elementStats.skills.ToArray();    
-        Debug.Log(def);
+        //Debug.Log(def);
 
     }
     public void UpdateStats(PlayerStats player)

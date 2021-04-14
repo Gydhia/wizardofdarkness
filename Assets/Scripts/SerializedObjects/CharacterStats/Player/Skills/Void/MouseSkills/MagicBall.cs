@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class MagicBall : Skill
 {
+
+
+    public float ballMoveSpeed;
+    public float ballGrowSpeed;
+    public Vector3 maxScale;
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
+        MagicBallScript ball = Instantiate(PlayerStats.Instance.ballPrefab,PlayerStats.Instance.ballSpawnSpot).GetComponent<MagicBallScript>();
+        //ball.transform.SetParent(ballSpawnSpot);
+        ball.ballMoveSpeed = ballMoveSpeed;
+        ball.ballGrowSpeed = ballGrowSpeed;
+        ball.maxScale = maxScale;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         

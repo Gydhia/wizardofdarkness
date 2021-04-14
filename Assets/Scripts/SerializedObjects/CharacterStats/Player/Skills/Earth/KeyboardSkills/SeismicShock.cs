@@ -6,18 +6,7 @@ public class SeismicShock : Skill
 {
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Ne pouvoir rien faire, pendant une seconde, cast, pas de cc. Pour l'instant, pas d'enemis -> inutile.
+        Instantiate(PlayerStats.Instance.earthquakePrefab, transform.position, Quaternion.identity);
     }
 }
