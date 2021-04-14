@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33126336837868158}
   - component: {fileID: 23263220480084090}
   - component: {fileID: 64216086172931782}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Prop_Dwarf_Torch_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Point light
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552452859528771223, guid: 00293c6a2c8f47949ae63e0fcb0864db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00293c6a2c8f47949ae63e0fcb0864db, type: 3}

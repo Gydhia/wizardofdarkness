@@ -79,6 +79,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  airControl: 1
 --- !u!1 &1770926877354960669
 GameObject:
   m_ObjectHideFlags: 0
