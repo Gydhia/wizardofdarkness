@@ -22,16 +22,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.5f;
     public LayerMask groundMask;
-<<<<<<< HEAD
-    Vector3 velocity;
-    bool isGrounded;
-    public float airControl;
-    float control;
-    
-=======
     public Vector3 velocity;
     public bool isGrounded;
->>>>>>> WindSpells
+    public float airControl;
+    float control;
+
 
     private void Awake()
     {
