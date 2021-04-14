@@ -41,13 +41,11 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
-<<<<<<< Updated upstream
-=======
+    DungeonSpecification[,] dungeonPath;
 
     public DungeonParts DungeonParts;
     public DungeonPart[,] GeneratedDungeon;
 
->>>>>>> Stashed changes
     public int size = 4;
     public DungeonParts dungeonParts;
     private int maxLinkedRooms = 3;
@@ -99,9 +97,9 @@ public class DungeonManager : MonoBehaviour
         foreach(DungeonPartPreset preset in partsPreset) {
             DungeonPart part = new DungeonPart();
 
-            part.doorsOrientation = new Dictionary<Orientation, Vector2>();
-            for (int i = 0; i < preset.doorsPositions.Count; i++)
-                part.doorsOrientation.Add(preset.doorsOrientations[i], preset.doorsPositions[i]);
+            part.Doors = new Dictionary<Orientation, Vector2>();
+            for (int i = 0; i < preset.DoorsPositions.Count; i++)
+                part.Doors.Add(preset.DoorsOrientations[i], preset.DoorsPositions[i]);
 
             part.id = preset.RoomID;
             part.Prefab = preset.Prefab;
@@ -219,9 +217,6 @@ public class DungeonManager : MonoBehaviour
 
     public void GenerateDungeonPrefab()
     {
-<<<<<<< Updated upstream
-
-=======
         GeneratedDungeon = new DungeonPart[size, size];
 
         DungeonPart actualPart = new DungeonPart();
@@ -239,7 +234,6 @@ public class DungeonManager : MonoBehaviour
                     Instantiate(GeneratedDungeon[i, j].Prefab, new Vector3(i * 50, 0, j * 50), Quaternion.identity);
             }
         }
->>>>>>> Stashed changes
     }
 
     /// <summary>
@@ -381,8 +375,6 @@ public class DungeonManager : MonoBehaviour
         };
     }
 
-<<<<<<< Updated upstream
-=======
     public string GetShapeFromOrientations(List<Orientation> orientations)
     {
         if (orientations.Count == 0) return null;
@@ -404,7 +396,6 @@ public class DungeonManager : MonoBehaviour
             return "IShape";
     }
 
->>>>>>> Stashed changes
     private Vector2 GenerateMainRoom(Orientation orientation, DungeonRooms roomType,DungeonSpecification[,] dungeon)
     {
         int column = orientation == Orientation.Left ? 0 : size - 1;

@@ -7,19 +7,13 @@ using UnityEngine;
 public class DungeonPart
 {
     public string id;
-<<<<<<< Updated upstream
-    public List<Vector2> doors;
-    public string prefabPath;
-=======
+    
     public GameObject Prefab;
     public string roomShape;
->>>>>>> Stashed changes
     public DungeonRooms roomType;
-    public List<Orientation> doorsOrientation;
+    public Dictionary<Orientation, Vector2> Doors;
     public int width, height;
     public Vector2 position;
-
-
 }
 public class DungeonParts : IEnumerable<DungeonPart>
 {
@@ -57,21 +51,13 @@ public class DungeonParts : IEnumerable<DungeonPart>
     /// </summary>
     /// <param name="constraints">Doors orientation constraints. The first is for the doors that it HAS to have, and the second for the doors that it SHOULDN'T have</param>
     /// <returns></returns>
-    public DungeonPart GetSpecificPart(DungeonRooms type, Tuple<List<Orientation>, List<Orientation>> constraints)
+    public DungeonPart GetSpecificPart(DungeonRooms type, string shape)
     {
-<<<<<<< Updated upstream
-        return dungeonParts.Where(room => room.roomType == type)
-            .Where(room => room.doorsOrientation == constraints.Item1)
-            .Where(room => (room.doorsOrientation.Select(orientation => constraints.Item2.Contains(orientation)).Contains(true)))
-            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
-=======
-        Debug.Log(shape);
         return dungeonParts
             .Where(room => room.roomShape == shape)
             .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomShape == shape).Count()));
         // .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
         // .Where(room => room.roomType == type)
->>>>>>> Stashed changes
     }
 
     public IEnumerator<DungeonPart> GetEnumerator()
