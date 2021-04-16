@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Earth Variables")]
     public GameObject earthquakePrefab;
+
     private void Awake()
     {
         Instance = this;
