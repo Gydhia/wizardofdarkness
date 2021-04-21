@@ -2,11 +2,11 @@ Shader "Unlit/Void"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex ("Texture", 2D) = "black" {}
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Transparent" }
         LOD 100
 
         Pass
@@ -64,7 +64,7 @@ float n ( float3 x ) {
     }
     return s;
 }
-            fixed4 frag (v2f i) : SV_Target
+            float4 frag (v2f i) : SV_Target
             {
                 float2 uv = i.uv*10.;
     float a = abs(n(float3(uv+_Time.y*3.14,sin(_Time.y)))-n(float3(uv+_Time.y,cos(_Time.y+3.))));

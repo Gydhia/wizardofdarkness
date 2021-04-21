@@ -106,7 +106,7 @@ MonoBehaviour:
   ballSpawnSpot: {fileID: 2972144081306814412}
   ballPrefab: {fileID: 515718092575105231, guid: 3396c33f9e91247439b897498ce14c31,
     type: 3}
-  blackHolePrefab: {fileID: 6734351742079726847, guid: 80b3826e079b1244b8ab490485761c2e,
+  blackHolePrefab: {fileID: 7810155896456656746, guid: eebe6cb31a569ec4b8d38ef50f61b6df,
     type: 3}
   teleportPointPrefab: {fileID: 8125175264758840427, guid: 655502fff45b08142adb07f75391efd2,
     type: 3}
