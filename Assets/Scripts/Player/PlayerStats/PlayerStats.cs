@@ -18,7 +18,9 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]public Skill[] actualSkills;
     public bool canOpenDoors;
     public GameObject[] elementsWeapons;
-
+    public float[] CDs;
+    [SerializeField]float[] timers = new float[5];
+    
     [Header("Wind Variables")]
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
     public Transform arrowSpawn;
@@ -45,6 +47,24 @@ public class PlayerStats : MonoBehaviour
     {
         //Debug.Log("wsh?");
         elements[actualElement].UpdateStats(this);
+    }
+    private void Update()
+    {
+        for (int i = 0; i < actualSkills.Length; i++)
+        {
+            if (!actualSkills[i].canLaunch)
+            {
+                if(timers[i] >= CDs[i])
+                {
+                    timers[i] = 0;
+                    actualSkills[i].canLaunch = true;
+                }
+                else
+                {
+                    timers[i] += Time.deltaTime;
+                }
+            }
+        }
     }
     public void ChangeElement(EElements newElement)
     {

@@ -10,6 +10,7 @@ public abstract class Element : MonoBehaviour
     protected float moveSpeed;
     public CharacterStatus elementStats;
     protected Skill[] skills;
+    protected float[] CDs = new float[5];
 
     public void Init()
     {
@@ -17,9 +18,12 @@ public abstract class Element : MonoBehaviour
         strength = elementStats.baseStr;
         attackSpeed = elementStats.attackSpeed;
         moveSpeed = elementStats.moveSpeed;
-        skills = elementStats.skills.ToArray();    
+        skills = elementStats.skills.ToArray();
         //Debug.Log(def);
-
+        for (int i = 0; i < skills.Length; i++)
+        {
+            CDs[i] = skills[i].coolDown;
+        }
     }
     public void UpdateStats(PlayerStats player)
     {
@@ -28,5 +32,6 @@ public abstract class Element : MonoBehaviour
         player.atqSpeed = attackSpeed;
         player.moveSpeed = moveSpeed;
         player.actualSkills = skills;
+        player.CDs = CDs;
     }
 }

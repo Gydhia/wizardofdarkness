@@ -15,20 +15,14 @@ public class Skill : MonoBehaviour
         Melee = 0,
         Ranged = 1,
     }
-    public float coolDown;
     public bool canLaunch = true;
 
-    [UnityEngine.Header("Damages")]
-    [UnityEngine.Tooltip("Skill damage based on THIS % of base strength.")]public float dmgPercent = 100;
-    [UnityEngine.Tooltip("Skill cooldown.")] public float skillCD;
-    [UnityEngine.Tooltip("The skill's areaOfEffect radius.")] public GameObject AOERadius;
-    [UnityEngine.Tooltip("Duration the skill has to be casted in order to be released.")] public float castTime;
-    public ESkillType state;
-    [UnityEngine.Header("Movement (not sure)")]
-    [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float speedBoost;
-
-    [UnityEngine.Header("Defense (not sure)")]
-    [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] public float defBoost;
+    [UnityEngine.Header("Common:")]
+    [UnityEngine.Tooltip("Skill cooldown.")] public float coolDown;
+    [UnityEngine.Header("To Implement:")]
+    [UnityEngine.Tooltip("Skill damage based on THIS % of base strength.(not implemented)")]public float dmgPercent = 100;
+    [UnityEngine.Tooltip("The skill's areaOfEffect radius.(not implemented)")] public GameObject AOERadius;
+    [UnityEngine.Tooltip("Duration the skill has to be casted in order to be released.(not implemented)")] public float castTime;
 
     [Header("Specificities to this skill:")]
     [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] private float PH;
