@@ -40,6 +40,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject blackHolePrefab;
     public GameObject teleportPointPrefab;
     public TPPointScript actualTPPoint;
+    public GameObject projBarrier;
 
     [Header("Earth Variables")]
     public GameObject earthquakePrefab;
@@ -75,6 +76,10 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             cooldownBars[i].fillValue = timers[i];
+        }
+        if(actualEElement == EElements.Void)
+        {
+            projBarrier.SetActive(Input.GetButton("RightClickSpell"));
         }
     }
     public void ChangeElement(EElements newElement)
