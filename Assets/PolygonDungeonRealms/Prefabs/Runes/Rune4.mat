@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Rune4
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,12 +20,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BaseMap:
+    - Texture2D_560b55f3057c45109a7517b07b80fcef:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 48dd9a7736c11b5448a74711310e2ee6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d21b0d52ea5f1c84ba2e275be1619ee0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -41,15 +45,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2deb9a997d4c62c4d92210d0f0a9abdd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 48dd9a7736c11b5448a74711310e2ee6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ca5218861d869e442bcae7aca8629a7b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -77,6 +81,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_1: 1
+    - Vector1_70f5bf663e15436083dd5990615e6b93: 0.5
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -88,15 +94,15 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.2
+    - _GlossyReflections: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.005
+    - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -104,9 +110,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.6509434, g: 0.11360805, b: 0.11360805, a: 1}
+    - Color_81ac9620e7754aa9b8f9dc66d85ed26d: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7709925498987136430

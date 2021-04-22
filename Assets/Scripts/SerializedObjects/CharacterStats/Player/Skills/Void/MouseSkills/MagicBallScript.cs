@@ -15,7 +15,7 @@ public class MagicBallScript : MonoBehaviour
     {
         if (Input.GetButton("LeftClickSpell") && !launched)
         {
-            //On grow labouboule...
+            //On grow la bouboule...
             if (transform.localScale.x <= maxScale.x)
             {
                 scale = transform.localScale;
@@ -32,6 +32,7 @@ public class MagicBallScript : MonoBehaviour
             {
                 launched = true;
                 transform.parent.gameObject.transform.DetachChildren();
+                Destroy(gameObject, 10f);
             }
             else
             {
