@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: LoadingInner
   m_Shader: {fileID: 4800000, guid: 14d4a9d5643343d4d949abbc67178b2a, type: 3}
   m_ShaderKeywords: _INVERTSECONDARYTEXALPHA_ON _INVERTSECONDARYTEX_ON _MAINSCROLLROTATE_SCROLL
@@ -144,7 +145,7 @@ Material:
     - _Parallax: 0.02
     - _Radius: 0.127
     - _Rotate: 0
-    - _Rotation: 15
+    - _Rotation: 141
     - _RotationSpeed: -0.08
     - _Scrollrotate: 2
     - _SecondaryTexRotationSpeed: 1
@@ -197,3 +198,4 @@ Material:
     - _Texturescrollingspeed: {r: -0.01, g: 0, b: 0, a: 0}
     - _Vector1: {r: -0.05, g: -0.05, b: 0, a: 0}
     - _Vector2: {r: -0.5, g: 0.5, b: 0, a: 0}
+  m_BuildTextureStacks: []

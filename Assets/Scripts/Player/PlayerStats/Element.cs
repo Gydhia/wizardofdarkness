@@ -11,6 +11,9 @@ public abstract class Element : MonoBehaviour
     public CharacterStatus elementStats;
     protected Skill[] skills;
     protected float[] CDs = new float[5];
+    [SerializeField]protected Color BarFillColor;
+    [SerializeField]protected Color BarBorderColor;
+    [SerializeField]protected Color BarMinMaxColor;
 
     public void Init()
     {
@@ -33,5 +36,16 @@ public abstract class Element : MonoBehaviour
         player.moveSpeed = moveSpeed;
         player.actualSkills = skills;
         player.CDs = CDs;
+        for (int i = 0; i < player.cooldownBars.Length; i++)
+        {
+            player.cooldownBars[i].maxValue = CDs[i];
+        }
+        foreach(CoolDown bar in player.cooldownBars)
+        {
+            bar.mat.SetColor("_Backgroundfillcolor", BarFillColor);
+            bar.mat.SetColor("_Backgroundbordercolor", BarBorderColor);
+            bar.mat.SetColor("_Barmincolor", BarMinMaxColor);
+            bar.mat.SetColor("_Barmaxcolor", BarMinMaxColor);
+        }
     }
 }

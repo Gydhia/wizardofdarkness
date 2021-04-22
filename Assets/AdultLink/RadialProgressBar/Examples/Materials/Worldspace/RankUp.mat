@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: RankUp
   m_Shader: {fileID: 4800000, guid: d9ecb8f62eacf3745a90d02a295701ad, type: 3}
   m_ShaderKeywords: _INVERTSECONDARYTEXALPHA_ON _MAINSCROLLROTATE_NONE _SCROLLROTATE_NONE
@@ -197,3 +198,4 @@ Material:
     - _Texturescrollingspeed: {r: -0.01, g: 0, b: 0, a: 0}
     - _Vector1: {r: -0.05, g: -0.05, b: 0, a: 0}
     - _Vector2: {r: -0.5, g: 0.5, b: 0, a: 0}
+  m_BuildTextureStacks: []
