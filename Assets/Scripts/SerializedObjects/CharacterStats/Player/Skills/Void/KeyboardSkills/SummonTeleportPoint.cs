@@ -15,6 +15,7 @@ public class SummonTeleportPoint : Skill
             {
                 GameObject TP = Instantiate(PlayerStats.Instance.teleportPointPrefab, hit.point, Quaternion.identity);
                 PlayerStats.Instance.actualTPPoint = TP.GetComponent<TPPointScript>();
+                PlayerStats.Instance.actualTPPoint.skillAccessor = this;
             }
         }
         else

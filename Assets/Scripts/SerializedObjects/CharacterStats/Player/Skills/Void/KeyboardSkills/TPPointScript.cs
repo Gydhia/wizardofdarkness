@@ -4,6 +4,7 @@ using System.Collections;
 public class TPPointScript : MonoBehaviour
 {
     IEnumerator cor;
+    public SummonTeleportPoint skillAccessor;
     // Use this for initialization
     private void OnEnable()
     {
@@ -20,5 +21,6 @@ public class TPPointScript : MonoBehaviour
         PlayerStats.Instance.transform.position = transform.position;   //problématique: ne se téléporte pas des fois à cause de déplacement.
         StopCoroutine(cor);
         Destroy(gameObject,0.15f);
+        skillAccessor.canLaunch = false;
     }
 }

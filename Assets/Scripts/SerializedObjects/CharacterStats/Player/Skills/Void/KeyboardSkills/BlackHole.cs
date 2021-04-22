@@ -12,6 +12,7 @@ public class BlackHole : Skill
         if (Physics.Raycast(ray, out hit, mask))
         {
             GameObject BH = Instantiate(PlayerStats.Instance.blackHolePrefab, hit.point, Quaternion.identity);
+            this.canLaunch = false;
             Destroy(BH, 7f);
         }
     }
