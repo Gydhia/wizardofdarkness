@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -14,6 +15,9 @@ public class Skill : MonoBehaviour
         Melee = 0,
         Ranged = 1,
     }
+    public float coolDown;
+    public bool canLaunch = true;
+
     [UnityEngine.Header("Damages")]
     [UnityEngine.Tooltip("Skill damage based on THIS % of base strength.")]public float dmgPercent = 100;
     [UnityEngine.Tooltip("Skill cooldown.")] public float skillCD;
@@ -28,7 +32,10 @@ public class Skill : MonoBehaviour
 
     [Header("Specificities to this skill:")]
     [UnityEngine.Tooltip("Please ignore, this is just a placeholder for the header. Just in case.")] private float PH;
-
+    private void Start()
+    {
+        canLaunch = true;
+    }
     public virtual void ActivatedSkill()
     {
 
