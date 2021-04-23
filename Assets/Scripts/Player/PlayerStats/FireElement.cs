@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthElement : Element
+public class FireElement : Element
 {
     public override void ChangementFX()
     {

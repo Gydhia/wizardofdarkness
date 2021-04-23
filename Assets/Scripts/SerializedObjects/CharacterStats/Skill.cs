@@ -10,7 +10,7 @@ public class Skill : MonoBehaviour
     Donc, ici, t'es dans Skill.cs. C'est la classe parent de tout les spells, alliés comme ennemis (à priori). Doooooonc, toutes les variables qui sont ici, sont aussi dans chaque skill, ok?
     Je pense que les variables sont assez explicites, on va passer sur ça. 
     Le plus important, c'est les enfants. J'ai tout bien trié, il faut Aller dans:
-    Scripts>SerializedObjects>CharacterStats>Player>Skills
+    Scripts>Skills
     Et là, t'as les Skills de earth, void et wind! Avec dedans des sous dossiers qui contiennent les sorts de claviers ou de souris.
     Vous devrez coder la fonction ActivatedSkill(). Attention! pas celle dans ce script, mais celle dans les autres skills.
     Pour lancer le coolDown? Trop simple! Il suffit de faire "canLaunch = false"; pile quand tu veux lancer le cooldown :)

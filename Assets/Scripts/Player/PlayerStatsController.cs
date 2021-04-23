@@ -20,5 +20,9 @@ public class PlayerStatsController : MonoBehaviour
         {
             PlayerStats.Instance.ChangeElement(PlayerStats.EElements.Earth);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            PlayerStats.Instance.ChangeElement(PlayerStats.EElements.Fire);
+        }
     }
 }

@@ -149,6 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1371681455124981258, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
         type: 3}
+      propertyPath: actualEElement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371681455124981258, guid: 3e0bb4b7785ac6948af78e85e3d541b9,
+        type: 3}
       propertyPath: cooldownBars.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -301,6 +306,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 829509154644614323, guid: 33b1cf328778a124e8f866999d6561f8,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.69
+      objectReference: {fileID: 0}
     - target: {fileID: 829509154870614370, guid: 33b1cf328778a124e8f866999d6561f8,
         type: 3}
       propertyPath: m_Name

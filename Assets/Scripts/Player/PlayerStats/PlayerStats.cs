@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
          */
     [Header("Variables For All Elements")]
     public static PlayerStats Instance;
-    public enum EElements { Void = 0, Wind = 1, Earth = 2 }
+    public enum EElements { Void = 0, Wind = 1, Earth = 2, Fire = 3 }
     public EElements actualEElement;
     public int HP;
     public int def;
@@ -42,8 +42,19 @@ public class PlayerStats : MonoBehaviour
     public TPPointScript actualTPPoint;
     public GameObject projBarrier;
 
+
     [Header("Earth Variables")]
-    public GameObject earthquakePrefab;
+    public bool blocking;
+
+
+    [Header("FireVariables")]
+    float overheat;
+    public bool overheating;
+    public GameObject fireLaser;
+    public GameObject fireTornadoPrefab;
+    public GameObject fireWallPrefab;
+    public GameObject fireMinePrefab;
+
 
     private void Awake()
     {
@@ -77,10 +88,23 @@ public class PlayerStats : MonoBehaviour
             }
             cooldownBars[i].fillValue = timers[i];
         }
-        if(actualEElement == EElements.Void)
+        switch (actualElement)
         {
-            projBarrier.SetActive(Input.GetButton("RightClickSpell"));
+            case 0://Void
+                projBarrier.SetActive(Input.GetButton("RightClickSpell"));
+                break;
+            case 1://Wind
+
+                break;
+            case 2://Earth
+
+                blocking = Input.GetButton("RightClickSpell");
+                break;
+            case 3://Fire
+                fireLaser.SetActive(Input.GetButton("LeftClickSpell"));
+                break;
         }
+        
     }
     public void ChangeElement(EElements newElement)
     {

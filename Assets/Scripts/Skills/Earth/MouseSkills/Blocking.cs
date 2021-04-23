@@ -6,7 +6,7 @@ public class Blocking : Skill
 {
     public override void ActivatedSkill()
     {
-        //Faire autrement? Il suffit de mettre dans un update:
+        //Faire autrement? Il suffit de mettre dans un update: (voir ligne ~80 playerstats)
         /*
          Ce que le thomas du passé voulais dire, c'est que si jamais tu met ça dans n'importe quelle update, ça marche 
          tout ça parce que PlayerStats est un singleton hehe

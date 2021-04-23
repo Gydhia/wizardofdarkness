@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd97c3a68d089041b62711a8d4abc11, type: 3}
+  m_Name: Fire
+  m_EditorClassIdentifier: 
+  baseDef: 35
+  baseStr: 35
+  attackSpeed: 1
+  moveSpeed: 1.1
+  skills:
+  - {fileID: 657237984361380439, guid: 25295c2fedd12a44d8e956a02f157bf2, type: 3}
+  - {fileID: 3736458093096233918, guid: 29d29fe665265ed47b274ffae21b59c7, type: 3}
+  - {fileID: -8231158184052890043, guid: e092233b23d283344a1748ba4602ee2d, type: 3}
+  - {fileID: -5036646064849345230, guid: 9f2a5efbedbd7b44a932cc148950bb8a, type: 3}
+  - {fileID: 1277931785907006465, guid: 19d30db837f3bc345b6245f29e3dae88, type: 3}

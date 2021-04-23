@@ -6,6 +6,6 @@ public class WindElement : Element
 {
     public override void ChangementFX()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }

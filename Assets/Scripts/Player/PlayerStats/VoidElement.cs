@@ -6,6 +6,6 @@ public class VoidElement : Element
 {
     public override void ChangementFX()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }
