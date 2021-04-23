@@ -91,6 +91,7 @@ public class PlayerStats : MonoBehaviour
             actualElement = (int)actualEElement;
             elements[actualElement].UpdateStats(this);
             elementsWeapons[actualElement].SetActive(true);
+            elements[actualElement].ChangementFX();
         }
     }
 }

@@ -48,4 +48,9 @@ public abstract class Element : MonoBehaviour
             bar.mat.SetColor("_Barmaxcolor", BarMinMaxColor);
         }
     }
+    public abstract void ChangementFX();/*  Cette fonction, override dans les autres, va gérer les FX qu'on déclencheras lors d'un changement. La différence entre cette méthode et UpdateStats;
+                                            C'est que du coup UpdateStats est commune pour toutes les classes. Dans cette fonction, on met alors les choses que les classes n'ont pas toutes en commun.
+                                            Cette fonction sera appellée quand on changeras de classe, si c'était pas évident lmao
+
+     */
 }
