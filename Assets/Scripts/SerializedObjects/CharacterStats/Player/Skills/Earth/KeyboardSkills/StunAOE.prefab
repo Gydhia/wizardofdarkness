@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7122403586403102284}
   - component: {fileID: 750415013182018748}
   m_Layer: 0
-  m_Name: Ack
+  m_Name: StunAOE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,10 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ef0026b951014489e76de8248e6bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canLaunch: 1
+  coolDown: 5
   dmgPercent: 100
-  skillCD: 0
-  AOERadius: 0
+  AOERadius: {fileID: 0}
   castTime: 0
-  state: 0
-  speedBoost: 0
-  defBoost: 0

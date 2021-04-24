@@ -92,15 +92,14 @@ public class DungeonParts// : IEnumerable<DungeonPart>
     /// </summary>
     public Orientation RotateOrientation(Orientation orientation) {
 
-        /*return orientation switch
+        return orientation switch
         {
             Orientation.Top => Orientation.Right,
             Orientation.Right => Orientation.Bottom,
             Orientation.Bottom => Orientation.Left,
             Orientation.Left => Orientation.Top,
             _ => orientation,
-        };*/
-        return 0;
+        };
     }
 
 

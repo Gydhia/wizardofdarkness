@@ -6,18 +6,11 @@ public class AttackSpeedBoost : Skill
 {
     public override void ActivatedSkill()
     {
+        /*
+         bande l'arc plus rapidement. Pour ça, je dirais que tu fait l'implémentation dans PlayerStats. Ici, tu met qu'un booléen set à true, puis PlayerStats fera le reste.
+         D'ailleurs, fonce dans playerStats, maintenant!
+         */
         throw new System.NotImplementedException();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

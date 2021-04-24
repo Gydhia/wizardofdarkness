@@ -6,18 +6,14 @@ public class BlackHole : Skill
 {
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        RaycastHit hit;
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+        LayerMask mask = LayerMask.GetMask("Ground");
+        if (Physics.Raycast(ray, out hit, mask))
+        {
+            GameObject BH = Instantiate(PlayerStats.Instance.blackHolePrefab, hit.point, Quaternion.identity);
+            this.canLaunch = false;
+            Destroy(BH, 7f);
+        }
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WindArrow : Skill
 {
-    [Header("Specificities to this skill:")]
     public GameObject arrowPrefab;
     public Transform arrowSpawn;
     public float shootForce = 20f;
@@ -16,13 +15,12 @@ public class WindArrow : Skill
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
         rb.velocity = Camera.main.transform.forward * shootForce;
         PlayerStats.Instance.activeArrows.Add(arrow.GetComponent<ArrowScript>());
+        /*
+         Bon, là c'est tout fait, on va pas se mentir. mais c'est un proto, quoi, parce qu'à priori ça va changer, mais ça fait ce que ça fait, quand même...
+         Faudrait par exemple, genre... Faire le bandage de l'arc :)
+        bref, maintenant brow go CallingBackArrows.cs! Oeoe
+
+         */
     }
-    public void Start()
-    {
-        
-    }
-    private void Update()
-    {
-        
-    }
+
 }

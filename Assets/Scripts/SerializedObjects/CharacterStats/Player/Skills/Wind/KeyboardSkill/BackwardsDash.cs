@@ -6,18 +6,12 @@ public class BackwardsDash : Skill
 {
     public override void ActivatedSkill()
     {
+        /*
+             Dash en arrière (Comme le chasseur dans WoW et Archeage, ralentit les
+             ennemis juste devant)
+             aaaah, les dashs... Mon né-mé-sis. Je veux faire ça bien, mais comment faire ça bien? hmmmm...$
+             Go AttackSpeedBoost, maintenant!
+         */
         throw new System.NotImplementedException();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

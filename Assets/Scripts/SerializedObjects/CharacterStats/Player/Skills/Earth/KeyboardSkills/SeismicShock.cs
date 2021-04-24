@@ -6,18 +6,11 @@ public class SeismicShock : Skill
 {
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
-    }
+        /*"Réduction de dégâts - 75% pendant 7 secondes -> boost la parade
+        de base durant l'effet"
+        Genre de l'armure de fou en gros quoi
+        bref, maintenant brow go playerstats.cs! Oeoe
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+         */
     }
 }
