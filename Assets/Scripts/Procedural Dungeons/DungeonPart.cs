@@ -9,19 +9,19 @@ public class DungeonPart
     public string id;
     
     public GameObject Prefab;
-    public string roomShape;
-    public DungeonRooms roomType;
+    public string RoomShape;
+    public DungeonRooms RoomType;
     public Dictionary<Orientation, Vector2> Doors;
-    public int width, height;
-    public Vector2 position;
+    public int Width, Height;
+    public Vector2 Position;
 }
 public class DungeonParts// : IEnumerable<DungeonPart>
 {
-    public List<DungeonPart> dungeonParts;
+    public List<DungeonPart> dungeonParts { get; set; }
 
     public DungeonPart GetRandomPart(DungeonRooms type)
     {
-        return dungeonParts.Where(room => room.roomType == type).ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
+        return dungeonParts.Where(room => room.RoomType == type).ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.RoomType == type).Count()));
     }
     /// <summary>
     /// Return a room that has the doors that we passed in parameter
@@ -54,8 +54,8 @@ public class DungeonParts// : IEnumerable<DungeonPart>
     public DungeonPart GetSpecificPart(DungeonRooms type, string shape)
     {
         return dungeonParts
-            .Where(room => room.roomShape == shape)
-            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomShape == shape).Count()));
+            .Where(room => room.RoomShape == shape)
+            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.RoomShape == shape).Count()));
         // .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
         // .Where(room => room.roomType == type)
     }
@@ -64,12 +64,12 @@ public class DungeonParts// : IEnumerable<DungeonPart>
     {
         float? rotation = 0f;
         // Part orientations different from given orientations to get
-        if (part.doorsOrientation.Keys.Count() != orientations.Count){
+        if (part.Doors.Keys.Count() != orientations.Count){
             Debug.LogError("This part (" + part.id + ") doesn't fit the orientations passed");
             return null;
         }
         // Already the good rotation
-        if (Enumerable.SequenceEqual(part.doorsOrientation.Keys.ToList().OrderBy(e => e), orientations.OrderBy(e => e)))
+        if (Enumerable.SequenceEqual(part.Doors.Keys.ToList().OrderBy(e => e), orientations.OrderBy(e => e)))
             return rotation;
 
         // Turn until we get the right orientations

@@ -30,6 +30,7 @@ public struct DungeonSpecification
     public DungeonRooms roomType;
     public List<Orientation> orientations;
     public Vector2 position;
+    public DungeonPart Part;
 }
 
 public class DungeonManager : MonoBehaviour
@@ -41,14 +42,7 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
-    DungeonSpecification[,] dungeonPath;
-
     public DungeonParts DungeonParts;
-    public DungeonPart[,] GeneratedDungeon;
-
-    public int size = 4;
-    public DungeonParts dungeonParts;
-    public DungeonPart[] GeneratedDungeon;
 
     public int size = 4;
     DungeonSpecification[,] dungeonPath;
@@ -109,8 +103,8 @@ public class DungeonManager : MonoBehaviour
 
             part.id = preset.RoomID;
             part.Prefab = preset.Prefab;
-            part.roomType = preset.RoomType;
-            part.roomShape = preset.RoomShape;
+            part.RoomType = preset.RoomType;
+            part.RoomShape = preset.RoomShape;
             
             DungeonParts.dungeonParts.Add(part);
         }
@@ -143,7 +137,7 @@ public class DungeonManager : MonoBehaviour
         // Spawn room
         Vector2 spawnLocation = GenerateMainRoom(Orientation.Left, DungeonRooms.Spawn, dungeonPath);
         // Boss room 
-        GenerateMainRoom(Orientation.Right, DungeonRooms.Boss, dungeonPath);
+        Vector2 bossLocation = GenerateMainRoom(Orientation.Right, DungeonRooms.Boss, dungeonPath);
 
         // Place empty rooms at free spots
         for (int i = 0; i < emptyRooms; i++)
@@ -196,7 +190,6 @@ public class DungeonManager : MonoBehaviour
             }
         }
 
-
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
@@ -204,10 +197,14 @@ public class DungeonManager : MonoBehaviour
                 if (dungeonPath[i, j].roomType == DungeonRooms.None)
                 {
                     dungeonPath[i, j].roomType = GetNextRoom();
+                    dungeonPath[i, j].position.Set(i, j);
                     SetRoomOrientation(dungeonPath[i, j], dungeonPath);
                 }
             }
         }
+
+        SetRoomOrientation(dungeonPath[(int)bossLocation.x, (int)bossLocation.y], dungeonPath, true);
+
         string dungeonText = "";
         for (int i = 0; i < size; i++)
         {
@@ -224,21 +221,24 @@ public class DungeonManager : MonoBehaviour
     // PREFAB GENERATOR
     public void GenerateDungeonPrefab()
     {
-        GeneratedDungeon = new DungeonPart[size, size];
-
-        DungeonPart actualPart = new DungeonPart();
-        foreach(DungeonSpecification spec in dungeonPath) {
-            string shape = GetShapeFromOrientations(spec.orientations);
-            actualPart = shape != null ? DungeonParts.GetSpecificPart(spec.roomType, shape) : null;
-            GeneratedDungeon[(int)spec.position.x, (int)spec.position.y] = actualPart;
-        }
-
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                if(GeneratedDungeon[i, j] != null)
-                    Instantiate(GeneratedDungeon[i, j].Prefab, new Vector3(i * 50, 0, j * 50), Quaternion.identity);
+                if (dungeonPath[i, j].roomType != DungeonRooms.Empty) {
+
+                    string shape = GetShapeFromOrientations(dungeonPath[i, j].orientations);
+                    dungeonPath[i, j].Part = DungeonParts.GetSpecificPart(dungeonPath[i, j].roomType, shape);
+
+                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, new Vector3(i * 50, 0, j * 50), Quaternion.identity);
+                    part.transform.eulerAngles = new Vector3(
+                        part.transform.eulerAngles.x,
+                        (float)DungeonParts.GetPartRotation(dungeonPath[i, j].Part, dungeonPath[i, j].orientations),
+                        part.transform.eulerAngles.z
+                        );
+                    part.transform.parent = this.transform;
+                    part.name = shape + " | " + dungeonPath[i, j].position;
+                }
             }
         }
     }
@@ -250,17 +250,18 @@ public class DungeonManager : MonoBehaviour
     {
         List<Orientation?> availableOrientations = new List<Orientation?>();
 
-        // We don't want the path to be able to go Left
-        if (position.y + 1 < size && dungeon[(int)position.x, (int)position.y + 1].roomType == DungeonRooms.None)
+        
+        if (position.y + 1 < size && (dungeon[(int)position.x, (int)position.y + 1].roomType == DungeonRooms.None || !excludeLeft) )
             availableOrientations.Add(Orientation.Right);
 
-        if (!excludeLeft && position.y - 1 >= 0 && dungeon[(int)position.x, (int)position.y - 1].roomType == DungeonRooms.None)
+        // We don't want the path to be able to go Left
+        if (!excludeLeft && position.y - 1 >= 0 && (dungeon[(int)position.x, (int)position.y - 1].roomType == DungeonRooms.None || !excludeLeft))
             availableOrientations.Add(Orientation.Left);
 
-        if (position.x - 1 >= 0 && dungeon[(int)position.x - 1, (int)position.y].roomType == DungeonRooms.None)
+        if (position.x - 1 >= 0 && (dungeon[(int)position.x - 1, (int)position.y].roomType == DungeonRooms.None || !excludeLeft))
             availableOrientations.Add(Orientation.Top);
 
-        if (position.x + 1 < size && dungeon[(int)position.x + 1, (int)position.y].roomType == DungeonRooms.None)
+        if (position.x + 1 < size && (dungeon[(int)position.x + 1, (int)position.y].roomType == DungeonRooms.None || !excludeLeft))
             availableOrientations.Add(Orientation.Bottom);
 
         return availableOrientations;
@@ -269,11 +270,8 @@ public class DungeonManager : MonoBehaviour
     private Orientation? GetRandomAvailableDirections(Vector2 position, DungeonSpecification[,] dungeon) {
         List<Orientation?> orientations = GetAvailableDirections(position, dungeon);
 
-        if (orientations.Count > 0)
-        {
+        if (orientations.Count > 0) {
             Orientation? or = orientations[Random.Range(0, orientations.Count)];
-
-            Debug.Log("X: " + position.x + " | Y:" + position.y + " : " + or);
             return or;
         }
         else return null;
@@ -312,10 +310,12 @@ public class DungeonManager : MonoBehaviour
         DungeonRooms room = DungeonRooms.None;
         var rooms = System.Enum.GetValues(typeof(DungeonRooms));
 
+        List<DungeonRooms> unobtainableRooms = new List<DungeonRooms>() { DungeonRooms.Empty, DungeonRooms.None, DungeonRooms.Boss, DungeonRooms.Spawn };
+
         while (room == DungeonRooms.None)
         {
             DungeonRooms randomRoom = (DungeonRooms)rooms.GetValue(Random.Range(0, rooms.Length - 1));
-            if (NbOfRoomsType[randomRoom] > 0) {
+            if (!unobtainableRooms.Contains(randomRoom) && NbOfRoomsType[randomRoom] > 0) {
                 room = randomRoom;
                 NbOfRoomsType[randomRoom]--;
             }
@@ -349,7 +349,7 @@ public class DungeonManager : MonoBehaviour
             }
         }
     }
-    private void SetRoomOrientation(DungeonSpecification room, DungeonSpecification[,] dungeon)
+    private void SetRoomOrientation(DungeonSpecification room, DungeonSpecification[,] dungeon, bool OnlyOne = false)
     {
         if (room.orientations == null)
             room.orientations = new List<Orientation>();
@@ -360,36 +360,26 @@ public class DungeonManager : MonoBehaviour
             DungeonRooms.None
         };
 
-        foreach (Orientation or in GetAvailableDirections(room.position, dungeon))
+        foreach (Orientation or in GetAvailableDirections(room.position, dungeon, false))
         {
-
             DungeonSpecification adjRoom = dungeon[(int)(room.position.x + Directions[or].x), (int)(room.position.y + Directions[or].y)];
             if (!unlinkableRooms.Contains(adjRoom.roomType)) {
                 room.orientations.Add(or);
                 adjRoom.orientations.Add(GetOppositeOrientation(or));
+                if (OnlyOne) return;
             }
         }
     }
     private Orientation GetOppositeOrientation(Orientation orientation)
     {
-        /*return orientation switch
+        return orientation switch
         {
             Orientation.Top => Orientation.Bottom,
             Orientation.Bottom => Orientation.Top,
             Orientation.Left => Orientation.Right,
             Orientation.Right => Orientation.Left,
             _ => orientation,
-        };*/
-        return (Orientation)0;
-    }
-
-    public string GetShapeFromOrientations(List<Orientation> orientations)
-    {
-       /* switch (orientations)
-        {
-
-        }*/
-        return null;
+        };
     }
 
     public string GetShapeFromOrientations(List<Orientation> orientations)
@@ -423,7 +413,7 @@ public class DungeonManager : MonoBehaviour
         NbOfRoomsType[roomType]--;
         dungeon[roomHeight, column].position.Set(roomHeight, column);
         
-        return new Vector2(column, 0);
+        return new Vector2(roomHeight, column);
     }
 
 

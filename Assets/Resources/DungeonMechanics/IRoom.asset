@@ -16,9 +16,5 @@ MonoBehaviour:
   RoomID: IRoom
   RoomType: 0
   RoomShape: IShape
-  doorsPositions:
-  - {x: 30, y: 2.4}
-  - {x: 0, y: 2.4}
-  doorsOrientations: 0200000003000000
-  Width: 4
-  Height: 4
+  DoorsOrientations: 0200000003000000
+  DoorsPositions: []
