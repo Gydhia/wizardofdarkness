@@ -9,10 +9,12 @@ public class DoorChoice : MonoBehaviour
 
     public void BeWall()
     {
-
+        door.SetActive(false);
+        wall.SetActive(true);
     }
     public void BeDoor()
     {
-
+        door.SetActive(true);
+        wall.SetActive(false);
     }
 }
