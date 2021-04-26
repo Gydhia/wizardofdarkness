@@ -231,11 +231,11 @@ public class DungeonManager : MonoBehaviour
                     dungeonPath[i, j].Part = DungeonParts.GetSpecificPart(dungeonPath[i, j].roomType, shape);
 
                     GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, new Vector3(i * 50, 0, j * 50), Quaternion.identity);
-                    part.transform.eulerAngles = new Vector3(
-                        part.transform.eulerAngles.x,
-                        (float)DungeonParts.GetPartRotation(dungeonPath[i, j].Part, dungeonPath[i, j].orientations),
-                        part.transform.eulerAngles.z
-                        );
+                    //part.transform.eulerAngles = new Vector3(
+                    //    part.transform.eulerAngles.x,
+                    //    (float)DungeonParts.GetPartRotation(dungeonPath[i, j].Part, dungeonPath[i, j].orientations),
+                    //    part.transform.eulerAngles.z
+                    //    );
                     part.transform.parent = this.transform;
                     part.name = shape + " | " + dungeonPath[i, j].position;
                 }
