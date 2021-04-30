@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CooldownBar 5
+  m_Name: HPBar
   m_Shader: {fileID: 4800000, guid: d9ecb8f62eacf3745a90d02a295701ad, type: 3}
   m_ShaderKeywords: _MAINSCROLLROTATE_SCROLL _SECONDARYSCROLLROTATE_SCROLL
   m_LightmapFlags: 4
@@ -109,7 +109,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fillpercentage: 0
+    - _Fillpercentage: 1
     - _Globalopacity: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -146,9 +146,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Backgroundbordercolor: {r: 0, g: 0.2830189, b: 0.035619266, a: 1}
-    - _Backgroundfillcolor: {r: 0, g: 1, b: 0.23184776, a: 1}
-    - _Barmaxcolor: {r: 0, g: 0, b: 0, a: 1}
-    - _Barmincolor: {r: 0, g: 0, b: 0, a: 1}
+    - _Backgroundfillcolor: {r: 0, g: 0, b: 0, a: 1}
+    - _Barmaxcolor: {r: 0.006182432, g: 1, b: 0, a: 1}
+    - _Barmincolor: {r: 0.008547783, g: 1, b: 0, a: 1}
     - _Barsecondarymaxcolor: {r: 0, g: 1, b: 0.08965516, a: 1}
     - _Barsecondarymincolor: {r: 1, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

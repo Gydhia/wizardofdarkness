@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats Instance;
     public enum EElements { Void = 0, Wind = 1, Earth = 2 }
     public EElements actualEElement;
-    public int HP;
+    [Min(0)]public int HP;
     public int def;
     public int str;
     public float atqSpeed;
@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour
     public float[] CDs;
     [SerializeField] float[] timers = new float[5];
     public CoolDown[] cooldownBars = new CoolDown[5];
+    public Material HPBar;
     /*
      A partir d'ici, typiquement si vous avez des prefab à stocker, des listes, des variables utiles à garder, c'est ici que vous allez les mettre
      (Sous Wind pour Killian, sous Earth pour Enzo, évidemment)
@@ -41,7 +42,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject teleportPointPrefab;
     public TPPointScript actualTPPoint;
     public GameObject projBarrier;
-
+    float HPPercentage;
     [Header("Earth Variables")]
     public GameObject earthquakePrefab;
 
@@ -61,6 +62,8 @@ public class PlayerStats : MonoBehaviour
     }
     private void Update()
     {
+        HPPercentage = (float)HP / 100;
+        HPBar.SetFloat("_Fillpercentage", HPPercentage);
         for (int i = 0; i < actualSkills.Length; i++)
         {
             if (!actualSkills[i].canLaunch)
