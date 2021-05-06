@@ -27,11 +27,12 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     public float airControl;
     float control;
-
+    CharacterController charController;
 
     private void Awake()
     {
         Instance = this;
+        charController = GetComponent<CharacterController>();
     }
     // Update is called once per frame
     public void Update()
@@ -101,5 +102,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    public void Teleport(Vector3 pos)
+    {
+        charController.enabled = false;
+        charController.transform.position = pos;
+        charController.enabled = true;
+    }
 }

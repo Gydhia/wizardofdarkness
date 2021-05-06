@@ -18,10 +18,9 @@ public class TPPointScript : MonoBehaviour
     }
     public void Teleport()
     {
-        PlayerMovement.Instance.move = Vector3.zero;   //problématique: ne se téléporte pas des fois à cause de déplacement.
-        PlayerMovement.Instance.transform.position = transform.position;   //problématique: ne se téléporte pas des fois à cause de déplacement.
+        PlayerMovement.Instance.Teleport(transform.position);   //problématique: ne se téléporte pas des fois à cause de déplacement.
        // StopCoroutine(cor);
         skillAccessor.canLaunch = false;
-        Destroy(gameObject,0.25f);
+        Destroy(gameObject);
     }
 }
