@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxStamina = 100f;
     [Range(0,100)]public float stamina = 100f;
     public Slider slider;
-
+    public Vector3 move;
     public Transform groundCheck;
     public float groundDistance = 0.5f;
     public LayerMask groundMask;
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x * control + transform.forward * z * control;
+        move = transform.right * x * control + transform.forward * z * control;
       
         controller.Move(move * Currentspeed * Time.deltaTime);
 
