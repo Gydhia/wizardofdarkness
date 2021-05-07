@@ -9,7 +9,6 @@ public class DungeonPart
     public string id;
     
     public GameObject Prefab;
-    public string RoomShape;
     public DungeonRooms RoomType;
     public Dictionary<Orientation, Vector2> Doors;
     public int Width, Height;
@@ -51,11 +50,10 @@ public class DungeonParts// : IEnumerable<DungeonPart>
     /// </summary>
     /// <param name="constraints">Doors orientation constraints. The first is for the doors that it HAS to have, and the second for the doors that it SHOULDN'T have</param>
     /// <returns></returns>
-    public DungeonPart GetSpecificPart(DungeonRooms type, string shape)
+    public DungeonPart GetSpecificPart(DungeonRooms type, List<Orientation> orientations)
     {
-        return dungeonParts
-            .Where(room => room.RoomShape == shape)
-            .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.RoomShape == shape).Count()));
+        var parts = dungeonParts.Where(room => (room.Doors.Select(orientation => orientations.Contains(orientation.Key)).Contains(true)));
+        return parts.ElementAt(UnityEngine.Random.Range(0, parts.Count()));
         // .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
         // .Where(room => room.roomType == type)
     }

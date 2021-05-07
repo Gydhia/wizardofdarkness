@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum DungeonRooms
@@ -43,6 +44,7 @@ public class DungeonManager : MonoBehaviour
     };
 
     public DungeonParts DungeonParts;
+    public Room[,] Rooms;
 
     public int size = 4;
     DungeonSpecification[,] dungeonPath;
@@ -80,6 +82,7 @@ public class DungeonManager : MonoBehaviour
             Destroy(this.gameObject);
 
         DungeonParts = new DungeonParts();
+        Rooms = new Room[size, size];
     }
 
     public void Start()
@@ -93,18 +96,17 @@ public class DungeonManager : MonoBehaviour
     {
         DungeonParts.dungeonParts = new List<DungeonPart>();
 
-        var partsPreset = Resources.LoadAll("DungeonMechanics", typeof(DungeonPartPreset));
-        foreach(DungeonPartPreset preset in partsPreset) {
+        var partsPreset = Resources.LoadAll("DungeonMechanics", typeof(Room));
+        foreach(Room preset in partsPreset) {
             DungeonPart part = new DungeonPart();
 
             part.Doors = new Dictionary<Orientation, Vector2>();
-            for (int i = 0; i < preset.DoorsPositions.Count; i++)
-                part.Doors.Add(preset.DoorsOrientations[i], preset.DoorsPositions[i]);
+            for (int i = 0; i < preset.RoomDoors.Count; i++)
+               part.Doors.Add(preset.RoomDoors[i].Orientation, preset.RoomDoors[i].Position);
 
             part.id = preset.RoomID;
-            part.Prefab = preset.Prefab;
+            part.Prefab = preset.gameObject;
             part.RoomType = preset.RoomType;
-            part.RoomShape = preset.RoomShape;
             
             DungeonParts.dungeonParts.Add(part);
         }
@@ -215,29 +217,67 @@ public class DungeonManager : MonoBehaviour
             }
         }
         Debug.Log(dungeonText);
+
         GenerateDungeonPrefab();
     }
 
     // PREFAB GENERATOR
     public void GenerateDungeonPrefab()
     {
+        StartCoroutine(CreateDungeon());
+    }
+
+    public IEnumerator CreateDungeon()
+    {
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                if (dungeonPath[i, j].roomType != DungeonRooms.Empty) {
+                if (dungeonPath[i, j].roomType != DungeonRooms.Empty)
+                {
+                    dungeonPath[i, j].Part = DungeonParts.GetSpecificPart(dungeonPath[i, j].roomType, dungeonPath[i, j].orientations);
 
-                    string shape = GetShapeFromOrientations(dungeonPath[i, j].orientations);
-                    dungeonPath[i, j].Part = DungeonParts.GetSpecificPart(dungeonPath[i, j].roomType, shape);
+                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, this.transform);
+                    Room room = part.GetComponent<Room>();
 
-                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, new Vector3(i * 50, 0, j * 50), Quaternion.identity);
+                    room.GivenOrientations = dungeonPath[i, j].orientations;
+                    room.EnableDoorFromOrientation(dungeonPath[i, j].orientations);
+                    Rooms[i, j] = room;
                     //part.transform.eulerAngles = new Vector3(
                     //    part.transform.eulerAngles.x,
                     //    (float)DungeonParts.GetPartRotation(dungeonPath[i, j].Part, dungeonPath[i, j].orientations),
                     //    part.transform.eulerAngles.z
                     //    );
-                    part.transform.parent = this.transform;
-                    part.name = shape + " | " + dungeonPath[i, j].position;
+                }
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (dungeonPath[i, j].roomType != DungeonRooms.Empty)
+                {
+                    float xOffset = 0, yOffset = 0;
+                    if (i < size - 1 && Rooms[i + 1, j] != null)
+                    {
+                        Vector2 nextDoor = Rooms[i + 1, j].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
+                        Vector2 actualDoor = Rooms[i, j].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
+                        if (nextDoor != null && actualDoor != null) {
+                            xOffset = actualDoor.x - nextDoor.x;
+                        }
+                    }
+                    if(j < size - 1 && Rooms[i, j + 1] != null)
+                    {
+                        Vector2 nextDoor = Rooms[i, j + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
+                        Vector2 actualDoor = Rooms[i, j].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
+                        if(nextDoor != null && actualDoor != null) {
+                            yOffset = actualDoor.y - nextDoor.y ;
+                        }
+                    }
+
+                    Rooms[i, j].gameObject.transform.position = new Vector3(j * 70 + yOffset, 0, i * - 70 + xOffset);
+                    Rooms[i, j].gameObject.name = dungeonPath[i, j].Part.id + " | " + dungeonPath[i, j].position;
+                    
+                    yield return null;
                 }
             }
         }
@@ -415,8 +455,5 @@ public class DungeonManager : MonoBehaviour
         
         return new Vector2(roomHeight, column);
     }
-
-
-    
 }
 
