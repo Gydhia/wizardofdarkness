@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BooleanDoor : MonoBehaviour
@@ -24,7 +25,10 @@ public class BooleanDoor : MonoBehaviour
             Wall = renderers[1].gameObject;
 
             Vector3 pos = renderers[0].bounds.center;
-            Position = new Vector3(pos.x, 0f, pos.z);
+
+            Undo.RecordObject(this, "Refreshed positions");
+            Position = new Vector2(pos.x, pos.z);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(this);
         }
         catch(Exception e)
         {

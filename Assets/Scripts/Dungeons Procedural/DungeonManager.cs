@@ -237,7 +237,7 @@ public class DungeonManager : MonoBehaviour
                 {
                     dungeonPath[i, j].Part = DungeonParts.GetSpecificPart(dungeonPath[i, j].roomType, dungeonPath[i, j].orientations);
 
-                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, this.transform);
+                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, new Vector3(j * 70, 0, i * -70), Quaternion.identity, this.transform);
                     Room room = part.GetComponent<Room>();
 
                     room.GivenOrientations = dungeonPath[i, j].orientations;
@@ -252,30 +252,30 @@ public class DungeonManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (dungeonPath[i, j].roomType != DungeonRooms.Empty)
+        for (int k = 0; k < size; k++) {
+            for (int l = 0; l < size; l++) {
+                if (dungeonPath[k, l].roomType != DungeonRooms.Empty)
                 {
-                    float xOffset = 0, yOffset = 0;
-                    if (i < size - 1 && Rooms[i + 1, j] != null)
-                    {
-                        Vector2 nextDoor = Rooms[i + 1, j].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
-                        Vector2 actualDoor = Rooms[i, j].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
-                        if (nextDoor != null && actualDoor != null) {
-                            xOffset = actualDoor.x - nextDoor.x;
-                        }
-                    }
-                    if(j < size - 1 && Rooms[i, j + 1] != null)
-                    {
-                        Vector2 nextDoor = Rooms[i, j + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
-                        Vector2 actualDoor = Rooms[i, j].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
-                        if(nextDoor != null && actualDoor != null) {
-                            yOffset = actualDoor.y - nextDoor.y ;
-                        }
-                    }
-
-                    Rooms[i, j].gameObject.transform.position = new Vector3(j * 70 + yOffset, 0, i * - 70 + xOffset);
-                    Rooms[i, j].gameObject.name = dungeonPath[i, j].Part.id + " | " + dungeonPath[i, j].position;
+                    //float xOffset = 0, yOffset = 0;
+                    //if (l < size - 1 && Rooms[k , l + 1] != null)
+                    //{
+                    //    Vector2 nextDoor = Rooms[k , l + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
+                    //    Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
+                    //    if (Rooms[k , l + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[k, l].GivenOrientations.Contains(Orientation.Right)) {
+                    //        xOffset = actualDoor.x - nextDoor.x;
+                    //    }
+                    //}
+                    //if(k < size - 1 && Rooms[k + 1, l ] != null)
+                    //{
+                    //    Vector2 nextDoor = Rooms[k + 1, l ].RoomDoors.Single(door => door.Orientation == Orientation.Top).Position;
+                    //    Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Bottom).Position;
+                    //    if(Rooms[k + 1, l ].GivenOrientations.Contains(Orientation.Top) && Rooms[k, l].GivenOrientations.Contains(Orientation.Bottom)) {
+                    //        yOffset = actualDoor.y - nextDoor.y ;
+                    //    }
+                    //}
+                    //Debug.Log("yOffset : " + yOffset + " | xOffset : " + xOffset);
+                    //Rooms[k, l].gameObject.transform.position += new Vector3(xOffset , 0, yOffset);
+                    Rooms[k, l].gameObject.name = dungeonPath[k, l].Part.id + " | " + dungeonPath[k, l].position;
                     
                     yield return null;
                 }

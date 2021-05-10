@@ -53,6 +53,8 @@ public class DungeonParts// : IEnumerable<DungeonPart>
     public DungeonPart GetSpecificPart(DungeonRooms type, List<Orientation> orientations)
     {
         var parts = dungeonParts.Where(room => (room.Doors.Select(orientation => orientations.Contains(orientation.Key)).Contains(true)));
+        if (parts.Count() == 0) return null;
+
         return parts.ElementAt(UnityEngine.Random.Range(0, parts.Count()));
         // .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
         // .Where(room => room.roomType == type)
