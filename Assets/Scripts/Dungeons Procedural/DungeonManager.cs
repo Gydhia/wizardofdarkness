@@ -237,7 +237,7 @@ public class DungeonManager : MonoBehaviour
                 {
                     dungeonPath[i, j].Part = DungeonParts.GetSpecificPart(dungeonPath[i, j].roomType, dungeonPath[i, j].orientations);
 
-                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, new Vector3(j * 70, 0, i * -70), Quaternion.identity, this.transform);
+                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, new Vector3(j * 140, 0, i * -140), Quaternion.identity, this.transform);
                     Room room = part.GetComponent<Room>();
 
                     room.GivenOrientations = dungeonPath[i, j].orientations;
@@ -253,35 +253,56 @@ public class DungeonManager : MonoBehaviour
         }
 
         for (int k = 0; k < size; k++) {
-            for (int l = 0; l < size; l++) {
-                if (dungeonPath[k, l].roomType != DungeonRooms.Empty)
+            float totalXOffset = 0f;
+            for (int l = 0; l < size - 1; l++) {
+                if (dungeonPath[k, l].roomType != DungeonRooms.Empty && dungeonPath[k, l + 1].roomType != DungeonRooms.Empty)
                 {
-                    //float xOffset = 0, yOffset = 0;
-                    //if (l < size - 1 && Rooms[k , l + 1] != null)
-                    //{
-                    //    Vector2 nextDoor = Rooms[k , l + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
-                    //    Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
-                    //    if (Rooms[k , l + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[k, l].GivenOrientations.Contains(Orientation.Right)) {
-                    //        xOffset = actualDoor.x - nextDoor.x;
-                    //    }
-                    //}
-                    //if(k < size - 1 && Rooms[k + 1, l ] != null)
-                    //{
-                    //    Vector2 nextDoor = Rooms[k + 1, l ].RoomDoors.Single(door => door.Orientation == Orientation.Top).Position;
-                    //    Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Bottom).Position;
-                    //    if(Rooms[k + 1, l ].GivenOrientations.Contains(Orientation.Top) && Rooms[k, l].GivenOrientations.Contains(Orientation.Bottom)) {
-                    //        yOffset = actualDoor.y - nextDoor.y ;
-                    //    }
-                    //}
-                    //Debug.Log("yOffset : " + yOffset + " | xOffset : " + xOffset);
-                    //Rooms[k, l].gameObject.transform.position += new Vector3(xOffset , 0, yOffset);
-                    Rooms[k, l].gameObject.name = dungeonPath[k, l].Part.id + " | " + dungeonPath[k, l].position;
-                    
-                    yield return null;
+                    float xOffset = 0;
+                    if (l < size - 1 && Rooms[k, l + 1] != null)
+                    {
+                        Vector2 nextDoor = Rooms[k, l + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
+                        Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
+                        if (Rooms[k, l + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[k, l].GivenOrientations.Contains(Orientation.Right))
+                        {
+                            xOffset = actualDoor.x - nextDoor.x;
+                        }
+                    }
+
+                    totalXOffset += xOffset;
+                   
+                    Rooms[k, l + 1].gameObject.transform.position += new Vector3(0f, 0f, totalXOffset / 2);
+                    Rooms[k, l + 1].gameObject.name = dungeonPath[k, l].Part.id + " | " + dungeonPath[k, l].position;
                 }
             }
         }
+        yield return new WaitForSeconds(2f);
+        for (int m = 0; m < size - 1; m++)
+        {
+            float totalYOffset = 0f;
+            for (int n = 0; n < size; n++)
+            {
+                if (dungeonPath[m, n].roomType != DungeonRooms.Empty && dungeonPath[m + 1, n].roomType != DungeonRooms.Empty)
+                {
+                    float yOffset = 0;
+                    if (m < size - 1 && Rooms[m + 1, n] != null)
+                    {
+                        Vector2 nextDoor = Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top).Position;
+                        Vector2 actualDoor = Rooms[m, n].RoomDoors.Single(door => door.Orientation == Orientation.Bottom).Position;
+                        if (Rooms[m + 1, n].GivenOrientations.Contains(Orientation.Top) && Rooms[m, n].GivenOrientations.Contains(Orientation.Bottom))
+                        {
+                            yOffset = actualDoor.y - nextDoor.y;
+                        }
+                    }
+
+                    totalYOffset += yOffset;
+                    Rooms[m + 1, n].gameObject.transform.position += new Vector3(-totalYOffset / 2, 0f, 0f);
+                    yield return new WaitForSeconds(2f);
+                }
+            }
+        }
+        yield return null;
     }
+
 
     /// <summary>
     /// Return the next direction that'll follow the path
