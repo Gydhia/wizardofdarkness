@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats Instance;
     public enum EElements { Void = 0, Wind = 1, Earth = 2 }
     public EElements actualEElement;
-    [Min(0)]public int HP;
+    [Min(0)] public int HP;
     public int def;
     public int str;
     public float atqSpeed;
@@ -36,15 +36,18 @@ public class PlayerStats : MonoBehaviour
     public Transform arrowSpawn;
 
     [Header("Void Variables")]
+    public float magicBallStaminaConsumption;
     public Transform ballSpawnSpot;
     public GameObject ballPrefab;
     public GameObject blackHolePrefab;
     public GameObject teleportPointPrefab;
     public TPPointScript actualTPPoint;
     public GameObject projBarrier;
+    public float projBarrierStaminaConsumption;
     float HPPercentage;
     [Header("Earth Variables")]
     public GameObject earthquakePrefab;
+    public bool blocking;
 
     private void Awake()
     {
@@ -59,9 +62,14 @@ public class PlayerStats : MonoBehaviour
             e.Init();
         }
         elements[actualElement].UpdateStats(this);
+        for (int i = 0; i < timers.Length; i++)
+        {
+            timers[i] = 0;
+        }
     }
     private void Update()
     {
+        blocking = false;
         HPPercentage = (float)HP / 100;
         HPBar.SetFloat("_Fillpercentage", HPPercentage);
         for (int i = 0; i < actualSkills.Length; i++)
@@ -80,21 +88,90 @@ public class PlayerStats : MonoBehaviour
             }
             cooldownBars[i].fillValue = timers[i];
         }
-        if(actualEElement == EElements.Void)
+        if (actualEElement == EElements.Void)
         {
-            projBarrier.SetActive(Input.GetButton("RightClickSpell"));
+                
+            if(projBarrier.activeSelf) PlayerMovement.Instance.stamina -= Time.deltaTime * projBarrierStaminaConsumption;
+            if (Input.GetButtonDown("RightClickSpell"))
+            {
+                projBarrier.SetActive(true);
+            }
+            else if (Input.GetButtonUp("RightClickSpell") || PlayerMovement.Instance.stamina <= 2)
+            {
+                projBarrier.SetActive(false);
+            }
         }
+        else if (actualEElement == EElements.Earth)
+        {
+            blocking = Input.GetButton("RightClickSpell");
+        }
+
     }
     public void ChangeElement(EElements newElement)
     {
         if (actualEElement != newElement)
         {
+
             elementsWeapons[actualElement].SetActive(false);
             actualEElement = newElement;
             actualElement = (int)actualEElement;
+            foreach (Skill s in actualSkills)
+            {
+                s.canLaunch = true;
+            }
             elements[actualElement].UpdateStats(this);
+            for (int i = 0; i < timers.Length; i++)
+            {
+                timers[i] = 0;
+            }
             elementsWeapons[actualElement].SetActive(true);
             elements[actualElement].ChangementFX();
+        }
+    }
+    void AddDamage(int damageTaken)
+    {
+        if (HP - damageTaken > 0)
+        {
+            HP -= damageTaken;
+        }
+        else
+        {
+            HP -= HP;
+            Die();
+        }
+    }
+    void Die()
+    {
+        //GameOver Screen
+    }
+    public IEnumerator StatBuff(float timeOfBuff, EStatsDebuffs buffID, int percentAugment)
+    {
+        switch (buffID)
+        {
+            case EStatsDebuffs.Defense: //def
+                float buff = percentAugment * def / 100;
+                def += (int)buff;
+                yield return new WaitForSeconds(timeOfBuff);
+                def -= (int)buff;
+                break;
+            case EStatsDebuffs.Strength: //str
+                buff = percentAugment * str / 100;
+                str += (int)buff;
+                yield return new WaitForSeconds(timeOfBuff);
+                str -= (int)buff;
+                break;
+            case EStatsDebuffs.AttackSpeed: //atqSpeed
+                buff = percentAugment * atqSpeed / 100;
+                atqSpeed += buff;
+                yield return new WaitForSeconds(timeOfBuff);
+                atqSpeed -= buff;
+                break;
+            case EStatsDebuffs.MoveSpeed: //Movespeed
+                buff = percentAugment * (int)PlayerMovement.Instance.speed / 100;
+                PlayerMovement.Instance.speed += buff;
+                yield return new WaitForSeconds(timeOfBuff);
+                PlayerMovement.Instance.speed -= percentAugment;
+                break;
         }
     }
 }

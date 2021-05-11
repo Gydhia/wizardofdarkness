@@ -8,6 +8,7 @@ TagManager:
   - Exit
   - Arrow
   - Enemy
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Arrow
   - Enemy
   - Player
-  - 
+  - WarpingPlayer
   - 
   - 
   - 

@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class Dash : Skill
 {
+    public float warpTime;
     public override void ActivatedSkill()
     {
-        throw new System.NotImplementedException();
+        PlayerCoroutines.Instance.LaunchRoutine(PlayerCoroutines.Instance.VoidDash(warpTime,this));
+        Debug.Log("dash!");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

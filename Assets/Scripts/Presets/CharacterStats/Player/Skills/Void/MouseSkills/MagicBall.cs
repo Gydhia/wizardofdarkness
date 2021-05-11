@@ -11,15 +11,19 @@ public class MagicBall : Skill
     public Vector3 maxScale;
     public override void ActivatedSkill()
     {
-        MagicBallScript ball = Instantiate(PlayerStats.Instance.ballPrefab,PlayerStats.Instance.ballSpawnSpot).GetComponent<MagicBallScript>();
-        //ball.transform.SetParent(ballSpawnSpot);
-        ball.ballMoveSpeed = ballMoveSpeed;
-        ball.ballGrowSpeed = ballGrowSpeed;
-        ball.maxScale = maxScale;
+        if (PlayerMovement.Instance.stamina >= 20)
+        {
+            MagicBallScript ball = Instantiate(PlayerStats.Instance.ballPrefab, PlayerStats.Instance.ballSpawnSpot).GetComponent<MagicBallScript>();
+            //ball.transform.SetParent(ballSpawnSpot);
+            ball.ballMoveSpeed = ballMoveSpeed;
+            ball.ballGrowSpeed = ballGrowSpeed;
+            ball.maxScale = maxScale;
+        }
+        else
+        {
+            //Feedback qui dit que la jauge de stamina est pas assez remplie
+        }
+
     }
 
-    void Update()
-    {
-        
-    }
 }

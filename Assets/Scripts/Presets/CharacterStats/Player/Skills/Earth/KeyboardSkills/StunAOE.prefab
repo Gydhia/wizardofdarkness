@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canLaunch: 1
   coolDown: 5
-  dmgPercent: 100
-  AOERadius: {fileID: 0}
-  castTime: 0
+  dmg: 5
+  AOERadius: 5
+  castTime: 1
+  stunTime: 2
+  breakDefPercent: 10
+  breakDefTime: 6

@@ -8,6 +8,7 @@ public class MagicBallScript : MonoBehaviour
     [HideInInspector] public float ballMoveSpeed;
     [HideInInspector] public float ballGrowSpeed;
     [HideInInspector] public Vector3 maxScale;
+    private int dmg;
     private bool launched;
     private Vector3 scale;
     // Update is called once per frame
@@ -33,11 +34,22 @@ public class MagicBallScript : MonoBehaviour
                 launched = true;
                 transform.parent.gameObject.transform.DetachChildren();
                 Destroy(gameObject, 10f);
+                dmg = (int)(scale.x * 20);
+                PlayerMovement.Instance.stamina -= scale.x * PlayerStats.Instance.magicBallStaminaConsumption;
             }
             else
             {
                 transform.Translate(Vector3.forward * ballMoveSpeed * Time.deltaTime);
             }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        LayerMask enemy = LayerMask.GetMask("Enemy");
+        if ((other.CompareTag("Enemy") && launched))
+        {
+            other.GetComponent<EnemyStats>().AddDamage(dmg);
+            Debug.Log(dmg);
         }
     }
 }
