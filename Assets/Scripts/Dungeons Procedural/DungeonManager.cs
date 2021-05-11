@@ -253,32 +253,29 @@ public class DungeonManager : MonoBehaviour
         }
 
         for (int k = 0; k < size; k++) {
-            float totalXOffset = 0f;
             for (int l = 0; l < size - 1; l++) {
                 if (dungeonPath[k, l].roomType != DungeonRooms.Empty && dungeonPath[k, l + 1].roomType != DungeonRooms.Empty)
                 {
                     float xOffset = 0;
                     if (l < size - 1 && Rooms[k, l + 1] != null)
                     {
-                        Vector2 nextDoor = Rooms[k, l + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).Position;
-                        Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Right).Position;
+                        Vector2 nextDoor = Rooms[k, l + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).WorldPosition;
+                        Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Right).WorldPosition;
+                        Debug.Log("Actual door = " + actualDoor + " | Next Door = " + nextDoor);
                         if (Rooms[k, l + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[k, l].GivenOrientations.Contains(Orientation.Right))
                         {
-                            xOffset = actualDoor.x - nextDoor.x;
+                            xOffset = actualDoor.y - nextDoor.y;
                         }
                     }
-
-                    totalXOffset += xOffset;
-                   
-                    Rooms[k, l + 1].gameObject.transform.position += new Vector3(0f, 0f, totalXOffset / 2);
+                    
+                    Rooms[k, l + 1].gameObject.transform.position += new Vector3(0f, 0f, xOffset);
                     Rooms[k, l + 1].gameObject.name = dungeonPath[k, l].Part.id + " | " + dungeonPath[k, l].position;
                 }
             }
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         for (int m = 0; m < size - 1; m++)
         {
-            float totalYOffset = 0f;
             for (int n = 0; n < size; n++)
             {
                 if (dungeonPath[m, n].roomType != DungeonRooms.Empty && dungeonPath[m + 1, n].roomType != DungeonRooms.Empty)
@@ -286,17 +283,15 @@ public class DungeonManager : MonoBehaviour
                     float yOffset = 0;
                     if (m < size - 1 && Rooms[m + 1, n] != null)
                     {
-                        Vector2 nextDoor = Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top).Position;
-                        Vector2 actualDoor = Rooms[m, n].RoomDoors.Single(door => door.Orientation == Orientation.Bottom).Position;
+                        Vector2 nextDoor = Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top).WorldPosition;
+                        Vector2 actualDoor = Rooms[m, n].RoomDoors.Single(door => door.Orientation == Orientation.Bottom).WorldPosition;
                         if (Rooms[m + 1, n].GivenOrientations.Contains(Orientation.Top) && Rooms[m, n].GivenOrientations.Contains(Orientation.Bottom))
                         {
-                            yOffset = actualDoor.y - nextDoor.y;
+                            yOffset = actualDoor.x - nextDoor.x;
                         }
                     }
 
-                    totalYOffset += yOffset;
-                    Rooms[m + 1, n].gameObject.transform.position += new Vector3(-totalYOffset / 2, 0f, 0f);
-                    yield return new WaitForSeconds(2f);
+                    Rooms[m + 1, n].gameObject.transform.position += new Vector3(yOffset, 0f, 0f);
                 }
             }
         }
