@@ -43,10 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e80d6282f14d64c9af9cf41fc1090d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgPercent: 100
-  skillCD: 0
+  canLaunch: 1
+  coolDown: 3
+  dmg: 5
   AOERadius: 0
   castTime: 0
-  state: 0
-  speedBoost: 0
-  defBoost: 0
+  range: 2
+  timing: 0

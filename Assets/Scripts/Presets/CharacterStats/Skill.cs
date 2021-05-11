@@ -21,7 +21,7 @@ public class Skill : MonoBehaviour
     Or, si avec votre spell vous instanciez quelque chose, (ex: ma boule magique avec le void), c'est tout a fait possible de mettre une coroutine là dessus!
 
     */
-    public enum ESkillType
+    /*public enum ESkillType
     {
         Movement = 0,
         Defense = 1,
@@ -31,22 +31,24 @@ public class Skill : MonoBehaviour
     {
         Melee = 0,
         Ranged = 1,
-    }
+    }*/
+
     public bool canLaunch = true;
 
     [UnityEngine.Header("Common:")]
     [UnityEngine.Tooltip("Skill cooldown.")] public float coolDown;
     [UnityEngine.Header("To Implement:")]
-    [UnityEngine.Tooltip("Skill damage based on THIS % of base strength.(not implemented)")]public float dmgPercent = 100;
-    [UnityEngine.Tooltip("The skill's areaOfEffect radius.(not implemented)")] public GameObject AOERadius;
+    [UnityEngine.Tooltip("Skill damage based on THIS % of base strength.(not implemented)")]public int dmg = 5;
+    [UnityEngine.Tooltip("The skill's areaOfEffect radius.")] public float AOERadius;
     [UnityEngine.Tooltip("Duration the skill has to be casted in order to be released.(not implemented)")] public float castTime;
-    private void Start()
+
+    private void Awake()
     {
         canLaunch = true;
     }
     public virtual void ActivatedSkill()
     {
-
+        
     }
     
 }

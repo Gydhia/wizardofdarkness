@@ -18,6 +18,14 @@ public class SmashGround : Skill
          Bref, go sur SeismicShock.cs mtn!
 
          */
+            LayerMask enemy = LayerMask.GetMask("Enemy");
+            Collider[] hitColliders = Physics.OverlapSphere(PlayerStats.Instance.transform.position, AOERadius, enemy);
+            foreach (Collider hitCollider in hitColliders)
+            {
+                EnemyStats enemyStats = hitCollider.GetComponent<EnemyStats>();
+                enemyStats.AddDamage(dmg);
+            }
+            canLaunch = false;
         }
     }
 
