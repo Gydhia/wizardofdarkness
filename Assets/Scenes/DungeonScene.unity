@@ -373,4 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251df83be0f53fb4da14b8a4f98cf113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 4
+  NbOfRooms: 0100000001000000010000000500000003000000020000000100000003000000
   DungeonJSON: {fileID: 4900000, guid: 04f8ed3e9005a6b49b4c0f0969f13337, type: 3}
