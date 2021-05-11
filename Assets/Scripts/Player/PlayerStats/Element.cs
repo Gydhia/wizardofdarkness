@@ -40,7 +40,8 @@ public abstract class Element : MonoBehaviour
         {
             player.cooldownBars[i].maxValue = CDs[i];
         }
-        foreach(CoolDown bar in player.cooldownBars)
+        
+        foreach (CoolDown bar in player.cooldownBars)
         {
             bar.mat.SetColor("_Backgroundfillcolor", BarFillColor);
             bar.mat.SetColor("_Backgroundbordercolor", BarBorderColor);

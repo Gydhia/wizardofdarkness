@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwordSwing : Skill
 {
+    public float range;
+    public float timing;
     public override void ActivatedSkill()
     {
         /*
@@ -13,6 +15,6 @@ public class SwordSwing : Skill
          donc en vrai ici y'aura peut-être juste un trigger d'animation.
          Bref, go sur Blocking.cs mtn!
          */
-        throw new System.NotImplementedException();
+        PlayerCoroutines.Instance.LaunchRoutine(PlayerCoroutines.Instance.SwordSwing(timing, this));
     }
 }
