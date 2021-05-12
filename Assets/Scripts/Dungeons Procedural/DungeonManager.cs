@@ -133,9 +133,6 @@ public class DungeonManager : MonoBehaviour
                 dungeonPath[i, j].orientations = new List<Orientation>();
             }
 
-
-        DungeonPart[,] dungeon = new DungeonPart[size, size];
-
         // Spawn room
         Vector2 spawnLocation = GenerateMainRoom(Orientation.Left, DungeonRooms.Spawn, dungeonPath);
         // Boss room 
@@ -158,9 +155,11 @@ public class DungeonManager : MonoBehaviour
             }
         }
 
-
         // Setup the spawn orientations
         SetRoomOrientation(dungeonPath[(int)spawnLocation.x, (int)spawnLocation.y], dungeonPath);
+        int pathToBeReward = Random.Range(0, dungeonPath[(int)spawnLocation.x, (int)spawnLocation.y].orientations.Count);
+
+        List<DungeonSpecification> ActualPath = new List<DungeonSpecification>();
 
         // Variables for creating path
         for (int i = 0; i < 3; i++)
@@ -173,7 +172,12 @@ public class DungeonManager : MonoBehaviour
                 DungeonSpecification actualRoom = dungeonPath[(int)actualPosition.x, (int)actualPosition.y];
 
                 direction = GetNextWay(GetRandomAvailableDirections(actualPosition, dungeonPath));
-                if (direction == Vector2.zero) continue;
+                if (direction == Vector2.zero) {
+                    if(i == pathToBeReward) {
+                        
+                    }
+                    continue;
+                }
 
                 DungeonSpecification nextRoom = dungeonPath[(int)(actualPosition.x + direction.x), (int)(actualPosition.y + direction.y)];
                 nextRoom.position.Set((int)actualPosition.x + direction.x, (int)actualPosition.y + direction.y);
@@ -185,6 +189,7 @@ public class DungeonManager : MonoBehaviour
 
                 actualPosition.Set((int)(nextRoom.position.x), (int)(nextRoom.position.y));
                 iteration++;
+                ActualPath.Add(nextRoom);
             }
             if (iteration >= 99)
             {
@@ -273,7 +278,7 @@ public class DungeonManager : MonoBehaviour
                 }
             }
         }
-        yield return new WaitForSeconds(5f);
+        
         for (int m = 0; m < size - 1; m++)
         {
             for (int n = 0; n < size; n++)
@@ -378,6 +383,11 @@ public class DungeonManager : MonoBehaviour
         }
 
         return room;
+    }
+
+    public void ChangeEndingRoom(DungeonRooms newTypes, DungeonSpecification room)
+    {
+
     }
 
     /// <summary>
