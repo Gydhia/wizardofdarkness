@@ -38,7 +38,7 @@ public abstract class EnemyStats : MonoBehaviour
         }
 
     }
-    private IEnumerator Flashing()
+    public virtual IEnumerator Flashing()
     {
         //Red
         if (flashing == false)
