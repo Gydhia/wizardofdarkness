@@ -25,6 +25,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float[] timers = new float[5];
     public CoolDown[] cooldownBars = new CoolDown[5];
     public Material HPBar;
+    float HPPercentage;
+
     /*
      A partir d'ici, typiquement si vous avez des prefab à stocker, des listes, des variables utiles à garder, c'est ici que vous allez les mettre
      (Sous Wind pour Killian, sous Earth pour Enzo, évidemment)
@@ -44,7 +46,6 @@ public class PlayerStats : MonoBehaviour
     public TPPointScript actualTPPoint;
     public GameObject projBarrier;
     public float projBarrierStaminaConsumption;
-    float HPPercentage;
     [Header("Earth Variables")]
     public GameObject earthquakePrefab;
     public bool blocking;
@@ -52,7 +53,14 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        if (elements.Count == 0) actualEElement = EElements.None;
+        if (elements.Count == 0)
+        {
+            actualEElement = EElements.None;
+            foreach (GameObject item in PlayerUIManager.Instance.HUD)
+            {
+                item.SetActive(false);
+            }
+        }
     }
     private void Start()
     {
@@ -115,7 +123,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void ChangeElement(EElements newElement)
     {
-        
+
         if (actualEElement != newElement)
         {
             elementsWeapons[actualElement].SetActive(false);

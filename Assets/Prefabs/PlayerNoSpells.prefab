@@ -113,7 +113,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  HPBar: {fileID: 0}
+  HPBar: {fileID: 2100000, guid: 13dd69f8f80765c4ab7db69a012dfee6, type: 2}
   activeArrows: []
   arrowSpawn: {fileID: 5961991952231012916}
   magicBallStaminaConsumption: 0
