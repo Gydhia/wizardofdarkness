@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EElements { Void = 0, Wind = 1, Earth = 2, None = -1 }
 public class PlayerStats : MonoBehaviour
 {
     /*
@@ -9,7 +10,6 @@ public class PlayerStats : MonoBehaviour
          */
     [Header("Variables For All Elements")]
     public static PlayerStats Instance;
-    public enum EElements { Void = 0, Wind = 1, Earth = 2 }
     public EElements actualEElement;
     [Min(0)] public int HP;
     public int def;
@@ -17,8 +17,8 @@ public class PlayerStats : MonoBehaviour
     public float atqSpeed;
     public float moveSpeed;
     public int actualElement;
-    public Element[] elements;
-    [HideInInspector] public Skill[] actualSkills;
+    public List<Element> elements = new List<Element>(3);
+    public List<Skill> actualSkills = new List<Skill>();
     public bool canOpenDoors;
     public GameObject[] elementsWeapons;
     public float[] CDs;
@@ -52,19 +52,22 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
+        if (elements.Count == 0) actualEElement = EElements.None;
     }
     private void Start()
     {
-        //Debug.Log("wsh?");
-        foreach (Element e in elements)
+        if (actualEElement != EElements.None)
         {
-            e.Init();
-        }
-        elements[actualElement].UpdateStats(this);
-        for (int i = 0; i < timers.Length; i++)
-        {
-            timers[i] = 0;
+            //Debug.Log("wsh?");
+            foreach (Element e in elements)
+            {
+                e.Init();
+            }
+            elements[actualElement].UpdateStats(this);
+            for (int i = 0; i < timers.Length; i++)
+            {
+                timers[i] = 0;
+            }
         }
     }
     private void Update()
@@ -72,26 +75,29 @@ public class PlayerStats : MonoBehaviour
         blocking = false;
         HPPercentage = (float)HP / 100;
         HPBar.SetFloat("_Fillpercentage", HPPercentage);
-        for (int i = 0; i < actualSkills.Length; i++)
+        if (actualEElement != EElements.None)
         {
-            if (!actualSkills[i].canLaunch)
+            for (int i = 0; i < actualSkills.Count; i++)
             {
-                if (timers[i] >= CDs[i])
+                if (!actualSkills[i].canLaunch)
                 {
-                    timers[i] = 0;
-                    actualSkills[i].canLaunch = true;
+                    if (timers[i] >= CDs[i])
+                    {
+                        timers[i] = 0;
+                        actualSkills[i].canLaunch = true;
+                    }
+                    else
+                    {
+                        timers[i] += Time.deltaTime;
+                    }
                 }
-                else
-                {
-                    timers[i] += Time.deltaTime;
-                }
+                cooldownBars[i].fillValue = timers[i];
             }
-            cooldownBars[i].fillValue = timers[i];
         }
-        if (actualEElement == EElements.Void)
+        else if (actualEElement == EElements.Void)
         {
-                
-            if(projBarrier.activeSelf) PlayerMovement.Instance.stamina -= Time.deltaTime * projBarrierStaminaConsumption;
+
+            if (projBarrier.activeSelf) PlayerMovement.Instance.stamina -= Time.deltaTime * projBarrierStaminaConsumption;
             if (Input.GetButtonDown("RightClickSpell"))
             {
                 projBarrier.SetActive(true);
@@ -109,9 +115,9 @@ public class PlayerStats : MonoBehaviour
     }
     public void ChangeElement(EElements newElement)
     {
+        
         if (actualEElement != newElement)
         {
-
             elementsWeapons[actualElement].SetActive(false);
             actualEElement = newElement;
             actualElement = (int)actualEElement;

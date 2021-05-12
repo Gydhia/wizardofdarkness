@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BooleanDoor : MonoBehaviour
 {
-    public Orientation Orientation;
+    //public Orientation Orientation;
     public Vector2 Position = new Vector2();
 
     public GameObject Door;
