@@ -39,7 +39,6 @@ public abstract class Element : MonoBehaviour
         {
             player.actualSkills.Add(i);
         }
-        Debug.Log("trql le boss");
         player.CDs = CDs;
         for (int i = 0; i < player.cooldownBars.Length; i++)
         {

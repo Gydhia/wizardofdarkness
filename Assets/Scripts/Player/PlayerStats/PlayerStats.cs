@@ -56,10 +56,7 @@ public class PlayerStats : MonoBehaviour
         if (elements.Count == 0)
         {
             actualEElement = EElements.None;
-            foreach (GameObject item in PlayerUIManager.Instance.HUD)
-            {
-                item.SetActive(false);
-            }
+            PlayerUIManager.Instance.ToggleHud(false);
         }
     }
     private void Start()

@@ -22,13 +22,12 @@ public class PlayerUIManager : MonoBehaviour
     {
         beerUI.SetActive(beerDisplayed);
     }
-    public void ToggleHud()
+    public void ToggleHud(bool newState)
     {
-        Debug.Log("pls");
         foreach (GameObject item in HUD)
         {
-            item.SetActive(!item.activeSelf);
-            hudActive = !hudActive;
+            item.SetActive(newState);
+            hudActive = newState;
         }
     }
 }

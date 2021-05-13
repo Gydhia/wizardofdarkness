@@ -19,7 +19,7 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
         if (scrollType == EScrollTypes.Tutorial)
         {
             Destroy(gameObject);
-            if (!PlayerUIManager.Instance.hudActive) PlayerUIManager.Instance.ToggleHud();
+            if (!PlayerUIManager.Instance.hudActive) PlayerUIManager.Instance.ToggleHud(true);
 
             PlayerStats.Instance.elements.Add(elementToAdd);
             elementToAdd.Init();

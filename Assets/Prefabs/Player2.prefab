@@ -115,9 +115,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  HPBar: {fileID: 0}
+  HPBar: {fileID: 2100000, guid: 13dd69f8f80765c4ab7db69a012dfee6, type: 2}
   activeArrows: []
   arrowSpawn: {fileID: 5961991952231012916}
+  magicBallStaminaConsumption: 25
   ballSpawnSpot: {fileID: 2972144081306814412}
   ballPrefab: {fileID: 515718092575105231, guid: 3396c33f9e91247439b897498ce14c31,
     type: 3}
@@ -127,7 +128,9 @@ MonoBehaviour:
     type: 3}
   actualTPPoint: {fileID: 0}
   projBarrier: {fileID: 6057547959130871523}
+  projBarrierStaminaConsumption: 5
   earthquakePrefab: {fileID: 0}
+  blocking: 0
 --- !u!143 &1770926876427669907
 CharacterController:
   m_ObjectHideFlags: 0
@@ -175,6 +178,7 @@ MonoBehaviour:
     m_Bits: 8
   velocity: {x: 0, y: 0, z: 0}
   isGrounded: 0
+  canMove: 1
   airControl: 1
 --- !u!114 &2261139059068404529
 MonoBehaviour:
@@ -214,6 +218,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beerUI: {fileID: 0}
   beerDisplayed: 0
+  HUD:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hudActive: 1
 --- !u!1 &1770926877354960669
 GameObject:
   m_ObjectHideFlags: 0
