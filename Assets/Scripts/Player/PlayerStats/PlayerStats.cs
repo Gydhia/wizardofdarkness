@@ -48,12 +48,12 @@ public class PlayerStats : MonoBehaviour
     public GameObject ballPrefab;
     public GameObject blackHolePrefab;
     public GameObject teleportPointPrefab;
-    public TPPointScript actualTPPoint;
+    [HideInInspector]public TPPointScript actualTPPoint;
     public GameObject projBarrier;
     public float projBarrierStaminaConsumption;
 
     [Header("Earth Variables")]
-    public GameObject earthquakePrefab;
+    //public GameObject earthquakePrefab; j'avais prévu ça pour le shader hihi
     public bool blocking;
 
     private void Awake()
