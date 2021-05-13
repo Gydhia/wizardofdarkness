@@ -36,6 +36,11 @@ public class PlayerStats : MonoBehaviour
     [Header("Wind Variables")]
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
     public Transform arrowSpawn;
+    public float windArrowStaminaConsumption;
+    public bool nextArrowWeakens;
+    public float bendingSpeed;
+    public float weakenDuration;
+    public int weakenPercent;
 
     [Header("Void Variables")]
     public float magicBallStaminaConsumption;
@@ -46,6 +51,7 @@ public class PlayerStats : MonoBehaviour
     public TPPointScript actualTPPoint;
     public GameObject projBarrier;
     public float projBarrierStaminaConsumption;
+
     [Header("Earth Variables")]
     public GameObject earthquakePrefab;
     public bool blocking;
@@ -156,6 +162,8 @@ public class PlayerStats : MonoBehaviour
         //GameOver Screen
     }
     public IEnumerator StatBuff(float timeOfBuff, EStatsDebuffs buffID, int percentAugment)
+        //problème, si on change de classe, les bonus ne perdurent pas. Il faudra surement coder autrement.
+        //(pire que ça: comme la coroutine perdure, on fini par soustraire buff (pour annuler le buff) alors qu'on a pas eu de buff.
     {
         switch (buffID)
         {
@@ -173,15 +181,18 @@ public class PlayerStats : MonoBehaviour
                 break;
             case EStatsDebuffs.AttackSpeed: //atqSpeed
                 buff = percentAugment * atqSpeed / 100;
+                float buff2 = percentAugment * bendingSpeed / 100;
                 atqSpeed += buff;
+                bendingSpeed += buff2;
                 yield return new WaitForSeconds(timeOfBuff);
                 atqSpeed -= buff;
+                bendingSpeed -= buff2;
                 break;
             case EStatsDebuffs.MoveSpeed: //Movespeed
-                buff = percentAugment * (int)PlayerMovement.Instance.speed / 100;
-                PlayerMovement.Instance.speed += buff;
+                buff = percentAugment * (int)moveSpeed / 100;
+                moveSpeed += buff;
                 yield return new WaitForSeconds(timeOfBuff);
-                PlayerMovement.Instance.speed -= percentAugment;
+                moveSpeed -= percentAugment;
                 break;
         }
     }

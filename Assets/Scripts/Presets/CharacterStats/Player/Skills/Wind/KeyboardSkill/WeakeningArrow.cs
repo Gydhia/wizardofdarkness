@@ -11,8 +11,8 @@ public class WeakeningArrow : Skill
          "Flèche affaiblissante : pendant 10s, +20% dégâts sur l'ennemi"
          Assez explicite, maintenant on peux pas le faire tout de suite, parce qu'on a même pas d'ennemis mdr
          Surtout, comment on fait? faut bander une flèche comme une autre.
-          Bon maintenant bro c'est Weakening arrow!*/
-        throw new System.NotImplementedException();
+          Bon maintenant bro c'est BackwardsDash!*/
+        PlayerStats.Instance.nextArrowWeakens = true;
         
     }
 

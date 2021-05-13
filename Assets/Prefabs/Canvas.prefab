@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 2163425724983364890}
   - component: {fileID: 2163425724983364889}
   - component: {fileID: 2163425724983364888}
+  - component: {fileID: 2678605292674678216}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -242,6 +243,32 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2678605292674678216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163425724983364895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba06fae67ade8da4f9d63c7fa3745c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HUD:
+  - {fileID: 4792062905663736290}
+  - {fileID: 4157593119494650462}
+  - {fileID: 2163425725917994326}
+  - {fileID: 5341471396081971292}
+  - {fileID: 3638050321329830342}
+  - {fileID: 4080816762185849221}
+  - {fileID: 2224803383909328369}
+  - {fileID: 7148315542039718086}
+  - {fileID: 4871204550166248382}
+  hudActive: 1
+  beerUI: {fileID: 4157593119494650462}
+  beerDisplayed: 0
+  staminaBar: {fileID: 2163425725917994321}
 --- !u!1 &2163425725094575072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,6 +1836,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bea90f04ceae18408bd7bcdc6ec2b9e, type: 3}
+--- !u!1 &4792062905663736290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2427575296331754440, guid: 8bea90f04ceae18408bd7bcdc6ec2b9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7147398477678895658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4792062905663736291 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2427575296331754441, guid: 8bea90f04ceae18408bd7bcdc6ec2b9e,

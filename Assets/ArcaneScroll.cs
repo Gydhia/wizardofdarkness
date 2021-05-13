@@ -26,4 +26,9 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
             PlayerStats.Instance.ChangeElement(scrollElement);
         }
     }
+
+    public void Hovered(bool isHovered)
+    {
+        Debug.Log("Need to implement Hovering Scrolls -> need a crosshair");
+    }
 }

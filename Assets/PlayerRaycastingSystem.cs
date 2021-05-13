@@ -11,6 +11,8 @@ public class PlayerRaycastingSystem : MonoBehaviour
     public Color[] hoveringColors;
     public Color actualColor;
 
+    IInteractable interactive;
+
     enum ETypeOfHoveredObject { Interactable, Talkable, Enemy }
     ETypeOfHoveredObject currentlyHovered;
     List<LayerMask> masks = new List<LayerMask>();
@@ -36,10 +38,22 @@ public class PlayerRaycastingSystem : MonoBehaviour
         if (Physics.Raycast(ray, out hit, touchRange,masks[(int)ETypeOfHoveredObject.Interactable]))
         {
             isHovering = true;
-            currentlyHovered = ETypeOfHoveredObject.Interactable;
-            if (Input.GetButtonDown("Interact"))
+            if(hit.collider.TryGetComponent(out interactive))
             {
-                hit.collider.GetComponent<IInteractable>().Interact();
+                currentlyHovered = ETypeOfHoveredObject.Interactable;
+                interactive.Hovered(true);
+                if (Input.GetButtonDown("Interact"))
+                {
+                    interactive.Interact();
+                }
+            }
+        }
+        else
+        {
+            if(interactive != null)
+            {
+                interactive.Hovered(false);
+                interactive = null;
             }
         }
         actualColor = hoveringColors[(int)currentlyHovered];

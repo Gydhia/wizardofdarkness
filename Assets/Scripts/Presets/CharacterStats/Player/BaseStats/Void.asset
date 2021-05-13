@@ -15,7 +15,7 @@ MonoBehaviour:
   baseDef: 30
   baseStr: 15
   attackSpeed: 1
-  moveSpeed: 1.15
+  moveSpeed: 11.5
   skills:
   - {fileID: 390133056823755414, guid: c354934ebe81af243ae11813a1546f0a, type: 3}
   - {fileID: 8918480564777524976, guid: 1050b8fcf45a5974693ae64afa73262e, type: 3}

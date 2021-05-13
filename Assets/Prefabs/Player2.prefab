@@ -45,7 +45,8 @@ GameObject:
   - component: {fileID: 1770926876427669917}
   - component: {fileID: 2261139059068404529}
   - component: {fileID: 531408670296527687}
-  - component: {fileID: 4976950658625321750}
+  - component: {fileID: 3872774865562320124}
+  - component: {fileID: 2174182956355732936}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -118,6 +119,11 @@ MonoBehaviour:
   HPBar: {fileID: 2100000, guid: 13dd69f8f80765c4ab7db69a012dfee6, type: 2}
   activeArrows: []
   arrowSpawn: {fileID: 5961991952231012916}
+  windArrowStaminaConsumption: 0
+  nextArrowWeakens: 0
+  bendingSpeed: 0
+  weakenDuration: 0
+  weakenPercent: 0
   magicBallStaminaConsumption: 25
   ballSpawnSpot: {fileID: 2972144081306814412}
   ballPrefab: {fileID: 515718092575105231, guid: 3396c33f9e91247439b897498ce14c31,
@@ -162,14 +168,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1770926876427669907}
-  speedSprint: 18
-  speed: 12
-  Currentspeed: 12
+  sprintFactor: 2
+  walkSpeed: 0
+  actualSpeed: 0
   gravity: -38
   jumpHeight: 3
   maxStamina: 100
   stamina: 100
-  slider: {fileID: 0}
   move: {x: 0, y: 0, z: 0}
   groundCheck: {fileID: 1770926877354960670}
   groundDistance: 0.4
@@ -180,6 +185,7 @@ MonoBehaviour:
   isGrounded: 0
   canMove: 1
   airControl: 1
+  sprintingStaminaConsumption: 15
 --- !u!114 &2261139059068404529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d25b66856c3eba46b7696e427f4f079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4976950658625321750
+--- !u!114 &3872774865562320124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,22 +219,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1770926876427669906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba06fae67ade8da4f9d63c7fa3745c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: eac2a6a7087f5e9458d5979aa5d6e217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beerUI: {fileID: 0}
-  beerDisplayed: 0
-  HUD:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  hudActive: 1
+--- !u!114 &2174182956355732936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770926876427669906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2ec767f9479b24e93c72502487bbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchRange: 3
+  defaultColor: {r: 1, g: 1, b: 1, a: 0}
+  hoveringColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0.15248537, b: 1, a: 1}
+  - {r: 0.9716981, g: 0.9689887, b: 0, a: 1}
+  actualColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1770926877354960669
 GameObject:
   m_ObjectHideFlags: 0

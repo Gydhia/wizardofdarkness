@@ -43,14 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a9c4a0abfa3444499262c044fafe18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgPercent: 100
-  skillCD: 0
+  canLaunch: 1
+  coolDown: 0
+  dmg: 5
   AOERadius: 0
   castTime: 0
-  state: 0
-  speedBoost: 0
-  defBoost: 0
   arrowPrefab: {fileID: 1581110721377894570, guid: 5239232a44c858d4ba112c4218c8b645,
     type: 3}
-  arrowSpawn: {fileID: 0}
+  arrowSpawn: {fileID: 3269538665118825302, guid: 0433a2967646aa048b4265943a90ce58,
+    type: 3}
   shootForce: 20
+  maxBending: {x: 0, y: 0, z: -0.5}
