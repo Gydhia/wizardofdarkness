@@ -30,9 +30,9 @@ public class PlayerUIManager : MonoBehaviour
     }
     void Start()
     {
-        PlayerMovement.Instance.UpdateStamina += UpdateStamina;
+        PlayerMovement.Instance.UpdateStamina += movement_UpdateStamina;
     }
-    private void UpdateStamina(float value)
+    public void movement_UpdateStamina(float value)
     {
         staminaBar.value = value;
     }
