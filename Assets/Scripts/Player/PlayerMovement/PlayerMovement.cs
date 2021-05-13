@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
 
     public static PlayerMovement Instance;
     public event SetSlider UpdateStamina;
-
     public float sprintFactor;
     private float walkSpeed;
     private float actualSpeed;
@@ -44,10 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             #region stamina
             UseStamina(Input.GetKey(KeyCode.LeftShift));
-            if(UpdateStamina != null)
-            {
-                UpdateStamina(stamina);
-            }
+            UpdateStamina?.Invoke(stamina);
             #endregion
             #region Jumping and Gravity
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

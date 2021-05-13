@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
          */
     [Header("Variables For All Elements")]
     public static PlayerStats Instance;
+    public CharacterStatus statsEmpty;
     public EElements actualEElement;
     [Min(0)] public int HP;
     public int def;
@@ -79,6 +80,10 @@ public class PlayerStats : MonoBehaviour
             {
                 timers[i] = 0;
             }
+        }
+        else
+        {
+            moveSpeed = statsEmpty.moveSpeed;
         }
     }
     private void Update()
