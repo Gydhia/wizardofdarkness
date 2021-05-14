@@ -536,4 +536,3 @@ public class DungeonManager : MonoBehaviour
         return new Vector2(roomHeight, column);
     }
 }
-

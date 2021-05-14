@@ -46,8 +46,9 @@ GameObject:
   - component: {fileID: 2261139059068404529}
   - component: {fileID: 531408670296527687}
   - component: {fileID: 4976950658625321750}
+  - component: {fileID: 3670818880990583167}
   m_Layer: 0
-  m_Name: Player2
+  m_Name: PlayerNoSpells
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,10 +93,7 @@ MonoBehaviour:
   atqSpeed: 0
   moveSpeed: 0
   actualElement: 0
-  elements:
-  - {fileID: 4430309418471777927, guid: 8a1d9693a52fe59478dfb203756b6b66, type: 3}
-  - {fileID: 3896883525946458527, guid: 22ccd3bc670c0d441af43ca1b44a310e, type: 3}
-  - {fileID: -3962710079843836785, guid: 44025f59903fe4041b497358c5b09ca0, type: 3}
+  elements: []
   actualSkills: []
   canOpenDoors: 0
   elementsWeapons:
@@ -118,7 +116,7 @@ MonoBehaviour:
   HPBar: {fileID: 2100000, guid: 13dd69f8f80765c4ab7db69a012dfee6, type: 2}
   activeArrows: []
   arrowSpawn: {fileID: 5961991952231012916}
-  magicBallStaminaConsumption: 25
+  magicBallStaminaConsumption: 0
   ballSpawnSpot: {fileID: 2972144081306814412}
   ballPrefab: {fileID: 515718092575105231, guid: 3396c33f9e91247439b897498ce14c31,
     type: 3}
@@ -128,7 +126,7 @@ MonoBehaviour:
     type: 3}
   actualTPPoint: {fileID: 0}
   projBarrier: {fileID: 6057547959130871523}
-  projBarrierStaminaConsumption: 5
+  projBarrierStaminaConsumption: 0
   earthquakePrefab: {fileID: 0}
   blocking: 0
 --- !u!143 &1770926876427669907
@@ -218,17 +216,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beerUI: {fileID: 0}
   beerDisplayed: 0
-  HUD:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  hudActive: 1
+--- !u!114 &3670818880990583167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770926876427669906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2ec767f9479b24e93c72502487bbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchRange: 2
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  hoveringColors:
+  - {r: 1, g: 0, b: 0.14725637, a: 1}
+  - {r: 0.8301887, g: 0.7924928, b: 0.105731584, a: 1}
+  - {r: 0.28248486, g: 0.4193701, b: 0.8679245, a: 1}
+  actualColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1770926877354960669
 GameObject:
   m_ObjectHideFlags: 0

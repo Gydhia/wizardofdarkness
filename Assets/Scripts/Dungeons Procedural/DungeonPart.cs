@@ -110,8 +110,8 @@ public class DungeonParts// : IEnumerable<DungeonPart>
             yield return dungeonPart;
     }
 
-    /*IEnumerator IEnumerable.GetEnumerator()
-    {
-        return dungeonParts.GetEnumerator();
-    }*/
+    //IEnumerator IEnumerable.GetEnumerator()
+    //{
+      //  return dungeonParts.GetEnumerator();
+    //}
 }

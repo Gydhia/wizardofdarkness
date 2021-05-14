@@ -7,18 +7,27 @@ public class PlayerStatsController : MonoBehaviour
 
     private void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (PlayerStats.Instance.elements.Count > 2)
         {
-            PlayerStats.Instance.ChangeElement(PlayerStats.EElements.Void);
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                PlayerStats.Instance.ChangeElement(EElements.Earth);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (PlayerStats.Instance.elements.Count > 1)
         {
-            PlayerStats.Instance.ChangeElement(PlayerStats.EElements.Wind);
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                PlayerStats.Instance.ChangeElement(EElements.Wind);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (PlayerStats.Instance.elements.Count > 0)
         {
-            PlayerStats.Instance.ChangeElement(PlayerStats.EElements.Earth);
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                PlayerStats.Instance.ChangeElement(EElements.Void);
+            }
         }
     }
 }
