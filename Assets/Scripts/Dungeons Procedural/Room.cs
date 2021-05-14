@@ -34,7 +34,7 @@ public class Room : MonoBehaviour
         foreach (MeshRenderer rend in renderers) {
             if (!foundFirst) {
                 bounds = rend.bounds;
-                foundFirst = false;
+                foundFirst = true;
             }
             bounds.Encapsulate(rend.bounds);
         }
