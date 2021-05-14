@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
+    public bool IsDefault = false;
+
     public List<BooleanDoor> RoomDoors = new List<BooleanDoor>();
     public List<Orientation> GivenOrientations = new List<Orientation>();
 

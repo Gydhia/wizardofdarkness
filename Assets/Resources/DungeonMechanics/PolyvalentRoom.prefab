@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2120a0aedd8b8d94aa97d0eda9e7645d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDefault: 1
   RoomDoors:
   - {fileID: 3202670965678342699}
   - {fileID: 2840629993615790796}
@@ -328,7 +329,7 @@ MonoBehaviour:
     m_Center: {x: -4.669999, y: 17.498703, z: 54.860394}
     m_Extent: {x: 2.500001, y: 2.501297, z: 0.28199768}
   RoomID: 
-  RoomType: 0
+  RoomType: 3
 --- !u!1 &56102423948910806
 GameObject:
   m_ObjectHideFlags: 0

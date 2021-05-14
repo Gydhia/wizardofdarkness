@@ -108,6 +108,7 @@ public class DungeonManager : MonoBehaviour
             part.id = preset.RoomID;
             part.Prefab = preset.gameObject;
             part.RoomType = preset.RoomType;
+            part.IsDefault = preset.IsDefault;
             
             DungeonParts.dungeonParts.Add(part);
         }
@@ -341,8 +342,6 @@ public class DungeonManager : MonoBehaviour
         }
         float corridorLength = 5; //corridorBounds.size.z;
 
-        if (horizontal)
-            Debug.Log("First : " + actualDoor + " | Second : " + nextDoor + " || Length = " + corridorsWayLength);
         GameObject corridorContainer = Instantiate(new GameObject(), CorridorsContainer.transform);
         corridorContainer.name = "Corridor";
 

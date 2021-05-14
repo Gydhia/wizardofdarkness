@@ -13,6 +13,8 @@ public class DungeonPart
     public Dictionary<Orientation, Vector2> Doors;
     public int Width, Height;
     public Vector2 Position;
+
+    public bool IsDefault;
 }
 public class DungeonParts// : IEnumerable<DungeonPart>
 {
@@ -52,8 +54,11 @@ public class DungeonParts// : IEnumerable<DungeonPart>
     /// <returns></returns>
     public DungeonPart GetSpecificPart(DungeonRooms type, List<Orientation> orientations)
     {
-        var parts = dungeonParts.Where(room => (room.Doors.Select(orientation => orientations.Contains(orientation.Key)).Contains(true)));
-        if (parts.Count() == 0) return null;
+        var parts = dungeonParts.Where(room => (room.Doors.Select(orientation => orientations.Contains(orientation.Key)).Contains(true)))
+            .Where(r => r.RoomType == type);
+        if (parts.Count() == 0) {
+            return dungeonParts.Single(def => def.IsDefault);
+        }
 
         return parts.ElementAt(UnityEngine.Random.Range(0, parts.Count()));
         // .ElementAt(UnityEngine.Random.Range(0, dungeonParts.Where(room => room.roomType == type).Count()));
