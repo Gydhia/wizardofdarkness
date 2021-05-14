@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class VoidElement : Element
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void ChangementFX()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        throw new System.NotImplementedException();
     }
 }

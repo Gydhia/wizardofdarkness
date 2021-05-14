@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class EarthElement : Element
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void ChangementFX()
     {
-        this.def = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        throw new System.NotImplementedException();
     }
 }

@@ -4,4 +4,9 @@ using UnityEngine;
 
 public class WindElement : Element
 {
+    public override void ChangementFX()
+    {
+        throw new System.NotImplementedException();
+    }
+
 }
