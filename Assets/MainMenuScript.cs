@@ -7,7 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public void LaunchGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        PlayerUIManager.Instance.FadeOut();
     }
     public void Quit()
     {

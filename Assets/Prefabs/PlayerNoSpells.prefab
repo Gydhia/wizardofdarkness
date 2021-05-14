@@ -116,12 +116,12 @@ MonoBehaviour:
   HPBar: {fileID: 2100000, guid: 13dd69f8f80765c4ab7db69a012dfee6, type: 2}
   activeArrows: []
   arrowSpawn: {fileID: 5961991952231012916}
-  windArrowStaminaConsumption: 0
+  windArrowStaminaConsumption: 1.5
   nextArrowWeakens: 0
-  bendingSpeed: 0
-  weakenDuration: 0
-  weakenPercent: 0
-  magicBallStaminaConsumption: 0
+  bendingSpeed: 4
+  weakenDuration: 10
+  weakenPercent: 20
+  magicBallStaminaConsumption: 25
   ballSpawnSpot: {fileID: 2972144081306814412}
   ballPrefab: {fileID: 515718092575105231, guid: 3396c33f9e91247439b897498ce14c31,
     type: 3}
@@ -131,7 +131,7 @@ MonoBehaviour:
     type: 3}
   actualTPPoint: {fileID: 0}
   projBarrier: {fileID: 6057547959130871523}
-  projBarrierStaminaConsumption: 0
+  projBarrierStaminaConsumption: 5
   blocking: 0
 --- !u!143 &1770926876427669907
 CharacterController:
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2ec767f9479b24e93c72502487bbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchRange: 2
+  touchRange: 3
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoveringColors:
   - {r: 1, g: 0, b: 0.14725637, a: 1}

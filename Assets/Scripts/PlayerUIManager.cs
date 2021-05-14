@@ -22,16 +22,26 @@ public class PlayerUIManager : MonoBehaviour
 
     [Header("Stamina")]
     public Slider staminaBar;
-    
+
+    [Header("Fade")]
+    public Animator fade;
+    public bool fadedOut;
+
     void Awake()
     {
         Instance = this;
-
     }
     void Start()
     {
+        if(PlayerMovement.Instance != null)
         PlayerMovement.Instance.UpdateStamina += movement_UpdateStamina;
     }
+
+    public void FadeOut()
+    {
+        fade.SetTrigger("FadeOut");
+    }
+
     public void movement_UpdateStamina(float value)
     {
         staminaBar.value = value;

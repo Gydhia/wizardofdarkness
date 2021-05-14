@@ -10,6 +10,7 @@ public class CoolDown : MonoBehaviour
     public float fillPercentage;
     private float initialFillPercentage;
     public float maxValue;
+    public RawImage center;
     public float fillSpeed = 1f;
     public TextMeshProUGUI textField;
 

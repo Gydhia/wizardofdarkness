@@ -18,12 +18,14 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
     {
         if (scrollType == EScrollTypes.Tutorial)
         {
+            TextingSystemManager.Instance.NextLine();
             Destroy(gameObject);
             if (!PlayerUIManager.Instance.hudActive) PlayerUIManager.Instance.ToggleHud(true);
 
             PlayerStats.Instance.elements.Add(elementToAdd);
             elementToAdd.Init();
             PlayerStats.Instance.ChangeElement(scrollElement);
+            PlayerStats.Instance.canOpenDoors = true;
         }
     }
 

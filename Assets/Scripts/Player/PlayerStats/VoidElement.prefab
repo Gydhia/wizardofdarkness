@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementStats: {fileID: 11400000, guid: 89fefce7f64d8444996d40059f2353a9, type: 2}
-  BarFillColor: {r: 0.27450982, g: 0, b: 0.4627451, a: 1}
-  BarBorderColor: {r: 0.15294118, g: 0, b: 0.4627451, a: 1}
-  BarMinMaxColor: {r: 0.11372549, g: 0, b: 1, a: 1}
+  BarFillColor: {r: 0.627451, g: 0.39215687, b: 0.6745098, a: 1}
+  CenterColor: {r: 0.8156863, g: 0.7058824, b: 0.83137256, a: 0.7019608}
+  BarMinMaxColor: {r: 0.42352942, g: 0.2509804, b: 0.59607846, a: 1}

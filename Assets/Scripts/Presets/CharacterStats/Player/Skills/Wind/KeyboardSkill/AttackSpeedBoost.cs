@@ -13,6 +13,7 @@ public class AttackSpeedBoost : Skill
          D'ailleurs, fonce dans playerStats, maintenant!
          */
         PlayerCoroutines.Instance.LaunchRoutine(PlayerStats.Instance.StatBuff(buffTime, EStatsDebuffs.AttackSpeed, 70));
+        canLaunch = false;
     }
 
 }

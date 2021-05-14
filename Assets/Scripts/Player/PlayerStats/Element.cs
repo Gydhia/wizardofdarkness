@@ -12,7 +12,7 @@ public abstract class Element : MonoBehaviour
     protected List<Skill> skills = new List<Skill>();
     protected float[] CDs = new float[5];
     [SerializeField]protected Color BarFillColor;
-    [SerializeField]protected Color BarBorderColor;
+    [SerializeField]protected Color CenterColor;
     [SerializeField]protected Color BarMinMaxColor;
 
     public void Init()
@@ -48,7 +48,7 @@ public abstract class Element : MonoBehaviour
         foreach (CoolDown bar in player.cooldownBars)
         {
             bar.mat.SetColor("_Backgroundfillcolor", BarFillColor);
-            bar.mat.SetColor("_Backgroundbordercolor", BarBorderColor);
+            bar.center.color = CenterColor;
             bar.mat.SetColor("_Barmincolor", BarMinMaxColor);
             bar.mat.SetColor("_Barmaxcolor", BarMinMaxColor);
         }
