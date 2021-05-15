@@ -88,6 +88,10 @@ public class PlayerStats : MonoBehaviour
     }
     private void Update()
     {
+        if(transform.position.y <= -20)
+        {
+            Die();
+        }
         blocking = false;
         HPPercentage = (float)HP / 100;
         HPBar.SetFloat("_Fillpercentage", HPPercentage);
@@ -165,6 +169,8 @@ public class PlayerStats : MonoBehaviour
     void Die()
     {
         //GameOver Screen
+        PlayerUIManager.Instance.gameOver.gameObject.SetActive(true);
+        PlayerUIManager.Instance.gameOver.SetTrigger("GameOver");
     }
     public IEnumerator StatBuff(float timeOfBuff, EStatsDebuffs buffID, int percentAugment)
         //problème, si on change de classe, les bonus ne perdurent pas. Il faudra surement coder autrement.

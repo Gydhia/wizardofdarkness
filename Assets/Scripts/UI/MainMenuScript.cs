@@ -9,6 +9,14 @@ public class MainMenuScript : MonoBehaviour
     {
         PlayerUIManager.Instance.FadeOut();
     }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void RelaunchScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     public void Quit()
     {
         Application.Quit();

@@ -21,11 +21,14 @@ public class PlayerUIManager : MonoBehaviour
     public bool beerDisplayed = false;
 
     [Header("Stamina")]
-    public Slider staminaBar;
+    public Image staminaBar;
 
     [Header("Fade")]
     public Animator fade;
     public bool fadedOut;
+
+    [Header("GameOver")]
+    public Animator gameOver;
 
     void Awake()
     {
@@ -44,7 +47,7 @@ public class PlayerUIManager : MonoBehaviour
 
     public void movement_UpdateStamina(float value)
     {
-        staminaBar.value = value;
+        staminaBar.fillAmount = value/100;
     }
 
     public void BeerUIToggle(bool state)
