@@ -34,7 +34,7 @@ public class PlayerRaycastingSystem : MonoBehaviour
         // actual Ray
         Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
         RaycastHit hit;
-        //Debug.DrawRay(ray.origin, ray.direction * touchRange, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * touchRange, Color.red);
         if (Physics.Raycast(ray, out hit, touchRange,masks[(int)ETypeOfHoveredObject.Interactable]))
         {
             isHovering = true;

@@ -59,14 +59,16 @@ public class PlayerMovement : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
             #region Animation
-
-            PlayerAnimationState.Instance.playerAnimator.SetFloat("DirX", x);
-            PlayerAnimationState.Instance.playerAnimator.SetFloat("DirZ", z);
-            PlayerAnimationState.Instance.playerAnimator.SetBool("isMoving", (move == Vector3.zero? false:true));
-            if(!PlayerAnimationState.Instance.playerAnimator.GetBool("isJumping"))
-                PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", !isGrounded);
-            else
-                PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", false);
+            if (PlayerAnimationState.Instance.playerAnimator != null)
+            {
+                PlayerAnimationState.Instance.playerAnimator.SetFloat("DirX", x);
+                PlayerAnimationState.Instance.playerAnimator.SetFloat("DirZ", z);
+                PlayerAnimationState.Instance.playerAnimator.SetBool("isMoving", (move == Vector3.zero));
+                if (!PlayerAnimationState.Instance.playerAnimator.GetBool("isJumping"))
+                    PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", !isGrounded);
+                else
+                    PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", false);
+            }
             #endregion
             move = transform.right * x  + transform.forward * z ;
             controller.Move(move * actualSpeed * Time.deltaTime);

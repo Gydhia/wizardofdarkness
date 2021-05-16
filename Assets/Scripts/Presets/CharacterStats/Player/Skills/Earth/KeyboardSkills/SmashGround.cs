@@ -25,6 +25,7 @@ public class SmashGround : Skill
                 EnemyStats enemyStats = hitCollider.GetComponent<EnemyStats>();
                 enemyStats.AddDamage(dmg);
             }
+            Instantiate(PlayerStats.Instance.FXPrefab, PlayerStats.Instance.transform.position, Quaternion.identity);
             canLaunch = false;
         }
     }

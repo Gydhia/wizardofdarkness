@@ -34,7 +34,10 @@ public class StunAOE : Skill
             enemyStats.StartCor(enemyStats.StatDebuff(breakDefTime, EStatsDebuffs.Defense, breakDefPercent));
             //dmg? quand même? un poquito
             enemyStats.AddDamage(dmg);
+            //fx
         }
+        Instantiate(PlayerStats.Instance.FXPrefab, PlayerStats.Instance.transform.position, Quaternion.identity);
+
         canLaunch = false;
 
 

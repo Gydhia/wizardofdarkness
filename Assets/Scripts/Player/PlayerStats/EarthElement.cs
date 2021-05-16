@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EarthElement : Element
 {
-    public override void ChangementFX()
+
+    public override void ChangementFX(ParticleSystem part)
     {
-        throw new System.NotImplementedException();
+        part.Play();
     }
 }

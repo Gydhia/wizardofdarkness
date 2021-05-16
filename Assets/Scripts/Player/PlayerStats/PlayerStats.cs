@@ -36,6 +36,9 @@ public class PlayerStats : MonoBehaviour
          voilà, vous savez tout normalement! Allez, codez maintenant!
          (voilà, maintenant vous avez toutes les infos les brows
          */
+    public ParticleSystem[] particles;
+    public ParticleSystem buffArrow;
+    public ParticleSystem debuffArrow;
     [Header("Wind Variables")]
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
     public Transform arrowSpawn;
@@ -57,9 +60,9 @@ public class PlayerStats : MonoBehaviour
     public float projBarrierStaminaConsumption;
 
     [Header("Earth Variables")]
-    //public GameObject earthquakePrefab; j'avais prévu ça pour le shader hihi
+    public GameObject FXPrefab;
     public bool blocking;
-
+    public Animator hammer;
     private void Awake()
     {
         Instance = this;
@@ -118,7 +121,6 @@ public class PlayerStats : MonoBehaviour
         }
         else if (actualEElement == EElements.Void)
         {
-
             if (projBarrier.activeSelf) PlayerMovement.Instance.stamina -= Time.deltaTime * projBarrierStaminaConsumption;
             if (Input.GetButtonDown("RightClickSpell"))
             {
@@ -153,7 +155,7 @@ public class PlayerStats : MonoBehaviour
                 timers[i] = 0;
             }
             elementsWeapons[actualElement].SetActive(true);
-            elements[actualElement].ChangementFX();
+            elements[actualElement].ChangementFX(particles[actualElement]);
         }
     }
     public void TakeDamage(int damageTaken)
@@ -184,29 +186,37 @@ public class PlayerStats : MonoBehaviour
             case EStatsDebuffs.Defense: //def
                 float buff = percentAugment * def / 100;
                 def += (int)buff;
+                buffArrow.Play();
                 yield return new WaitForSeconds(timeOfBuff);
+                debuffArrow.Play();
                 def -= (int)buff;
                 break;
             case EStatsDebuffs.Strength: //str
                 buff = percentAugment * str / 100;
                 str += (int)buff;
+                buffArrow.Play();
                 yield return new WaitForSeconds(timeOfBuff);
+                debuffArrow.Play();
                 str -= (int)buff;
                 break;
             case EStatsDebuffs.AttackSpeed: //atqSpeed
                 buff = percentAugment * atqSpeed / 100;
                 float buff2 = percentAugment * bendingSpeed / 100;
                 atqSpeed += buff;
+                buffArrow.Play();
                 bendingSpeed += buff2;
                 yield return new WaitForSeconds(timeOfBuff);
                 atqSpeed -= buff;
+                debuffArrow.Play();
                 bendingSpeed -= buff2;
                 break;
             case EStatsDebuffs.MoveSpeed: //Movespeed
                 buff = percentAugment * (int)moveSpeed / 100;
                 moveSpeed += buff;
+                buffArrow.Play();
                 yield return new WaitForSeconds(timeOfBuff);
-                moveSpeed -= percentAugment;
+                debuffArrow.Play();
+                moveSpeed -= buff;
                 break;
         }
     }

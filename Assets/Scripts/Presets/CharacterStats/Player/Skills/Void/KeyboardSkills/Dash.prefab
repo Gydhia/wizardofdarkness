@@ -48,4 +48,4 @@ MonoBehaviour:
   dmg: 5
   AOERadius: 0
   castTime: 0
-  warpTime: 1.5
+  warpTime: 0.35

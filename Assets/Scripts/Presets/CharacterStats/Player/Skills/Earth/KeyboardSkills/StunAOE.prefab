@@ -51,3 +51,4 @@ MonoBehaviour:
   stunTime: 2
   breakDefPercent: 10
   breakDefTime: 6
+  FXPrefab: {fileID: 1159970587636746, guid: e7473d9620ab29341b98bf21b400e598, type: 3}

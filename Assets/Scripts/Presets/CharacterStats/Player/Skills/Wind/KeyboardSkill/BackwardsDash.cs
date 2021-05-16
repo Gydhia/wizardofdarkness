@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackwardsDash : Skill
 {
+    public float dashRange;
     public override void ActivatedSkill()
     {
         /*
@@ -13,6 +14,17 @@ public class BackwardsDash : Skill
              Go AttackSpeedBoost, maintenant!
          */
         canLaunch = false;
+        LayerMask mask = LayerMask.GetMask("Wall");
+        RaycastHit hit;
+        if (Physics.Raycast(PlayerMovement.Instance.transform.position, Vector3.back, out hit, dashRange, mask))
+        {
+            //Dash jusqu'a
+            //hit.distance;
+        }
+        else
+        {
+            //dash de dashRange
+        }
         throw new System.NotImplementedException();
     }
 }

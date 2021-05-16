@@ -18,27 +18,22 @@ public class PlayerCoroutines : MonoBehaviour
     /****************************************** VOID ************************************************************/
     public IEnumerator VoidDash(float warpTime, Dash script)
     {
-        //Passage en mode gigatrigger: plus rien ne nous arrête à part les murs (on ignore les collision de quasiment tout
+        //Passage en mode gigatrigger: plus rien ne nous arrête à part les murs (on ignore les collision de quasiment tout)
         gameObject.layer = 9;
         script.canLaunch = false;
         //Giga movespeed
-        PlayerStats.Instance.StatBuff(warpTime, EStatsDebuffs.MoveSpeed,75);
+        StartCoroutine(PlayerStats.Instance.StatBuff(warpTime, EStatsDebuffs.MoveSpeed,300));
         //Invisible?
         yield return new WaitForSeconds(warpTime);
         //Annuler tout ça
         gameObject.layer = 8;
-
-
     }
-
-
-
-
     /****************************************** EARTH ***********************************************************/
 
     public IEnumerator SwordSwing(float timeToHit, SwordSwing script)
     {
         script.canLaunch = false;
+        PlayerStats.Instance.hammer.SetTrigger("Hit");
         yield return new WaitForSeconds(timeToHit);
         Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // center of the screen
         float rayLength = script.range;
@@ -51,11 +46,6 @@ public class PlayerCoroutines : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-
+    /****************************************** WIND ***********************************************************/
+    
 }

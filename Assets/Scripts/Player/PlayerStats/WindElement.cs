@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WindElement : Element
 {
-    public override void ChangementFX()
+    public override void ChangementFX(ParticleSystem part)
     {
-        throw new System.NotImplementedException();
+        part.Play();
     }
 
 }
