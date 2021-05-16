@@ -10,7 +10,8 @@ public class PlayerUIManager : MonoBehaviour
 
     public GameObject beerUI;
     public bool beerDisplayed = false;
-
+    public GameObject[] HUD;
+    public bool hudActive = true;
     void Awake()
     {
         Instance = this;
@@ -20,5 +21,13 @@ public class PlayerUIManager : MonoBehaviour
     void Update()
     {
         beerUI.SetActive(beerDisplayed);
+    }
+    public void ToggleHud(bool newState)
+    {
+        foreach (GameObject item in HUD)
+        {
+            item.SetActive(newState);
+            hudActive = newState;
+        }
     }
 }

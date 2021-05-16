@@ -9,7 +9,7 @@ public abstract class Element : MonoBehaviour
     protected float attackSpeed;
     protected float moveSpeed;
     public CharacterStatus elementStats;
-    protected Skill[] skills;
+    protected List<Skill> skills = new List<Skill>();
     protected float[] CDs = new float[5];
     [SerializeField]protected Color BarFillColor;
     [SerializeField]protected Color BarBorderColor;
@@ -21,9 +21,9 @@ public abstract class Element : MonoBehaviour
         strength = elementStats.baseStr;
         attackSpeed = elementStats.attackSpeed;
         moveSpeed = elementStats.moveSpeed;
-        skills = elementStats.skills.ToArray();
+        skills = elementStats.skills;
         //Debug.Log(def);
-        for (int i = 0; i < skills.Length; i++)
+        for (int i = 0; i < skills.Count; i++)
         {
             CDs[i] = skills[i].coolDown;
         }
@@ -34,7 +34,11 @@ public abstract class Element : MonoBehaviour
         player.str = strength;
         player.atqSpeed = attackSpeed;
         player.moveSpeed = moveSpeed;
-        player.actualSkills = skills;
+        player.actualSkills.Clear();
+        foreach (Skill i in skills)
+        {
+            player.actualSkills.Add(i);
+        }
         player.CDs = CDs;
         for (int i = 0; i < player.cooldownBars.Length; i++)
         {

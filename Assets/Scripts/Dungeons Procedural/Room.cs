@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
+    public bool IsDefault = false;
+
     public List<BooleanDoor> RoomDoors = new List<BooleanDoor>();
     public List<Orientation> GivenOrientations = new List<Orientation>();
 
@@ -34,7 +36,7 @@ public class Room : MonoBehaviour
         foreach (MeshRenderer rend in renderers) {
             if (!foundFirst) {
                 bounds = rend.bounds;
-                foundFirst = false;
+                foundFirst = true;
             }
             bounds.Encapsulate(rend.bounds);
         }
@@ -42,5 +44,4 @@ public class Room : MonoBehaviour
         RoomBounds = bounds;
     }
 }
-
 
