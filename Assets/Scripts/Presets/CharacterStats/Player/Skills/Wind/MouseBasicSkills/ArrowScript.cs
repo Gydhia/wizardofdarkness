@@ -9,7 +9,6 @@ public class ArrowScript : MonoBehaviour
     [SerializeField]
     private float arrowSpeed;
     [SerializeField]
-    private Rigidbody arrowRb;
     private GameObject player;
     private Vector3 dir;    //direction
     private CapsuleCollider arrowCollider;
@@ -18,62 +17,86 @@ public class ArrowScript : MonoBehaviour
     private float timer;
     private bool hitSthg;//hit Something: a touché qlqchose
 
+    bool launched;
+    bool weakeningArrow;
+    public float bending;
+    public float maxBending;
+    public int dmg;
     // Update is called once per frame
     private void OnEnable()
     {
         player = PlayerStats.Instance.gameObject;
-        arrowRb = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.LookRotation(arrowRb.velocity);
         arrowCollider = GetComponent<CapsuleCollider>();
     }
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= lifeTimer)
+        
+        if (Input.GetButton("LeftClickSpell") && !launched)
+        {
+            //On bande
+            if (bending <= maxBending)
+            {
+                bending += Time.deltaTime * PlayerStats.Instance.bendingSpeed;
+            }
+            if (PlayerStats.Instance.nextArrowWeakens)
+            {
+                weakeningArrow = true;
+            }
+        }
+        else
+        {
+            //On lance la flèche
+            if (!launched)
+            {
+                launched = true;
+                transform.parent.gameObject.transform.DetachChildren();
+                Destroy(gameObject, lifeTimer);
+                dmg = (int)(bending * 20);
+                PlayerMovement.Instance.stamina -= bending * PlayerStats.Instance.windArrowStaminaConsumption;
+                arrowSpeed += bending;
+            }
+            else
+            {
+                if (!isBeingCalledBack)
+                {
+                    transform.Translate(Vector3.forward * arrowSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    
+                    dir = (player.transform.position - transform.position).normalized;
+                    transform.Translate(dir * arrowSpeed * Time.deltaTime);
+                    //fait revenir la flèche
+                    transform.rotation = Quaternion.LookRotation(dir); //Fais venir les flèche vers moi VITE
+                }
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        LayerMask enemy = LayerMask.GetMask("Enemy");
+        if ((other.CompareTag("Enemy") && launched))
+        {
+            EnemyStats enemyStats = other.GetComponent<EnemyStats>();
+            enemyStats.AddDamage(dmg);
+            Debug.Log(dmg);
+            if (weakeningArrow)
+            {
+                enemyStats.StatDebuff(PlayerStats.Instance.weakenDuration,EStatsDebuffs.Defense,PlayerStats.Instance.weakenPercent);
+            }
+        }
+        else if (other.CompareTag("Player") && isBeingCalledBack)
         {
             Destroy(gameObject);
-        }//TF, j'aurais pu faire tellement plus simple, genre mettre un "Destroy(gameObject, lifeTimer);" dans le OnEnable???? jsp mdr
-        if (!hitSthg)
-        {
-            transform.rotation = Quaternion.LookRotation(arrowRb.velocity); //Quand tu touche quelque chose, tu te plante de manière realiste
         }
-        if (isBeingCalledBack)
-        {
-            if (arrowRb.constraints == RigidbodyConstraints.FreezeAll)//Si, de base, j'ai totalement freeze la flèche dans l'espace:
-            {
-                arrowRb.constraints = RigidbodyConstraints.None;//Unfreeze la
-            }
-            var pos = player.transform.position;
-            pos.y += 1.5f;
-            dir = (pos - transform.position).normalized;
-            arrowRb.AddForce(dir * arrowSpeed*10);
-            transform.rotation = Quaternion.LookRotation(arrowRb.velocity); //Fais venir les flèche vers moi VITE
-        }
-    }
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (isBeingCalledBack && collision.gameObject.CompareTag("Player")) Destroy(gameObject); //Pretty obvious
-        /*else if (!isBeingCalledBack)
-        {
-            Physics.IgnoreCollision(collision.collider, arrowCollider); //J'avais mis ça, mais en fait non, sinon elle disparraissen tjamais (sauf si le timer expire)
-        }*/
-        if (!collision.gameObject.CompareTag("Player"))//Si on a touché autre chose que le joueur, alors on se plante dans cette chose
-        {
-            hitSthg = true;
-            Stick();
-        }
-    }
-    public void Stick()
-    {
-        arrowRb.constraints = RigidbodyConstraints.FreezeAll;//On bloque totalement la flèche dans l'espace
     }
     private void OnDestroy()
     {
         PlayerStats.Instance.activeArrows.Remove(this);//On pense a retirer la flèche de l'array des flèches actives
     }
-    /*
-     Ouch, c'était physique quand même!     (jsuis en moula)
-     Mais assez simple en esprit            (jsuis en esprit)
-     Bon maintenant bro c'est WeakeningArrow.cs !
-     */
 }
+/*
+ Ouch, c'était physique quand même!     (jsuis en moula)
+ Mais assez simple en esprit            (jsuis en esprit)
+ Bon maintenant bro c'est WeakeningArrow.cs !
+ */

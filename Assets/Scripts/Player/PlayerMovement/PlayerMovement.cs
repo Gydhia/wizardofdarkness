@@ -9,15 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
 
     public static PlayerMovement Instance;
-
-    public float speedSprint = 12f;
-    public float speed = 12f;
-    public float Currentspeed = 12f;
+    public event SetSlider UpdateStamina;
+    public float sprintFactor;
+    private float walkSpeed;
+    private float actualSpeed;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
     public float maxStamina = 100f;
     [Range(0, 100)] public float stamina = 100f;
-    public Slider slider;
     public Vector3 move;
     public Transform groundCheck;
     public float groundDistance = 0.5f;
@@ -28,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     public float airControl;
     float control;
     CharacterController charController;
+    public float sprintingStaminaConsumption = 15f;
+    private float staminaCooldownRate = 9f;
+    private float depletedStaminaCooldownRate = 6f;
 
     private void Awake()
     {
@@ -39,66 +41,58 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
+            #region stamina
             UseStamina(Input.GetKey(KeyCode.LeftShift));
-            slider.value = stamina;
-
+            UpdateStamina?.Invoke(stamina);
+            #endregion
+            #region Jumping and Gravity
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-            if (!isGrounded)
-            {
-                control = airControl;
-            }
-            else
-            {
-                control = 1f;
-            }
             if (isGrounded && velocity.y < 0)
                 velocity.y = -2f;
-
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-
-            move = transform.right * x * control + transform.forward * z * control;
-
-            controller.Move(move * Currentspeed * Time.deltaTime);
-
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
-
+            #endregion
+            #region move
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+            move = transform.right * x  + transform.forward * z ;
+            controller.Move(move * actualSpeed * Time.deltaTime);
             velocity.y += gravity * Time.deltaTime;
-
             controller.Move(velocity * Time.deltaTime);
+            #endregion
+
         }
     }
 
     public void UseStamina(bool isRunning)
     {
+        walkSpeed = PlayerStats.Instance.moveSpeed;
         if (isRunning)
         {
             if (stamina > 0f)
             {
-                stamina -= 15f * Time.deltaTime;
-                Currentspeed = speedSprint;
+                stamina -= sprintingStaminaConsumption * Time.deltaTime;
+                actualSpeed = walkSpeed*sprintFactor;
             }
             else
             {
-                Currentspeed = speed;
+                actualSpeed = walkSpeed;
             }
         }
         else
         {
             if (stamina <= 30f)
             {
-                stamina += 9f * Time.deltaTime;
+                stamina += staminaCooldownRate * Time.deltaTime;
             }
 
             else if (stamina < maxStamina)
             {
-                stamina += 6f * Time.deltaTime;
+                stamina += depletedStaminaCooldownRate * Time.deltaTime;
             }
-            Currentspeed = speed;
-
+            actualSpeed = walkSpeed;
         }
     }
 

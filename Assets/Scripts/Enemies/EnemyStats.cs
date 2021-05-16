@@ -30,7 +30,7 @@ public abstract class EnemyStats : MonoBehaviour
         StartCoroutine(Flashing());
         if(HP-damageTaken > 0)
         {
-            HP -= damageTaken;
+            HP -= (damageTaken-(damageTaken/def));
         }
         else
         {
@@ -59,7 +59,6 @@ public abstract class EnemyStats : MonoBehaviour
     }
     public IEnumerator Debuff(float timeOfDebuff, EDebuffs debuffID)
     {
-
         switch (debuffID)
         {
             case EDebuffs.Stun: //Stun

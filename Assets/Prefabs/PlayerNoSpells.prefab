@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 1770926876427669917}
   - component: {fileID: 2261139059068404529}
   - component: {fileID: 531408670296527687}
-  - component: {fileID: 4976950658625321750}
   - component: {fileID: 3670818880990583167}
   m_Layer: 0
   m_Name: PlayerNoSpells
@@ -86,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30dae25603bdcb42a6e8a81c9a11485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statsEmpty: {fileID: 11400000, guid: 0efb046db8205d5499bb6f867e73afef, type: 2}
   actualEElement: 0
   HP: 100
   def: 0
@@ -116,7 +116,12 @@ MonoBehaviour:
   HPBar: {fileID: 2100000, guid: 13dd69f8f80765c4ab7db69a012dfee6, type: 2}
   activeArrows: []
   arrowSpawn: {fileID: 5961991952231012916}
-  magicBallStaminaConsumption: 0
+  windArrowStaminaConsumption: 1.5
+  nextArrowWeakens: 0
+  bendingSpeed: 4
+  weakenDuration: 10
+  weakenPercent: 20
+  magicBallStaminaConsumption: 25
   ballSpawnSpot: {fileID: 2972144081306814412}
   ballPrefab: {fileID: 515718092575105231, guid: 3396c33f9e91247439b897498ce14c31,
     type: 3}
@@ -126,8 +131,7 @@ MonoBehaviour:
     type: 3}
   actualTPPoint: {fileID: 0}
   projBarrier: {fileID: 6057547959130871523}
-  projBarrierStaminaConsumption: 0
-  earthquakePrefab: {fileID: 0}
+  projBarrierStaminaConsumption: 5
   blocking: 0
 --- !u!143 &1770926876427669907
 CharacterController:
@@ -160,14 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1770926876427669907}
-  speedSprint: 18
-  speed: 12
-  Currentspeed: 12
+  sprintFactor: 0
   gravity: -38
   jumpHeight: 3
   maxStamina: 100
   stamina: 100
-  slider: {fileID: 0}
   move: {x: 0, y: 0, z: 0}
   groundCheck: {fileID: 1770926877354960670}
   groundDistance: 0.4
@@ -178,6 +179,7 @@ MonoBehaviour:
   isGrounded: 0
   canMove: 1
   airControl: 1
+  sprintingStaminaConsumption: 15
 --- !u!114 &2261139059068404529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,20 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d25b66856c3eba46b7696e427f4f079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4976950658625321750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770926876427669906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba06fae67ade8da4f9d63c7fa3745c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beerUI: {fileID: 0}
-  beerDisplayed: 0
 --- !u!114 &3670818880990583167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2ec767f9479b24e93c72502487bbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchRange: 2
+  touchRange: 3
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoveringColors:
   - {r: 1, g: 0, b: 0.14725637, a: 1}

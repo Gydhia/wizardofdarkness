@@ -13,6 +13,14 @@ public class PlayerStatsController : MonoBehaviour
             {
                 PlayerStats.Instance.ChangeElement(EElements.Earth);
             }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                PlayerStats.Instance.ChangeElement(EElements.Wind);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                PlayerStats.Instance.ChangeElement(EElements.Void);
+            }
         }
         else if (PlayerStats.Instance.elements.Count > 1)
         {
@@ -20,6 +28,10 @@ public class PlayerStatsController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 PlayerStats.Instance.ChangeElement(EElements.Wind);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                PlayerStats.Instance.ChangeElement(EElements.Void);
             }
         }
         else if (PlayerStats.Instance.elements.Count > 0)

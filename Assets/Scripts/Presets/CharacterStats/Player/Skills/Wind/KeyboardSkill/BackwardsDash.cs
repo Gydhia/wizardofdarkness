@@ -12,6 +12,7 @@ public class BackwardsDash : Skill
              aaaah, les dashs... Mon né-mé-sis. Je veux faire ça bien, mais comment faire ça bien? hmmmm...$
              Go AttackSpeedBoost, maintenant!
          */
+        canLaunch = false;
         throw new System.NotImplementedException();
     }
 }

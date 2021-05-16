@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
          */
     [Header("Variables For All Elements")]
     public static PlayerStats Instance;
+    public CharacterStatus statsEmpty;
     public EElements actualEElement;
     [Min(0)] public int HP;
     public int def;
@@ -36,6 +37,11 @@ public class PlayerStats : MonoBehaviour
     [Header("Wind Variables")]
     public List<ArrowScript> activeArrows = new List<ArrowScript>();
     public Transform arrowSpawn;
+    public float windArrowStaminaConsumption;
+    public bool nextArrowWeakens;
+    public float bendingSpeed;
+    public float weakenDuration;
+    public int weakenPercent;
 
     [Header("Void Variables")]
     public float magicBallStaminaConsumption;
@@ -43,11 +49,12 @@ public class PlayerStats : MonoBehaviour
     public GameObject ballPrefab;
     public GameObject blackHolePrefab;
     public GameObject teleportPointPrefab;
-    public TPPointScript actualTPPoint;
+    [HideInInspector]public TPPointScript actualTPPoint;
     public GameObject projBarrier;
     public float projBarrierStaminaConsumption;
+
     [Header("Earth Variables")]
-    public GameObject earthquakePrefab;
+    //public GameObject earthquakePrefab; j'avais prévu ça pour le shader hihi
     public bool blocking;
 
     private void Awake()
@@ -74,9 +81,17 @@ public class PlayerStats : MonoBehaviour
                 timers[i] = 0;
             }
         }
+        else
+        {
+            moveSpeed = statsEmpty.moveSpeed;
+        }
     }
     private void Update()
     {
+        if(transform.position.y <= -20)
+        {
+            Die();
+        }
         blocking = false;
         HPPercentage = (float)HP / 100;
         HPBar.SetFloat("_Fillpercentage", HPPercentage);
@@ -154,8 +169,12 @@ public class PlayerStats : MonoBehaviour
     void Die()
     {
         //GameOver Screen
+        PlayerUIManager.Instance.gameOver.gameObject.SetActive(true);
+        PlayerUIManager.Instance.gameOver.SetTrigger("GameOver");
     }
     public IEnumerator StatBuff(float timeOfBuff, EStatsDebuffs buffID, int percentAugment)
+        //problème, si on change de classe, les bonus ne perdurent pas. Il faudra surement coder autrement.
+        //(pire que ça: comme la coroutine perdure, on fini par soustraire buff (pour annuler le buff) alors qu'on a pas eu de buff.
     {
         switch (buffID)
         {
@@ -173,15 +192,18 @@ public class PlayerStats : MonoBehaviour
                 break;
             case EStatsDebuffs.AttackSpeed: //atqSpeed
                 buff = percentAugment * atqSpeed / 100;
+                float buff2 = percentAugment * bendingSpeed / 100;
                 atqSpeed += buff;
+                bendingSpeed += buff2;
                 yield return new WaitForSeconds(timeOfBuff);
                 atqSpeed -= buff;
+                bendingSpeed -= buff2;
                 break;
             case EStatsDebuffs.MoveSpeed: //Movespeed
-                buff = percentAugment * (int)PlayerMovement.Instance.speed / 100;
-                PlayerMovement.Instance.speed += buff;
+                buff = percentAugment * (int)moveSpeed / 100;
+                moveSpeed += buff;
                 yield return new WaitForSeconds(timeOfBuff);
-                PlayerMovement.Instance.speed -= percentAugment;
+                moveSpeed -= percentAugment;
                 break;
         }
     }

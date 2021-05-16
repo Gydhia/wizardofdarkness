@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - Enemy
   - Interactable
+  - TextDialog
   layers:
   - Default
   - TransparentFX
