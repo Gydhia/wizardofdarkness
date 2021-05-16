@@ -235,6 +235,7 @@ public class DungeonManager : MonoBehaviour
     }
 
     // PREFAB GENERATOR
+    // X = jOffset ; Z = iOffset
     public IEnumerator GenerateDungeonPrefab()
     {
         for (int i = 0; i < size; i++)
@@ -249,12 +250,8 @@ public class DungeonManager : MonoBehaviour
                     part.name = dungeonPath[i, j].Part.id + " | " + dungeonPath[i, j].position;
                     Room room = part.GetComponent<Room>();
 
-                    if (i >= 1 && Rooms[i - 1, j] != null)
-                        part.transform.position += new Vector3(0f, 0f, Rooms[i - 1, j].RoomBounds.size.x + 20f);
-                    if(j >= 1 && Rooms[i, j - 1] != null)
-                        part.transform.position += new Vector3(-(Rooms[i, j - 1].RoomBounds.size.z) + 20f, 0f, 0f);
+                    part.transform.position += new Vector3(j * 140f, 0f, i * -140f);
 
-                    yield return new WaitForSeconds(2f);
                     room.GivenOrientations = dungeonPath[i, j].orientations;
                     room.EnableDoorFromOrientation(dungeonPath[i, j].orientations);
 
@@ -278,12 +275,13 @@ public class DungeonManager : MonoBehaviour
                     float xOffset = 0;
                     if (l < size - 1 && Rooms[k, l + 1] != null)
                     {
-                        Vector2 nextDoor = Rooms[k, l + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).WorldPosition;
-                        Vector2 actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Right).WorldPosition;
+                        BooleanDoor nextDoor = Rooms[k, l + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left);
+                        BooleanDoor actualDoor = Rooms[k, l].RoomDoors.Single(door => door.Orientation == Orientation.Right);
                         if (Rooms[k, l + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[k, l].GivenOrientations.Contains(Orientation.Right)) {
-                            xOffset = actualDoor.y - nextDoor.y;
+                            xOffset = actualDoor.WorldPosition.y - nextDoor.WorldPosition.y;
                             Rooms[k, l + 1].gameObject.transform.position += new Vector3(0f, 0f, xOffset);
                         }
+                        
                     }
                 }
             }
@@ -298,16 +296,16 @@ public class DungeonManager : MonoBehaviour
                     float yOffset = 0;
                     if (m < size - 1 && Rooms[m + 1, n] != null)
                     {
-                        Vector2 nextDoor = Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top).WorldPosition;
-                        var aDoor = Rooms[m, n].RoomDoors.SingleOrDefault(door => door.Orientation == Orientation.Bottom);
-                        Vector2 actualDoor = aDoor.WorldPosition;
+                        BooleanDoor nextDoor = Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top);
+                        BooleanDoor actualDoor = Rooms[m, n].RoomDoors.SingleOrDefault(door => door.Orientation == Orientation.Bottom);
                         if (Rooms[m + 1, n].GivenOrientations.Contains(Orientation.Top) && Rooms[m, n].GivenOrientations.Contains(Orientation.Bottom))  {
-                            yOffset = actualDoor.x - nextDoor.x;
+                            yOffset = actualDoor.WorldPosition.x - nextDoor.WorldPosition.x;
                             Rooms[m + 1, n].gameObject.transform.position += new Vector3(yOffset, 0f, 0f);
-
-                            GenerateDungeonCorridors(actualDoor, Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top).WorldPosition);
+                            yield return null;
+                            GenerateDungeonCorridors(actualDoor, nextDoor);
                         }
                     }
+                    
                 }
             }
         }
@@ -319,22 +317,24 @@ public class DungeonManager : MonoBehaviour
                 {
                     if (p < size - 1 && Rooms[o, p + 1] != null)
                     {
-                        Vector2 nextDoor = Rooms[o, p + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left).WorldPosition;
-                        Vector2 actualDoor = Rooms[o, p].RoomDoors.Single(door => door.Orientation == Orientation.Right).WorldPosition;
+                        BooleanDoor nextDoor = Rooms[o, p + 1].RoomDoors.Single(door => door.Orientation == Orientation.Left);
+                        BooleanDoor actualDoor = Rooms[o, p].RoomDoors.Single(door => door.Orientation == Orientation.Right);
                         if (Rooms[o, p + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[o, p].GivenOrientations.Contains(Orientation.Right))
                         {
                             GenerateDungeonCorridors(actualDoor, nextDoor);
+                            yield return null;
                         }
                     }
+                    yield return null;
                 }
             }
         }
     }
 
-    public void GenerateDungeonCorridors(Vector2 actualDoor, Vector2 nextDoor)
+    public void GenerateDungeonCorridors(BooleanDoor actualDoor, BooleanDoor nextDoor)
     {
-        bool horizontal = Mathf.Abs(actualDoor.x - nextDoor.x) > Mathf.Abs(actualDoor.y - nextDoor.y);
-        float corridorsWayLength = horizontal ? Mathf.Abs(actualDoor.x - nextDoor.x) : Mathf.Abs(actualDoor.y - nextDoor.y);
+        bool horizontal = Mathf.Abs(actualDoor.WorldPosition.x - nextDoor.WorldPosition.x) > Mathf.Abs(actualDoor.WorldPosition.y - nextDoor.WorldPosition.y);
+        float corridorsWayLength = horizontal ? Mathf.Abs(actualDoor.WorldPosition.x - nextDoor.WorldPosition.x) : Mathf.Abs(actualDoor.WorldPosition.y - nextDoor.WorldPosition.y);
         
         MeshFilter[] corridorsFilter = Corridor.GetComponentsInChildren<MeshFilter>();
         bool foundFirst = false;
@@ -358,8 +358,8 @@ public class DungeonManager : MonoBehaviour
         {
             GameObject corridor = Instantiate(Corridor, Vector3.zero, horizontal ? Quaternion.identity : Quaternion.Euler(0f, 90f, 0f), corridorContainer.transform);
             corridor.transform.position += horizontal ?
-                new Vector3(actualDoor.x + i + corridorLength, 0f, actualDoor.y) :
-                new Vector3(actualDoor.x, 0f, actualDoor.y - (i + corridorLength));
+                new Vector3(actualDoor.WorldPosition.x + i + corridorLength, 0f, actualDoor.WorldPosition.y - corridorBounds.size.x / 3f) :
+                new Vector3(actualDoor.WorldPosition.x - corridorBounds.size.x, 0f, actualDoor.WorldPosition.y - (i + corridorLength));
             corridor.name = actualDoor + " to " + nextDoor;
         }
         corridorContainer.transform.position -= new Vector3(horizontal ? corridorLength / 2 : 0f, 0f, horizontal ? 0f : -corridorLength / 2);

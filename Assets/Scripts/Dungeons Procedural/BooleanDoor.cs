@@ -10,6 +10,7 @@ public class BooleanDoor : MonoBehaviour
     public Vector2 Position = new Vector2();
     public Vector2 WorldPosition { get => new Vector2(transform.position.x, transform.position.z); }
     public float WorldHeight { get => transform.position.y; }
+    public Bounds DoorBounds = new Bounds();
 
     public GameObject Door;
     public GameObject Wall;
@@ -21,7 +22,8 @@ public class BooleanDoor : MonoBehaviour
         try
         {
             Renderers = this.GetComponentsInChildren<MeshRenderer>();
-            
+            bool foundFirst = false;
+
             if (Renderers.Length < 2) 
                 throw (new Exception());
             
@@ -29,8 +31,15 @@ public class BooleanDoor : MonoBehaviour
             Wall = Renderers[1].gameObject;
 
             Vector3 pos = Renderers[0].bounds.center;
-
+            
             Undo.RecordObject(this, "Refreshed positions");
+            foreach (MeshRenderer rend in Renderers) {
+                if (!foundFirst) {
+                    DoorBounds = rend.bounds;
+                    foundFirst = true;
+                }
+                DoorBounds.Encapsulate(rend.bounds);
+            }
             Position = new Vector2(pos.x, pos.z);
             PrefabUtility.RecordPrefabInstancePropertyModifications(this);
         }
