@@ -262,6 +262,7 @@ public class DungeonManager : MonoBehaviour
                     //    );
 
                     Rooms[i, j] = room;
+                    yield return new WaitForSeconds(0.1f);
                 }
             }
         }
@@ -281,6 +282,7 @@ public class DungeonManager : MonoBehaviour
                             xOffset = actualDoor.WorldPosition.y - nextDoor.WorldPosition.y;
                             Rooms[k, l + 1].gameObject.transform.position += new Vector3(0f, 0f, xOffset);
                         }
+                        yield return new WaitForSeconds(0.1f);
                         
                     }
                 }
@@ -304,6 +306,7 @@ public class DungeonManager : MonoBehaviour
                             yield return null;
                             GenerateDungeonCorridors(actualDoor, nextDoor);
                         }
+                        yield return new WaitForSeconds(0.1f);
                     }
                     
                 }
@@ -322,7 +325,7 @@ public class DungeonManager : MonoBehaviour
                         if (Rooms[o, p + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[o, p].GivenOrientations.Contains(Orientation.Right))
                         {
                             GenerateDungeonCorridors(actualDoor, nextDoor);
-                            yield return null;
+                            yield return new WaitForSeconds(0.1f);
                         }
                     }
                     yield return null;

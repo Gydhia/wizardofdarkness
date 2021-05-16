@@ -9,17 +9,23 @@ public abstract class EnemyStats : MonoBehaviour
 {
     public enum EEnemyElements { Void = 0, Wind = 1, Earth = 2, None = 3 }
     public EEnemyElements ActualElement;
-    public int maxHP;
+    public int MaxHP;
     public float HP;  //StatDebuff 0
-    public float def; //StatDebuff 1
-    public float str; //StatDebuff 2
-    public float atqSpeed; //StatDebuff 3
-    public float moveSpeed; //StatDebuff 4
+    public float Def; //StatDebuff 1
+    public float Str; //StatDebuff 2
+    public float AtkSpeek; //StatDebuff 3
+    public float MoveSpeed; //StatDebuff 4
     public Skill[] Skills;
-    public MeshRenderer matRenderer;
-    bool flashing;
+    public MeshRenderer MatRenderer;
+    bool IsFlashing;
     [Header("Debuff")]
-    public bool isStuned; //ID : 0
+    public bool IsStuned; //ID : 0
+    public Animator EnemyAnimator;
+
+    protected void Start()
+    {
+        EnemyAnimator = this.GetComponent<Animator>();
+    }
 
     public void ActivateSkill(int index)
     {
@@ -28,33 +34,31 @@ public abstract class EnemyStats : MonoBehaviour
     public void AddDamage(int damageTaken)
     {
         StartCoroutine(Flashing());
-        if(HP-damageTaken > 0)
-        {
-            HP -= (damageTaken-(damageTaken/def));
+        if(HP-damageTaken > 0) {
+            HP -= (damageTaken-(damageTaken/Def));
         }
-        else
-        {
+        else {
             HP -= HP;
             Die();
         }
-
     }
     public virtual IEnumerator Flashing()
     {
         //Red
-        if (flashing == false)
+        if (IsFlashing == false)
         {
-            flashing = true;
-            Color defaultCol = matRenderer.material.color;
-            matRenderer.material.color = Color.red;
+            IsFlashing = true;
+            Color defaultCol = MatRenderer.material.color;
+            MatRenderer.material.color = Color.red;
             yield return new WaitForSeconds(.5f);
-            flashing = false;
-            matRenderer.material.color = defaultCol;
+            IsFlashing = false;
+            MatRenderer.material.color = defaultCol;
         }
     }
-    void Die()
+    public void Die()
     {
         //Animation de mort,
+        EnemyAnimator.SetTrigger("Death");
         Destroy(gameObject, 1.5f);
     }
     public IEnumerator Debuff(float timeOfDebuff, EDebuffs debuffID)
@@ -62,9 +66,9 @@ public abstract class EnemyStats : MonoBehaviour
         switch (debuffID)
         {
             case EDebuffs.Stun: //Stun
-                isStuned = true;
+                IsStuned = true;
                 yield return new WaitForSeconds(timeOfDebuff);
-                isStuned = false;
+                IsStuned = false;
                 break;
         }
     }
@@ -75,33 +79,33 @@ public abstract class EnemyStats : MonoBehaviour
             case EStatsDebuffs.MaxHP: //HP
                 float debuff;
                 debuff = percentReduce*HP/100;
-                maxHP -= (int)debuff;
+                MaxHP -= (int)debuff;
                 yield return new WaitForSeconds(timeOfDebuff);
-                maxHP += (int)debuff;
+                MaxHP += (int)debuff;
                 break;
             case EStatsDebuffs.Defense: //def
-                debuff = percentReduce*def/100;
-                def -= debuff;
+                debuff = percentReduce*Def/100;
+                Def -= debuff;
                 yield return new WaitForSeconds(timeOfDebuff);
-                def += debuff;
+                Def += debuff;
                 break;
             case EStatsDebuffs.Strength: //str
-                debuff = percentReduce*str/100;
-                str -= debuff;
+                debuff = percentReduce*Str/100;
+                Str -= debuff;
                 yield return new WaitForSeconds(timeOfDebuff);
-                str += debuff;
+                Str += debuff;
                 break;
             case EStatsDebuffs.AttackSpeed: //atqSpeed
-                debuff = percentReduce*atqSpeed/100;
-                atqSpeed -= debuff;
+                debuff = percentReduce*AtkSpeek/100;
+                AtkSpeek -= debuff;
                 yield return new WaitForSeconds(timeOfDebuff);
-                atqSpeed += debuff;
+                AtkSpeek += debuff;
                 break;
             case EStatsDebuffs.MoveSpeed: //Movespeed
-                debuff = percentReduce*(int)moveSpeed/100;
-                moveSpeed -= debuff;
+                debuff = percentReduce*(int)MoveSpeed/100;
+                MoveSpeed -= debuff;
                 yield return new WaitForSeconds(timeOfDebuff);
-                moveSpeed += percentReduce;
+                MoveSpeed += percentReduce;
                 break;
         }
     }

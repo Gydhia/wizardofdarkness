@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum EnemyType
+{
+    Distance,
+    Melee
+}
+
 public class BasicEnemy : EnemyStats
 {
-    public Animator EnemyAnimator;
+    public EnemyType Type;
+    private bool IsDead = false;
 
     // Aggro attributes
     public NavMeshAgent Agent;
-    public float AggroRadius = 50f;
     public bool TriggeredAggro = false;
-    public GameObject TargettedDestination;
+    public PlayerStats Target;
+    public float AttackDelay;
 
-    private void Start()
+    protected void Start()
     {
-        EnemyAnimator = this.GetComponent<Animator>();
+        base.Start();
         Agent = this.GetComponent<NavMeshAgent>();
     }
 
@@ -32,15 +39,23 @@ public class BasicEnemy : EnemyStats
         yield return null;
     }
 
-    public void TriggerAggro(GameObject target)
+    public void TriggerAggro(PlayerStats target)
     {
-        TargettedDestination = target;
+        Target = target;
         TriggeredAggro = true;
         BeginChase();
+        StartCoroutine(StartBehaviour());
     }
 
     public void BeginChase()
     {
-        Agent.SetDestination(TargettedDestination.transform.position);
+        Agent.SetDestination(Target.transform.position);
     }
+
+    public virtual IEnumerator StartBehaviour()
+    {
+        yield return null;
+    }
+
+    
 }

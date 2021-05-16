@@ -27,6 +27,8 @@ public class PlayerStats : MonoBehaviour
     public CoolDown[] cooldownBars = new CoolDown[5];
     public Material HPBar;
     float HPPercentage;
+    public Animator EnemyAnimator;
+    public bool IsDead = false;
 
     /*
      A partir d'ici, typiquement si vous avez des prefab à stocker, des listes, des variables utiles à garder, c'est ici que vous allez les mettre
@@ -51,6 +53,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject teleportPointPrefab;
     [HideInInspector]public TPPointScript actualTPPoint;
     public GameObject projBarrier;
+    public GameObject AimPoint;
     public float projBarrierStaminaConsumption;
 
     [Header("Earth Variables")]
@@ -81,8 +84,7 @@ public class PlayerStats : MonoBehaviour
                 timers[i] = 0;
             }
         }
-        else
-        {
+        else{
             moveSpeed = statsEmpty.moveSpeed;
         }
     }
@@ -154,7 +156,7 @@ public class PlayerStats : MonoBehaviour
             elements[actualElement].ChangementFX();
         }
     }
-    void AddDamage(int damageTaken)
+    public void TakeDamage(int damageTaken)
     {
         if (HP - damageTaken > 0)
         {
@@ -166,9 +168,10 @@ public class PlayerStats : MonoBehaviour
             Die();
         }
     }
-    void Die()
+    public void Die()
     {
         //GameOver Screen
+        this.IsDead = true;
         PlayerUIManager.Instance.gameOver.gameObject.SetActive(true);
         PlayerUIManager.Instance.gameOver.SetTrigger("GameOver");
     }
