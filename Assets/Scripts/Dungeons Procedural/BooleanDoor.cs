@@ -9,6 +9,7 @@ public class BooleanDoor : MonoBehaviour
     public Orientation Orientation;
     public Vector2 Position = new Vector2();
     public Vector2 WorldPosition { get => new Vector2(transform.position.x, transform.position.z); }
+    public float WorldHeight { get => transform.position.y; }
 
     public GameObject Door;
     public GameObject Wall;

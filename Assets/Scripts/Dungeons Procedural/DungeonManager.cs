@@ -231,11 +231,11 @@ public class DungeonManager : MonoBehaviour
         }
         Debug.Log(dungeonText);
 
-        GenerateDungeonPrefab();
+        StartCoroutine(GenerateDungeonPrefab());
     }
 
     // PREFAB GENERATOR
-    public void GenerateDungeonPrefab()
+    public IEnumerator GenerateDungeonPrefab()
     {
         for (int i = 0; i < size; i++)
         {
@@ -245,18 +245,26 @@ public class DungeonManager : MonoBehaviour
                 {
                     dungeonPath[i, j].Part = DungeonParts.GetSpecificPart(dungeonPath[i, j].roomType, dungeonPath[i, j].orientations);
 
-                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, new Vector3(j * 140, 0, i * -140), Quaternion.identity, this.transform);
+                    GameObject part = Instantiate(dungeonPath[i, j].Part.Prefab, this.transform);
                     part.name = dungeonPath[i, j].Part.id + " | " + dungeonPath[i, j].position;
                     Room room = part.GetComponent<Room>();
 
+                    if (i >= 1 && Rooms[i - 1, j] != null)
+                        part.transform.position += new Vector3(0f, 0f, Rooms[i - 1, j].RoomBounds.size.x + 20f);
+                    if(j >= 1 && Rooms[i, j - 1] != null)
+                        part.transform.position += new Vector3(-(Rooms[i, j - 1].RoomBounds.size.z) + 20f, 0f, 0f);
+
+                    yield return new WaitForSeconds(2f);
                     room.GivenOrientations = dungeonPath[i, j].orientations;
                     room.EnableDoorFromOrientation(dungeonPath[i, j].orientations);
-                    Rooms[i, j] = room;
+
                     //part.transform.eulerAngles = new Vector3(
                     //    part.transform.eulerAngles.x,
                     //    (float)DungeonParts.GetPartRotation(dungeonPath[i, j].Part, dungeonPath[i, j].orientations),
                     //    part.transform.eulerAngles.z
                     //    );
+
+                    Rooms[i, j] = room;
                 }
             }
         }
@@ -291,7 +299,8 @@ public class DungeonManager : MonoBehaviour
                     if (m < size - 1 && Rooms[m + 1, n] != null)
                     {
                         Vector2 nextDoor = Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top).WorldPosition;
-                        Vector2 actualDoor = Rooms[m, n].RoomDoors.Single(door => door.Orientation == Orientation.Bottom).WorldPosition;
+                        var aDoor = Rooms[m, n].RoomDoors.SingleOrDefault(door => door.Orientation == Orientation.Bottom);
+                        Vector2 actualDoor = aDoor.WorldPosition;
                         if (Rooms[m + 1, n].GivenOrientations.Contains(Orientation.Top) && Rooms[m, n].GivenOrientations.Contains(Orientation.Bottom))  {
                             yOffset = actualDoor.x - nextDoor.x;
                             Rooms[m + 1, n].gameObject.transform.position += new Vector3(yOffset, 0f, 0f);
