@@ -23,7 +23,7 @@ public class SmashGround : Skill
             foreach (Collider hitCollider in hitColliders)
             {
                 EnemyStats enemyStats = hitCollider.GetComponent<EnemyStats>();
-                enemyStats.AddDamage(dmg);
+                enemyStats.TakeDamage(dmg);
             }
             Instantiate(PlayerStats.Instance.FXPrefab, PlayerStats.Instance.transform.position, Quaternion.identity);
             canLaunch = false;

@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Interactable
   - TextDialog
+  - MeleeWeapon
   - HUD
   - PlayerAnim
   - Crosshair

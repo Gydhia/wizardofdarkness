@@ -28,28 +28,16 @@ public class BasicEnemy : EnemyStats
 
     private void Update()
     {
-        EnemyAnimator.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
-        EnemyAnimator.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
-    }
-
-    public override IEnumerator Flashing()
-    {
-        EnemyAnimator.SetTrigger("Hitted");
-        base.Flashing();
-        yield return null;
+        EnemyAnimator.SetFloat("VerticalSpeed", Agent.velocity.z);
+        EnemyAnimator.SetFloat("HorizontalSpeed", Agent.velocity.x);
+        EnemyAnimator.SetBool("IsMoving", Agent.velocity.z > 0f || Agent.velocity.x > 0f);
     }
 
     public void TriggerAggro(PlayerStats target)
     {
         Target = target;
         TriggeredAggro = true;
-        BeginChase();
         StartCoroutine(StartBehaviour());
-    }
-
-    public void BeginChase()
-    {
-        Agent.SetDestination(Target.transform.position);
     }
 
     public virtual IEnumerator StartBehaviour()
@@ -57,5 +45,11 @@ public class BasicEnemy : EnemyStats
         yield return null;
     }
 
-    
+    public override void TakeDamage(int value)
+    {
+        base.TakeDamage(value);
+        EnemyAnimator.SetTrigger("Hitted");
+    }
+
+
 }

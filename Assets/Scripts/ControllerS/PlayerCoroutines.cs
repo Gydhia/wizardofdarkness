@@ -42,7 +42,7 @@ public class PlayerCoroutines : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, rayLength, enemy))
         {
-            hit.collider.gameObject.GetComponent<EnemyStats>().AddDamage(script.dmg);
+            hit.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(script.dmg);
         }
     }
 
