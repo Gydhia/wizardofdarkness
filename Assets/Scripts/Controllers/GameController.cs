@@ -29,8 +29,6 @@ public class GameController : MonoBehaviour
 
     public void FireOnGameReady()
     {
-        GameReady = true;
-
         if (this.OnGameReady != null)
             this.OnGameReady.Invoke();
     }

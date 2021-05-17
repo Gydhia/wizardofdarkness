@@ -10,6 +10,8 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
     [Header("Tutorial: (empty if scrollType = Spell)")]
     public Element elementToAdd;
 
+    public bool InteractState { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     private void OnEnable()
     {
         elementsParticles[(int)scrollElement].SetActive(true);
@@ -37,8 +39,13 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
         Debug.Log("Need to implement Hovering Scrolls -> need a crosshair");
     }
 
-    public void isCompletionCondition()
+    public void IsCompletionCondition()
     {
         completionCondition = true;
+    }
+
+    public void Unhovered()
+    {
+        throw new System.NotImplementedException();
     }
 }

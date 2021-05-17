@@ -9,6 +9,8 @@ public class HealingBeer : MonoBehaviour, IInteractable
     public event ToggleUI ToggleBeer;
     public bool completionCondition;
 
+    public bool InteractState { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     public void Hovered(bool isHovered)
     {
         PlayerUIManager.Instance.BeerUIToggle(isHovered);
@@ -23,8 +25,13 @@ public class HealingBeer : MonoBehaviour, IInteractable
         }
     }
 
-    public void isCompletionCondition()
+    public void IsCompletionCondition()
     {
         completionCondition = true;
+    }
+
+    public void Unhovered()
+    {
+        throw new System.NotImplementedException();
     }
 }
