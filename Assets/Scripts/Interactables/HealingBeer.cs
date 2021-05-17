@@ -1,3 +1,4 @@
+using ED.Interactable;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,20 @@ public class HealingBeer : MonoBehaviour, IInteractable
     public event ToggleUI ToggleBeer;
     public bool completionCondition;
 
-    public bool InteractState { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public InteractableDatas OverviewDatas => this.OverviewDatas;
+
+    public void IsCompletionCondition()
+    {
+        completionCondition = true;
+    }
 
     public void Hovered(bool isHovered)
     {
-        PlayerUIManager.Instance.BeerUIToggle(isHovered);
+        return;
+    }
+    public void Unhovered()
+    {
+        return;
     }
     public void Interact()
     {
@@ -25,12 +35,7 @@ public class HealingBeer : MonoBehaviour, IInteractable
         }
     }
 
-    public void IsCompletionCondition()
-    {
-        completionCondition = true;
-    }
-
-    public void Unhovered()
+    public void Hovered()
     {
         throw new System.NotImplementedException();
     }
