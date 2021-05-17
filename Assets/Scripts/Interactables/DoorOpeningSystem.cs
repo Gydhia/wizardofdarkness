@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorOpeningSystem : MonoBehaviour
-    {
-    public Animator doorAnim;
+{
+    public Animator DoorAnim;
 
+    private void Start()
+    {
+        DoorAnim = this.GetComponent<Animator>();
+    }
 }
 

@@ -40,6 +40,8 @@ public class PlayerRaycastingSystem : MonoBehaviour
     }
     private void Update()
     {
+        
+
         isHovering = false;
         actualColor = defaultColor;
         Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // center of the screen
@@ -73,7 +75,8 @@ public class PlayerRaycastingSystem : MonoBehaviour
             }
         }
         if (isHovering) actualColor = hoveringColors[(int)currentlyHovered];
-        cursor.color = actualColor;
+        if(cursor != null)
+            cursor.color = actualColor;
     }
 
 }

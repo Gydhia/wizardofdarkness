@@ -9,16 +9,12 @@ public class Room : MonoBehaviour
     public bool IsComplete = false;
 
     public List<BooleanDoor> RoomDoors = new List<BooleanDoor>();
+    public List<Animator> RoomDoorsAnim = new List<Animator>();
     public List<Orientation> GivenOrientations = new List<Orientation>();
 
     public Bounds RoomBounds = new Bounds();
     public string RoomID;
     public DungeonRooms RoomType;
-
-    private void Start()
-    {
-        GameController.Instance.OnRoomComplete += RoomComplete;
-    }
 
     public void EnableDoorFromOrientation(List<Orientation> orientations)
     {
@@ -51,13 +47,15 @@ public class Room : MonoBehaviour
     }
     public void RoomComplete()
     {
+        GameController.Instance.OnRoomComplete -= RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {
-            bd.DoorComponent.doorAnim.SetBool("OpenDoor", true);
+            bd.DoorComponent.DoorAnim.SetBool("OpenDoor", true);
         }
     }
     public void RoomStart()
     {
+        GameController.Instance.OnRoomComplete += RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {
             bd.DoorComponent.doorAnim.SetBool("OpenDoor", false);

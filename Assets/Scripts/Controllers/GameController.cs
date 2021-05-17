@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void RoomComplete();
+public delegate void GameReady();
 
 public class GameController : MonoBehaviour
 {
     public event RoomComplete OnRoomComplete;
+    public event GameReady OnGameReady;
+
+    public bool GameReady = false;
+
     public static GameController Instance;
     private void Awake()
     {
@@ -18,7 +23,15 @@ public class GameController : MonoBehaviour
     }
     public void FireOnRoomComplete()
     {
-        if (OnRoomComplete != null)
-            OnRoomComplete.Invoke();
+        if (this.OnRoomComplete != null)
+            this.OnRoomComplete.Invoke();
+    }
+
+    public void FireOnGameReady()
+    {
+        GameReady = true;
+
+        if (this.OnGameReady != null)
+            this.OnGameReady.Invoke();
     }
 }

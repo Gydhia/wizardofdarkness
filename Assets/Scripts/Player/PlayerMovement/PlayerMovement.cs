@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
             #region Animation
-            if (PlayerAnimationState.Instance.playerAnimator != null)
+            if (PlayerAnimationState.Instance != null && PlayerAnimationState.Instance.playerAnimator != null)
             {
                 PlayerAnimationState.Instance.playerAnimator.SetFloat("DirX", x);
                 PlayerAnimationState.Instance.playerAnimator.SetFloat("DirZ", z);
