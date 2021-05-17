@@ -20,7 +20,7 @@ public class PlayerCoroutines : MonoBehaviour
     {
         //Passage en mode gigatrigger: plus rien ne nous arrête à part les murs (on ignore les collision de quasiment tout)
         gameObject.layer = 9;
-        script.canLaunch = false;
+        script.CanLaunch = false;
         //Giga movespeed
         StartCoroutine(PlayerStats.Instance.StatBuff(warpTime, EStatsDebuffs.MoveSpeed,300));
         //Invisible?
@@ -32,7 +32,7 @@ public class PlayerCoroutines : MonoBehaviour
 
     public IEnumerator SwordSwing(float timeToHit, SwordSwing script)
     {
-        script.canLaunch = false;
+        script.CanLaunch = false;
         PlayerStats.Instance.hammer.SetTrigger("Hit");
         yield return new WaitForSeconds(timeToHit);
         Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // center of the screen

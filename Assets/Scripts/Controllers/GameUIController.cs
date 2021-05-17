@@ -10,9 +10,15 @@ public class GameUIController : MonoBehaviour
     public delegate void InteractOverviewChange(InteractableDatas Overview);
     public delegate void InteractOverviewCancel();
 
+    public delegate void ElementChange();
+    public delegate void DamageTaken(int value);
+
     // EVENTS
     public event InteractOverviewChange OnInteractOverviewChange;
     public event InteractOverviewCancel OnInteractOverviewCancel;
+
+    public event ElementChange OnElementChange;
+    public event DamageTaken OnDamageTaken;
 
     public Image Cursor;
     public TextMeshProUGUI InteractText;
@@ -36,5 +42,15 @@ public class GameUIController : MonoBehaviour
     {
         if (OnInteractOverviewCancel != null)
             OnInteractOverviewCancel.Invoke();
+    }
+    public void FireOnElementChange()
+    {
+        if (OnElementChange != null)
+            OnElementChange.Invoke();
+    }
+    public void FireOnDamageTaken(int value)
+    {
+        if (OnDamageTaken != null)
+            OnDamageTaken.Invoke(value);
     }
 }

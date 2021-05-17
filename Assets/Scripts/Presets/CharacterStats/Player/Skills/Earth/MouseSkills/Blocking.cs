@@ -19,5 +19,6 @@ public class Blocking : Skill
         /*if(PlayerStats.Instance.actualElement == 2)       (si la classe actuelle est la classe de terre)
               blocking = Input.GetKey("RightClickSpell"); (Assez explicite?)
          */
+        base.ActivatedSkill();
     }
 }

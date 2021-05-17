@@ -16,5 +16,6 @@ public class SwordSwing : Skill
          Bref, go sur Blocking.cs mtn!
          */
         PlayerCoroutines.Instance.LaunchRoutine(PlayerCoroutines.Instance.SwordSwing(timing, this));
+        base.ActivatedSkill();
     }
 }

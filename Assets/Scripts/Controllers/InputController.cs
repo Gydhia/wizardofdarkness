@@ -21,6 +21,17 @@ namespace ED.Controllers
         public Color ActualColor;
 
         List<LayerMask> masks = new List<LayerMask>();
+
+        public static InputController Instance;
+        private void Awake()
+        {
+            // Singleton pattern
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(this.gameObject);
+        }
+
         private void Start()
         {
             foreach (int i in Enum.GetValues(typeof(ETypeOfHoveredObject)))
@@ -47,7 +58,7 @@ namespace ED.Controllers
                 if (HoveredItem != null) 
                 {
                     GameUIController.Instance.FireOnInteractOverviewCancel();
-                    HoveredItem.Hovered();
+                    HoveredItem.Unhovered();
                     HoveredItem = null;
                     //interactText.color = new Vector4(1, 1, 1, 0);
                 }
@@ -106,11 +117,13 @@ namespace ED.Controllers
         }
         public void OnLeftClick(InputAction.CallbackContext ctx)
         {
-
+            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[0].CanLaunch)
+                PlayerController.Instance.PlayerStats.ActualElement.Skills[0].ActivatedSkill();
         }
         public void OnRightClick(InputAction.CallbackContext ctx)
         {
-
+            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[1].CanLaunch)
+                PlayerController.Instance.PlayerStats.ActualElement.Skills[1].ActivatedSkill();
         }
         public void OnMove(InputAction.CallbackContext ctx)
         {
@@ -123,27 +136,30 @@ namespace ED.Controllers
         }
         public void OnCastFirstSpell(InputAction.CallbackContext ctx)
         {
-
+            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[2].CanLaunch)
+                PlayerController.Instance.PlayerStats.ActualElement.Skills[2].ActivatedSkill();
         }
         public void OnCastSecondSpell(InputAction.CallbackContext ctx)
         {
-
+            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[3].CanLaunch)
+                PlayerController.Instance.PlayerStats.ActualElement.Skills[3].ActivatedSkill();
         }
         public void OnCastThirdSpell(InputAction.CallbackContext ctx)
         {
-
+            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[4].CanLaunch)
+                PlayerController.Instance.PlayerStats.ActualElement.Skills[4].ActivatedSkill();
         }
         public void OnChangeToFirstClass(InputAction.CallbackContext ctx)
         {
-
+            PlayerController.Instance.PlayerStats.ChangeElement(EElements.Void);
         }
         public void OnChangeToSecondClass(InputAction.CallbackContext ctx)
         {
-
+            PlayerController.Instance.PlayerStats.ChangeElement(EElements.Wind);
         }
         public void OnChangeToThirdClass(InputAction.CallbackContext ctx)
         {
-
+            PlayerController.Instance.PlayerStats.ChangeElement(EElements.Earth);
         }
         public void OnJump(InputAction.CallbackContext ctx)
         {

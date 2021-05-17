@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public CharacterController controller;
+    public CharacterController CharController;
 
     public static PlayerMovement Instance;
     public event SetSlider UpdateStamina;
@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     public float airControl;
     float control;
-    CharacterController charController;
     public float sprintingStaminaConsumption = 15f;
     private float staminaCooldownRate = 9f;
     private float depletedStaminaCooldownRate = 6f;
@@ -35,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        charController = GetComponent<CharacterController>();
+        CharController = GetComponent<CharacterController>();
     }
     // Update is called once per frame
     public void Update()
@@ -59,21 +58,21 @@ public class PlayerMovement : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
             #region Animation
-            if (PlayerAnimationState.Instance != null && PlayerAnimationState.Instance.playerAnimator != null)
-            {
-                PlayerAnimationState.Instance.playerAnimator.SetFloat("DirX", x);
-                PlayerAnimationState.Instance.playerAnimator.SetFloat("DirZ", z);
-                PlayerAnimationState.Instance.playerAnimator.SetBool("isMoving", (move == Vector3.zero));
-                if (!PlayerAnimationState.Instance.playerAnimator.GetBool("isJumping"))
-                    PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", !isGrounded);
-                else
-                    PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", false);
-            }
+            //if (PlayerAnimationState.Instance != null && PlayerAnimationState.Instance.playerAnimator != null)
+            //{
+            //    PlayerAnimationState.Instance.playerAnimator.SetFloat("DirX", x);
+            //    PlayerAnimationState.Instance.playerAnimator.SetFloat("DirZ", z);
+            //    PlayerAnimationState.Instance.playerAnimator.SetBool("isMoving", (move == Vector3.zero));
+            //    if (!PlayerAnimationState.Instance.playerAnimator.GetBool("isJumping"))
+            //        PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", !isGrounded);
+            //    else
+            //        PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", false);
+            //}
             #endregion
             move = transform.right * x  + transform.forward * z ;
-            controller.Move(move * actualSpeed * Time.deltaTime);
+            CharController.Move(move * actualSpeed * Time.deltaTime);
             velocity.y += gravity * Time.deltaTime;
-            controller.Move(velocity * Time.deltaTime);
+            CharController.Move(velocity * Time.deltaTime);
             #endregion
 
         }
@@ -111,8 +110,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Teleport(Vector3 pos)
     {
-        charController.enabled = false;
-        charController.transform.position = pos;
-        charController.enabled = true;
+        CharController.enabled = false;
+        CharController.transform.position = pos;
+        CharController.enabled = true;
     }
 }

@@ -21,6 +21,7 @@ public class WindArrow : Skill
         bref, maintenant brow go CallingBackArrows.cs! Oeoe
 
          */
+        base.ActivatedSkill();
     }
 
 }

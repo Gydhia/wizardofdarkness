@@ -20,7 +20,7 @@ public class TPPointScript : MonoBehaviour
     {
         PlayerMovement.Instance.Teleport(transform.position);   //problématique: ne se téléporte pas des fois à cause de déplacement.
        // StopCoroutine(cor);
-        skillAccessor.canLaunch = false;
+        skillAccessor.CanLaunch = false;
         Destroy(gameObject);
     }
 }

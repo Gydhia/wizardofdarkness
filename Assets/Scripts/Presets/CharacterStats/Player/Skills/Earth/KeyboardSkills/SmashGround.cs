@@ -26,8 +26,9 @@ public class SmashGround : Skill
                 enemyStats.TakeDamage(dmg);
             }
             Instantiate(PlayerStats.Instance.FXPrefab, PlayerStats.Instance.transform.position, Quaternion.identity);
-            canLaunch = false;
         }
+
+        base.ActivatedSkill();
     }
 
 }

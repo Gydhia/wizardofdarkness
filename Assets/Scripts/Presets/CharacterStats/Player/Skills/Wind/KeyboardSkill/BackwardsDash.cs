@@ -13,7 +13,7 @@ public class BackwardsDash : Skill
              aaaah, les dashs... Mon né-mé-sis. Je veux faire ça bien, mais comment faire ça bien? hmmmm...$
              Go AttackSpeedBoost, maintenant!
          */
-        canLaunch = false;
+        base.ActivatedSkill();
         LayerMask mask = LayerMask.GetMask("Wall");
         RaycastHit hit;
         if (Physics.Raycast(PlayerMovement.Instance.transform.position, Vector3.back, out hit, dashRange, mask))

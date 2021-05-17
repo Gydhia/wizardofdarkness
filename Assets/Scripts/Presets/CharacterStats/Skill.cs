@@ -33,10 +33,11 @@ public class Skill : MonoBehaviour
         Ranged = 1,
     }*/
 
-    public bool canLaunch = true;
+    public bool CanLaunch = true;
+    public float CooldownTimer;
 
     [UnityEngine.Header("Common:")]
-    [UnityEngine.Tooltip("Skill cooldown.")] public float coolDown;
+    [UnityEngine.Tooltip("Skill cooldown.")] public float Cooldown;
     [UnityEngine.Header("To Implement:")]
     [UnityEngine.Tooltip("Skill damage based on THIS % of base strength.(not implemented)")]public int dmg = 5;
     [UnityEngine.Tooltip("The skill's areaOfEffect radius.")] public float AOERadius;
@@ -44,11 +45,28 @@ public class Skill : MonoBehaviour
 
     private void Awake()
     {
-        canLaunch = true;
+        CooldownTimer = Cooldown;
+        CanLaunch = true;
     }
     public virtual void ActivatedSkill()
     {
+        if(Cooldown != 0f)
+            StartCoroutine(OnCooldown());
+    }
+
+    public IEnumerator OnCooldown()
+    {
+        CanLaunch = false;
+        CooldownTimer = Cooldown;
+        while(CooldownTimer >= 0f)
+        {
+            CooldownTimer -= Time.deltaTime;
+            yield return null;
+        }
+        CanLaunch = true;
         
+
+        yield return null;
     }
     
 }

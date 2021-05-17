@@ -1,33 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
-public enum EElements { Void = 0, Wind = 1, Earth = 2, None = -1 }
 public class PlayerStats : MonoBehaviour
 {
     /*
      Bienvenue! ce truc est assez insane. Mais ce qui va nous interesser, c'est avant le 2ème header. Descendons...
          */
     [Header("Variables For All Elements")]
-    public static PlayerStats Instance;
     public CharacterStatus statsEmpty;
-    public EElements actualEElement;
-    [Min(0)] public int HP;
-    public int def;
-    public int str;
-    public float atqSpeed;
-    public float moveSpeed;
-    public int actualElement;
-    public List<Element> elements = new List<Element>(3);
-    public List<Skill> actualSkills = new List<Skill>();
-    public bool canOpenDoors;
-    public GameObject[] elementsWeapons;
-    public float[] CDs;
-    [SerializeField] float[] timers = new float[5];
-    public CoolDown[] cooldownBars = new CoolDown[5];
-    public Material HPBar;
-    float HPPercentage;
-    public Animator EnemyAnimator;
+
+
+    public int HP { get; protected set; }
+    public int Def { get; protected set; }
+    public int Str { get; protected set; }
+    public float AtkSpeed { get; protected set; }
+    public float MoveSpeed { get; protected set; }
+
+    public Element ActualElement;
+    public List<Element> Elements = new List<Element>(3);
+
     public bool IsDead = false;
 
     /*
@@ -39,136 +32,71 @@ public class PlayerStats : MonoBehaviour
     public ParticleSystem[] particles;
     public ParticleSystem buffArrow;
     public ParticleSystem debuffArrow;
-    [Header("Wind Variables")]
-    public List<ArrowScript> activeArrows = new List<ArrowScript>();
-    public Transform arrowSpawn;
-    public float windArrowStaminaConsumption;
-    public bool nextArrowWeakens;
-    public float bendingSpeed;
-    public float weakenDuration;
-    public int weakenPercent;
-
-    [Header("Void Variables")]
-    public float magicBallStaminaConsumption;
-    public Transform ballSpawnSpot;
-    public GameObject ballPrefab;
-    public GameObject blackHolePrefab;
-    public GameObject teleportPointPrefab;
-    [HideInInspector]public TPPointScript actualTPPoint;
-    public GameObject projBarrier;
-    public GameObject AimPoint;
-    public float projBarrierStaminaConsumption;
-
-    [Header("Earth Variables")]
-    public GameObject FXPrefab;
-    public bool blocking;
-    public Animator hammer;
-    private void Awake()
-    {
-        Instance = this;
-        if (elements.Count == 0)
-        {
-            actualEElement = EElements.None;
-            PlayerUIManager.Instance.ToggleHud(false);
-        }
-    }
+    
     private void Start()
     {
-        if (actualEElement != EElements.None)
-        {
-            //Debug.Log("wsh?");
-            foreach (Element e in elements)
-            {
-                e.Init();
-            }
-            elements[actualElement].UpdateStats(this);
-            for (int i = 0; i < timers.Length; i++)
-            {
-                timers[i] = 0;
-            }
-        }
-        else{
-            moveSpeed = statsEmpty.moveSpeed;
-        }
+        foreach (Element element in Elements)
+            element.Init();
+
+        ActualElement = Elements.Single(element => element.Type == EElements.Void);
+        UpdateStats();
     }
     private void Update()
     {
-        if(transform.position.y <= -20)
-        {
-            Die();
-        }
-        blocking = false;
-        HPPercentage = (float)HP / 100;
-        HPBar.SetFloat("_Fillpercentage", HPPercentage);
-        if (actualEElement != EElements.None)
-        {
-            for (int i = 0; i < actualSkills.Count; i++)
-            {
-                if (!actualSkills[i].canLaunch)
-                {
-                    if (timers[i] >= CDs[i])
-                    {
-                        timers[i] = 0;
-                        actualSkills[i].canLaunch = true;
-                    }
-                    else
-                    {
-                        timers[i] += Time.deltaTime;
-                    }
-                }
-                cooldownBars[i].fillValue = timers[i];
-            }
-        }
-        else if (actualEElement == EElements.Void)
-        {
-            if (projBarrier.activeSelf) PlayerMovement.Instance.stamina -= Time.deltaTime * projBarrierStaminaConsumption;
-            if (Input.GetButtonDown("RightClickSpell"))
-            {
-                projBarrier.SetActive(true);
-            }
-            else if (Input.GetButtonUp("RightClickSpell") || PlayerMovement.Instance.stamina <= 2)
-            {
-                projBarrier.SetActive(false);
-            }
-        }
-        else if (actualEElement == EElements.Earth)
-        {
-            blocking = Input.GetButton("RightClickSpell");
-        }
-
+        
     }
+
     public void ChangeElement(EElements newElement)
     {
-
-        if (actualEElement != newElement)
+        if (ActualElement.Type != newElement)
         {
-            elementsWeapons[actualElement].SetActive(false);
-            actualEElement = newElement;
-            actualElement = (int)actualEElement;
-            foreach (Skill s in actualSkills)
-            {
-                s.canLaunch = true;
-            }
-            elements[actualElement].UpdateStats(this);
-            for (int i = 0; i < timers.Length; i++)
-            {
-                timers[i] = 0;
-            }
-            elementsWeapons[actualElement].SetActive(true);
-            elements[actualElement].ChangementFX(particles[actualElement]);
+            ActualElement.ElementWeapon.SetActive(false);
+            ActualElement = Elements.Single(element => element.Type == newElement);
+            
+            UpdateStats();
+
+            ActualElement.ElementWeapon.SetActive(true);
+            ActualElement.ChangementFX(ActualElement.SwitchingParticle);
         }
     }
+
+    public void UpdateStats()
+    {
+        this.Def = ActualElement.Def;
+        this.Str = ActualElement.Str;
+        this.AtkSpeed = ActualElement.AtkSpeed;
+        this.MoveSpeed = ActualElement.MoveSpeed;
+
+        GameUIController.Instance.FireOnElementChange();
+        //player.actualSkills.Clear();
+        //foreach (Skill i in skills)
+        //{
+        //    player.actualSkills.Add(i);
+        //}
+        //player.CDs = CDs;
+        //for (int i = 0; i < player.cooldownBars.Length; i++)
+        //{
+        //    player.cooldownBars[i].maxValue = CDs[i];
+        //}
+
+        //foreach (CoolDown bar in player.cooldownBars)
+        //{
+        //    bar.mat.SetColor("_Backgroundfillcolor", BarFillColor);
+        //    bar.center.color = CenterColor;
+        //    bar.mat.SetColor("_Barmincolor", BarMinMaxColor);
+        //    bar.mat.SetColor("_Barmaxcolor", BarMinMaxColor);
+        //}
+    }
+
     public void TakeDamage(int damageTaken)
     {
-        if (HP - damageTaken > 0)
-        {
+        if (HP - damageTaken > 0) {
             HP -= damageTaken;
-        }
-        else
-        {
+        } else {
             HP -= HP;
             Die();
         }
+        GameUIController.Instance.FireOnDamageTaken(HP);
     }
     public void Die()
     {
@@ -177,46 +105,46 @@ public class PlayerStats : MonoBehaviour
         PlayerUIManager.Instance.gameOver.gameObject.SetActive(true);
         PlayerUIManager.Instance.gameOver.SetTrigger("GameOver");
     }
-    public IEnumerator StatBuff(float timeOfBuff, EStatsDebuffs buffID, int percentAugment)
+    public IEnumerator StatBuff(float timeOfBuff, EStatsDebuffs buffID, int percentAugment, EElements affectedElemnt = EElements.None)
         //problème, si on change de classe, les bonus ne perdurent pas. Il faudra surement coder autrement.
         //(pire que ça: comme la coroutine perdure, on fini par soustraire buff (pour annuler le buff) alors qu'on a pas eu de buff.
     {
         switch (buffID)
         {
-            case EStatsDebuffs.Defense: //def
-                float buff = percentAugment * def / 100;
-                def += (int)buff;
+            case EStatsDebuffs.Defense: 
+                float buff = percentAugment * Def / 100;
+                Def += (int)buff;
                 buffArrow.Play();
                 yield return new WaitForSeconds(timeOfBuff);
                 debuffArrow.Play();
-                def -= (int)buff;
+                Def -= (int)buff;
                 break;
-            case EStatsDebuffs.Strength: //str
-                buff = percentAugment * str / 100;
-                str += (int)buff;
+            case EStatsDebuffs.Strength: 
+                buff = percentAugment * Str / 100;
+                Str += (int)buff;
                 buffArrow.Play();
                 yield return new WaitForSeconds(timeOfBuff);
                 debuffArrow.Play();
-                str -= (int)buff;
+                Str -= (int)buff;
                 break;
-            case EStatsDebuffs.AttackSpeed: //atqSpeed
-                buff = percentAugment * atqSpeed / 100;
+            case EStatsDebuffs.AttackSpeed: 
+                buff = percentAugment * AtkSpeed / 100;
                 float buff2 = percentAugment * bendingSpeed / 100;
-                atqSpeed += buff;
+                AtkSpeed += buff;
                 buffArrow.Play();
                 bendingSpeed += buff2;
                 yield return new WaitForSeconds(timeOfBuff);
-                atqSpeed -= buff;
+                AtkSpeed -= buff;
                 debuffArrow.Play();
                 bendingSpeed -= buff2;
                 break;
             case EStatsDebuffs.MoveSpeed: //Movespeed
-                buff = percentAugment * (int)moveSpeed / 100;
-                moveSpeed += buff;
+                buff = percentAugment * (int)MoveSpeed / 100;
+                MoveSpeed += buff;
                 buffArrow.Play();
                 yield return new WaitForSeconds(timeOfBuff);
                 debuffArrow.Play();
-                moveSpeed -= buff;
+                MoveSpeed -= buff;
                 break;
         }
     }

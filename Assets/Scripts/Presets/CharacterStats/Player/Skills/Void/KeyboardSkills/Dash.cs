@@ -9,6 +9,7 @@ public class Dash : Skill
     {
         PlayerCoroutines.Instance.LaunchRoutine(PlayerCoroutines.Instance.VoidDash(warpTime,this));
         Debug.Log("dash!");
+        base.ActivatedSkill();
     }
 
 }

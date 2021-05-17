@@ -22,6 +22,7 @@ public class SummonTeleportPoint : Skill
         {
             PlayerStats.Instance.actualTPPoint.Teleport();
         }
+        base.ActivatedSkill();
     }
 
 }

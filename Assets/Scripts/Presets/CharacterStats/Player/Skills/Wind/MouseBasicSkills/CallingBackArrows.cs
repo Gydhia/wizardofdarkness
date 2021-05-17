@@ -13,5 +13,6 @@ public class CallingBackArrows : Skill
         {
             a.isBeingCalledBack = true;
         }
+        base.ActivatedSkill();
     }
 }

@@ -13,8 +13,8 @@ public class BlackHole : Skill
         {
             GameObject BH = Instantiate(PlayerStats.Instance.blackHolePrefab, hit.point, Quaternion.identity);
             BH.GetComponent<BlackHoleScript>().AOERadius = AOERadius;
-            this.canLaunch = false;
+            base.ActivatedSkill();
             Destroy(BH, 7f);
-        }
+        }   
     }
 }
