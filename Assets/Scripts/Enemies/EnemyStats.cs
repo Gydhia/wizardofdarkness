@@ -31,30 +31,17 @@ public abstract class EnemyStats : MonoBehaviour
     {
         Skills[index].ActivatedSkill();
     }
-    public void AddDamage(int damageTaken)
+    public virtual void TakeDamage(int value)
     {
-        StartCoroutine(Flashing());
-        if(HP-damageTaken > 0) {
-            HP -= (damageTaken-(damageTaken/Def));
+        if(HP-value > 0) {
+            HP -= (value-(value/Def));
         }
         else {
             HP -= HP;
             Die();
         }
     }
-    public virtual IEnumerator Flashing()
-    {
-        //Red
-        if (IsFlashing == false)
-        {
-            IsFlashing = true;
-            Color defaultCol = MatRenderer.material.color;
-            MatRenderer.material.color = Color.red;
-            yield return new WaitForSeconds(.5f);
-            IsFlashing = false;
-            MatRenderer.material.color = defaultCol;
-        }
-    }
+
     public void Die()
     {
         //Animation de mort,

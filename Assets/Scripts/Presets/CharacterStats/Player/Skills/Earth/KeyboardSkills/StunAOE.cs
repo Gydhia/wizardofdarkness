@@ -33,7 +33,7 @@ public class StunAOE : Skill
             //-10% de def
             enemyStats.StartCor(enemyStats.StatDebuff(breakDefTime, EStatsDebuffs.Defense, breakDefPercent));
             //dmg? quand même? un poquito
-            enemyStats.AddDamage(dmg);
+            enemyStats.TakeDamage(dmg);
         }
         canLaunch = false;
 

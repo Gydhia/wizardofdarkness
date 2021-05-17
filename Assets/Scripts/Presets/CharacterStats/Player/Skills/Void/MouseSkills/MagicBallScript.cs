@@ -48,7 +48,7 @@ public class MagicBallScript : MonoBehaviour
         LayerMask enemy = LayerMask.GetMask("Enemy");
         if ((other.CompareTag("Enemy") && launched))
         {
-            other.GetComponent<EnemyStats>().AddDamage(dmg);
+            other.GetComponent<EnemyStats>().TakeDamage(dmg);
             Debug.Log(dmg);
         }
     }

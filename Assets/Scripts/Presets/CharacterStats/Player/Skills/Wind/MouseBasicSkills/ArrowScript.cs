@@ -78,7 +78,7 @@ public class ArrowScript : MonoBehaviour
         if ((other.CompareTag("Enemy") && launched))
         {
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
-            enemyStats.AddDamage(dmg);
+            enemyStats.TakeDamage(dmg);
             Debug.Log(dmg);
             if (weakeningArrow)
             {
