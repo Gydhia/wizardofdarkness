@@ -31,6 +31,8 @@ public class MagicBallScript : MonoBehaviour
             //On lache la bouboule
             if (!launched)
             {
+            PlayerAnimationState.Instance.playerAnimator.SetBool("LongCast", false);
+
                 launched = true;
                 transform.parent.gameObject.transform.DetachChildren();
                 Destroy(gameObject, 10f);

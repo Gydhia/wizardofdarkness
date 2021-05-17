@@ -13,7 +13,7 @@ public class PlayerUIManager : MonoBehaviour
     public static PlayerUIManager Instance;
 
     [Header("General")]
-    public GameObject[] HUD;
+    public List<GameObject> HUD = new List<GameObject>();
     public bool hudActive = true;
 
     [Header("Beer")]
@@ -38,6 +38,10 @@ public class PlayerUIManager : MonoBehaviour
     {
         if(PlayerMovement.Instance != null)
         PlayerMovement.Instance.UpdateStamina += movement_UpdateStamina;
+        foreach(GameObject h in GameObject.FindGameObjectsWithTag("HUD"))
+        {
+            HUD.Add(h);
+        }
     }
 
     public void FadeOut()

@@ -11,6 +11,8 @@ TagManager:
   - Interactable
   - TextDialog
   - MeleeWeapon
+  - HUD
+  - PlayerAnim
   layers:
   - Default
   - TransparentFX

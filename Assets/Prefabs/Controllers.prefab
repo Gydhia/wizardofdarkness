@@ -50,6 +50,7 @@ MonoBehaviour:
   staminaBar: {fileID: 0}
   fade: {fileID: 0}
   fadedOut: 0
+  gameOver: {fileID: 0}
 --- !u!1 &1783457646
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +96,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNames: []
   actualSceneIndex: 0
+--- !u!1 &6542071024027236980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7334002871093174530}
+  - component: {fileID: 8575461730749619389}
+  m_Layer: 0
+  m_Name: AnimatorControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7334002871093174530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542071024027236980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1553726181990426622}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8575461730749619389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542071024027236980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811f48eb9efacc749b1fbf582c7afc1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
 --- !u!1 &8379200309649127687
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,12 +184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
-  textSpeed: 0.1
+  textSpeed: 0.0001
   actualText: 
   dialogLines: []
   actualLine: 0
   continueWhenOver: 0
-  waitBetweenLine: 2
+  waitBetweenLine: 1
 --- !u!1 &8971265704434783508
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,6 +221,7 @@ Transform:
   - {fileID: 1783457647}
   - {fileID: 65182816}
   - {fileID: 3280921902039560867}
+  - {fileID: 7334002871093174530}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

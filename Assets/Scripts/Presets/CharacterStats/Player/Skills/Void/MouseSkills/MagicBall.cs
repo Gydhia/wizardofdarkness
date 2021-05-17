@@ -18,6 +18,7 @@ public class MagicBall : Skill
             ball.ballMoveSpeed = ballMoveSpeed;
             ball.ballGrowSpeed = ballGrowSpeed;
             ball.maxScale = maxScale;
+            PlayerAnimationState.Instance.playerAnimator.SetBool("LongCast", true);
         }
         else
         {
