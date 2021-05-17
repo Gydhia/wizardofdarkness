@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IInteractable
 {
+    void isCompletionCondition();
     void Interact();
     void Hovered(bool isHovered);
 }

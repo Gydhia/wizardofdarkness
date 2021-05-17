@@ -7,6 +7,7 @@ public class HealingBeer : MonoBehaviour, IInteractable
     public GameObject fullMug;
     public GameObject emptyMug;
     public event ToggleUI ToggleBeer;
+    public bool completionCondition;
 
     public void Hovered(bool isHovered)
     {
@@ -20,5 +21,10 @@ public class HealingBeer : MonoBehaviour, IInteractable
             emptyMug.SetActive(true);
             PlayerStats.Instance.HP = 100;
         }
+    }
+
+    public void isCompletionCondition()
+    {
+        completionCondition = true;
     }
 }

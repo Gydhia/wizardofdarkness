@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class BooleanDoor : MonoBehaviour
 {
+    public Room LinkedRoom;
+
     public Orientation Orientation;
     public Vector2 Position = new Vector2();
     public Vector2 WorldPosition { get => new Vector2(transform.position.x, transform.position.z); }
@@ -15,13 +17,22 @@ public class BooleanDoor : MonoBehaviour
     public GameObject Door;
     public GameObject Wall;
 
+    public DoorOpeningSystem DoorComponent;
+
     MeshRenderer[] Renderers;
 
     public void SetupPosition()
     {
         try
         {
-            Renderers = this.GetComponentsInChildren<MeshRenderer>();
+            Renderers = new MeshRenderer[this.transform.childCount];
+            for (int i = 0; i < Renderers.Length; i++)
+            {
+                if (i > 1) break;
+                Renderers[i] = transform.GetChild(i).GetComponent<MeshRenderer>();
+
+            }
+            Renderers = this.GetComponentsInChildren<MeshRenderer>(true);
             bool foundFirst = false;
 
             if (Renderers.Length < 2) 
@@ -33,6 +44,8 @@ public class BooleanDoor : MonoBehaviour
             Vector3 pos = Renderers[0].bounds.center;
             
             Undo.RecordObject(this, "Refreshed positions");
+            LinkedRoom = transform.parent.transform.parent.GetComponent<Room>();
+            DoorComponent = Door.GetComponentInChildren<DoorOpeningSystem>();
             foreach (MeshRenderer rend in Renderers) {
                 if (!foundFirst) {
                     DoorBounds = rend.bounds;
@@ -46,6 +59,13 @@ public class BooleanDoor : MonoBehaviour
         catch(Exception e)
         {
             Debug.LogError("Boolean Door order : [0] - Door & [1] - Wall\nYou forgot to put one of these as a child\n" + e.Message);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            LinkedRoom.RoomStart();
         }
     }
 }

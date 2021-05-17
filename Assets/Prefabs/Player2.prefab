@@ -268,10 +268,11 @@ MonoBehaviour:
   touchRange: 3
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoveringColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0.15248537, b: 1, a: 1}
-  - {r: 0.9716981, g: 0.9689887, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.9167206, a: 1}
+  - {r: 0.8413968, g: 0, b: 1, a: 1}
+  - {r: 0.972549, g: 0.1213885, b: 0, a: 1}
   actualColor: {r: 1, g: 1, b: 1, a: 1}
+  cursor: {fileID: 0}
 --- !u!1 &1770926877354960669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5682,7 +5683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4018576897928806205
 Transform:
   m_ObjectHideFlags: 0
@@ -5820,12 +5821,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4402833965041678, guid: ae20f979577bee44f995673132676687, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402833965041678, guid: ae20f979577bee44f995673132676687, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402833965041678, guid: ae20f979577bee44f995673132676687, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402833965041678, guid: ae20f979577bee44f995673132676687, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.98
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 4402833965041678, guid: ae20f979577bee44f995673132676687, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.47
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4402833965041678, guid: ae20f979577bee44f995673132676687, type: 3}
       propertyPath: m_LocalPosition.z

@@ -12,6 +12,8 @@ TagManager:
   - TextDialog
   - HUD
   - PlayerAnim
+  - Crosshair
+  - InteractText
   layers:
   - Default
   - TransparentFX

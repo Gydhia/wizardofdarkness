@@ -6,6 +6,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     public bool IsDefault = false;
+    public bool IsComplete = false;
 
     public List<BooleanDoor> RoomDoors = new List<BooleanDoor>();
     public List<Orientation> GivenOrientations = new List<Orientation>();
@@ -14,6 +15,11 @@ public class Room : MonoBehaviour
     public string RoomID;
     public DungeonRooms RoomType;
 
+    private void Start()
+    {
+        GameController.Instance.OnRoomComplete += RoomComplete;
+    }
+
     public void EnableDoorFromOrientation(List<Orientation> orientations)
     {
         foreach (BooleanDoor door in RoomDoors) {
@@ -21,7 +27,7 @@ public class Room : MonoBehaviour
             door.Door.SetActive(orientations.Contains(door.Orientation));
         }
     }
-
+    
     public void SetupDoors()
     {
         this.RoomDoors = this.GetComponentsInChildren<BooleanDoor>().ToList();
@@ -42,6 +48,20 @@ public class Room : MonoBehaviour
         }
 
         RoomBounds = bounds;
+    }
+    public void RoomComplete()
+    {
+        foreach (BooleanDoor bd in RoomDoors)
+        {
+            bd.DoorComponent.doorAnim.SetBool("OpenDoor", true);
+        }
+    }
+    public void RoomStart()
+    {
+        foreach (BooleanDoor bd in RoomDoors)
+        {
+            bd.DoorComponent.doorAnim.SetBool("OpenDoor", false);
+        }
     }
 }
 

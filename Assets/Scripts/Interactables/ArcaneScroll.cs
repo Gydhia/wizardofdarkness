@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArcaneScroll : MonoBehaviour, IInteractable
@@ -8,8 +6,10 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
     public EElements scrollElement;
     public enum EScrollTypes { Tutorial, Spell }
     public EScrollTypes scrollType;
+    public bool completionCondition;
     [Header("Tutorial: (empty if scrollType = Spell)")]
     public Element elementToAdd;
+
     private void OnEnable()
     {
         elementsParticles[(int)scrollElement].SetActive(true);
@@ -25,12 +25,20 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
             PlayerStats.Instance.elements.Add(elementToAdd);
             elementToAdd.Init();
             PlayerStats.Instance.ChangeElement(scrollElement);
-            PlayerStats.Instance.canOpenDoors = true;
+            if (completionCondition)
+            {
+                GameController.Instance.FireOnRoomComplete();
+            }
         }
     }
 
     public void Hovered(bool isHovered)
     {
         Debug.Log("Need to implement Hovering Scrolls -> need a crosshair");
+    }
+
+    public void isCompletionCondition()
+    {
+        completionCondition = true;
     }
 }

@@ -17,7 +17,6 @@ public class SceneManagementSystem : MonoBehaviour
     }
     private void Start()
     {
-        
         sceneNames.Add("Tutorial");
         sceneNames.Add("Dungeon");
         sceneNames.Add("MainMenu");
