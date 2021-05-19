@@ -31,7 +31,7 @@ public class HealingBeer : MonoBehaviour, IInteractable
         {
             fullMug.SetActive(false);
             emptyMug.SetActive(true);
-            PlayerStats.Instance.HP = 100;
+            PlayerController.Instance.PlayerStats.AddLife(100);
         }
     }
 

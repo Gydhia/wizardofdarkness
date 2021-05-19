@@ -53,9 +53,9 @@ public class PuzzleRoomManager : MonoBehaviour
             PlayerMovement.Instance.Teleport(winRoom.position);
             PlayerMovement.Instance.transform.rotation = winRoom.rotation;
         }
-        if (PlayerStats.Instance.actualTPPoint != null)
+        if (((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).ActualTPPoint != null)
         {
-            Destroy(PlayerStats.Instance.actualTPPoint);
+            Destroy(((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).ActualTPPoint);
         }
     }
 }

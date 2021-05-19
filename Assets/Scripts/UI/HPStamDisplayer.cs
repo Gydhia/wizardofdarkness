@@ -13,8 +13,8 @@ public class HPStamDisplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HP.text = PlayerStats.Instance.HP.ToString("#") + "%";
-        HPbar.fillAmount = (float)PlayerStats.Instance.HP/100;
+        HP.text = PlayerController.Instance.PlayerStats.HP.ToString("#") + "%";
+        HPbar.fillAmount = (float)PlayerController.Instance.PlayerStats.HP/100;
         Stamina.text = ((int)PlayerMovement.Instance.stamina).ToString("#") + "%";
     }
 }

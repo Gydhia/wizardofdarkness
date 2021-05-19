@@ -37,7 +37,7 @@ public class MagicBallScript : MonoBehaviour
                 transform.parent.gameObject.transform.DetachChildren();
                 Destroy(gameObject, 10f);
                 dmg = (int)(scale.x * 20);
-                PlayerMovement.Instance.stamina -= scale.x * PlayerStats.Instance.magicBallStaminaConsumption;
+                PlayerMovement.Instance.stamina -= scale.x * ((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).MagicBallStaminaConsumption;
             }
             else
             {

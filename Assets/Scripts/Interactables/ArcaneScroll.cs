@@ -40,9 +40,9 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
             Destroy(gameObject);
             if (!PlayerUIManager.Instance.hudActive) PlayerUIManager.Instance.ToggleHud(true);
 
-            PlayerStats.Instance.elements.Add(elementToAdd);
+            PlayerController.Instance.PlayerStats.Elements.Add(elementToAdd);
             elementToAdd.Init();
-            PlayerStats.Instance.ChangeElement(scrollElement);
+            PlayerController.Instance.PlayerStats.ChangeElement(scrollElement);
             if (completionCondition)
             {
                 GameController.Instance.FireOnRoomComplete();

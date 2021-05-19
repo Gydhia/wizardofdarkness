@@ -11,8 +11,8 @@ public class BlackHole : Skill
         LayerMask mask = LayerMask.GetMask("Ground");
         if (Physics.Raycast(ray, out hit, mask))
         {
-            GameObject BH = Instantiate(PlayerStats.Instance.blackHolePrefab, hit.point, Quaternion.identity);
-            BH.GetComponent<BlackHoleScript>().AOERadius = AOERadius;
+            GameObject BH = Instantiate(((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).BlackHolePrefab, hit.point, Quaternion.identity);
+            BH.GetComponent<BlackHoleScript>().AOERadius = AoeRadius;
             base.ActivatedSkill();
             Destroy(BH, 7f);
         }   

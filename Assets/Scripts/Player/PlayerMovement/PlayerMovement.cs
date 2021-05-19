@@ -11,11 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance;
     public event SetSlider UpdateStamina;
     public float sprintFactor;
-    private float walkSpeed;
-    private float actualSpeed;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3f;
-    public float maxStamina = 100f;
+    private float _walkSpeed;
+    private float _actualSpeed;
+    public float Gravity = -9.81f;
+    public float JumpHeight = 3f;
+    public float MaxStamina = 100f;
     [Range(0, 100)] public float stamina = 100f;
     public Vector3 move;
     public Transform groundCheck;
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
                 velocity.y = -2f;
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
             }
             #endregion
             #region move
@@ -70,8 +70,8 @@ public class PlayerMovement : MonoBehaviour
             //}
             #endregion
             move = transform.right * x  + transform.forward * z ;
-            CharController.Move(move * actualSpeed * Time.deltaTime);
-            velocity.y += gravity * Time.deltaTime;
+            CharController.Move(move * _actualSpeed * Time.deltaTime);
+            velocity.y += Gravity * Time.deltaTime;
             CharController.Move(velocity * Time.deltaTime);
             #endregion
 
@@ -80,17 +80,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void UseStamina(bool isRunning)
     {
-        walkSpeed = PlayerStats.Instance.moveSpeed;
+        _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
         if (isRunning)
         {
             if (stamina > 0f)
             {
                 stamina -= sprintingStaminaConsumption * Time.deltaTime;
-                actualSpeed = walkSpeed*sprintFactor;
+                _actualSpeed = _walkSpeed*sprintFactor;
             }
             else
             {
-                actualSpeed = walkSpeed;
+                _actualSpeed = _walkSpeed;
             }
         }
         else
@@ -100,11 +100,11 @@ public class PlayerMovement : MonoBehaviour
                 stamina += staminaCooldownRate * Time.deltaTime;
             }
 
-            else if (stamina < maxStamina)
+            else if (stamina < MaxStamina)
             {
                 stamina += depletedStaminaCooldownRate * Time.deltaTime;
             }
-            actualSpeed = walkSpeed;
+            _actualSpeed = _walkSpeed;
         }
     }
 

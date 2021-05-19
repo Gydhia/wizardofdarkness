@@ -9,7 +9,7 @@ public class ArrowScript : MonoBehaviour
     [SerializeField]
     private float arrowSpeed;
     [SerializeField]
-    private GameObject player;
+    private GameObject Player;
     private Vector3 dir;    //direction
     private CapsuleCollider arrowCollider;
 
@@ -18,14 +18,14 @@ public class ArrowScript : MonoBehaviour
     private bool hitSthg;//hit Something: a touché qlqchose
 
     bool launched;
-    bool weakeningArrow;
+    bool WeakeningArrow;
     public float bending;
     public float maxBending;
     public int dmg;
     // Update is called once per frame
     private void OnEnable()
     {
-        player = PlayerStats.Instance.gameObject;
+        Player = PlayerController.Instance.gameObject;
         arrowCollider = GetComponent<CapsuleCollider>();
     }
     void Update()
@@ -36,11 +36,11 @@ public class ArrowScript : MonoBehaviour
             //On bande
             if (bending <= maxBending)
             {
-                bending += Time.deltaTime * PlayerStats.Instance.bendingSpeed;
+                bending += Time.deltaTime * ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).BendingSpeed;
             }
-            if (PlayerStats.Instance.nextArrowWeakens)
+            if (((WindElement)PlayerController.Instance.PlayerStats.ActualElement).NextArrowWeakens)
             {
-                weakeningArrow = true;
+                WeakeningArrow = true;
             }
         }
         else
@@ -52,7 +52,7 @@ public class ArrowScript : MonoBehaviour
                 transform.parent.gameObject.transform.DetachChildren();
                 Destroy(gameObject, lifeTimer);
                 dmg = (int)(bending * 20);
-                PlayerMovement.Instance.stamina -= bending * PlayerStats.Instance.windArrowStaminaConsumption;
+                PlayerMovement.Instance.stamina -= bending * ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).WindArrowStaminaConsumption;
                 arrowSpeed += bending;
             }
             else
@@ -64,7 +64,7 @@ public class ArrowScript : MonoBehaviour
                 else
                 {
                     
-                    dir = (player.transform.position - transform.position).normalized;
+                    dir = (Player.transform.position - transform.position).normalized;
                     transform.Translate(dir * arrowSpeed * Time.deltaTime);
                     //fait revenir la flèche
                     transform.rotation = Quaternion.LookRotation(dir); //Fais venir les flèche vers moi VITE
@@ -77,13 +77,18 @@ public class ArrowScript : MonoBehaviour
         LayerMask enemy = LayerMask.GetMask("Enemy");
         if ((other.CompareTag("Enemy") && launched))
         {
-            EnemyStats enemyStats = other.GetComponent<EnemyStats>();
-            enemyStats.TakeDamage(dmg);
-            Debug.Log(dmg);
-            if (weakeningArrow)
+            if (other.TryGetComponent(out EntityStat entityStat))
             {
-                enemyStats.StatDebuff(PlayerStats.Instance.weakenDuration,EStatsDebuffs.Defense,PlayerStats.Instance.weakenPercent);
-            }
+                entityStat.TakeDamage(dmg);
+                if (WeakeningArrow)
+                {
+                    entityStat.LaunchStatModifier(
+                        ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).weakenDuration, 
+                        EStatsDebuffs.Defense,
+                        ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).weakenPercent
+                    );
+                }
+            }            
         }
         else if (other.CompareTag("Player") && isBeingCalledBack)
         {
@@ -92,7 +97,7 @@ public class ArrowScript : MonoBehaviour
     }
     private void OnDestroy()
     {
-        PlayerStats.Instance.activeArrows.Remove(this);//On pense a retirer la flèche de l'array des flèches actives
+        ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).ActiveArrows.Remove(this);
     }
 }
 /*

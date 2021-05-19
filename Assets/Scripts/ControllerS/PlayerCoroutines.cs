@@ -22,7 +22,7 @@ public class PlayerCoroutines : MonoBehaviour
         gameObject.layer = 9;
         script.CanLaunch = false;
         //Giga movespeed
-        StartCoroutine(PlayerStats.Instance.StatBuff(warpTime, EStatsDebuffs.MoveSpeed,300));
+        //StartCoroutine(PlayerController.Instance.StatBuff(warpTime, EStatsDebuffs.MoveSpeed,300));
         //Invisible?
         yield return new WaitForSeconds(warpTime);
         //Annuler tout ça
@@ -33,7 +33,7 @@ public class PlayerCoroutines : MonoBehaviour
     public IEnumerator SwordSwing(float timeToHit, SwordSwing script)
     {
         script.CanLaunch = false;
-        PlayerStats.Instance.hammer.SetTrigger("Hit");
+        //PlayerStats.Instance.hammer.SetTrigger("Hit");
         yield return new WaitForSeconds(timeToHit);
         Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // center of the screen
         float rayLength = script.range;
@@ -42,7 +42,7 @@ public class PlayerCoroutines : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, rayLength, enemy))
         {
-            hit.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(script.dmg);
+            //hit.collider.gameObject.GetComponent<EnemyStats>().TakeDamage(script.dmg);
         }
     }
 

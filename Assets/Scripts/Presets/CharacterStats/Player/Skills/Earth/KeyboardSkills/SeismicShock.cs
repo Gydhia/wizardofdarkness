@@ -13,6 +13,6 @@ public class SeismicShock : Skill
         Genre de l'armure de fou en gros quoi
         bref, maintenant brow go playerstats.cs! Oeoe
          */
-        PlayerCoroutines.Instance.LaunchRoutine(PlayerStats.Instance.StatBuff(buffTimer,EStatsDebuffs.Defense,75));
+        PlayerController.Instance.PlayerStats.LaunchStatModifier(buffTimer, EStatsDebuffs.Defense, 75);
     }
 }

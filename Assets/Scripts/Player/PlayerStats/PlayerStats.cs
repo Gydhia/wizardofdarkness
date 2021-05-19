@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : EntityStat
 {
     /*
      Bienvenue! ce truc est assez insane. Mais ce qui va nous interesser, c'est avant le 2ème header. Descendons...
@@ -11,17 +11,9 @@ public class PlayerStats : MonoBehaviour
     [Header("Variables For All Elements")]
     public CharacterStatus statsEmpty;
 
-
-    public int HP { get; protected set; }
-    public int Def { get; protected set; }
-    public int Str { get; protected set; }
-    public float AtkSpeed { get; protected set; }
-    public float MoveSpeed { get; protected set; }
-
     public Element ActualElement;
     public List<Element> Elements = new List<Element>(3);
 
-    public bool IsDead = false;
 
     /*
      A partir d'ici, typiquement si vous avez des prefab à stocker, des listes, des variables utiles à garder, c'est ici que vous allez les mettre
@@ -29,9 +21,9 @@ public class PlayerStats : MonoBehaviour
          voilà, vous savez tout normalement! Allez, codez maintenant!
          (voilà, maintenant vous avez toutes les infos les brows
          */
-    public ParticleSystem[] particles;
-    public ParticleSystem buffArrow;
-    public ParticleSystem debuffArrow;
+    public ParticleSystem[] Particles;
+    public ParticleSystem BuffArrow;
+    public ParticleSystem DebuffArrow;
     
     private void Start()
     {
@@ -40,10 +32,6 @@ public class PlayerStats : MonoBehaviour
 
         ActualElement = Elements.Single(element => element.Type == EElements.Void);
         UpdateStats();
-    }
-    private void Update()
-    {
-        
     }
 
     public void ChangeElement(EElements newElement)
@@ -88,64 +76,16 @@ public class PlayerStats : MonoBehaviour
         //}
     }
 
-    public void TakeDamage(int damageTaken)
+    public virtual void TakeDamage(int value)
     {
-        if (HP - damageTaken > 0) {
-            HP -= damageTaken;
-        } else {
-            HP -= HP;
-            Die();
-        }
-        GameUIController.Instance.FireOnDamageTaken(HP);
+        base.TakeDamage(value);
+        GameUIController.Instance.FireOnDamageTaken((int)HP);
     }
-    public void Die()
+
+    public override void Die()
     {
-        //GameOver Screen
-        this.IsDead = true;
+        base.Die();
         PlayerUIManager.Instance.gameOver.gameObject.SetActive(true);
         PlayerUIManager.Instance.gameOver.SetTrigger("GameOver");
-    }
-    public IEnumerator StatBuff(float timeOfBuff, EStatsDebuffs buffID, int percentAugment, EElements affectedElemnt = EElements.None)
-        //problème, si on change de classe, les bonus ne perdurent pas. Il faudra surement coder autrement.
-        //(pire que ça: comme la coroutine perdure, on fini par soustraire buff (pour annuler le buff) alors qu'on a pas eu de buff.
-    {
-        switch (buffID)
-        {
-            case EStatsDebuffs.Defense: 
-                float buff = percentAugment * Def / 100;
-                Def += (int)buff;
-                buffArrow.Play();
-                yield return new WaitForSeconds(timeOfBuff);
-                debuffArrow.Play();
-                Def -= (int)buff;
-                break;
-            case EStatsDebuffs.Strength: 
-                buff = percentAugment * Str / 100;
-                Str += (int)buff;
-                buffArrow.Play();
-                yield return new WaitForSeconds(timeOfBuff);
-                debuffArrow.Play();
-                Str -= (int)buff;
-                break;
-            case EStatsDebuffs.AttackSpeed: 
-                buff = percentAugment * AtkSpeed / 100;
-                float buff2 = percentAugment * bendingSpeed / 100;
-                AtkSpeed += buff;
-                buffArrow.Play();
-                bendingSpeed += buff2;
-                yield return new WaitForSeconds(timeOfBuff);
-                AtkSpeed -= buff;
-                debuffArrow.Play();
-                bendingSpeed -= buff2;
-                break;
-            case EStatsDebuffs.MoveSpeed: //Movespeed
-                buff = percentAugment * (int)MoveSpeed / 100;
-                MoveSpeed += buff;
-                buffArrow.Play();
-                yield return new WaitForSeconds(timeOfBuff);
-                debuffArrow.Play();
-                MoveSpeed -= buff;
-                break;
-        }
     }
 }

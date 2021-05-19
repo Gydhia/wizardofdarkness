@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StunAOE : Skill
+public class StunAOE : MeleeAttackSkill
 {
     public float stunTime;
     [Tooltip("Enter with a '0%-100%' format.")] public int breakDefPercent;
@@ -24,18 +24,20 @@ public class StunAOE : Skill
          Bref, go sur SmashGround.cs mtn!
          */
         LayerMask enemy = LayerMask.GetMask("Enemy");
-        Collider[] hitColliders = Physics.OverlapSphere(PlayerStats.Instance.transform.position, AOERadius, enemy);
-        foreach (Collider hitCollider in hitColliders)
+        Collider[] colliders = Physics.OverlapSphere(PlayerController.Instance.transform.position, AoeRadius, enemy);
+        foreach (Collider collider in colliders)
         {
-            EnemyStats enemyStats = hitCollider.GetComponent<EnemyStats>();
-            //Les stuns
-            enemyStats.StartCor(enemyStats.Debuff(stunTime, EDebuffs.Stun));
-            //-10% de def
-            enemyStats.StartCor(enemyStats.StatDebuff(breakDefTime, EStatsDebuffs.Defense, breakDefPercent));
-            //dmg? quand même? un poquito
-            enemyStats.TakeDamage(dmg);
+            if(collider.TryGetComponent(out EntityStat entityStat))
+            {
+                //Les stuns
+                entityStat.LaunchStatusModifier(stunTime, EDebuffs.Stun);
+                //-10% de def
+                entityStat.LaunchStatModifier(breakDefTime, EStatsDebuffs.Defense, breakDefPercent);
+                //dmg? quand même? un poquito
+                entityStat.TakeDamage((int)Damages);
+            }
         }
-        Instantiate(PlayerStats.Instance.FXPrefab, PlayerStats.Instance.transform.position, Quaternion.identity);
+        Instantiate(SpellParticles, PlayerController.Instance.transform.position, Quaternion.identity);
         
         base.ActivatedSkill();
     }

@@ -11,10 +11,10 @@ public class WindArrow : Skill
 
     public override void ActivatedSkill()
     {
-        arrowSpawn = PlayerStats.Instance.arrowSpawn;
+        arrowSpawn = ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).ArrowSpawn;
         ArrowScript arrow = Instantiate(arrowPrefab, arrowSpawn).GetComponent<ArrowScript>();
         arrow.maxBending = maxBending;
-        PlayerStats.Instance.activeArrows.Add(arrow.GetComponent<ArrowScript>());
+        ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).ActiveArrows.Add(arrow.GetComponent<ArrowScript>());
         /*
          Bon, là c'est tout fait, on va pas se mentir. mais c'est un proto, quoi, parce qu'à priori ça va changer, mais ça fait ce que ça fait, quand même...
          Faudrait par exemple, genre... Faire le bandage de l'arc :)

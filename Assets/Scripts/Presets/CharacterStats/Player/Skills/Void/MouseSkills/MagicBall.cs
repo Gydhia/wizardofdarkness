@@ -13,7 +13,10 @@ public class MagicBall : Skill
     {
         if (PlayerMovement.Instance.stamina >= 20)
         {
-            MagicBallScript ball = Instantiate(PlayerStats.Instance.ballPrefab, PlayerStats.Instance.ballSpawnSpot).GetComponent<MagicBallScript>();
+            MagicBallScript ball = Instantiate(
+                ((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).BallPrefab,
+                ((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).BallSpawnSpot).GetComponent<MagicBallScript>(
+            );
             //ball.transform.SetParent(ballSpawnSpot);
             ball.ballMoveSpeed = ballMoveSpeed;
             ball.ballGrowSpeed = ballGrowSpeed;

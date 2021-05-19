@@ -12,7 +12,7 @@ public class WeakeningArrow : Skill
          Assez explicite, maintenant on peux pas le faire tout de suite, parce qu'on a même pas d'ennemis mdr
          Surtout, comment on fait? faut bander une flèche comme une autre.
           Bon maintenant bro c'est BackwardsDash!*/
-        PlayerStats.Instance.nextArrowWeakens = true;
+        ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).NextArrowWeakens = true;
         CanLaunch = false;
     }
 

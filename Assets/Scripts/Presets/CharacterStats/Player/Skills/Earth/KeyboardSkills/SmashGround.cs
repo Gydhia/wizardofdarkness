@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmashGround : Skill
+public class SmashGround : MeleeAttackSkill
 {
-    public float smashJumpHeight;
+    public float SmashJumpHeight;
+
     public override void ActivatedSkill()
     {
         if (PlayerMovement.Instance.isGrounded)
         {
-            PlayerMovement.Instance.velocity.y = Mathf.Sqrt(smashJumpHeight * -7f * PlayerMovement.Instance.gravity);
+            PlayerMovement.Instance.velocity.y = Mathf.Sqrt(SmashJumpHeight * -7f * PlayerMovement.Instance.Gravity);
             /*
          Donc, ici, c'est le nouveau spell qui a remplacé le totem: on frappe le sol pour faire un aoe de dégats.
          Pour les dégats, je ferais pareil  que la STUNAOE, je sais pas
@@ -19,13 +20,13 @@ public class SmashGround : Skill
 
          */
             LayerMask enemy = LayerMask.GetMask("Enemy");
-            Collider[] hitColliders = Physics.OverlapSphere(PlayerStats.Instance.transform.position, AOERadius, enemy);
+            Collider[] hitColliders = Physics.OverlapSphere(PlayerController.Instance.transform.position, AoeRadius, enemy);
             foreach (Collider hitCollider in hitColliders)
             {
                 EnemyStats enemyStats = hitCollider.GetComponent<EnemyStats>();
-                enemyStats.TakeDamage(dmg);
+                enemyStats.TakeDamage((int)Damages);
             }
-            Instantiate(PlayerStats.Instance.FXPrefab, PlayerStats.Instance.transform.position, Quaternion.identity);
+            Instantiate(SpellParticles, PlayerController.Instance.transform.position, Quaternion.identity);
         }
 
         base.ActivatedSkill();

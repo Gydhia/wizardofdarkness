@@ -16,9 +16,6 @@ public class OpenDoor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            if(PlayerStats.Instance.canOpenDoors)
-                anim.SetTrigger("OpenDoor");
-        }
+            anim.SetTrigger("OpenDoor");
     }
 }
