@@ -1,20 +1,40 @@
 using System.Collections;
 using UnityEngine;
 
+public enum SkillBind
+{
+    None,
+
+    MainAttack,
+    Secondary,
+
+    FirstSpell,
+    SecondSpell,
+    ThirdSpell
+}
 
 public class Skill : MonoBehaviour
 {
+    public SkillBind SkillBind = SkillBind.None;
+
     public bool CanLaunch = true;
     public float CooldownTimer;
 
     public float Cooldown;
-    public float CastTime;
 
     public ParticleSystem SpellParticles;
 
     public bool IsAoe;
     [ConditionalField("IsAoe")]
     public float AoeRadius;
+
+    public bool IsIncanted;
+    [ConditionalField("IsIncanted")]
+    public float CastTime;
+
+    public bool IsCasted;
+
+    public bool IsPiercing;
 
     private void Awake()
     {
@@ -37,7 +57,6 @@ public class Skill : MonoBehaviour
             yield return null;
         }
         CanLaunch = true;
-        
 
         yield return null;
     }

@@ -5,11 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public CharacterController CharController;
 
-    public static PlayerMovement Instance;
-    public event SetSlider UpdateStamina;
     public float sprintFactor;
     private float _walkSpeed;
     private float _actualSpeed;
@@ -33,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
         CharController = GetComponent<CharacterController>();
     }
     // Update is called once per frame
@@ -43,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         {
             #region stamina
             UseStamina(Input.GetKey(KeyCode.LeftShift));
-            UpdateStamina?.Invoke(stamina);
             #endregion
             #region Jumping and Gravity
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -81,31 +76,30 @@ public class PlayerMovement : MonoBehaviour
     public void UseStamina(bool isRunning)
     {
         _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
+        float updatedStamina = 0f;
+
         if (isRunning)
         {
-            if (stamina > 0f)
-            {
-                stamina -= sprintingStaminaConsumption * Time.deltaTime;
-                _actualSpeed = _walkSpeed*sprintFactor;
-            }
-            else
-            {
+            if (stamina > 0f) {
+                updatedStamina -= sprintingStaminaConsumption * Time.deltaTime;
+                _actualSpeed = _walkSpeed * sprintFactor;
+            } else {
                 _actualSpeed = _walkSpeed;
             }
         }
         else
         {
             if (stamina <= 30f)
-            {
-                stamina += staminaCooldownRate * Time.deltaTime;
-            }
+                updatedStamina += staminaCooldownRate * Time.deltaTime;
 
             else if (stamina < MaxStamina)
-            {
-                stamina += depletedStaminaCooldownRate * Time.deltaTime;
-            }
+                updatedStamina += depletedStaminaCooldownRate * Time.deltaTime;
+            
             _actualSpeed = _walkSpeed;
         }
+
+        stamina += updatedStamina;
+        GameUIController.Instance.FireOnStaminaConsumed();
     }
 
     public void Teleport(Vector3 pos)

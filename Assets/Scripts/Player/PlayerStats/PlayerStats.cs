@@ -14,13 +14,6 @@ public class PlayerStats : EntityStat
     public Element ActualElement;
     public List<Element> Elements = new List<Element>(3);
 
-
-    /*
-     A partir d'ici, typiquement si vous avez des prefab à stocker, des listes, des variables utiles à garder, c'est ici que vous allez les mettre
-     (Sous Wind pour Killian, sous Earth pour Enzo, évidemment)
-         voilà, vous savez tout normalement! Allez, codez maintenant!
-         (voilà, maintenant vous avez toutes les infos les brows
-         */
     public ParticleSystem[] Particles;
     public ParticleSystem BuffArrow;
     public ParticleSystem DebuffArrow;
@@ -30,7 +23,7 @@ public class PlayerStats : EntityStat
         foreach (Element element in Elements)
             element.Init();
 
-        ActualElement = Elements.Single(element => element.Type == EElements.Void);
+        ActualElement = Elements.SingleOrDefault(element => element.Type == EElements.Void);
         UpdateStats();
     }
 
@@ -55,25 +48,7 @@ public class PlayerStats : EntityStat
         this.AtkSpeed = ActualElement.AtkSpeed;
         this.MoveSpeed = ActualElement.MoveSpeed;
 
-        GameUIController.Instance.FireOnElementChange();
-        //player.actualSkills.Clear();
-        //foreach (Skill i in skills)
-        //{
-        //    player.actualSkills.Add(i);
-        //}
-        //player.CDs = CDs;
-        //for (int i = 0; i < player.cooldownBars.Length; i++)
-        //{
-        //    player.cooldownBars[i].maxValue = CDs[i];
-        //}
-
-        //foreach (CoolDown bar in player.cooldownBars)
-        //{
-        //    bar.mat.SetColor("_Backgroundfillcolor", BarFillColor);
-        //    bar.center.color = CenterColor;
-        //    bar.mat.SetColor("_Barmincolor", BarMinMaxColor);
-        //    bar.mat.SetColor("_Barmaxcolor", BarMinMaxColor);
-        //}
+        GameController.Instance.FireOnElementChange();
     }
 
     public virtual void TakeDamage(int value)
@@ -85,7 +60,6 @@ public class PlayerStats : EntityStat
     public override void Die()
     {
         base.Die();
-        PlayerUIManager.Instance.gameOver.gameObject.SetActive(true);
-        PlayerUIManager.Instance.gameOver.SetTrigger("GameOver");
+        GameController.Instance.FireOnDeath();
     }
 }

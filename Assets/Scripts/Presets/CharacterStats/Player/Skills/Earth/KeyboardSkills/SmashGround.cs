@@ -8,9 +8,9 @@ public class SmashGround : MeleeAttackSkill
 
     public override void ActivatedSkill()
     {
-        if (PlayerMovement.Instance.isGrounded)
+        if (PlayerController.Instance.PlayerMovement.isGrounded)
         {
-            PlayerMovement.Instance.velocity.y = Mathf.Sqrt(SmashJumpHeight * -7f * PlayerMovement.Instance.Gravity);
+            PlayerController.Instance.PlayerMovement.velocity.y = Mathf.Sqrt(SmashJumpHeight * -7f * PlayerController.Instance.PlayerMovement.Gravity);
             /*
          Donc, ici, c'est le nouveau spell qui a remplacé le totem: on frappe le sol pour faire un aoe de dégats.
          Pour les dégats, je ferais pareil  que la STUNAOE, je sais pas

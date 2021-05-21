@@ -52,7 +52,6 @@ namespace ED.Controllers
                 {
                     HoveredItem.Hovered();
                     GameUIController.Instance.FireOnInteractOverviewChange(HoveredItem.OverviewDatas);
-                    //interactText.color = new Vector4(1, 1, 1, 1);
                 }
             } else {
                 if (HoveredItem != null) 
@@ -60,7 +59,6 @@ namespace ED.Controllers
                     GameUIController.Instance.FireOnInteractOverviewCancel();
                     HoveredItem.Unhovered();
                     HoveredItem = null;
-                    //interactText.color = new Vector4(1, 1, 1, 0);
                 }
             }
             //if (isHovering) ActualColor = HoveringColors[(int)currentlyHovered];

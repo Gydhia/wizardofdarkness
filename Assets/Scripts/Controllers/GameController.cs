@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void RoomComplete();
-public delegate void GameReady();
-
 public class GameController : MonoBehaviour
 {
+    public delegate void ElementChange();
+    public delegate void RoomComplete();
+    public delegate void GameReady();
+    public delegate void Death();
+
+    public event ElementChange OnElementChange;
     public event RoomComplete OnRoomComplete;
     public event GameReady OnGameReady;
+    public event Death OnDeath;
 
-    public bool GameReady = false;
+    public bool GameIsReady = false;
 
     public static GameController Instance;
     private void Awake()
@@ -31,5 +35,15 @@ public class GameController : MonoBehaviour
     {
         if (this.OnGameReady != null)
             this.OnGameReady.Invoke();
+    }
+    public void FireOnElementChange()
+    {
+        if (OnElementChange != null)
+            OnElementChange.Invoke();
+    }
+    public void FireOnDeath()
+    {
+        if (OnDeath != null)
+            OnDeath.Invoke();
     }
 }

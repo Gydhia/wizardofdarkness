@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private float _checkDelay = 0.5f, _actualDelay = 0f;
 
     public PlayerStats PlayerStats;
+    public PlayerMovement PlayerMovement;
 
     public static PlayerController Instance;
     private void Awake()

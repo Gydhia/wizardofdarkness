@@ -38,7 +38,6 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
         {
             TextingSystemManager.Instance.NextLine();
             Destroy(gameObject);
-            if (!PlayerUIManager.Instance.hudActive) PlayerUIManager.Instance.ToggleHud(true);
 
             PlayerController.Instance.PlayerStats.Elements.Add(elementToAdd);
             elementToAdd.Init();

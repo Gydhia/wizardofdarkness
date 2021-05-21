@@ -35,24 +35,18 @@ public class PuzzleRoomManager : MonoBehaviour
     }
     public void NextStep(int TPEntered)
     {
-        if (state + 1 < solution.Count)
-        {
+        if (state + 1 < solution.Count) {
             if (TPEntered == solution[state])
-            {
                 state++;
-            }
             else
-            {
                 state = 0;
-            }
-            PlayerMovement.Instance.Teleport(rooms[state].position);
-            PlayerMovement.Instance.transform.rotation = rooms[state].rotation;
+            PlayerController.Instance.PlayerMovement.Teleport(rooms[state].position);
+            PlayerController.Instance.PlayerMovement.transform.rotation = rooms[state].rotation;
+        } else {
+            PlayerController.Instance.PlayerMovement.Teleport(winRoom.position);
+            PlayerController.Instance.PlayerMovement.transform.rotation = winRoom.rotation;
         }
-        else
-        {
-            PlayerMovement.Instance.Teleport(winRoom.position);
-            PlayerMovement.Instance.transform.rotation = winRoom.rotation;
-        }
+
         if (((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).ActualTPPoint != null)
         {
             Destroy(((VoidElement)PlayerController.Instance.PlayerStats.ActualElement).ActualTPPoint);

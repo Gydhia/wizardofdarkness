@@ -52,7 +52,7 @@ public class ArrowScript : MonoBehaviour
                 transform.parent.gameObject.transform.DetachChildren();
                 Destroy(gameObject, lifeTimer);
                 dmg = (int)(bending * 20);
-                PlayerMovement.Instance.stamina -= bending * ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).WindArrowStaminaConsumption;
+                PlayerController.Instance.PlayerMovement.stamina -= bending * ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).WindArrowStaminaConsumption;
                 arrowSpeed += bending;
             }
             else

@@ -16,7 +16,7 @@ public class BackwardsDash : Skill
         base.ActivatedSkill();
         LayerMask mask = LayerMask.GetMask("Wall");
         RaycastHit hit;
-        if (Physics.Raycast(PlayerMovement.Instance.transform.position, Vector3.back, out hit, dashRange, mask))
+        if (Physics.Raycast(PlayerController.Instance.PlayerMovement.transform.position, Vector3.back, out hit, dashRange, mask))
         {
             //Dash jusqu'a
             //hit.distance;

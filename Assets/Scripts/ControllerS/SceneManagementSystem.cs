@@ -56,7 +56,7 @@ public class SceneManagementSystem : MonoBehaviour
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
 
         // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone && PlayerUIManager.Instance.fadedOut)
+        while (!asyncLoad.isDone && GameUIController.Instance.FadedOut)
         {
             yield return null;
         }

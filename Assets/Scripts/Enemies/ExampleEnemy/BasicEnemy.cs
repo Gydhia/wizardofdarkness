@@ -12,7 +12,6 @@ public enum EnemyType
 public class BasicEnemy : EnemyStats
 {
     public EnemyType Type;
-    private bool IsDead = false;
 
     // Aggro attributes
     public NavMeshAgent Agent;

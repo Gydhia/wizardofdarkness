@@ -7,7 +7,6 @@ public class HealingBeer : MonoBehaviour, IInteractable
 {
     public GameObject fullMug;
     public GameObject emptyMug;
-    public event ToggleUI ToggleBeer;
     public bool completionCondition;
 
     public InteractableDatas OverviewDatas => this.OverviewDatas;
@@ -17,7 +16,7 @@ public class HealingBeer : MonoBehaviour, IInteractable
         completionCondition = true;
     }
 
-    public void Hovered(bool isHovered)
+    public void Hovered()
     {
         return;
     }
@@ -35,8 +34,4 @@ public class HealingBeer : MonoBehaviour, IInteractable
         }
     }
 
-    public void Hovered()
-    {
-        throw new System.NotImplementedException();
-    }
 }

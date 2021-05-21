@@ -17,7 +17,6 @@ public class EntityStat : MonoBehaviour
     public Animator EntityAnimator;
     public GameObject AimPoint;
 
-
     public virtual void TakeDamage(int value)
     {
         if (HP - value > 0) {
