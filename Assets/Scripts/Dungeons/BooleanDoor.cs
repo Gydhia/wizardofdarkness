@@ -18,6 +18,7 @@ public class BooleanDoor : MonoBehaviour
     public GameObject Wall;
 
     public DoorOpeningSystem DoorComponent;
+    public BoxCollider OpeningCollider;
 
     MeshRenderer[] Renderers;
 
@@ -25,6 +26,7 @@ public class BooleanDoor : MonoBehaviour
     {
         try
         {
+            this.OpeningCollider = this.GetComponent<BoxCollider>();
             Renderers = new MeshRenderer[this.transform.childCount];
             for (int i = 0; i < Renderers.Length; i++)
             {
@@ -32,7 +34,7 @@ public class BooleanDoor : MonoBehaviour
                 Renderers[i] = transform.GetChild(i).GetComponent<MeshRenderer>();
 
             }
-            Renderers = this.GetComponentsInChildren<MeshRenderer>(true);
+
             bool foundFirst = false;
 
             if (Renderers.Length < 2) 

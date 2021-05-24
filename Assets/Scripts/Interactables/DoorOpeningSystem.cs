@@ -9,6 +9,7 @@ public class DoorOpeningSystem : MonoBehaviour
     private void Start()
     {
         DoorAnim = this.GetComponent<Animator>();
+        DoorAnim.SetBool("OpenDoor", true);
     }
 }
 

@@ -12,7 +12,12 @@ namespace ED.Controllers
         public PlayerInput PlayerInputs;
         private PlayerBindingsMaps _playerBindingMap;
 
-        public float InteractRange; // The range of the raycast of objects we have to TOUCH with our HANDS. Ex: scrolls.
+        public Vector2 MouseSpeed = Vector2.zero;
+        public Vector2 PlayerAxisSpeed = Vector2.zero;
+
+        public Keyboard Keyboard;
+
+        public float InteractRange = 10f; // The range of the raycast of objects we have to TOUCH with our HANDS. Ex: scrolls.
         Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // Center of the screen
         public IInteractable HoveredItem = null;
 
@@ -20,7 +25,7 @@ namespace ED.Controllers
         public Color[] HoveringColors;
         public Color ActualColor;
 
-        List<LayerMask> masks = new List<LayerMask>();
+        public List<LayerMask> Masks = new List<LayerMask>();
 
         public static InputController Instance;
         private void Awake()
@@ -34,11 +39,16 @@ namespace ED.Controllers
 
         private void Start()
         {
-            foreach (int i in Enum.GetValues(typeof(ETypeOfHoveredObject)))
-            {
-                masks.Add(LayerMask.GetMask(((ETypeOfHoveredObject)i).ToString()));
-            }
+            Keyboard = InputSystem.GetDevice<Keyboard>();
+
+            SetupInputEvents();
+
             ActualColor = DefaultColor;
+        }
+
+        private void OnDestroy()
+        {
+            UnsetupInputEvents();
         }
 
         private void Update()
@@ -47,7 +57,7 @@ namespace ED.Controllers
 
             Debug.DrawRay(ray.origin, ray.direction * InteractRange, Color.red);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, InteractRange, masks[(int)ETypeOfHoveredObject.Interactable])) {
+            if (Physics.Raycast(ray, out RaycastHit hit, InteractRange, Masks[(int)ETypeOfHoveredObject.Interactable])) {
                 if (hit.collider.TryGetComponent(out HoveredItem))
                 {
                     HoveredItem.Hovered();
@@ -89,7 +99,7 @@ namespace ED.Controllers
 
             this.PlayerInputs.actions[PlayerBindings.Escape.ToString()].performed += this.OnEscape;
         }
-        public void UnsetupInputEvents(InputAction.CallbackContext ctx)
+        public void UnsetupInputEvents()
         {
             this.PlayerInputs.actions[PlayerBindings.MousePosition.ToString()].performed -= this.OnMouseMove;
             this.PlayerInputs.actions[PlayerBindings.LeftClick.ToString()].performed -= this.OnLeftClick;
@@ -111,21 +121,27 @@ namespace ED.Controllers
         }
         public void OnMouseMove(InputAction.CallbackContext ctx)
         {
-
+            MouseSpeed = ctx.ReadValue<Vector2>();
         }
         public void OnLeftClick(InputAction.CallbackContext ctx)
         {
-            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[0].CanLaunch)
-                PlayerController.Instance.PlayerStats.ActualElement.Skills[0].ActivatedSkill();
+            if (ctx.performed) 
+                _castSpell(0, true);
+            else if (ctx.canceled) 
+                _castSpell(0, false);
         }
         public void OnRightClick(InputAction.CallbackContext ctx)
         {
-            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[1].CanLaunch)
-                PlayerController.Instance.PlayerStats.ActualElement.Skills[1].ActivatedSkill();
+            if (ctx.performed)
+                _castSpell(1, true);
+            else if (ctx.canceled)
+                _castSpell(1, false);
         }
         public void OnMove(InputAction.CallbackContext ctx)
         {
+            Vector2 speed = ctx.ReadValue<Vector2>();
 
+            PlayerController.Instance.PlayerMovement.MoveSpeed = new Vector3(speed.x, 0f, speed.y);
         }
         public void OnInteract(InputAction.CallbackContext ctx)
         {
@@ -134,18 +150,24 @@ namespace ED.Controllers
         }
         public void OnCastFirstSpell(InputAction.CallbackContext ctx)
         {
-            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[2].CanLaunch)
-                PlayerController.Instance.PlayerStats.ActualElement.Skills[2].ActivatedSkill();
+            if (ctx.performed)
+                _castSpell(2, true);
+            else if (ctx.canceled)
+                _castSpell(2, false);
         }
         public void OnCastSecondSpell(InputAction.CallbackContext ctx)
         {
-            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[3].CanLaunch)
-                PlayerController.Instance.PlayerStats.ActualElement.Skills[3].ActivatedSkill();
+            if (ctx.performed)
+                _castSpell(3, true);
+            else if (ctx.canceled)
+                _castSpell(3, false);
         }
         public void OnCastThirdSpell(InputAction.CallbackContext ctx)
         {
-            if (PlayerController.Instance.PlayerStats.ActualElement.Skills[4].CanLaunch)
-                PlayerController.Instance.PlayerStats.ActualElement.Skills[4].ActivatedSkill();
+            if (ctx.performed)
+                _castSpell(4, true);
+            else if (ctx.canceled)
+                _castSpell(4, false);
         }
         public void OnChangeToFirstClass(InputAction.CallbackContext ctx)
         {
@@ -161,15 +183,29 @@ namespace ED.Controllers
         }
         public void OnJump(InputAction.CallbackContext ctx)
         {
-
+            PlayerController.Instance.PlayerMovement.PlayerJump();
         }
         public void OnRun(InputAction.CallbackContext ctx)
         {
-
+            if (ctx.performed)
+                PlayerController.Instance.PlayerMovement.UseStamina();
+            else
+                PlayerController.Instance.PlayerMovement.RegenerateStamina();
         }
         public void OnEscape(InputAction.CallbackContext ctx)
         {
 
+        }
+
+        private void _castSpell(int index, bool performed)
+        {
+            if (performed) {
+                if (PlayerController.Instance.PlayerStats.ActualElement.Skills[index].CanLaunch)
+                    PlayerController.Instance.PlayerStats.ActualElement.Skills[index].ActivatedSkill();
+            }
+            else if (performed) {
+                PlayerController.Instance.PlayerStats.ActualElement.Skills[index].HasReleased = true;
+            }
         }
     }
 

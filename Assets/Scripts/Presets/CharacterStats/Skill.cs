@@ -16,25 +16,19 @@ public enum SkillBind
 public class Skill : MonoBehaviour
 {
     public SkillBind SkillBind = SkillBind.None;
+    [HideInInspector]
+    public EntityStat EntityHolder;
 
+    [HideInInspector]
     public bool CanLaunch = true;
+    [HideInInspector]
+    public bool HasReleased = false;
+    [HideInInspector]
     public float CooldownTimer;
 
     public float Cooldown;
 
     public ParticleSystem SpellParticles;
-
-    public bool IsAoe;
-    [ConditionalField("IsAoe")]
-    public float AoeRadius;
-
-    public bool IsIncanted;
-    [ConditionalField("IsIncanted")]
-    public float CastTime;
-
-    public bool IsCasted;
-
-    public bool IsPiercing;
 
     private void Awake()
     {
@@ -43,11 +37,16 @@ public class Skill : MonoBehaviour
     }
     public virtual void ActivatedSkill()
     {
-        if(Cooldown != 0f)
-            StartCoroutine(OnCooldown());
+        
     }
 
-    public IEnumerator OnCooldown()
+    protected void BeginCooldown()
+    {
+        if (Cooldown != 0f)
+            StartCoroutine(_onCooldown());
+    }
+
+    private IEnumerator _onCooldown()
     {
         CanLaunch = false;
         CooldownTimer = Cooldown;

@@ -14,6 +14,9 @@ public class InteractableOverview : MonoBehaviour
     {
         GameUIController.Instance.OnInteractOverviewChange += ShowOverview;
         GameUIController.Instance.OnInteractOverviewCancel += HideOverview;
+
+        DataText.gameObject.SetActive(false);
+        DataImage.gameObject.SetActive(false);
     }
 
     public void ShowOverview(InteractableDatas Datas)

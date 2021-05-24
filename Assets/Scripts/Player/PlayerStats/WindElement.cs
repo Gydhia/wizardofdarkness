@@ -5,7 +5,7 @@ using UnityEngine;
 public class WindElement : Element
 {
     [Header("Wind Variables")]
-    public List<ArrowScript> ActiveArrows = new List<ArrowScript>();
+    //public List<ArrowScript> ActiveArrows = new List<ArrowScript>();
     public Transform ArrowSpawn;
     public float WindArrowStaminaConsumption;
     public bool NextArrowWeakens;

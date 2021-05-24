@@ -19,4 +19,9 @@ public class StaminaBar : MonoBehaviour
         FillText.text = PlayerController.Instance.PlayerMovement.stamina.ToString("#") + "%";
         Bar.fillAmount = (float)PlayerController.Instance.PlayerMovement.stamina / 100;
     }
+
+    private void OnDestroy()
+    {
+        GameUIController.Instance.OnStaminaConsumed -= UpdateStaminaBar;
+    }
 }

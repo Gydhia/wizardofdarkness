@@ -1030,6 +1030,21 @@ PrefabInstance:
       propertyPath: fade
       value: 
       objectReference: {fileID: 1028508852}
+    - target: {fileID: 1514716023922313680, guid: fba8eebc6322d7844a38618f7c83a52d,
+        type: 3}
+      propertyPath: PlayerInputs
+      value: 
+      objectReference: {fileID: 1659363432}
+    - target: {fileID: 1514716023922313680, guid: fba8eebc6322d7844a38618f7c83a52d,
+        type: 3}
+      propertyPath: InteractRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514716023922313680, guid: fba8eebc6322d7844a38618f7c83a52d,
+        type: 3}
+      propertyPath: Masks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1553726181990426622, guid: fba8eebc6322d7844a38618f7c83a52d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1085,6 +1100,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3597355341137846244, guid: fba8eebc6322d7844a38618f7c83a52d,
+        type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 953328476}
+    - target: {fileID: 3597355341137846244, guid: fba8eebc6322d7844a38618f7c83a52d,
+        type: 3}
+      propertyPath: SceneFade
+      value: 
+      objectReference: {fileID: 1028508852}
     - target: {fileID: 8971265704434783508, guid: fba8eebc6322d7844a38618f7c83a52d,
         type: 3}
       propertyPath: m_Name
@@ -1092,25 +1117,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fba8eebc6322d7844a38618f7c83a52d, type: 3}
---- !u!1 &1323114192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6542071024027236980, guid: fba8eebc6322d7844a38618f7c83a52d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1323114191}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1323114193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323114192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811f48eb9efacc749b1fbf582c7afc1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
 --- !u!1 &1465827217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1355,6 @@ GameObject:
   - component: {fileID: 1659363430}
   - component: {fileID: 1659363433}
   - component: {fileID: 1659363432}
-  - component: {fileID: 1659363429}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1357,49 +1362,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1659363429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659363428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
-  m_MaxPlayerCount: -1
-  m_AllowJoining: 1
-  m_JoinBehavior: 0
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JoinAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: 
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 0}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!114 &1659363430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,11 +1493,23 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: de663ab3-f8b4-43c4-b3d5-43055d13f19d
     m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebff8dd6-6bd9-483d-b97c-84f9d221400c
+    m_ActionName: Player/FirstClass[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2a2d7bd5-fcaa-4c9f-9823-80100efd892d
+    m_ActionName: Player/SecondClass[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a59833a2-87bc-4eb3-a146-974c45162753
+    m_ActionName: Player/ThirdClass[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 961475643}
 --- !u!114 &1659363433
 MonoBehaviour:
   m_ObjectHideFlags: 0

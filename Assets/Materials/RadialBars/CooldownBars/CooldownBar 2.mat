@@ -109,7 +109,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fillpercentage: 0
+    - _Fillpercentage: 1
     - _Globalopacity: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -130,7 +130,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
-    - _Radius: 0.198
+    - _Radius: 0.2
     - _ReceiveShadows: 1
     - _Rotation: 180
     - _Secondaryscrollrotate: 0

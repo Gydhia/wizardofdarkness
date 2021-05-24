@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EDebuffs { Stun }
+public enum EStatsBuffs { MaxHP, Defense, Strength, AttackSpeed, MoveSpeed }
+public enum EEnemyElements { Void = 0, Wind = 1, Earth = 2, None = 3 }
+
 public class EntityStat : MonoBehaviour
 {
     public bool IsDead = false;
@@ -12,9 +16,8 @@ public class EntityStat : MonoBehaviour
     public float Def { get; protected set; }
     public float Str { get; protected set; }
     public float AtkSpeed { get; protected set; }
-    public float MoveSpeed { get; protected set; }
+    public float MoveSpeed { get => 10f; protected set => MoveSpeed = value; }
 
-    public Animator EntityAnimator;
     public GameObject AimPoint;
 
     public virtual void TakeDamage(int value)
@@ -39,48 +42,47 @@ public class EntityStat : MonoBehaviour
     public virtual void Die()
     {
         IsDead = true;
-        EntityAnimator.SetTrigger("Death");
         Destroy(gameObject, 1.5f);
     }
 
-    public void LaunchStatModifier(float timeOfDebuff, EStatsDebuffs debuffID, int percentReduce)
+    public void LaunchStatModifier(float timeOfDebuff, EStatsBuffs debuffID, int percentReduce)
     {
         StartCoroutine(_statModifier(timeOfDebuff, debuffID, percentReduce));
     }
-    private IEnumerator _statModifier(float timeOfDebuff, EStatsDebuffs debuffID, int percentReduce)
+    private IEnumerator _statModifier(float timeOfDebuff, EStatsBuffs debuffID, int percent, bool isBuffing = true)
     {
         switch (debuffID)
         {
-            case EStatsDebuffs.MaxHP: //HP
-                float debuff;
-                debuff = percentReduce * HP / 100;
-                MaxHP -= (int)debuff;
+            case EStatsBuffs.MaxHP: //HP
+                float modifier;
+                modifier = percent * HP / 100;
+                MaxHP = isBuffing ? MaxHP + (int)modifier : MaxHP - (int)modifier;
                 yield return new WaitForSeconds(timeOfDebuff);
-                MaxHP += (int)debuff;
+                MaxHP = isBuffing ? MaxHP - (int)modifier : MaxHP + (int)modifier;
                 break;
-            case EStatsDebuffs.Defense: //def
-                debuff = percentReduce * Def / 100;
-                Def -= debuff;
+            case EStatsBuffs.Defense: //def
+                modifier = percent * Def / 100;
+                Def = isBuffing ? Def + modifier : Def - modifier;
                 yield return new WaitForSeconds(timeOfDebuff);
-                Def += debuff;
+                Def = isBuffing ? Def - modifier : Def + modifier;
                 break;
-            case EStatsDebuffs.Strength: //str
-                debuff = percentReduce * Str / 100;
-                Str -= debuff;
+            case EStatsBuffs.Strength: //str
+                modifier = percent * Str / 100;
+                Str = isBuffing ? Str + modifier : Str - modifier;
                 yield return new WaitForSeconds(timeOfDebuff);
-                Str += debuff;
+                Str = isBuffing ? Str - modifier : Str + modifier;
                 break;
-            case EStatsDebuffs.AttackSpeed: //atqSpeed
-                debuff = percentReduce * AtkSpeed / 100;
-                AtkSpeed -= debuff;
+            case EStatsBuffs.AttackSpeed: //atqSpeed
+                modifier = percent * AtkSpeed / 100;
+                AtkSpeed = isBuffing ? AtkSpeed + modifier : AtkSpeed - modifier;
                 yield return new WaitForSeconds(timeOfDebuff);
-                AtkSpeed += debuff;
+                AtkSpeed = isBuffing ? AtkSpeed - modifier : AtkSpeed + modifier;
                 break;
-            case EStatsDebuffs.MoveSpeed: //Movespeed
-                debuff = percentReduce * MoveSpeed / 100;
-                MoveSpeed -= debuff;
+            case EStatsBuffs.MoveSpeed: //Movespeed
+                modifier = percent * MoveSpeed / 100;
+                MoveSpeed = isBuffing ? MoveSpeed + modifier: MoveSpeed - modifier;
                 yield return new WaitForSeconds(timeOfDebuff);
-                MoveSpeed += percentReduce;
+                MoveSpeed = isBuffing ? MoveSpeed - modifier : MoveSpeed + modifier;
                 break;
         }
     }

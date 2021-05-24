@@ -28,9 +28,7 @@ public class PictureBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!takingPhoto && Input.GetKeyDown(KeyCode.P)) {
-			takingPhoto = true;
-		}
+		
 	}
 	void FixedUpdate()
 	{

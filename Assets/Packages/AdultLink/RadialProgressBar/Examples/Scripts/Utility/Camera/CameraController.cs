@@ -26,13 +26,7 @@ namespace AdultLink {
 		// Update is called once per frame
 		void Update () {
 
-			if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-				prevItem();
-			}
-
-			if (Input.GetKeyDown(KeyCode.RightArrow)) {
-				nextItem();
-			}
+			
 
 			//SMOOTH MOVEMENT TO THE DESIRED POSITION
 			transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);

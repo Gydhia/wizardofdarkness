@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ED.Controllers;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +12,8 @@ public class RotateCamera : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        float y = Input.GetAxis("Mouse X") * MouseRotateSpeed * Time.deltaTime;
-        float x = Input.GetAxis("Mouse Y") * MouseRotateSpeed * Time.deltaTime;
+        float y = InputController.Instance.MouseSpeed.x * MouseRotateSpeed * Time.deltaTime;
+        float x = InputController.Instance.MouseSpeed.y * MouseRotateSpeed * Time.deltaTime;
         transform.Rotate(-x, y, 0);
 
         Vector3 Angles = Camera.main.transform.eulerAngles;

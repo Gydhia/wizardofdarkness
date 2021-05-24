@@ -29,10 +29,7 @@ public class DestinationBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.X)) {
-			flashing = !flashing;
-			descriptionText.color = flashing ? descriptionTextHighlightColor : descriptionTextNormalColor;
-		}
+		
 	}
 
 	void FixedUpdate() {

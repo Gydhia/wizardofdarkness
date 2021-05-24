@@ -58,6 +58,8 @@ public class Room : MonoBehaviour
         GameController.Instance.OnRoomComplete += RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {
+            Debug.Log("Rooms started");
+            bd.OpeningCollider.enabled = false;
             bd.DoorComponent.DoorAnim.SetBool("OpenDoor", false);
         }
     }

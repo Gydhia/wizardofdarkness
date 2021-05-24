@@ -43,7 +43,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6693bc77602cf4b8057880f59765fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementStats: {fileID: 11400000, guid: e9406e77cf5ac874cba671089a6bedcb, type: 2}
+  Type: 0
+  Def: 0
+  Str: 0
+  AtkSpeed: 0
+  MoveSpeed: 0
+  ElementStats: {fileID: 0}
+  Skills:
+  - {fileID: 1161502679486882114, guid: bfe64be45c2b3ae4e8db07d96a720eba, type: 3}
+  ElementWeapon: {fileID: 0}
+  SwitchingParticle: {fileID: 0}
   BarFillColor: {r: 0.63529414, g: 0.8980392, b: 0.85882354, a: 1}
   CenterColor: {r: 0.43529412, g: 0.77254903, b: 0.6862745, a: 0.7019608}
   BarMinMaxColor: {r: 0.54901963, g: 0.84705883, b: 0.7254902, a: 1}
+  ArrowSpawn: {fileID: 0}
+  WindArrowStaminaConsumption: 0
+  NextArrowWeakens: 0
+  BendingSpeed: 0
+  weakenDuration: 0
+  weakenPercent: 0

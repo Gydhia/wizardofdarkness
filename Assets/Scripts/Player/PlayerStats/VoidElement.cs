@@ -10,7 +10,7 @@ public class VoidElement : Element
     public GameObject BallPrefab;
     public GameObject BlackHolePrefab;
     public GameObject TeleportPointPrefab;
-    [HideInInspector] public TPPointScript ActualTPPoint;
+    [HideInInspector] public GameObject ActualTPPoint;
     public GameObject projBarrier;
     public GameObject AimPoint;
     public float projBarrierStaminaConsumption;

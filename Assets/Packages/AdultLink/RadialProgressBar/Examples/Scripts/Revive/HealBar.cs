@@ -31,34 +31,7 @@ public class HealBar : MonoBehaviour {
 		decreaseAmount = 1f / decreaseTime * Time.fixedDeltaTime;
 	}
 	void FixedUpdate () {
-		//IF HOLDING H
-		if (Input.GetKey(KeyCode.E)) {
-			//IF STILL NOT FULL
-			setTextColor();
-			if (fillPercentage < 1f) {
-				fillPercentage += increaseAmount;
-				fillPercentage = Mathf.Clamp(fillPercentage, 0f, 1f);
-				mat.SetFloat("_Fillpercentage", fillPercentage);
-				countDowntext.gameObject.SetActive(true);
-				countDowntext.text = (fillTime * (1 - fillPercentage)).ToString("F1");
-			}
-			else {
-				countDowntext.gameObject.SetActive(false);
-			}
-		}
-		else {
-			resetTextColor();
-			if (fillPercentage > 0f) {
-				countDowntext.gameObject.SetActive(true);
-				fillPercentage -= decreaseAmount;
-				fillPercentage = Mathf.Clamp(fillPercentage, 0f, 1f);
-				mat.SetFloat("_Fillpercentage", fillPercentage);
-				countDowntext.text = (fillTime * (1 - fillPercentage)).ToString("F1");
-			}
-			else {
-				countDowntext.gameObject.SetActive(false);
-			}
-		}
+		
 	}
 
 	private void setTextColor() {

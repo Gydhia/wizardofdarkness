@@ -19,4 +19,9 @@ public class HealthBar : MonoBehaviour
         FillText.text = PlayerController.Instance.PlayerStats.HP.ToString("#") + "%";
         Bar.fillAmount = (float)PlayerController.Instance.PlayerStats.HP / 100;
     }
+
+    private void OnDestroy()
+    {
+        GameUIController.Instance.OnDamageTaken -= UpdateHealthBar;
+    }
 }
