@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeerUI: {fileID: 0}
-  Bars: {fileID: 0}
+  Bars: {fileID: 4831873448239160564}
   Crosshair: {fileID: 6586616772191052066}
   InteractText: {fileID: 0}
   fade: {fileID: 7207113770482088625}

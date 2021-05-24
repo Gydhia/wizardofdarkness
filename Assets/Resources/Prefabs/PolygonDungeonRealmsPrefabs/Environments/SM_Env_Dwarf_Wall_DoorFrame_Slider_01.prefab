@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 64298242005720716}
   - component: {fileID: 64552105758824554}
   - component: {fileID: 8773566855029686586}
-  - component: {fileID: 3193918933856778686}
   m_Layer: 0
   m_Name: SM_Env_Dwarf_Wall_DoorFrame_Slider_01
   m_TagString: Untagged
@@ -163,19 +162,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3193918933856778686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295091671189960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6480986dc23e0e245b400e09eacec5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorAnim: {fileID: 8773566855029686586}
 --- !u!1 &1400829033296206
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +174,6 @@ GameObject:
   - component: {fileID: 33275737951664384}
   - component: {fileID: 23726400284644118}
   - component: {fileID: 64454235870759998}
-  - component: {fileID: 2868722976203351287}
   m_Layer: 10
   m_Name: SM_Env_Dwarf_Wall_DoorFrame_Slider_01_Door
   m_TagString: Untagged
@@ -273,16 +258,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43966797794305466, guid: d548d27904a118b40b9f0b76c0d277b1, type: 2}
---- !u!114 &2868722976203351287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400829033296206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6480986dc23e0e245b400e09eacec5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorAnim: {fileID: 8773566855029686586}

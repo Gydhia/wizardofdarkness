@@ -12,6 +12,8 @@ public class Room : MonoBehaviour
     public List<Animator> RoomDoorsAnim = new List<Animator>();
     public List<Orientation> GivenOrientations = new List<Orientation>();
 
+    public List<EnemyStats> Enemies = new List<EnemyStats>();
+
     public Bounds RoomBounds = new Bounds();
     public string RoomID;
     public DungeonRooms RoomType;
@@ -47,6 +49,8 @@ public class Room : MonoBehaviour
     }
     public void RoomComplete()
     {
+        foreach (EnemyStats e in Enemies)
+            if (!e.IsDead) return;
         GameController.Instance.OnRoomComplete -= RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {
@@ -55,7 +59,7 @@ public class Room : MonoBehaviour
     }
     public void RoomStart()
     {
-        GameController.Instance.OnRoomComplete += RoomComplete;
+        GameController.Instance.OnEnemyDeath += RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {
             Debug.Log("Rooms started");

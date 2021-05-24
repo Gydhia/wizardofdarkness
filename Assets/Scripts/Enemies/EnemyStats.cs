@@ -8,7 +8,6 @@ public abstract class EnemyStats : EntityStat
     public EEnemyElements ActualElement;
     public Animator EntityAnimator;
 
-
     public Skill[] Skills;
     public MeshRenderer MatRenderer;
     bool IsFlashing;
@@ -23,5 +22,10 @@ public abstract class EnemyStats : EntityStat
     public void ActivateSkill(int index)
     {
         Skills[index].ActivatedSkill();
+    }
+    public override void Die()
+    {
+        base.Die();
+        GameController.Instance.FireOnEnemyDeath();
     }
 }
