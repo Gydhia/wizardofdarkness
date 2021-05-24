@@ -53,7 +53,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerJump()
     {
-        Velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+        if (isGrounded)
+        {
+            Velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);       
+        }
     }
 
     public void UseStamina()
