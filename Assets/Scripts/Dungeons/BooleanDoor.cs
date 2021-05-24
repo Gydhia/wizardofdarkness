@@ -32,7 +32,6 @@ public class BooleanDoor : MonoBehaviour
             {
                 if (i > 1) break;
                 Renderers[i] = transform.GetChild(i).GetComponent<MeshRenderer>();
-
             }
 
             bool foundFirst = false;

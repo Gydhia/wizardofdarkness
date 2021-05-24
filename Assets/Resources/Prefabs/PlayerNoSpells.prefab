@@ -67,6 +67,7 @@ Transform:
   - {fileID: 5360864547420198969}
   - {fileID: 8982305487353235125}
   - {fileID: 4018576897928806205}
+  - {fileID: 2973716997344224117}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -85,10 +86,14 @@ MonoBehaviour:
   IsDead: 0
   IsStuned: 0
   MaxHP: 0
-  AimPoint: {fileID: 0}
+  MoveSpeed: 10
+  AimPoint: {fileID: 4908348806816321032}
   statsEmpty: {fileID: 11400000, guid: 0efb046db8205d5499bb6f867e73afef, type: 2}
   ActualElement: {fileID: 0}
-  Elements: []
+  Elements:
+  - {fileID: 3896883525946458527, guid: 22ccd3bc670c0d441af43ca1b44a310e, type: 3}
+  - {fileID: 4430309418471777927, guid: 8a1d9693a52fe59478dfb203756b6b66, type: 3}
+  - {fileID: -3962710079843836785, guid: 44025f59903fe4041b497358c5b09ca0, type: 3}
   Particles: []
   BuffArrow: {fileID: 0}
   DebuffArrow: {fileID: 0}
@@ -123,21 +128,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  MoveSpeed: {x: 0, y: 0, z: 0}
   sprintFactor: 2
   Gravity: -9.81
   JumpHeight: 3
   MaxStamina: 100
   stamina: 100
-  move: {x: 0, y: 0, z: 0}
   groundCheck: {fileID: 1770926877354960670}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  velocity: {x: 0, y: 0, z: 0}
   isGrounded: 0
-  canMove: 1
-  airControl: 1
+  CanMove: 1
   sprintingStaminaConsumption: 15
 --- !u!114 &2261139059068404529
 MonoBehaviour:
@@ -152,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AggroRadius: 200
-  PlayerStats: {fileID: 0}
-  PlayerMovement: {fileID: 0}
+  PlayerStats: {fileID: 1371681455124981258}
+  PlayerMovement: {fileID: 1770926876427669917}
 --- !u!1 &1770926877354960669
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +201,7 @@ GameObject:
   - component: {fileID: 1770926878555534596}
   - component: {fileID: 1770926878555534599}
   - component: {fileID: 7466164034755127555}
+  - component: {fileID: 3262102928929492754}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -315,6 +320,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &3262102928929492754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770926878555534715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 142ff471025de4c4ab4f5efd983c2091, type: 2}
 --- !u!1 &1990423969439298963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,6 +5501,36 @@ Transform:
   - {fileID: 2882998097560740716}
   m_Father: {fileID: 1770926876427669916}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4908348806816321032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2973716997344224117}
+  m_Layer: 0
+  m_Name: AimPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2973716997344224117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908348806816321032}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.47, z: 0.205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1770926876427669916}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5005436121805075344
 GameObject:

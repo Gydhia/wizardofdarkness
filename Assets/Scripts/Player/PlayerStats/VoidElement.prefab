@@ -48,13 +48,16 @@ MonoBehaviour:
   Str: 0
   AtkSpeed: 0
   MoveSpeed: 0
-  ElementStats: {fileID: 0}
+  ElementStats: {fileID: 11400000, guid: 89fefce7f64d8444996d40059f2353a9, type: 2}
   Skills:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8340569340311662439, guid: 0a84108d847910c4dbd5b21fbcf26971, type: 3}
+  - {fileID: 4104187511788239016, guid: 79c6d3a5036624445ab52e5b75e5d614, type: 3}
+  - {fileID: 8394855744111783416, guid: 74fbbe4d556b9db4d9c2ab43561d06e2, type: 3}
+  - {fileID: 5942999898190538995, guid: 906c349360bb71644ac88daf53946e62, type: 3}
+  - {fileID: 270384955794969926, guid: f882a2da141a98448bb7c79957c8748c, type: 3}
   ElementWeapon: {fileID: 0}
-  SwitchingParticle: {fileID: 0}
+  SwitchingParticle: {fileID: 198771893959925924, guid: 44a9ad63a554c5a41b6530bfc5c1faff,
+    type: 3}
   BarFillColor: {r: 0.627451, g: 0.39215687, b: 0.6745098, a: 1}
   CenterColor: {r: 0.8156863, g: 0.7058824, b: 0.83137256, a: 0.7019608}
   BarMinMaxColor: {r: 0.42352942, g: 0.2509804, b: 0.59607846, a: 1}

@@ -43,7 +43,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c881908e18e5e7e409becc2b704150ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementStats: {fileID: 11400000, guid: 77d919ac5080b784685648aac075a065, type: 2}
+  Type: 2
+  Def: 50
+  Str: 30
+  AtkSpeed: 1.2
+  MoveSpeed: 8.5
+  ElementStats: {fileID: 11400000, guid: 77d919ac5080b784685648aac075a065, type: 2}
+  Skills:
+  - {fileID: 2362409253884397331, guid: ee82673cb5f399949b0af366e00325e3, type: 3}
+  - {fileID: 2077534254365948339, guid: 53477cfc3c5446041acbbe57d995e29d, type: 3}
+  - {fileID: 6920561276943584106, guid: 6749beae76f4fe245930ab636395f50d, type: 3}
+  - {fileID: 6168571296250838623, guid: 51f757d5c372c2d4c9feb28b8c23a536, type: 3}
+  - {fileID: 750415013182018748, guid: d0ef04c0575bf214784d6204f532f319, type: 3}
+  ElementWeapon: {fileID: 1557623499046660, guid: ea58054f5fa182946840ce9989a90443,
+    type: 3}
+  SwitchingParticle: {fileID: 198497312146361894, guid: 2e0d5536e42d3aa48b6e363997b6b9e4,
+    type: 3}
   BarFillColor: {r: 0.40784314, g: 0.1882353, b: 0.078431375, a: 1}
   CenterColor: {r: 0.3019608, g: 0.22352941, b: 0.20392157, a: 0.7019608}
   BarMinMaxColor: {r: 0.8117648, g: 0.62352943, b: 0.62352943, a: 1}
+  FXPrefab: {fileID: 0}
+  blocking: 0

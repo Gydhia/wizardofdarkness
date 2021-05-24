@@ -23,7 +23,7 @@ public class GameUIController : MonoBehaviour
 
     // ATTRIBUTES
     public List<ElementColor> ElementsColor;
-    public Dictionary<Element, ElementColor> ElementsColors = new Dictionary<Element, ElementColor>();
+    public Dictionary<EElements, ElementColor> ElementsColors = new Dictionary<EElements, ElementColor>();
 
     public Image Cursor;
     public TextMeshProUGUI InteractText;
@@ -41,14 +41,15 @@ public class GameUIController : MonoBehaviour
             Instance = this;
         else
             Destroy(this.gameObject);
+
+        foreach (ElementColor elementColor in ElementsColor) {
+            if (!ElementsColors.ContainsKey(elementColor.Element))
+                ElementsColors.Add(elementColor.Element, elementColor);
+        }
     }
 
     private void Start()
     {
-        foreach(ElementColor elementColor in ElementsColor) {
-            if (!ElementsColors.ContainsKey(elementColor.Element))
-                ElementsColors.Add(elementColor.Element, elementColor);
-        }
         // For now the game over screen isn't that much elaborated, but we'll need to 
         // create its own script later. 
         GameController.Instance.OnDeath += LaunchGameOverScreen;

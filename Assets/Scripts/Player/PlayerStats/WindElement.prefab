@@ -43,15 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6693bc77602cf4b8057880f59765fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
   Def: 0
   Str: 0
   AtkSpeed: 0
   MoveSpeed: 0
-  ElementStats: {fileID: 0}
+  ElementStats: {fileID: 11400000, guid: e9406e77cf5ac874cba671089a6bedcb, type: 2}
   Skills:
   - {fileID: 1161502679486882114, guid: bfe64be45c2b3ae4e8db07d96a720eba, type: 3}
-  ElementWeapon: {fileID: 0}
+  - {fileID: 1046771509190506549, guid: 1ddb655eddf01b24dad85c1ba24576d5, type: 3}
+  - {fileID: 691048292996386523, guid: 8ee87e20d0b56e541928b6eb2e68850e, type: 3}
+  - {fileID: 3017820782497080344, guid: 4235c75bd2c0cdd47ae006f80f5660d0, type: 3}
+  - {fileID: 3510656546890683834, guid: 32186ebb6c77c1a4e8736dccf10d5e3a, type: 3}
+  ElementWeapon: {fileID: 1160500651364054800, guid: 6f1a243a57ffa9441913e1a76ad96355,
+    type: 3}
   SwitchingParticle: {fileID: 0}
   BarFillColor: {r: 0.63529414, g: 0.8980392, b: 0.85882354, a: 1}
   CenterColor: {r: 0.43529412, g: 0.77254903, b: 0.6862745, a: 0.7019608}

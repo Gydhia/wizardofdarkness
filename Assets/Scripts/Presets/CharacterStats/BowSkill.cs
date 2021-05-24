@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BowSkill : AttackSkill
 {
-    public float CameraMaxAditionalFOV = -10;
     [HideInInspector]
     public Vector3 ArrowStartPostion;
     public float BendDistance = 1f;
@@ -12,17 +12,21 @@ public class BowSkill : AttackSkill
     private LineRenderer _lineRenderer;
     public ArrowProjectile ArrowProjectile;
 
+    private Bow _bow;
 
     private void Start()
     {
-        _lineRenderer = GetComponent<LineRenderer>();
+        Element windElement = PlayerController.Instance.PlayerStats.Elements.SingleOrDefault(element => element.Type == EElements.Wind);
+        _bow = windElement.ElementWeapon.GetComponent<Bow>();
+
+        _lineRenderer = _bow._stringRenderer;
     }
 
     public override void ActivatedSkill()
     {
         base.ActivatedSkill();
 
-        ArrowProjectile = Instantiate(ArrowProjectile, ((WindElement)PlayerController.Instance.PlayerStats.ActualElement).ElementWeapon.transform);
+        ArrowProjectile = Instantiate(ArrowProjectile, _bow.ArrowPoint.transform);
 
         StartCoroutine(BendBow());
     }

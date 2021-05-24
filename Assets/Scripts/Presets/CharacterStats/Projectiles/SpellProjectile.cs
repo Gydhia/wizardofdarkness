@@ -9,6 +9,10 @@ public class SpellProjectile : MonoBehaviour
     [ConditionalField("IsCasted")]
     public float CastTime = 0f;
 
+    public bool IsBeam = false;
+    [ConditionalField("IsBeam")]
+    public float BeamTime = 0f;
+
     [ConditionalField("IsCasted")]
     public GameObject ChargingParticle;
     public GameObject ThrowingParticle;
@@ -32,12 +36,21 @@ public class SpellProjectile : MonoBehaviour
 
     public void EndCast()
     {
-        if (IsCasted)
-            Destroy(ChargingSpell);
+        if (IsCasted) {
+            ParticleSystem ps = ChargingSpell.GetComponent<ParticleSystem>();
+            ps.Stop();
+            Destroy(ChargingSpell.gameObject);
+        }
+            
 
         ThrowingSpell = Instantiate(ThrowingParticle, this.transform);
         ThrowingSpell.transform.rotation = Quaternion.LookRotation(Target - this.transform.position);
 
-        ThrowingSpell.GetComponent<ProjectileCollision>().ProjectileDamages = this.Damages;
+        if (!IsBeam)
+            ThrowingSpell.GetComponent<ProjectileCollision>().ProjectileDamages = this.Damages;
+        else 
+            ThrowingSpell.GetComponent<BeamCollision>().BeamTime = this.BeamTime;
+         
+        
     }
 }

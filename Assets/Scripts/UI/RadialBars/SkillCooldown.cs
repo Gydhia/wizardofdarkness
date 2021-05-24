@@ -8,7 +8,7 @@ using System;
 
 public class SkillCooldown : MonoBehaviour
 {
-    private SkillBind SkillBind;
+    public SkillBind SkillBind;
     private Skill ActualSkill;
     private ElementColor SkillColor;
 
@@ -22,11 +22,7 @@ public class SkillCooldown : MonoBehaviour
 
     void Awake()
     {
-        SkillMaterial = this.GetComponent<RawImage>().material;
-        InitialFillPercentage = SkillMaterial.GetFloat("_Fillpercentage");
-        MaxValue = ActualSkill.Cooldown;
-        FillPercentage = InitialFillPercentage;
-        SkillMaterial.SetFloat("_Fillpercentage", FillPercentage);
+        
     }
 
     void FixedUpdate()
@@ -40,7 +36,16 @@ public class SkillCooldown : MonoBehaviour
 
     void Start()
     {
-        if(MaxValue <= 0) {
+        ActualSkill = PlayerController.Instance.PlayerStats.ActualElement.Skills.
+            SingleOrDefault(skill => skill.SkillBind == this.SkillBind);
+
+        SkillMaterial = this.GetComponent<RawImage>().material;
+        InitialFillPercentage = SkillMaterial.GetFloat("_Fillpercentage");
+        MaxValue = ActualSkill.Cooldown;
+        FillPercentage = InitialFillPercentage;
+        SkillMaterial.SetFloat("_Fillpercentage", FillPercentage);
+
+        if (MaxValue <= 0) {
             FillPercentage = 1;
             SkillMaterial.SetFloat("_Fillpercentage", FillPercentage);
             CooldownText.text = "";
@@ -53,7 +58,7 @@ public class SkillCooldown : MonoBehaviour
     public void ChangeFocusedSkill()
     {
         ActualSkill = PlayerController.Instance.PlayerStats.ActualElement.Skills.SingleOrDefault(skill => skill.SkillBind == this.SkillBind);
-        SkillColor = GameUIController.Instance.ElementsColors[PlayerController.Instance.PlayerStats.ActualElement];
+        SkillColor = GameUIController.Instance.ElementsColors[PlayerController.Instance.PlayerStats.ActualElement.Type] ;
 
         SkillMaterial.SetColor("_Backgroundfillcolor",  SkillColor.BackgroundFillColor);
         CenterImage.material.color = SkillColor.CenterColor;

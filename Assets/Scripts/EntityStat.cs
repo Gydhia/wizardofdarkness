@@ -16,7 +16,7 @@ public class EntityStat : MonoBehaviour
     public float Def { get; protected set; }
     public float Str { get; protected set; }
     public float AtkSpeed { get; protected set; }
-    public float MoveSpeed { get => 10f; protected set => MoveSpeed = value; }
+    public float MoveSpeed = 10;
 
     public GameObject AimPoint;
 

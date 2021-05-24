@@ -16,7 +16,7 @@ public enum SkillBind
 public class Skill : MonoBehaviour
 {
     public SkillBind SkillBind = SkillBind.None;
-    [HideInInspector]
+    
     public EntityStat EntityHolder;
 
     [HideInInspector]
@@ -37,7 +37,7 @@ public class Skill : MonoBehaviour
     }
     public virtual void ActivatedSkill()
     {
-        
+        if (!CanLaunch) return; 
     }
 
     protected void BeginCooldown()

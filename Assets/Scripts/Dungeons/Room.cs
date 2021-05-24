@@ -47,6 +47,7 @@ public class Room : MonoBehaviour
     }
     public void RoomComplete()
     {
+        return;
         GameController.Instance.OnRoomComplete -= RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {
@@ -55,6 +56,7 @@ public class Room : MonoBehaviour
     }
     public void RoomStart()
     {
+        return;
         GameController.Instance.OnRoomComplete += RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {

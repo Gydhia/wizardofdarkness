@@ -12,18 +12,22 @@ public class PlayerStats : EntityStat
     public CharacterStatus statsEmpty;
 
     public Element ActualElement;
-    public List<Element> Elements = new List<Element>(3);
+    public List<Element> Elements;
 
     public ParticleSystem[] Particles;
     public ParticleSystem BuffArrow;
     public ParticleSystem DebuffArrow;
-    
-    private void Start()
+
+    private void Awake()
     {
         foreach (Element element in Elements)
             element.Init();
 
         ActualElement = Elements.SingleOrDefault(element => element.Type == EElements.Void);
+    }
+
+    private void Start()
+    {
         UpdateStats();
     }
 

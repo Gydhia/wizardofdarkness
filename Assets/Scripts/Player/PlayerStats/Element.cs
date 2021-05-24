@@ -27,7 +27,6 @@ public abstract class Element : MonoBehaviour
         Str = ElementStats.baseStr;
         AtkSpeed = ElementStats.attackSpeed;
         MoveSpeed = ElementStats.moveSpeed;
-        Skills = ElementStats.skills;
     }
 
     public abstract void ChangementFX(ParticleSystem part);
