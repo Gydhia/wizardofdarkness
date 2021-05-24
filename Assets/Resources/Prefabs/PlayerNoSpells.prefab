@@ -123,21 +123,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharController: {fileID: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  MoveSpeed: {x: 0, y: 0, z: 0}
   sprintFactor: 2
   Gravity: -9.81
   JumpHeight: 3
   MaxStamina: 100
   stamina: 100
-  move: {x: 0, y: 0, z: 0}
   groundCheck: {fileID: 1770926877354960670}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  velocity: {x: 0, y: 0, z: 0}
   isGrounded: 0
-  canMove: 1
-  airControl: 1
+  CanMove: 1
   sprintingStaminaConsumption: 15
 --- !u!114 &2261139059068404529
 MonoBehaviour:

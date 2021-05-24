@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController CharController;
 
     public Vector3 Velocity;
-    public Vector3 MoveSpeed;
+    public Vector3 MoveDirection;
     private float _walkSpeed = 10f;
     public float sprintFactor = 2f;
     private float _actualSpeed = 1f;
@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             if (isGrounded && Velocity.y < 0)
                 Velocity.y = -2f;
-
-            CharController.Move(MoveSpeed * _actualSpeed * Time.deltaTime);
+            Vector3 localMoveSpeed = transform.InverseTransformPoint(MoveDirection * _actualSpeed);
+            CharController.Move(localMoveSpeed * Time.deltaTime);
             Velocity.y += Gravity * Time.deltaTime;
             CharController.Move(Velocity * Time.deltaTime);
         }
@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerJump()
     {
+        if(isGrounded)
         Velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
     }
 
