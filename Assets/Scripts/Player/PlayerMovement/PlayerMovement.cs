@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             if (isGrounded && Velocity.y < 0)
                 Velocity.y = -2f;
-            Debug.Log(MoveDirection.ToString());
-            CharController.Move(MoveDirection * _actualSpeed * Time.deltaTime);
+            Vector3 localDir = MoveDirection.x * transform.right + MoveDirection.z * transform.forward;
+            CharController.Move(localDir * _actualSpeed * Time.deltaTime);
 
             Velocity.y += Gravity * Time.deltaTime;
             CharController.Move(Velocity * Time.deltaTime);
