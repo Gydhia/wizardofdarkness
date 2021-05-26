@@ -8,11 +8,13 @@ public class GameController : MonoBehaviour
     public delegate void RoomComplete();
     public delegate void GameReady();
     public delegate void Death();
+    public delegate void EnemyDeath();
 
     public event ElementChange OnElementChange;
     public event RoomComplete OnRoomComplete;
     public event GameReady OnGameReady;
     public event Death OnDeath;
+    public event EnemyDeath OnEnemyDeath;
 
     public bool GameIsReady = false;
 
@@ -45,5 +47,10 @@ public class GameController : MonoBehaviour
     {
         if (OnDeath != null)
             OnDeath.Invoke();
+    }
+    public void FireOnEnemyDeath()
+    {
+        if (OnEnemyDeath != null)
+            OnEnemyDeath.Invoke();
     }
 }

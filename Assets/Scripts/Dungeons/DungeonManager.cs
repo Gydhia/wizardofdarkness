@@ -48,6 +48,8 @@ public class DungeonManager : MonoBehaviour
     public DungeonParts DungeonParts;
     public Room[,] Rooms;
 
+    Vector2 spawnLocation;
+
     public List<DungeonRooms> UnobtainableRooms;
     public List<DungeonRooms> UnlinkableRooms;
     public List<int> NbOfRooms = new List<int>() {
@@ -136,7 +138,7 @@ public class DungeonManager : MonoBehaviour
             }
 
         // Spawn room
-        Vector2 spawnLocation = GenerateMainRoom(Orientation.Left, DungeonRooms.Spawn, dungeonPath);
+        spawnLocation = GenerateMainRoom(Orientation.Left, DungeonRooms.Spawn, dungeonPath);
         // Boss room 
         Vector2 bossLocation = GenerateMainRoom(Orientation.Right, DungeonRooms.Boss, dungeonPath);
 
@@ -332,6 +334,7 @@ public class DungeonManager : MonoBehaviour
                 }
             }
         }
+        PlayerController.Instance.transform.position = Rooms[(int)spawnLocation.x,(int)spawnLocation.y].transform.position;
     }
 
     public void GenerateDungeonCorridors(BooleanDoor actualDoor, BooleanDoor nextDoor)

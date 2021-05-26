@@ -141,7 +141,7 @@ namespace ED.Controllers
         {
             Vector2 speed = ctx.ReadValue<Vector2>();
 
-            PlayerController.Instance.PlayerMovement.MoveSpeed = new Vector3(speed.x, 0f, speed.y);
+            PlayerController.Instance.PlayerMovement.MoveDirection = new Vector3(speed.x, 0f, speed.y);
         }
         public void OnInteract(InputAction.CallbackContext ctx)
         {

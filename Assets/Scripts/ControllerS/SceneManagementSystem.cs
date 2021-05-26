@@ -8,8 +8,8 @@ public class SceneManagementSystem : MonoBehaviour
 {
     public static SceneManagementSystem Instance;
     public event LoadScene LoadNextScene;
-    public List<string> sceneNames = new List<string>();
-    public int actualSceneIndex;
+    [HideInInspector] public List<string> sceneNames = new List<string>();
+    [Tooltip("0 = main Menu, 1 = tutorial, 2= donjon")]public int actualSceneIndex;
 
     public void Awake()
     {
@@ -18,7 +18,7 @@ public class SceneManagementSystem : MonoBehaviour
     private void Start()
     {
         sceneNames.Add("Tutorial");
-        sceneNames.Add("Dungeon");
+        sceneNames.Add("DungeonScene");
         sceneNames.Add("MainMenu");
     }
     public void FireLoadSceneEvent()
