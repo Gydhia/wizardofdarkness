@@ -25,12 +25,12 @@ public class MouseLook : MonoBehaviour
         
         if (lookInput != Vector2.zero)
         {
-            playerBody.Rotate(Vector3.up * lookInput.x * Time.deltaTime * mouseSensitivity);
 
             _xCamRotation += lookInput.y * 0.2f;
             _xCamRotation = Mathf.Clamp(_xCamRotation, -90f, 90f);
-
+         
             transform.localRotation = Quaternion.Euler(-_xCamRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * lookInput.x * Time.deltaTime * mouseSensitivity);
         }
         
     }
