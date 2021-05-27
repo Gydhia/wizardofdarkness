@@ -20,8 +20,11 @@ public class PlayerStats : EntityStat
 
     private void Awake()
     {
-        foreach (Element element in Elements)
+        foreach (Element element in Elements) {
             element.Init();
+            foreach (Skill skill in element.Skills)
+                skill.EntityHolder = this;
+        }
 
         ActualElement = Elements.SingleOrDefault(element => element.Type == EElements.Void);
     }

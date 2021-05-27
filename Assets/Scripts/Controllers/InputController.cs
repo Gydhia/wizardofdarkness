@@ -53,26 +53,33 @@ namespace ED.Controllers
 
         private void Update()
         {
-            Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
+            if(Camera.main != null)
+            {
+                Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
 
-            Debug.DrawRay(ray.origin, ray.direction * InteractRange, Color.red);
+                Debug.DrawRay(ray.origin, ray.direction * InteractRange, Color.red);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, InteractRange, Masks[(int)ETypeOfHoveredObject.Interactable])) {
-                if (hit.collider.TryGetComponent(out HoveredItem))
+                if (Physics.Raycast(ray, out RaycastHit hit, InteractRange, Masks[(int)ETypeOfHoveredObject.Interactable]))
                 {
-                    HoveredItem.Hovered();
-                    GameUIController.Instance.FireOnInteractOverviewChange(HoveredItem.OverviewDatas);
+                    if (hit.collider.TryGetComponent(out HoveredItem))
+                    {
+                        HoveredItem.Hovered();
+                        GameUIController.Instance.FireOnInteractOverviewChange(HoveredItem.OverviewDatas);
+                    }
                 }
-            } else {
-                if (HoveredItem != null) 
+                else
                 {
-                    GameUIController.Instance.FireOnInteractOverviewCancel();
-                    HoveredItem.Unhovered();
-                    HoveredItem = null;
+                    if (HoveredItem != null)
+                    {
+                        GameUIController.Instance.FireOnInteractOverviewCancel();
+                        HoveredItem.Unhovered();
+                        HoveredItem = null;
+                    }
                 }
+                //if (isHovering) ActualColor = HoveringColors[(int)currentlyHovered];
+                //cursor.color = ActualColor;
             }
-            //if (isHovering) ActualColor = HoveringColors[(int)currentlyHovered];
-            //cursor.color = ActualColor;
+
         }
 
         public void SwitchActionMap(PlayerBindings? map = null)
@@ -88,6 +95,7 @@ namespace ED.Controllers
             this.PlayerInputs.actions[PlayerBindings.Movements.ToString()].performed += this.OnMove;
             this.PlayerInputs.actions[PlayerBindings.Jump.ToString()].performed += this.OnJump;
             this.PlayerInputs.actions[PlayerBindings.Run.ToString()].performed += this.OnRun;
+            this.PlayerInputs.actions[PlayerBindings.Run.ToString()].canceled += this.OnStopRun;
 
             this.PlayerInputs.actions[PlayerBindings.Interact.ToString()].performed += this.OnInteract;
             this.PlayerInputs.actions[PlayerBindings.FirstSpell.ToString()].performed += this.OnCastFirstSpell;
@@ -108,6 +116,7 @@ namespace ED.Controllers
             this.PlayerInputs.actions[PlayerBindings.Movements.ToString()].performed -= this.OnMove;
             this.PlayerInputs.actions[PlayerBindings.Jump.ToString()].performed -= this.OnJump;
             this.PlayerInputs.actions[PlayerBindings.Run.ToString()].performed -= this.OnRun;
+            this.PlayerInputs.actions[PlayerBindings.Run.ToString()].canceled -= this.OnStopRun;
 
             this.PlayerInputs.actions[PlayerBindings.Interact.ToString()].performed -= this.OnInteract;
             this.PlayerInputs.actions[PlayerBindings.FirstSpell.ToString()].performed -= this.OnCastFirstSpell;
@@ -187,10 +196,15 @@ namespace ED.Controllers
         }
         public void OnRun(InputAction.CallbackContext ctx)
         {
-            if (ctx.performed)
-                PlayerController.Instance.PlayerMovement.UseStamina();
-            else
-                PlayerController.Instance.PlayerMovement.RegenerateStamina();
+            if (ctx.performed) {
+                PlayerController.Instance.PlayerMovement.UnregenerateStamina();
+                PlayerController.Instance.PlayerMovement.IsRunning = true;
+            }   
+        }
+        public void OnStopRun(InputAction.CallbackContext ctx)
+        {
+            PlayerController.Instance.PlayerMovement.IsRunning = false;
+            PlayerController.Instance.PlayerMovement.RegenerateStamina();
         }
         public void OnEscape(InputAction.CallbackContext ctx)
         {

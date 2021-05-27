@@ -74,7 +74,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1553726181990426622}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1514716023922313680
 MonoBehaviour:
@@ -101,49 +101,6 @@ MonoBehaviour:
   Masks:
   - serializedVersion: 2
     m_Bits: 1024
---- !u!1 &3444565766963074715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4952617570460150059}
-  - component: {fileID: 695717934208070085}
-  m_Layer: 0
-  m_Name: Coroutine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4952617570460150059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3444565766963074715}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1553726181990426622}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &695717934208070085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3444565766963074715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac2a6a7087f5e9458d5979aa5d6e217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5708583175743356666
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +130,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1553726181990426622}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &678893365226244950
 MonoBehaviour:
@@ -217,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1553726181990426622}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3597355341137846244
 MonoBehaviour:
@@ -231,9 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe472caa78dec14489aa92ba26cb8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElementsColor: []
+  ElementsColor:
+  - {fileID: 11400000, guid: ad68265d508937843a3f03badde70648, type: 2}
+  - {fileID: 11400000, guid: 35a50f9351d147e458101f9693f1005f, type: 2}
+  - {fileID: 11400000, guid: 585670564f197d04c96cc330dc7dc5c8, type: 2}
   Cursor: {fileID: 0}
-  InteractText: {fileID: 0}
   FadedOut: 0
   SceneFade: {fileID: 0}
   GameOver: {fileID: 0}
@@ -317,7 +276,6 @@ Transform:
   m_Children:
   - {fileID: 1783457647}
   - {fileID: 3280921902039560867}
-  - {fileID: 4952617570460150059}
   - {fileID: 5419467234082159147}
   - {fileID: 564207801687491871}
   - {fileID: 1465805462703889958}

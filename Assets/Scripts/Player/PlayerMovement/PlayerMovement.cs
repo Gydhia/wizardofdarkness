@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     
     public bool isGrounded;
     public bool CanMove = true;
+    public bool IsRunning = false;
     public float sprintingStaminaConsumption = 15f;
     private float staminaCooldownRate = 9f;
     private float depletedStaminaCooldownRate = 6f;
@@ -50,48 +51,69 @@ public class PlayerMovement : MonoBehaviour
             Velocity.y += Gravity * Time.deltaTime;
             CharController.Move(Velocity * Time.deltaTime);
         }
+        if (IsRunning)
+        {
+            _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
+            float updatedStamina = 0f;
+
+            if (stamina > 0f)
+            {
+                updatedStamina -= sprintingStaminaConsumption * Time.deltaTime;
+                _actualSpeed = _walkSpeed * sprintFactor;
+            }
+            else
+            {
+                _actualSpeed = _walkSpeed;
+            }
+
+            stamina += updatedStamina;
+            GameUIController.Instance.FireOnStaminaChange();
+        }
     }
 
     public void PlayerJump()
     {
-        if(isGrounded)
-        Velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+        if (isGrounded)
+            Velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
     }
 
-    public void UseStamina()
+    public void UnregenerateStamina()
     {
-        _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
-        float updatedStamina = 0f;
-        
-        if (stamina > 0f) {
-            updatedStamina -= sprintingStaminaConsumption * Time.deltaTime;
-            _actualSpeed = _walkSpeed * sprintFactor;
-        } else {
-            _actualSpeed = _walkSpeed;
+        if (StaminaRegeneration != null) {
+            StopCoroutine(StaminaRegeneration);
+            StaminaRegeneration = null;
         }
-
-        stamina += updatedStamina;
-        GameUIController.Instance.FireOnStaminaConsumed();
     }
 
     public void RegenerateStamina()
     {
         if(StaminaRegeneration == null)
-            StartCoroutine(_regenerateStamina());
+            StaminaRegeneration = StartCoroutine(_regenerateStamina());
     }
 
     private IEnumerator _regenerateStamina()
     {
         _actualSpeed = _walkSpeed;
 
-        if (stamina <= 30f)
-            stamina += staminaCooldownRate * Time.deltaTime;
-        else if (stamina < MaxStamina)
-            stamina += depletedStaminaCooldownRate * Time.deltaTime;
-        else
-            yield break;
-
-        yield return null;
+        while(stamina < MaxStamina)
+        {
+            if (stamina <= 30f)
+            {
+                stamina += staminaCooldownRate * Time.deltaTime;
+                GameUIController.Instance.FireOnStaminaChange();
+            }
+            else if (stamina < MaxStamina)
+            {
+                stamina += depletedStaminaCooldownRate * Time.deltaTime;
+                GameUIController.Instance.FireOnStaminaChange();
+            }
+            else
+            {
+                StaminaRegeneration = null;
+                yield break;
+            }
+            yield return null;
+        }
     }
 
     public void Teleport(Vector3 pos)

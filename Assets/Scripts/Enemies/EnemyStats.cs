@@ -26,6 +26,7 @@ public abstract class EnemyStats : EntityStat
     public override void Die()
     {
         base.Die();
+        Destroy(gameObject, 1.5f);
         GameController.Instance.FireOnEnemyDeath();
     }
 }

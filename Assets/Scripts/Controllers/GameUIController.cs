@@ -11,14 +11,14 @@ public class GameUIController : MonoBehaviour
     public delegate void InteractOverviewCancel();
 
     public delegate void DamageTaken(int value);
-    public delegate void StaminaConsumed();
+    public delegate void StaminaChange();
 
     // EVENTS
     public event InteractOverviewChange OnInteractOverviewChange;
     public event InteractOverviewCancel OnInteractOverviewCancel;
 
     public event DamageTaken OnDamageTaken;
-    public event StaminaConsumed OnStaminaConsumed;
+    public event StaminaChange OnStaminaChange;
 
 
     // ATTRIBUTES
@@ -26,7 +26,6 @@ public class GameUIController : MonoBehaviour
     public Dictionary<EElements, ElementColor> ElementsColors = new Dictionary<EElements, ElementColor>();
 
     public Image Cursor;
-    public TextMeshProUGUI InteractText;
 
     // Transitions
     public bool FadedOut = false;
@@ -70,10 +69,10 @@ public class GameUIController : MonoBehaviour
         if (OnDamageTaken != null)
             OnDamageTaken.Invoke(value);
     }
-    public void FireOnStaminaConsumed()
+    public void FireOnStaminaChange()
     {
-        if (OnStaminaConsumed != null)
-            OnStaminaConsumed.Invoke();
+        if (OnStaminaChange != null)
+            OnStaminaChange.Invoke();
     }
 
 

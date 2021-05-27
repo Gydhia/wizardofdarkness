@@ -11,7 +11,7 @@ public class StaminaBar : MonoBehaviour
 
     void Start()
     {
-        GameUIController.Instance.OnStaminaConsumed += UpdateStaminaBar;
+        GameUIController.Instance.OnStaminaChange += UpdateStaminaBar;
     }
 
     public void UpdateStaminaBar()
@@ -22,6 +22,6 @@ public class StaminaBar : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameUIController.Instance.OnStaminaConsumed -= UpdateStaminaBar;
+        GameUIController.Instance.OnStaminaChange -= UpdateStaminaBar;
     }
 }

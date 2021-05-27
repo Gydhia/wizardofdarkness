@@ -908,6 +908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -970,6 +974,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (102)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -1034,6 +1042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (123)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 123
@@ -1097,6 +1109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1159,6 +1175,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -1349,6 +1369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -1474,6 +1498,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (157)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -1790,6 +1818,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (132)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 132
@@ -1852,6 +1884,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (88)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -2105,6 +2141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 71
@@ -2167,6 +2207,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -2483,6 +2527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (164)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 164
@@ -2546,6 +2594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (187)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 187
@@ -2608,6 +2660,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (208)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -2735,6 +2791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (162)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 162
@@ -2797,6 +2857,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (98)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -2987,6 +3051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -3050,6 +3118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -3112,6 +3184,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (181)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -3239,6 +3315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -3302,6 +3382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -3364,6 +3448,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -3554,6 +3642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (106)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 102
@@ -3742,6 +3834,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -3932,6 +4028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (101)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 107
@@ -3994,6 +4094,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (105)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -4121,6 +4225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -4183,6 +4291,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -4373,6 +4485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -4520,6 +4636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (176)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 176
@@ -4582,6 +4702,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -4646,6 +4770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (221)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 221
@@ -4708,6 +4836,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (131)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -4834,6 +4966,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (125)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -5023,6 +5159,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -5402,6 +5542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -5465,6 +5609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (223)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 223
@@ -5527,6 +5675,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (226)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -5654,6 +5806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (222)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 222
@@ -5716,6 +5872,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (168)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -5843,6 +6003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -5905,6 +6069,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (94)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -5969,6 +6137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -6031,6 +6203,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (236)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -6095,6 +6271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (117)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 113
@@ -6158,6 +6338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (225)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 225
@@ -6220,6 +6404,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -6347,6 +6535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (113)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 117
@@ -6409,6 +6601,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (167)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -6473,6 +6669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -6535,6 +6735,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -6662,6 +6866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -6724,6 +6932,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (153)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -6788,6 +7000,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (163)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 163
@@ -6851,6 +7067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (213)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 213
@@ -6913,6 +7133,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (193)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -7103,6 +7327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (140)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 140
@@ -7165,6 +7393,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -7229,6 +7461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (202)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 202
@@ -7291,6 +7527,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (93)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -7355,6 +7595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -7418,6 +7662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (118)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 112
@@ -7480,6 +7728,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -7607,6 +7859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 97
@@ -7670,6 +7926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -7732,6 +7992,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (115)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -7985,6 +8249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (116)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 114
@@ -8110,6 +8378,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -8237,6 +8509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -8362,6 +8638,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (109)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -8489,6 +8769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (138)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 138
@@ -8551,6 +8835,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (122)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -8867,6 +9155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (87)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 77
@@ -8929,6 +9221,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (199)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -9056,6 +9352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -9182,6 +9482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (146)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 146
@@ -9244,6 +9548,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -9308,6 +9616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (124)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 124
@@ -9370,6 +9682,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (100)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -9434,6 +9750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -9496,6 +9816,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -9560,6 +9884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (134)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 134
@@ -9622,6 +9950,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (184)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -9812,6 +10144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -9938,6 +10274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -10000,6 +10340,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (197)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -10316,6 +10660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -10378,6 +10726,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (218)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -10568,6 +10920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -10757,6 +11113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -10883,6 +11243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (99)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 109
@@ -10945,6 +11309,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (228)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -11072,6 +11440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -11197,6 +11569,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (107)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -11324,6 +11700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (174)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 174
@@ -11386,6 +11766,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -11450,6 +11834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (207)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 207
@@ -11512,6 +11900,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (120)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -11639,6 +12031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (128)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 128
@@ -11701,6 +12097,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (145)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -11765,6 +12165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (194)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 194
@@ -11828,6 +12232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (111)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 119
@@ -11890,6 +12298,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (79)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -12080,6 +12492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (114)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 116
@@ -12143,6 +12559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (185)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 185
@@ -12205,6 +12625,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (159)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -12331,6 +12755,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (80)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -12521,6 +12949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (143)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 143
@@ -12584,6 +13016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (165)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 165
@@ -12646,6 +13082,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (209)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -12773,6 +13213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (220)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 220
@@ -12898,6 +13342,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (200)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -13151,6 +13599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -13213,6 +13665,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (234)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -13403,6 +13859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (86)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 78
@@ -13465,6 +13925,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (227)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -13592,6 +14056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (110)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 120
@@ -13654,6 +14122,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -13907,6 +14379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (241)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 241
@@ -13969,6 +14445,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (229)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -14096,6 +14576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (148)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 148
@@ -14158,6 +14642,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (121)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -14222,6 +14710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (189)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 189
@@ -14284,6 +14776,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (171)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -14411,6 +14907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -14473,6 +14973,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -14537,6 +15041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -14600,6 +15108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (108)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 100
@@ -14662,6 +15174,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (205)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -14788,6 +15304,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (182)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -14978,6 +15498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (151)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 151
@@ -15041,6 +15565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -15103,6 +15631,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (85)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -15230,6 +15762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -15292,6 +15828,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (191)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -15356,6 +15896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (129)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 129
@@ -15418,6 +15962,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (190)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -15671,6 +16219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -15860,6 +16412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (203)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 203
@@ -15923,6 +16479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -15985,6 +16545,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -16175,6 +16739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (103)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 105
@@ -16364,6 +16932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -16426,6 +16998,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (166)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -16616,6 +17192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (119)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 111
@@ -16678,6 +17258,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (112)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -16742,6 +17326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (73)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 69
@@ -16805,6 +17393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (217)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 217
@@ -16867,6 +17459,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -16994,6 +17590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (83)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -17119,6 +17719,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -17246,6 +17850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (154)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 154
@@ -17372,6 +17980,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (160)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 160
@@ -17434,6 +18046,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (198)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -17561,6 +18177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (133)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 133
@@ -17624,6 +18244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -17686,6 +18310,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -17812,6 +18440,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (91)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -18001,6 +18633,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -18317,6 +18953,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (84)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 80
@@ -18379,6 +19019,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -18505,6 +19149,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (95)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -18821,6 +19469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (158)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 158
@@ -18946,6 +19598,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -19073,6 +19729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (212)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 212
@@ -19135,6 +19795,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -19199,6 +19863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (96)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 90
@@ -19261,6 +19929,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -19325,6 +19997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (178)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 178
@@ -19387,6 +20063,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (172)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -19451,6 +20131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (152)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 152
@@ -19513,6 +20197,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (231)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -19892,6 +20580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (156)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 156
@@ -20018,6 +20710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (97)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 89
@@ -20080,6 +20776,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (137)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -20144,6 +20844,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (149)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 149
@@ -20206,6 +20910,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -20332,6 +21040,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (92)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -20522,6 +21234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (144)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 144
@@ -20648,6 +21364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (170)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 170
@@ -20710,6 +21430,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (237)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -20900,6 +21624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (141)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 141
@@ -20962,6 +21690,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (186)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -21089,6 +21821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (211)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 211
@@ -21215,6 +21951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (239)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 239
@@ -21277,6 +22017,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (192)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -21467,6 +22211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 75
@@ -21593,6 +22341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (180)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 180
@@ -21655,6 +22407,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (219)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -21781,6 +22537,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (216)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -21971,6 +22731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (126)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 126
@@ -22033,6 +22797,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -22223,6 +22991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -22348,6 +23120,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -22475,6 +23251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -22537,6 +23317,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (238)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -22664,6 +23448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -22727,6 +23515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -22789,6 +23581,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (224)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -22916,6 +23712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (142)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 142
@@ -23042,6 +23842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (214)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 214
@@ -23105,6 +23909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (195)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 195
@@ -23167,6 +23975,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (215)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -23294,6 +24106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (183)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 183
@@ -23420,6 +24236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -23482,6 +24302,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (130)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -23546,6 +24370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -23608,6 +24436,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (104)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -23735,6 +24567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -23797,6 +24633,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (136)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -23924,6 +24764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (175)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 175
@@ -24050,6 +24894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (235)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 235
@@ -24113,6 +24961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (196)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 196
@@ -24175,6 +25027,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (232)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -24302,6 +25158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (204)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 204
@@ -24428,6 +25288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (188)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 188
@@ -24490,6 +25354,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (210)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -24554,6 +25422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (77)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 87
@@ -24616,6 +25488,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -24743,6 +25619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -24806,6 +25686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (155)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 155
@@ -24868,6 +25752,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (177)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -25058,6 +25946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (230)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 230
@@ -25120,6 +26012,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -25310,6 +26206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (150)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 150
@@ -25373,6 +26273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (127)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 127
@@ -25435,6 +26339,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -25688,6 +26596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (179)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 179
@@ -25750,6 +26662,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -25814,6 +26730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -25876,6 +26796,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (240)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -26003,6 +26927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (206)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 206
@@ -26065,6 +26993,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (147)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -26129,6 +27061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (161)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 161
@@ -26191,6 +27127,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (90)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -26255,6 +27195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (135)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 135
@@ -26317,6 +27261,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -26381,6 +27329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (173)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 173
@@ -26443,6 +27395,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (139)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -26633,6 +27589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (201)
       objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
       value: 201
@@ -26695,6 +27655,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (169)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder
@@ -26884,6 +27848,10 @@ PrefabInstance:
     - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_20 (233)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209425597585632, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4383683694736562, guid: d9f2f474eb1965f4bb702d045bb9d2d3, type: 3}
       propertyPath: m_RootOrder

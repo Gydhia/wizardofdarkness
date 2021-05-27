@@ -16,6 +16,12 @@ public class DistanceEnemy : BasicEnemy
     public GameObject Spell;
     public GameObject SpellAnchor;
 
+    protected override void Update()
+    {
+        EnemyAnimator.SetFloat("VerticalSpeed", Agent.velocity.z);
+        EnemyAnimator.SetFloat("HorizontalSpeed", Agent.velocity.x);
+    }
+
     public void RangeAttack()
     {
         GameObject spell = Instantiate(Spell, SpellAnchor.transform);

@@ -11,7 +11,8 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
     [Header("Tutorial: (empty if scrollType = Spell)")]
     public Element elementToAdd;
 
-    public InteractableDatas OverviewDatas => this.OverviewDatas;
+    public InteractableDatas overviewDatas;
+    public InteractableDatas OverviewDatas => this.overviewDatas;
 
     private void OnEnable()
     {
@@ -24,7 +25,7 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
     }
     public void Hovered()
     {
-        throw new System.NotImplementedException();
+        return;
     }
 
     public void Unhovered()

@@ -56,8 +56,10 @@ MonoBehaviour:
   - {fileID: 8483496308292756097}
   scrollElement: 0
   scrollType: 0
+  completionCondition: 0
   elementToAdd: {fileID: 4430309418471777927, guid: 8a1d9693a52fe59478dfb203756b6b66,
     type: 3}
+  overviewDatas: {fileID: 11400000, guid: 7c1c68c2cf60c48478d50a01873471da, type: 2}
 --- !u!33 &3355331904917717017
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -42,7 +42,6 @@ public class EntityStat : MonoBehaviour
     public virtual void Die()
     {
         IsDead = true;
-        Destroy(gameObject, 1.5f);
     }
 
     public void LaunchStatModifier(float timeOfDebuff, EStatsBuffs debuffID, int percentReduce)

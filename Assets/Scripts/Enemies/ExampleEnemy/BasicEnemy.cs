@@ -25,10 +25,8 @@ public class BasicEnemy : EnemyStats
         Agent = this.GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        EnemyAnimator.SetFloat("VerticalSpeed", Agent.velocity.z);
-        EnemyAnimator.SetFloat("HorizontalSpeed", Agent.velocity.x);
         EnemyAnimator.SetBool("IsMoving", Agent.velocity.z > 0f || Agent.velocity.x > 0f);
     }
 

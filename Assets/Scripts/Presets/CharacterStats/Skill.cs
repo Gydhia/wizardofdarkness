@@ -20,6 +20,8 @@ public class Skill : MonoBehaviour
     public EntityStat EntityHolder;
 
     [HideInInspector]
+    public bool IsBeingCast = false;
+    [HideInInspector]
     public bool CanLaunch = true;
     [HideInInspector]
     public bool HasReleased = false;

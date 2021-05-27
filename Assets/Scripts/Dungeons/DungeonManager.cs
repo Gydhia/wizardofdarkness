@@ -334,7 +334,7 @@ public class DungeonManager : MonoBehaviour
                 }
             }
         }
-        PlayerController.Instance.transform.position = Rooms[(int)spawnLocation.x,(int)spawnLocation.y].transform.position;
+        //PlayerController.Instance.transform.position = Rooms[(int)spawnLocation.x,(int)spawnLocation.y].transform.position;
     }
 
     public void GenerateDungeonCorridors(BooleanDoor actualDoor, BooleanDoor nextDoor)

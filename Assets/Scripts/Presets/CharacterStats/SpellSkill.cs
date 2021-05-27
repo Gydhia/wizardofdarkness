@@ -12,6 +12,9 @@ public class SpellSkill : AttackSkill
 
     public override void ActivatedSkill()
     {
+        if (IsBeingCast) return;
+
+        IsBeingCast = true;
         base.ActivatedSkill();
 
         SpellProjectile = Instantiate(SpellProjectile, PlayerController.Instance.PlayerStats.AimPoint.transform);
@@ -36,6 +39,10 @@ public class SpellSkill : AttackSkill
                 timer += Time.deltaTime;
                 yield return null;
             }
+            if(timer < CastTime - 0.01f) {
+                SpellProjectile.EndCast();
+                yield break;
+            }
         }
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity))
@@ -44,6 +51,7 @@ public class SpellSkill : AttackSkill
             SpellProjectile.Target = Vector3.zero;
             
         SpellProjectile.EndCast();
+        SpellProjectile.ThrowSpell();
         BeginCooldown();
         
         this.HasReleased = false;

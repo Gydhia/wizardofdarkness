@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46fa72a48381434598d190dccf4086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SkillBind: 2
   CenterImage: {fileID: 347752189287842049}
   CooldownText: {fileID: 2459153566996028928}
 --- !u!1 &766655752740920465
@@ -516,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46fa72a48381434598d190dccf4086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SkillBind: 3
   CenterImage: {fileID: 2784117995971861087}
   CooldownText: {fileID: 6802618713412120201}
 --- !u!1 &1054482404388817010
@@ -853,6 +855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46fa72a48381434598d190dccf4086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SkillBind: 4
   CenterImage: {fileID: 5041394625467996490}
   CooldownText: {fileID: 243683757951511141}
 --- !u!1 &4277207197215268021
@@ -1354,6 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46fa72a48381434598d190dccf4086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SkillBind: 5
   CenterImage: {fileID: 7889538242413909316}
   CooldownText: {fileID: 1428528458490832574}
 --- !u!1 &7219184390805868240
@@ -1683,5 +1687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46fa72a48381434598d190dccf4086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SkillBind: 1
   CenterImage: {fileID: 4778103953296765137}
   CooldownText: {fileID: 8470636215138203241}

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinkedRoom: {fileID: 6250968488008166899}
-  Orientation: 0
+  Orientation: 1
   Position: {x: 0.33000112, y: 0.13960624}
   DoorBounds:
     m_Center: {x: 0.33000112, y: 2.501297, z: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinkedRoom: {fileID: 6250968488008166899}
-  Orientation: 0
+  Orientation: 2
   Position: {x: -27.030394, y: 27.5}
   DoorBounds:
     m_Center: {x: -27.17, y: 2.501297, z: 27.5}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinkedRoom: {fileID: 6250968488008166899}
-  Orientation: 0
+  Orientation: 3
   Position: {x: 27.693394, y: 27.5}
   DoorBounds:
     m_Center: {x: 27.833, y: 2.501297, z: 27.5}

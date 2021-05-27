@@ -41,16 +41,15 @@ public class SpellProjectile : MonoBehaviour
             ps.Stop();
             Destroy(ChargingSpell.gameObject);
         }
-            
-
+    }
+    public void ThrowSpell()
+    {
         ThrowingSpell = Instantiate(ThrowingParticle, this.transform);
         ThrowingSpell.transform.rotation = Quaternion.LookRotation(Target - this.transform.position);
 
         if (!IsBeam)
             ThrowingSpell.GetComponent<ProjectileCollision>().ProjectileDamages = this.Damages;
-        else 
+        else
             ThrowingSpell.GetComponent<BeamCollision>().BeamTime = this.BeamTime;
-         
-        
     }
 }
