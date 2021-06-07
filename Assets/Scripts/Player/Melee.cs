@@ -5,19 +5,30 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class Melee : MonoBehaviour
 {
-    public int Damages;
-    public Animator MeleeAnimator;
+    public int Dmg;
+    private Animator MeleeAnimator;
+    Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // Center of the screen
+    public float attackRange;
+    LayerMask enemies;
+    public GameObject BloodFXPrefab;
 
     private void Start()
     {
         MeleeAnimator = this.GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Damage()
     {
-        if (other.TryGetComponent(out EntityStat entity))
+        Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
+        enemies = LayerMask.GetMask("Enemy", "TriggeredEnemy");
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, attackRange, enemies))
         {
-            entity.TakeDamage(Damages);
+            if (hit.collider.gameObject.TryGetComponent(out EntityStat entity))
+            {
+                entity.TakeDamage(Dmg);
+                Instantiate(BloodFXPrefab, new Vector3(hit.point.x,hit.point.y,hit.point.z), Quaternion.identity);
+            }
         }
     }
 }

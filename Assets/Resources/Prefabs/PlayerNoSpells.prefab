@@ -937,6 +937,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992076239026399637, guid: ea58054f5fa182946840ce9989a90443,
+        type: 3}
+      propertyPath: Dmg
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992076239026399637, guid: ea58054f5fa182946840ce9989a90443,
+        type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992076239026399637, guid: ea58054f5fa182946840ce9989a90443,
+        type: 3}
+      propertyPath: BloodFXPrefab
+      value: 
+      objectReference: {fileID: 1489431029902184, guid: 4430919f14c50f84085d287cbcb2c30e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea58054f5fa182946840ce9989a90443, type: 3}
 --- !u!1 &6500400326905324092 stripped
