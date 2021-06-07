@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowPrefab: {fileID: 497356220400985511}
-  BackPoint: {fileID: 0}
-  IsLaunched: 0
+  BasePosition: {x: 0, y: 0, z: 0}
 --- !u!136 &3387077343574875088
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -61,7 +60,7 @@ CapsuleCollider:
   m_Radius: 0.48755908
   m_Height: 4.0104833
   m_Direction: 2
-  m_Center: {x: 0, y: -0.047229767, z: 0.09524155}
+  m_Center: {x: 0, y: 0, z: 1.82}
 --- !u!1001 &298684624699170779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,17 +81,17 @@ PrefabInstance:
     - target: {fileID: 686801559252902086, guid: fa667703bbd820c4aa5fc18f1c7fca00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 686801559252902086, guid: fa667703bbd820c4aa5fc18f1c7fca00,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 686801559252902086, guid: fa667703bbd820c4aa5fc18f1c7fca00,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.722
       objectReference: {fileID: 0}
     - target: {fileID: 686801559252902086, guid: fa667703bbd820c4aa5fc18f1c7fca00,
         type: 3}

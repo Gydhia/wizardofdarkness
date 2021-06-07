@@ -30,7 +30,7 @@ public class SkillCooldown : MonoBehaviour
         if (MaxValue > 0) {
             FillPercentage = ActualSkill.CooldownTimer / MaxValue;
             SkillMaterial.SetFloat("_Fillpercentage", FillPercentage);
-            CooldownText.text = (Math.Round(MaxValue - ActualSkill.CooldownTimer, 1)).ToString();
+            CooldownText.text = (Math.Round(ActualSkill.CooldownTimer, 1)).ToString();
         }
     }
 
@@ -48,7 +48,9 @@ public class SkillCooldown : MonoBehaviour
         if (MaxValue <= 0) {
             FillPercentage = 1;
             SkillMaterial.SetFloat("_Fillpercentage", FillPercentage);
-            CooldownText.text = "";
+            CooldownText.text = "^";
+        } else {
+            CooldownText.text = MaxValue.ToString();
         }
 
         GameController.Instance.OnElementChange += ChangeFocusedSkill;

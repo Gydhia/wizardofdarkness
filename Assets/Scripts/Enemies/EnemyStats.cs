@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyStats : EntityStat
+public class EnemyStats : EntityStat
 {
     
     public EEnemyElements ActualElement;
     public Animator EntityAnimator;
+    public EnemyHealth EnemyHealth;
 
     public Skill[] Skills;
     public MeshRenderer MatRenderer;
@@ -17,6 +18,14 @@ public abstract class EnemyStats : EntityStat
     protected void Start()
     {
         EnemyAnimator = this.GetComponent<Animator>();
+        this.HP = this.MaxHP;
+        EnemyHealth.Init(this.MaxHP);
+    }
+
+    public override void TakeDamage(int value)
+    {
+        base.TakeDamage(value);
+        EnemyHealth.RefreshHealth(this.HP);
     }
 
     public void ActivateSkill(int index)

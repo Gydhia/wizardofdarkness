@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpellSkill : AttackSkill
 {
     public SpellProjectile SpellProjectile;
+    private SpellProjectile _actualSpell;
 
     public bool IsBeam = false;
     [ConditionalField("IsBeam")]
@@ -12,27 +13,26 @@ public class SpellSkill : AttackSkill
 
     public override void ActivatedSkill()
     {
-        if (IsBeingCast) return;
-
         IsBeingCast = true;
-        base.ActivatedSkill();
+        this.HasReleased = false;
 
-        SpellProjectile = Instantiate(SpellProjectile, PlayerController.Instance.PlayerStats.AimPoint.transform);
-        SpellProjectile.Damages = this.Damages;
-        SpellProjectile.IsCasted = this.IsCasted;
-        SpellProjectile.CastTime = this.CastTime;
-        SpellProjectile.IsBeam = this.IsBeam;
-        SpellProjectile.BeamTime = this.BeamTime;
+        if(_actualSpell == null)
+            _actualSpell = Instantiate(SpellProjectile, PlayerController.Instance.PlayerStats.AimPoint.transform);
+        _actualSpell.Damages = this.Damages;
+        _actualSpell.IsCasted = this.IsCasted;
+        _actualSpell.CastTime = this.CastTime;
+        _actualSpell.IsBeam = this.IsBeam;
+        _actualSpell.BeamTime = this.BeamTime;
 
+        _actualSpell.gameObject.SetActive(true);
         StartCoroutine(CastSpell());
     }
 
     public IEnumerator CastSpell()
     {
-        CanLaunch = false;
         if (IsCasted)
         {
-            SpellProjectile.CastSpell();
+            _actualSpell.CastSpell();
             float timer = 0f;
             while (!HasReleased && timer < CastTime)
             { 
@@ -40,20 +40,22 @@ public class SpellSkill : AttackSkill
                 yield return null;
             }
             if(timer < CastTime - 0.01f) {
-                SpellProjectile.EndCast();
+                _actualSpell.EndCast();
+                IsBeingCast = false;
+                CanLaunch = true;
                 yield break;
             }
         }
-
+  
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity))
-            SpellProjectile.Target = hit.transform.position;
+            _actualSpell.Target = hit.point;
         else
-            SpellProjectile.Target = Vector3.zero;
-            
-        SpellProjectile.EndCast();
-        SpellProjectile.ThrowSpell();
+            _actualSpell.Target = Vector3.forward;
+
+        _actualSpell.EndCast();
+        _actualSpell.ThrowSpell();
         BeginCooldown();
-        
+
         this.HasReleased = false;
     }
 }

@@ -23,7 +23,7 @@ public class EntityStat : MonoBehaviour
     public virtual void TakeDamage(int value)
     {
         if (HP - value > 0) {
-            HP -= (value - (value / Def));
+            HP -= value;
         }
         else {
             HP -= HP;

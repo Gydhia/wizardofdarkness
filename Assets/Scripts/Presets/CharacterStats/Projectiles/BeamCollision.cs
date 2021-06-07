@@ -5,9 +5,10 @@ using UnityEngine;
 public class BeamCollision : MonoBehaviour
 {
     public float BeamDamages;
+    public ParticleSystem BeamParticles;
 
     public float BeamTime;
-    public float DamagesTickDelay = 0.1f;
+    public float DamagesTickDelay = 0.2f;
     private float _actualTickDelay = 0f;
     private bool _canHit = true;
 
@@ -18,35 +19,40 @@ public class BeamCollision : MonoBehaviour
         if (!_canHit) return;
 
         if (other.TryGetComponent(out EntityStat entity)) {
+
             entity.TakeDamage((int)BeamDamages);
-            _tickCoroutine = StartCoroutine(_startTickDelay());
+            if(_tickCoroutine == null)
+                _tickCoroutine = StartCoroutine(_startTickDelay());
         }
 
-        StartCoroutine(_destroyBeam(BeamTime));
+        StartCoroutine(_stopBeam(BeamTime));
     }
 
     private IEnumerator _startTickDelay()
     {
         _canHit = false;
+        _actualTickDelay = 0f;
         while (_actualTickDelay < DamagesTickDelay) {
             _actualTickDelay += Time.deltaTime;
 
             yield return null;
         }
         _canHit = true;
+        _tickCoroutine = null;
     }
 
-    private void OnDestroy()
-    {
-        if(_tickCoroutine != null)
-            StopCoroutine(_tickCoroutine);
-    }
-
-    private IEnumerator _destroyBeam(float time)
+    private IEnumerator _stopBeam(float time)
     {
         yield return new WaitForSeconds(time);
 
-        this.GetComponent<ParticleSystem>().Stop();
-        Destroy(this);
+        BeamParticles.Stop();
+        BeamParticles.Clear();
+        BeamParticles.gameObject.SetActive(false);
+
+        if (_tickCoroutine != null) {
+            StopCoroutine(_tickCoroutine);
+            _canHit = true;
+        }
+           
     }
 }

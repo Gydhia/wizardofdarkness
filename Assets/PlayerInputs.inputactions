@@ -19,7 +19,15 @@
                     "id": "5694bba1-e770-41bf-a6ea-728f2189416e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)"
+                    "interactions": "Press"
+                },
+                {
+                    "name": "LeftClickRelease",
+                    "type": "Button",
+                    "id": "2ab91155-d29c-413d-b0d8-7c80b54d3d96",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 },
                 {
                     "name": "RightClick",
@@ -314,6 +322,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ThirdClass",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "257d11c2-22db-4ed8-bea7-f6c8c443ffd4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Computer",
+                    "action": "LeftClickRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

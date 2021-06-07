@@ -27,15 +27,18 @@ public class PlayerStats : EntityStat
         }
 
         ActualElement = Elements.SingleOrDefault(element => element.Type == EElements.Void);
+        ActualElement.ElementWeapon.SetActive(true);
     }
 
     private void Start()
     {
+        this.HP = this.MaxHP;
         UpdateStats();
     }
 
     public void ChangeElement(EElements newElement)
     {
+
         if (ActualElement.Type != newElement)
         {
             ActualElement.ElementWeapon.SetActive(false);

@@ -90,6 +90,7 @@ namespace ED.Controllers
         {
             this.PlayerInputs.actions[PlayerBindings.MousePosition.ToString()].performed += this.OnMouseMove;
             this.PlayerInputs.actions[PlayerBindings.LeftClick.ToString()].performed += this.OnLeftClick;
+            this.PlayerInputs.actions[PlayerBindings.LeftClickRelease.ToString()].performed += this.OnLeftClickRelease;
             this.PlayerInputs.actions[PlayerBindings.RightClick.ToString()].performed += this.OnRightClick;
 
             this.PlayerInputs.actions[PlayerBindings.Movements.ToString()].performed += this.OnMove;
@@ -111,6 +112,7 @@ namespace ED.Controllers
         {
             this.PlayerInputs.actions[PlayerBindings.MousePosition.ToString()].performed -= this.OnMouseMove;
             this.PlayerInputs.actions[PlayerBindings.LeftClick.ToString()].performed -= this.OnLeftClick;
+            this.PlayerInputs.actions[PlayerBindings.LeftClickRelease.ToString()].performed -= this.OnLeftClickRelease;
             this.PlayerInputs.actions[PlayerBindings.RightClick.ToString()].performed -= this.OnRightClick;
 
             this.PlayerInputs.actions[PlayerBindings.Movements.ToString()].performed -= this.OnMove;
@@ -134,10 +136,11 @@ namespace ED.Controllers
         }
         public void OnLeftClick(InputAction.CallbackContext ctx)
         {
-            if (ctx.performed) 
-                _castSpell(0, true);
-            else if (ctx.canceled) 
-                _castSpell(0, false);
+            _castSpell(0, true);
+        }
+        public void OnLeftClickRelease(InputAction.CallbackContext ctx)
+        {
+            _castSpell(0, false);
         }
         public void OnRightClick(InputAction.CallbackContext ctx)
         {
@@ -217,7 +220,7 @@ namespace ED.Controllers
                 if (PlayerController.Instance.PlayerStats.ActualElement.Skills[index].CanLaunch)
                     PlayerController.Instance.PlayerStats.ActualElement.Skills[index].ActivatedSkill();
             }
-            else if (performed) {
+            else {
                 PlayerController.Instance.PlayerStats.ActualElement.Skills[index].HasReleased = true;
             }
         }
@@ -227,6 +230,7 @@ namespace ED.Controllers
     {
         MousePosition,
         LeftClick,
+        LeftClickRelease,
         RightClick,
         Escape,
 

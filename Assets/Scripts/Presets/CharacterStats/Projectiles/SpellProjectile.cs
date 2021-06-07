@@ -14,13 +14,13 @@ public class SpellProjectile : MonoBehaviour
     public float BeamTime = 0f;
 
     [ConditionalField("IsCasted")]
-    public GameObject ChargingParticle;
-    public GameObject ThrowingParticle;
+    public ParticleSystem ChargingParticle;
+    public ParticleSystem ThrowingParticle;
 
     // In code go
     [ConditionalField("IsCasted")]
-    private GameObject ChargingSpell;
-    private GameObject ThrowingSpell;
+    private ParticleSystem _chargingSpell;
+    private ParticleSystem _throwingSpell;
 
     [HideInInspector]
     public Vector3 Target;
@@ -29,27 +29,40 @@ public class SpellProjectile : MonoBehaviour
     {
         if (IsCasted)
         {
-            ChargingSpell = Instantiate(ChargingParticle, this.transform);
-            ChargingParticle.SetActive(true);
+            if(_chargingSpell == null) {
+                _chargingSpell = Instantiate(ChargingParticle, this.transform);
+            } else {
+                _chargingSpell.Clear();
+            }
+
+            _chargingSpell.gameObject.SetActive(true);
+            _chargingSpell.Play();
         }
     }
 
     public void EndCast()
     {
         if (IsCasted) {
-            ParticleSystem ps = ChargingSpell.GetComponent<ParticleSystem>();
-            ps.Stop();
-            Destroy(ChargingSpell.gameObject);
+            _chargingSpell.Stop();
+            _chargingSpell.gameObject.SetActive(false);
         }
     }
     public void ThrowSpell()
     {
-        ThrowingSpell = Instantiate(ThrowingParticle, this.transform);
-        ThrowingSpell.transform.rotation = Quaternion.LookRotation(Target - this.transform.position);
+        if(_throwingSpell == null)
+            _throwingSpell = Instantiate(ThrowingParticle, this.transform);
+        _throwingSpell.transform.rotation = Quaternion.LookRotation(Target - this.transform.position);
 
         if (!IsBeam)
-            ThrowingSpell.GetComponent<ProjectileCollision>().ProjectileDamages = this.Damages;
-        else
-            ThrowingSpell.GetComponent<BeamCollision>().BeamTime = this.BeamTime;
+            _throwingSpell.GetComponent<ProjectileCollision>().ProjectileDamages = this.Damages;
+        else {
+            BeamCollision beam = _throwingSpell.GetComponent<BeamCollision>();
+            beam.BeamTime = this.BeamTime;
+            beam.BeamDamages = this.Damages;
+            beam.BeamParticles = _throwingSpell;
+        }
+
+        _throwingSpell.gameObject.SetActive(true);
+            
     }
 }

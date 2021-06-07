@@ -6,14 +6,14 @@ using UnityEngine;
 public class ArrowProjectile : MonoBehaviour
 {
     public GameObject ArrowPrefab;
-    public GameObject BackPoint;
+    public Vector3 BasePosition;
 
-    public bool IsLaunched = false;
-    private float _projectileSpeed = 0.5f;
+    private bool _isLaunched = false;
+    private float _projectileSpeed = 40f;
 
     private void Update()
     {
-        if (IsLaunched)
+        if (_isLaunched)
         {
             transform.Translate(Vector3.forward * _projectileSpeed * Time.deltaTime);
         }
@@ -21,11 +21,18 @@ public class ArrowProjectile : MonoBehaviour
 
     public void LaunchProjectile()
     {
-        IsLaunched = true;
+        _isLaunched = true;
     }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.TryGetComponent(out EntityStat entity))
+        {
+            entity.TakeDamage(10);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out EntityStat entity))
         {
             entity.TakeDamage(10);
         }

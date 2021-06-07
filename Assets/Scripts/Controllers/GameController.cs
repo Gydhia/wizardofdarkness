@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public event EnemyDeath OnEnemyDeath;
 
     public bool GameIsReady = false;
+    public GameObject ProjectilePool;
 
     public static GameController Instance;
     private void Awake()

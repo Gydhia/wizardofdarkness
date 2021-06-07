@@ -35,6 +35,7 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        return;
         if (scrollType == EScrollTypes.Tutorial)
         {
             TextingSystemManager.Instance.NextLine();

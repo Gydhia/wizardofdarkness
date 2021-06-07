@@ -7,10 +7,11 @@ public class BowSkill : AttackSkill
 {
     [HideInInspector]
     public Vector3 ArrowStartPostion;
-    public float BendDistance = 1f;
+    private float _bendDistance;
 
     private LineRenderer _lineRenderer;
     public ArrowProjectile ArrowProjectile;
+    private ArrowProjectile _currentArrow;
 
     private Bow _bow;
 
@@ -26,7 +27,9 @@ public class BowSkill : AttackSkill
     {
         base.ActivatedSkill();
 
-        ArrowProjectile = Instantiate(ArrowProjectile, _bow.ArrowPoint.transform);
+        _currentArrow = Instantiate(ArrowProjectile, _bow.ArrowPoint.transform);
+        _currentArrow.BasePosition = _currentArrow.transform.localPosition;
+        _bendDistance = _bow.BackArrowPoint.position.z - _bow.ArrowPoint.position.z;
 
         StartCoroutine(BendBow());
     }
@@ -40,21 +43,34 @@ public class BowSkill : AttackSkill
             {
                 timer += Time.deltaTime;
 
-                ArrowProjectile.transform.localPosition += new Vector3(0f, 0f, BendDistance / CastTime * timer);
-                _lineRenderer.SetPosition(1, ArrowProjectile.BackPoint.transform.localPosition + ArrowProjectile.transform.localPosition);
+                float chargingDist = Mathf.Lerp(_bow.ArrowPoint.localPosition.z, _bow.BackArrowPoint.localPosition.z, timer / CastTime);
+                _currentArrow.transform.localPosition = new Vector3(0f, 0f, chargingDist);
+                _lineRenderer.SetPosition(1, _currentArrow.transform.localPosition);
             }
+            
             yield return null;
         }
 
-        _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
-        BeginCooldown();
-        ThrowProjectile();
         this.HasReleased = false;
+        if (timer < CastTime) {
+            Destroy(_currentArrow.gameObject);
+            _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
+        } else {
+            _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
+            BeginCooldown();
+            ThrowProjectile();
+        }
     }
 
     public void ThrowProjectile()
     {
-        ArrowProjectile.LaunchProjectile();
+        _currentArrow.transform.parent = GameController.Instance.ProjectilePool.transform;
+
+        //if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity)){
+        //    _currentArrow.transform.rotation = Quaternion.LookRotation(hit.point - this.transform.position);
+        //}
+
+        _currentArrow.LaunchProjectile();
     }
 }
 

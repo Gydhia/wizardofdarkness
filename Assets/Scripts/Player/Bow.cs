@@ -5,5 +5,11 @@ using UnityEngine;
 public class Bow : MonoBehaviour
 {
     public LineRenderer _stringRenderer;
-    public GameObject ArrowPoint;
+    public Transform ArrowPoint;
+    public Transform BackArrowPoint;
+
+    private void Update()
+    {
+        this.transform.rotation = Camera.main.transform.rotation;
+    }
 }

@@ -23,10 +23,10 @@ public abstract class Element : MonoBehaviour
 
     public void Init()
     {
-        Def = ElementStats.baseDef;
-        Str = ElementStats.baseStr;
-        AtkSpeed = ElementStats.attackSpeed;
-        MoveSpeed = ElementStats.moveSpeed;
+        this.Def = ElementStats.baseDef;
+        this.Str = ElementStats.baseStr;
+        this.AtkSpeed = ElementStats.attackSpeed;
+        this.MoveSpeed = ElementStats.moveSpeed;
     }
 
     public abstract void ChangementFX(ParticleSystem part);
