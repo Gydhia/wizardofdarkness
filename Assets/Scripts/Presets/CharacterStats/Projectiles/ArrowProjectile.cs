@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ArrowProjectile : MonoBehaviour
 {
-    public GameObject ArrowPrefab;
     public Vector3 BasePosition;
 
     private bool _isLaunched = false;
@@ -18,20 +17,20 @@ public class ArrowProjectile : MonoBehaviour
             transform.Translate(Vector3.forward * _projectileSpeed * Time.deltaTime);
         }
     }
-
     public void LaunchProjectile()
     {
         _isLaunched = true;
     }
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.TryGetComponent(out EntityStat entity))
         {
             entity.TakeDamage(10);
         }
-    }
+    }*/
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
         if (other.TryGetComponent(out EntityStat entity))
         {
             entity.TakeDamage(10);
