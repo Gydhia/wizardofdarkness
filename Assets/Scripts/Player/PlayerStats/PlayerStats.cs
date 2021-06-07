@@ -39,7 +39,7 @@ public class PlayerStats : EntityStat
     public void ChangeElement(EElements newElement)
     {
 
-        if (ActualElement.Type != newElement)
+        if (ActualElement.Type != newElement && Elements.Single(elem => elem.Type == newElement).IsActive)
         {
             ActualElement.ElementWeapon.SetActive(false);
             ActualElement = Elements.Single(element => element.Type == newElement);
@@ -70,6 +70,7 @@ public class PlayerStats : EntityStat
     public override void Die()
     {
         base.Die();
-        GameController.Instance.FireOnDeath();
+        //GameController.Instance.FireOnDeath();
+        DungeonManager.Instance.TeleportPlayer();
     }
 }

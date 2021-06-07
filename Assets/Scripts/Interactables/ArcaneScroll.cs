@@ -1,10 +1,11 @@
 using ED.Interactable;
+using System.Linq;
 using UnityEngine;
 
 public class ArcaneScroll : MonoBehaviour, IInteractable
 {
     public GameObject[] elementsParticles;
-    public EElements scrollElement;
+    public EElements ScrollElement;
     public enum EScrollTypes { Tutorial, Spell }
     public EScrollTypes scrollType;
     public bool completionCondition;
@@ -16,7 +17,7 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
 
     private void OnEnable()
     {
-        elementsParticles[(int)scrollElement].SetActive(true);
+        elementsParticles[(int)ScrollElement].SetActive(true);
     }
 
     public void IsCompletionCondition()
@@ -35,15 +36,13 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        return;
         if (scrollType == EScrollTypes.Tutorial)
         {
             TextingSystemManager.Instance.NextLine();
             Destroy(gameObject);
 
-            PlayerController.Instance.PlayerStats.Elements.Add(elementToAdd);
-            elementToAdd.Init();
-            PlayerController.Instance.PlayerStats.ChangeElement(scrollElement);
+            PlayerController.Instance.PlayerStats.Elements.Single(elem => elem.Type == this.ScrollElement).IsActive = true;
+            PlayerController.Instance.PlayerStats.ChangeElement(ScrollElement);
             if (completionCondition)
             {
                 GameController.Instance.FireOnRoomComplete();

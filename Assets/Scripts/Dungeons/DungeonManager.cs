@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum DungeonRooms
 {
@@ -43,12 +44,14 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
+    public NavMesh NavMesh;
+
     public GameObject Corridor;
     public GameObject CorridorsContainer;
     public DungeonParts DungeonParts;
     public Room[,] Rooms;
 
-    Vector2 spawnLocation;
+    public Vector2 SpawnLocation;
 
     public List<DungeonRooms> UnobtainableRooms;
     public List<DungeonRooms> UnlinkableRooms;
@@ -129,6 +132,7 @@ public class DungeonManager : MonoBehaviour
 
     private void GenerateDungeonPath() // 4x4
     {
+        NavMesh.
         dungeonPath = new DungeonSpecification[size, size];
 
         for (int i = 0; i < size; i++)
@@ -138,7 +142,7 @@ public class DungeonManager : MonoBehaviour
             }
 
         // Spawn room
-        spawnLocation = GenerateMainRoom(Orientation.Left, DungeonRooms.Spawn, dungeonPath);
+        SpawnLocation = GenerateMainRoom(Orientation.Left, DungeonRooms.Spawn, dungeonPath);
         // Boss room 
         Vector2 bossLocation = GenerateMainRoom(Orientation.Right, DungeonRooms.Boss, dungeonPath);
 
@@ -160,8 +164,8 @@ public class DungeonManager : MonoBehaviour
         }
 
         // Setup the spawn orientations
-        SetRoomOrientation(dungeonPath[(int)spawnLocation.x, (int)spawnLocation.y], dungeonPath);
-        int pathToBeReward = Random.Range(0, dungeonPath[(int)spawnLocation.x, (int)spawnLocation.y].orientations.Count);
+        SetRoomOrientation(dungeonPath[(int)SpawnLocation.x, (int)SpawnLocation.y], dungeonPath);
+        int pathToBeReward = Random.Range(0, dungeonPath[(int)SpawnLocation.x, (int)SpawnLocation.y].orientations.Count);
 
         List<DungeonSpecification> ActualPath = new List<DungeonSpecification>();
 
@@ -169,7 +173,7 @@ public class DungeonManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Vector2 direction = new Vector2(-1, -1);
-            Vector2 actualPosition = spawnLocation;
+            Vector2 actualPosition = SpawnLocation;
             
 
             int iteration = 0;
@@ -264,7 +268,6 @@ public class DungeonManager : MonoBehaviour
                     //    );
 
                     Rooms[i, j] = room;
-                    yield return new WaitForSeconds(0.1f);
                 }
             }
         }
@@ -283,9 +286,7 @@ public class DungeonManager : MonoBehaviour
                         if (Rooms[k, l + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[k, l].GivenOrientations.Contains(Orientation.Right)) {
                             xOffset = actualDoor.WorldPosition.y - nextDoor.WorldPosition.y;
                             Rooms[k, l + 1].gameObject.transform.position += new Vector3(0f, 0f, xOffset);
-                        }
-                        yield return new WaitForSeconds(0.1f);
-                        
+                        }                        
                     }
                 }
             }
@@ -308,7 +309,6 @@ public class DungeonManager : MonoBehaviour
                             yield return null;
                             GenerateDungeonCorridors(actualDoor, nextDoor);
                         }
-                        yield return new WaitForSeconds(0.1f);
                     }
                     
                 }
@@ -327,14 +327,19 @@ public class DungeonManager : MonoBehaviour
                         if (Rooms[o, p + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[o, p].GivenOrientations.Contains(Orientation.Right))
                         {
                             GenerateDungeonCorridors(actualDoor, nextDoor);
-                            yield return new WaitForSeconds(0.1f);
                         }
                     }
-                    yield return null;
                 }
             }
         }
-        //PlayerController.Instance.transform.position = Rooms[(int)spawnLocation.x,(int)spawnLocation.y].transform.position;
+
+
+
+        TeleportPlayer();
+    }
+    public void TeleportPlayer()
+    {
+        PlayerController.Instance.transform.position = Rooms[(int)SpawnLocation.x, (int)SpawnLocation.y].transform.position;
     }
 
     public void GenerateDungeonCorridors(BooleanDoor actualDoor, BooleanDoor nextDoor)
@@ -489,7 +494,7 @@ public class DungeonManager : MonoBehaviour
         int nbOfLinks = 0, linkedDone = 0;
 
         if (!OnlyOne) {
-            nbOfLinks = Random.Range(1, directions.Count);
+            nbOfLinks = Random.Range(2, directions.Count);
         }
 
         foreach (Orientation or in directions)

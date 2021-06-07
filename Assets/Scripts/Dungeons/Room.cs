@@ -25,7 +25,14 @@ public class Room : MonoBehaviour
             door.Door.SetActive(orientations.Contains(door.Orientation));
         }
     }
-    
+
+    private void Start()
+    {
+        foreach (BooleanDoor bd in RoomDoors) {
+            bd.DoorComponent.DoorAnim.SetBool("OpenDoor", true);
+        }
+    }
+
     public void SetupDoors()
     {
         this.RoomDoors = this.GetComponentsInChildren<BooleanDoor>().ToList();
@@ -59,6 +66,9 @@ public class Room : MonoBehaviour
     }
     public void RoomStart()
     {
+        if (this.IsComplete)
+            return;
+
         GameController.Instance.OnEnemyDeath += RoomComplete;
         foreach (BooleanDoor bd in RoomDoors)
         {

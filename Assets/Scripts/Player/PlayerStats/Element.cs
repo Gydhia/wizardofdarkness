@@ -6,6 +6,7 @@ public enum EElements { Void = 0, Wind = 1, Earth = 2, None = -1 }
 public abstract class Element : MonoBehaviour
 {
     public EElements Type;
+    public bool IsActive = true;
 
     public int Def;
     public int Str;

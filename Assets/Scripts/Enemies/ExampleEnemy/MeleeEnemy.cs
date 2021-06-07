@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,7 +34,15 @@ public class MeleeEnemy : BasicEnemy
     }
     public void SetNextPlacement()
     {
-        this.Agent.SetDestination(Target.transform.position);
+        try
+        {
+            this.Agent.SetDestination(Target.transform.position);
+        }
+        catch(Exception e)
+        {
+            Debug.LogWarning("There aren't any navmesh ; " + e.Message);
+        }
+        
     }
 
 
