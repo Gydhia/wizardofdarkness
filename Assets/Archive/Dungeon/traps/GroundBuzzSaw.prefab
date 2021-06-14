@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 914455241883289069}
   - component: {fileID: 914455241882207657}
   - component: {fileID: 888838211103967055}
+  - component: {fileID: 4226273152204073635}
   m_Layer: 0
   m_Name: GroundBuzzSaw
   m_TagString: Untagged
@@ -209,6 +210,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43243445819514444, guid: 12ffe5df9e6285f43be778385cca6b19, type: 2}
+--- !u!114 &4226273152204073635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914455241880225697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9792ef93fed90d8408114a3af0d83fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapMode: 0
+  Damage: 10
 --- !u!1 &914455242228029264
 GameObject:
   m_ObjectHideFlags: 0

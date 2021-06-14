@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4706249234827133307}
   - component: {fileID: 4706249234836768155}
   - component: {fileID: 4731612900002192823}
+  - component: {fileID: -7259641355268259223}
   m_Layer: 0
   m_Name: swingingAxe
   m_TagString: Untagged
@@ -94,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4706249234829367167}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7c51ea8d174ca2b43a9d4c94ddfd49d8, type: 3}
-  m_Controller: {fileID: 9100000, guid: b3f8875fd35b1e740a5bee99dc2cfa09, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -117,6 +118,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43363364321703400, guid: 22effdb9ddbb01b44823666486ce08e1, type: 2}
+--- !u!114 &-7259641355268259223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706249234829367167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9792ef93fed90d8408114a3af0d83fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapMode: 0
+  Damage: 15
 --- !u!1 &4706249234829389525
 GameObject:
   m_ObjectHideFlags: 0

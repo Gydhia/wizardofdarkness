@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 6341008304991646569}
   - component: {fileID: 6341008304984097821}
   - component: {fileID: 6276456094377631545}
+  - component: {fileID: -5360642979445804215}
   m_Layer: 3
   m_Name: FloorGrinder 1
   m_TagString: Untagged
@@ -216,6 +217,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43771850104897646, guid: 0e4bc71a0b2dcc54ab41ee99da503791, type: 2}
+--- !u!114 &-5360642979445804215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341008304993609831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9792ef93fed90d8408114a3af0d83fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapMode: 1
+  Damage: 1
 --- !u!1 &6341008304993630661
 GameObject:
   m_ObjectHideFlags: 0

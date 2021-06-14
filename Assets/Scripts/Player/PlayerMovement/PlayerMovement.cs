@@ -8,21 +8,23 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController CharController;
 
+    //[HideInInspector]
     public Vector3 Velocity;
     public Vector3 MoveDirection;
-    private float _walkSpeed = 10f;
     public float sprintFactor = 2f;
-    private float _actualSpeed = 1f;
+
+    private float _actualSpeed;
+    private float _walkSpeed = 10f;
 
     public float Gravity = -9.81f;
     public float JumpHeight = 3f;
     public float MaxStamina = 100f;
     [Range(0, 100)] public float stamina = 100f;
-    
+
     public Transform groundCheck;
     public float groundDistance = 0.5f;
     public LayerMask groundMask;
-    
+
     public bool isGrounded;
     public bool CanMove = true;
     public bool IsRunning = false;
@@ -50,27 +52,27 @@ public class PlayerMovement : MonoBehaviour
 
             Velocity.y += Gravity * Time.deltaTime;
             CharController.Move(Velocity * Time.deltaTime);
-        }
-        if (IsRunning)
-        {
-            _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
-            float updatedStamina = 0f;
 
-            if (stamina > 0f)
+            if (IsRunning && (MoveDirection.x != 0 || MoveDirection.z != 0))    //Pas le Y, sinon quand on saut on consommeras du stamina
             {
-                updatedStamina -= sprintingStaminaConsumption * Time.deltaTime;
-                _actualSpeed = _walkSpeed * sprintFactor;
-            }
-            else
-            {
-                _actualSpeed = _walkSpeed;
-            }
+                _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
+                float updatedStamina = 0f;
 
-            stamina += updatedStamina;
-            GameUIController.Instance.FireOnStaminaChange();
+                if (stamina > 0f)
+                {
+                    updatedStamina -= sprintingStaminaConsumption * Time.deltaTime;
+                    _actualSpeed = _walkSpeed * sprintFactor;
+                }
+                else
+                {
+                    _actualSpeed = _walkSpeed;
+                }
+
+                stamina += updatedStamina;
+                GameUIController.Instance.FireOnStaminaChange();
+            }
         }
     }
-
     public void PlayerJump()
     {
         if (isGrounded)
@@ -79,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void UnregenerateStamina()
     {
-        if (StaminaRegeneration != null) {
+        if (StaminaRegeneration != null)
+        {
             StopCoroutine(StaminaRegeneration);
             StaminaRegeneration = null;
         }
@@ -87,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void RegenerateStamina()
     {
-        if(StaminaRegeneration == null)
+        if (StaminaRegeneration == null)
             StaminaRegeneration = StartCoroutine(_regenerateStamina());
     }
 
@@ -95,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _actualSpeed = _walkSpeed;
 
-        while(stamina < MaxStamina)
+        while (stamina < MaxStamina)
         {
             if (stamina <= 30f)
             {

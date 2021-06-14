@@ -14,7 +14,7 @@ public class Melee : MonoBehaviour
 
     private void Start()
     {
-        MeleeAnimator = this.GetComponent<Animator>();
+        MeleeAnimator = GetComponent<Animator>();
     }
 
     public void Damage()
