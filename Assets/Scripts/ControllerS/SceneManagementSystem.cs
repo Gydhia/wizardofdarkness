@@ -21,6 +21,10 @@ public class SceneManagementSystem : MonoBehaviour
         sceneNames.Add("DungeonScene");
         sceneNames.Add("MainMenu");
     }
+    public string GetActualSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
     public void FireLoadSceneEvent()
     {
         SceneManagementSystem_LoadNextScene();

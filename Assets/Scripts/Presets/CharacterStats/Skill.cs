@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public enum SkillBind
@@ -16,6 +17,7 @@ public enum SkillBind
 public class Skill : MonoBehaviour
 {
     public SkillBind SkillBind = SkillBind.None;
+    public EElements SkillElement = EElements.None;
     
     public EntityStat EntityHolder;
 
@@ -38,7 +40,9 @@ public class Skill : MonoBehaviour
     }
     public virtual void ActivatedSkill()
     {
-        if (!CanLaunch) return; 
+        if (!CanLaunch && 
+            PlayerController.Instance.PlayerStats.Elements.Single(element => element.Type == this.SkillElement).IsActive) 
+            return; 
     }
 
     protected void BeginCooldown()

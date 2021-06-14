@@ -28789,6 +28789,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 491735476286728721, guid: 19d4fc0961eba014ba846e8118e767ee,
+        type: 3}
+      propertyPath: LinkedRoom
+      value: 
+      objectReference: {fileID: 4601538532717153930}
     - target: {fileID: 1198223467456466775, guid: 19d4fc0961eba014ba846e8118e767ee,
         type: 3}
       propertyPath: m_Layer

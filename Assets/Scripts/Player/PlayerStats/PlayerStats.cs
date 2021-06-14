@@ -29,6 +29,13 @@ public class PlayerStats : EntityStat
 
         ActualElement = Elements.SingleOrDefault(element => element.Type == EElements.Void);
         ActualElement.ElementWeapon.SetActive(true);
+
+        if (SceneManagementSystem.Instance.GetActualSceneName().Equals("Tutorial"))
+        {
+            foreach (Element elem in Elements)
+                elem.IsActive = false;
+        }
+            
     }
 
     private void Start()
@@ -39,7 +46,6 @@ public class PlayerStats : EntityStat
 
     public void ChangeElement(EElements newElement)
     {
-
         if (ActualElement.Type != newElement && Elements.Single(elem => elem.Type == newElement).IsActive)
         {
             ActualElement.ElementWeapon.SetActive(false);

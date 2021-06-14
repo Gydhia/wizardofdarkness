@@ -14,6 +14,7 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
 
     public InteractableDatas overviewDatas;
     public InteractableDatas OverviewDatas => this.overviewDatas;
+    public Room LinkedRoom;
 
     private void OnEnable()
     {
@@ -48,5 +49,6 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
                 GameController.Instance.FireOnRoomComplete();
             }
         }
+        LinkedRoom.RoomComplete();
     }
 }

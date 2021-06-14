@@ -43,7 +43,16 @@ public class BeamCollision : MonoBehaviour
 
     private IEnumerator _stopBeam(float time)
     {
-        yield return new WaitForSeconds(time);
+        float timer = 0f;
+
+        while (timer < time)
+        {
+            this.gameObject.transform.parent.rotation = Camera.main.transform.rotation;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        
 
         BeamParticles.Stop();
         BeamParticles.Clear();
