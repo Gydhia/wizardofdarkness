@@ -43,19 +43,19 @@ public class BooleanDoor : MonoBehaviour
             Wall = Renderers[1].gameObject;
 
             Vector3 pos = Renderers[0].bounds.center;
-            
-            Undo.RecordObject(this, "Refreshed positions");
-            LinkedRoom = transform.parent.transform.parent.GetComponent<Room>();
-            DoorComponent = Door.GetComponentInChildren<DoorOpeningSystem>();
-            foreach (MeshRenderer rend in Renderers) {
-                if (!foundFirst) {
-                    DoorBounds = rend.bounds;
-                    foundFirst = true;
-                }
-                DoorBounds.Encapsulate(rend.bounds);
-            }
-            Position = new Vector2(pos.x, pos.z);
-            PrefabUtility.RecordPrefabInstancePropertyModifications(this);
+
+            //Undo.RecordObject(this, "Refreshed positions");
+            //LinkedRoom = transform.parent.transform.parent.GetComponent<Room>();
+            //DoorComponent = Door.GetComponentInChildren<DoorOpeningSystem>();
+            //foreach (MeshRenderer rend in Renderers) {
+            //    if (!foundFirst) {
+            //        DoorBounds = rend.bounds;
+            //        foundFirst = true;
+            //    }
+            //    DoorBounds.Encapsulate(rend.bounds);
+            //}
+            //Position = new Vector2(pos.x, pos.z);
+            //PrefabUtility.RecordPrefabInstancePropertyModifications(this);
         }
         catch(Exception e)
         {

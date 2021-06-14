@@ -44,8 +44,6 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
-    public NavMesh NavMesh;
-
     public GameObject Corridor;
     public GameObject CorridorsContainer;
     public DungeonParts DungeonParts;
@@ -132,7 +130,6 @@ public class DungeonManager : MonoBehaviour
 
     private void GenerateDungeonPath() // 4x4
     {
-        NavMesh.
         dungeonPath = new DungeonSpecification[size, size];
 
         for (int i = 0; i < size; i++)

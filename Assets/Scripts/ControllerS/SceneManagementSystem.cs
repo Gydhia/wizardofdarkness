@@ -23,6 +23,7 @@ public class SceneManagementSystem : MonoBehaviour
     }
     public void FireLoadSceneEvent()
     {
+        SceneManagementSystem_LoadNextScene();
         if (LoadNextScene != null)
         {
             LoadNextScene.Invoke();

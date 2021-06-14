@@ -10,6 +10,7 @@ public class PlayerStats : EntityStat
          */
     [Header("Variables For All Elements")]
     public CharacterStatus statsEmpty;
+    public bool isInTutorial = false;
 
     public Element ActualElement;
     public List<Element> Elements;

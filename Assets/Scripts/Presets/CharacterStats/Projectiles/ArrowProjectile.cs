@@ -8,7 +8,7 @@ public class ArrowProjectile : MonoBehaviour
     public Vector3 BasePosition;
 
     private bool _isLaunched = false;
-    private float _projectileSpeed = 40f;
+    private float _projectileSpeed = 90f;
 
     private void Update()
     {

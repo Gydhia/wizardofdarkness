@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDefault: 0
-  IsComplete: 0
+  IsComplete: 1
   RoomDoors:
   - {fileID: 4575677481875410544}
   - {fileID: 3207527704539307857}

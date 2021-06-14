@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadSceneOnEnter : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class LoadSceneOnEnter : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManagementSystem.Instance.FireLoadSceneEvent();
+            SceneManager.LoadScene("DungeonScene");
         }
     }
 }

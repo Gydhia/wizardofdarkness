@@ -545,6 +545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1815858989580959661, guid: 44025f59903fe4041b497358c5b09ca0,
         type: 3}
+      propertyPath: Damages
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815858989580959661, guid: 44025f59903fe4041b497358c5b09ca0,
+        type: 3}
       propertyPath: EntityHolder
       value: 
       objectReference: {fileID: 0}
@@ -828,6 +833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5040631157338029144, guid: 22ccd3bc670c0d441af43ca1b44a310e,
         type: 3}
+      propertyPath: Damages
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040631157338029144, guid: 22ccd3bc670c0d441af43ca1b44a310e,
+        type: 3}
       propertyPath: EntityHolder
       value: 
       objectReference: {fileID: 0}
@@ -940,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 2992076239026399637, guid: ea58054f5fa182946840ce9989a90443,
         type: 3}
       propertyPath: Dmg
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2992076239026399637, guid: ea58054f5fa182946840ce9989a90443,
         type: 3}
