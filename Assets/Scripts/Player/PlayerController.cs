@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public PlayerMovement PlayerMovement;
 
     public static PlayerController Instance;
+
     private void Awake()
     {
         // Singleton pattern

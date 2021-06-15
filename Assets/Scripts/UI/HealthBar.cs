@@ -12,6 +12,8 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         GameUIController.Instance.OnDamageTaken += UpdateHealthBar;
+        FillText.text = "100" + "%";
+        Bar.fillAmount = 1f;
     }
 
     public void UpdateHealthBar(int value)

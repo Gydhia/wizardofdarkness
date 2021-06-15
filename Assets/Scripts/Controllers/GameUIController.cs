@@ -33,6 +33,8 @@ public class GameUIController : MonoBehaviour
     public Animator GameOver;
 
     public static GameUIController Instance;
+
+
     private void Awake()
     {
         // Singleton pattern
@@ -46,12 +48,17 @@ public class GameUIController : MonoBehaviour
                 ElementsColors.Add(elementColor.Element, elementColor);
         }
     }
-
+    
     private void Start()
     {
         // For now the game over screen isn't that much elaborated, but we'll need to 
         // create its own script later. 
         GameController.Instance.OnDeath += LaunchGameOverScreen;
+    }
+
+    public void OnLevelWasLoaded(int level)
+    {
+       
     }
 
     public void FireOnInteractOverviewChange(InteractableDatas Overview)

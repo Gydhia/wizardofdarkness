@@ -117,10 +117,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDead: 0
   IsStuned: 0
-  MaxHP: 0
+  MaxHP: 100
   MoveSpeed: 10
   AimPoint: {fileID: 4908348806816321032}
   statsEmpty: {fileID: 11400000, guid: 0efb046db8205d5499bb6f867e73afef, type: 2}
+  isInTutorial: 0
   ActualElement: {fileID: 0}
   Elements:
   - {fileID: 7949655269566235119}

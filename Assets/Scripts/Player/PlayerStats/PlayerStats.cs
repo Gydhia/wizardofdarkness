@@ -71,7 +71,11 @@ public class PlayerStats : EntityStat
     public override void Die()
     {
         base.Die();
-        //GameController.Instance.FireOnDeath();
-        DungeonManager.Instance.TeleportPlayer();
+        PlayerController.Instance.PlayerMovement.CanMove = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Debug.Log("died");
+        GameController.Instance.FireOnDeath();
+        //DungeonManager.Instance.TeleportPlayer();
     }
 }
