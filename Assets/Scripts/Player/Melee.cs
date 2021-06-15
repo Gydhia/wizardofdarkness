@@ -14,7 +14,7 @@ public class Melee : MonoBehaviour
 
     private void Start()
     {
-        MeleeAnimator = this.GetComponent<Animator>();
+        MeleeAnimator = GetComponent<Animator>();
     }
 
     public void Damage()
@@ -22,6 +22,7 @@ public class Melee : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
         enemies = LayerMask.GetMask("Enemy", "TriggeredEnemy");
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit, attackRange, enemies))
         {
             if (hit.collider.gameObject.TryGetComponent(out EntityStat entity))

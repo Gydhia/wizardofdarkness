@@ -9,7 +9,8 @@ public class HealingBeer : MonoBehaviour, IInteractable
     public GameObject emptyMug;
     public bool completionCondition;
 
-    public InteractableDatas OverviewDatas => this.OverviewDatas;
+    public InteractableDatas overviewDatas;
+    public InteractableDatas OverviewDatas => this.overviewDatas;
 
     public void IsCompletionCondition()
     {

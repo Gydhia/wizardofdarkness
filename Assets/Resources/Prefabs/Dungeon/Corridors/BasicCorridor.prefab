@@ -119,6 +119,10 @@ PrefabInstance:
       value: SM_Env_Dwarf_Floor_06 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1722460540044194, guid: e67d5042c895ac94aa7ecf7aaa3311a9, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722460540044194, guid: e67d5042c895ac94aa7ecf7aaa3311a9, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -318,6 +322,10 @@ PrefabInstance:
     - target: {fileID: 1722460540044194, guid: e67d5042c895ac94aa7ecf7aaa3311a9, type: 3}
       propertyPath: m_Name
       value: SM_Env_Dwarf_Floor_06 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722460540044194, guid: e67d5042c895ac94aa7ecf7aaa3311a9, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1722460540044194, guid: e67d5042c895ac94aa7ecf7aaa3311a9, type: 3}
       propertyPath: m_StaticEditorFlags

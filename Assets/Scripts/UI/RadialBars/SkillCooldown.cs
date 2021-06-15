@@ -39,7 +39,7 @@ public class SkillCooldown : MonoBehaviour
         ActualSkill = PlayerController.Instance.PlayerStats.ActualElement.Skills.
             SingleOrDefault(skill => skill.SkillBind == this.SkillBind);
 
-        SkillMaterial = this.GetComponent<RawImage>().material;
+        SkillMaterial = GetComponent<RawImage>().material;
         InitialFillPercentage = SkillMaterial.GetFloat("_Fillpercentage");
         MaxValue = ActualSkill.Cooldown;
         FillPercentage = InitialFillPercentage;

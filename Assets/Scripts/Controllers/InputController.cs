@@ -210,7 +210,7 @@ namespace ED.Controllers
         public void OnStopRun(InputAction.CallbackContext ctx)
         {
             PlayerController.Instance.PlayerMovement.IsRunning = false;
-            PlayerController.Instance.PlayerMovement.RegenerateStamina();
+            PlayerController.Instance.PlayerMovement.RegenerateStamina();   //Nouvelle feature : bravo
         }
         public void OnEscape(InputAction.CallbackContext ctx)
         {

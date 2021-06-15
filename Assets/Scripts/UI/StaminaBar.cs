@@ -12,6 +12,8 @@ public class StaminaBar : MonoBehaviour
     void Start()
     {
         GameUIController.Instance.OnStaminaChange += UpdateStaminaBar;
+        FillText.text = "100" + "%";
+        Bar.fillAmount = 1f;
     }
 
     public void UpdateStaminaBar()
