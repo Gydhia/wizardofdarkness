@@ -53,8 +53,8 @@ MonoBehaviour:
   LinkedEntity: {fileID: 0}
   Reminded: 0
   DisapearTime: 10
-  PiercingDamages: 0
-  CallbackDamages: 0
+  PiercingDamages: 20
+  CallbackDamages: 35
 --- !u!136 &3387077343574875088
 CapsuleCollider:
   m_ObjectHideFlags: 0

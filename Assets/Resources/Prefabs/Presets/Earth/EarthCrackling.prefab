@@ -50,13 +50,13 @@ MonoBehaviour:
   CanLaunch: 1
   HasReleased: 0
   CooldownTimer: 0
-  Cooldown: 5
-  IsAoe: 0
-  AoeRadius: 0
+  Cooldown: 8
+  IsAoe: 1
+  AoeRadius: 8
   IsCasted: 0
   CastTime: 0
   IsPiercing: 0
-  Damages: 50
+  Damages: 55
   WeaponAnimator: {fileID: 0}
   AnimationName: Crack
   AttackParticle: {fileID: 198106895250101352, guid: e7473d9620ab29341b98bf21b400e598,

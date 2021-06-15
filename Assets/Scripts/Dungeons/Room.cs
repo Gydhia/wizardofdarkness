@@ -12,6 +12,9 @@ public class Room : MonoBehaviour
     public List<Animator> RoomDoorsAnim = new List<Animator>();
     public List<Orientation> GivenOrientations = new List<Orientation>();
 
+    public List<Transform> MeleeEnemies;
+    public List<Transform> DistanceEnemies;
+
     public List<EnemyStats> Enemies = new List<EnemyStats>();
 
     public Bounds RoomBounds = new Bounds();
@@ -80,6 +83,17 @@ public class Room : MonoBehaviour
             Debug.Log("Rooms started");
             bd.OpeningCollider.enabled = false;
             bd.DoorComponent.DoorAnim.SetBool("OpenDoor", false);
+        }
+    }
+
+    public void SpawnEnemies()
+    {
+        foreach(Transform t in MeleeEnemies) {
+            Enemies.Add(Instantiate(DungeonManager.Instance.MeleeEnemy, t));
+        }
+        foreach (Transform t in DistanceEnemies)
+        {
+            Enemies.Add(Instantiate(DungeonManager.Instance.DistanceEnemy, t));
         }
     }
 }

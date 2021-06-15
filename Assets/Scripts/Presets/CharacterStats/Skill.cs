@@ -41,7 +41,9 @@ public class Skill : MonoBehaviour
     {
         if (!CanLaunch && 
             PlayerController.Instance.PlayerStats.Elements.Single(element => element.Type == this.SkillElement).IsActive) 
-            return; 
+            return;
+
+        BeginCooldown();
     }
 
     protected void BeginCooldown()

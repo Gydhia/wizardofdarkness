@@ -44,12 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillBind: 3
+  SkillElement: -1
   EntityHolder: {fileID: 0}
+  IsBeingCast: 0
   CanLaunch: 1
   HasReleased: 0
   CooldownTimer: 0
   Cooldown: 10
-  SpellParticles: {fileID: 0}
   StatBuff: 3
-  BuffTime: 6
-  BuffPercent: 30
+  BuffTime: 9
+  BuffPercent: 65

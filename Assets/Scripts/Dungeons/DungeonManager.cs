@@ -44,6 +44,9 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
+    public DistanceEnemy DistanceEnemy;
+    public MeleeEnemy MeleeEnemy;
+
     public Room ActualRoom;
     public GameObject Corridor;
     public GameObject CorridorsContainer;
@@ -331,7 +334,14 @@ public class DungeonManager : MonoBehaviour
             }
         }
 
-
+        for (int q = 0; q < size; q++)
+        {
+            for (int r = 0; r < size - 1; r++)
+            {
+                if(Rooms[q, r] != null)
+                    Rooms[q, r].SpawnEnemies();
+            }
+        }
 
         TeleportPlayer();
     }

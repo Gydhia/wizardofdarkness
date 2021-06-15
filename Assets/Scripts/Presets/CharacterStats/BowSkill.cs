@@ -40,13 +40,15 @@ public class BowSkill : AttackSkill
     public IEnumerator BendBow()
     {
         float timer = 0f;
+        float castTime = CastTime / PlayerController.Instance.PlayerStats.AtkSpeed;
         while (!HasReleased) 
         {
-            if(timer < CastTime)
+            
+            if(timer < castTime)
             {
                 timer += Time.deltaTime;
 
-                float chargingDist = Mathf.Lerp(_bow.ArrowPoint.localPosition.z, _bow.BackArrowPoint.localPosition.z, timer / CastTime);
+                float chargingDist = Mathf.Lerp(_bow.ArrowPoint.localPosition.z, _bow.BackArrowPoint.localPosition.z, timer / castTime);
                 _currentArrow.transform.localPosition = new Vector3(0f, 0f, chargingDist);
                 _lineRenderer.SetPosition(1, _currentArrow.transform.localPosition);
             }
@@ -55,7 +57,7 @@ public class BowSkill : AttackSkill
         }
 
         this.HasReleased = false;
-        if (timer < CastTime) {
+        if (timer < castTime) {
             Destroy(_currentArrow.gameObject);
             _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
         } else {

@@ -35,5 +35,15 @@ public class MeleeSkill : AttackSkill
             _attackParticle.Clear();
             _attackParticle.Play();
         }
+        if (IsAoe) {
+            Collider[] colliders = Physics.OverlapSphere(PlayerController.Instance.transform.position, this.AoeRadius);
+            foreach (Collider entity in colliders)
+            {
+                if(entity.TryGetComponent(out EntityStat target)) {
+                    if(target != this.EntityHolder)
+                        target.TakeDamage((int)this.Damages);
+                }
+            }    
+        }
     }
 }

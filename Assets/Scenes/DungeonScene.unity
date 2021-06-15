@@ -1041,6 +1041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251df83be0f53fb4da14b8a4f98cf113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DistanceEnemy: {fileID: 4424699171877586887, guid: 0f784e6d69e6a5645a60341a893a91e2,
+    type: 3}
+  MeleeEnemy: {fileID: -9131817482686280204, guid: 2ce836e3331db1648a713013b30dd1cd,
+    type: 3}
   ActualRoom: {fileID: 0}
   Corridor: {fileID: 5831686434732179802, guid: 92f2caf8a824b47449d5c6b83fa81f1a,
     type: 3}

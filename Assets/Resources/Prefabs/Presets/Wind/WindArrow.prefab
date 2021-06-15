@@ -56,7 +56,7 @@ MonoBehaviour:
   IsCasted: 1
   CastTime: 0.7
   IsPiercing: 0
-  Damages: 10
+  Damages: 20
   ArrowStartPostion: {x: 0, y: 0, z: 0}
   RemindArrow: 1
   ArrowProjectile: {fileID: 4536756993250138521, guid: b8f2a2d53bfcf6e47b5f8f680f3d157c,
