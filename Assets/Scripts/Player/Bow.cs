@@ -8,6 +8,8 @@ public class Bow : MonoBehaviour
     public Transform ArrowPoint;
     public Transform BackArrowPoint;
 
+    public List<ArrowProjectile> RemindedArrows = new List<ArrowProjectile>();
+
     private void Update()
     {
         this.transform.rotation = Camera.main.transform.rotation;

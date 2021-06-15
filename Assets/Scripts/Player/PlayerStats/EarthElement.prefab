@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1445947427096176636}
-  - {fileID: 1509486876012136381}
   - {fileID: 1299157287728971808}
+  - {fileID: 1509486876012136381}
   - {fileID: 6717483708847497304}
   - {fileID: 1190865112703591146}
   m_Father: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
+  IsActive: 1
   Def: 50
   Str: 30
   AtkSpeed: 1.2
@@ -57,7 +58,7 @@ MonoBehaviour:
   Skills:
   - {fileID: 1815858989580959661}
   - {fileID: 7918436337231796328}
-  - {fileID: 2227276509972124645}
+  - {fileID: 0}
   - {fileID: 1617536167025274530}
   - {fileID: 8854910215143951754}
   ElementWeapon: {fileID: 1557623499046660, guid: ea58054f5fa182946840ce9989a90443,
@@ -166,12 +167,12 @@ PrefabInstance:
     - target: {fileID: 4093996596692091930, guid: 78972cac02139c5468344e70ce88c726,
         type: 3}
       propertyPath: m_Name
-      value: MissingEarthSkill
+      value: EarthCrackling
       objectReference: {fileID: 0}
     - target: {fileID: 6070249056232104527, guid: 78972cac02139c5468344e70ce88c726,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6070249056232104527, guid: 78972cac02139c5468344e70ce88c726,
         type: 3}
@@ -223,6 +224,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8610552878284309159, guid: 78972cac02139c5468344e70ce88c726,
+        type: 3}
+      propertyPath: SkillBind
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78972cac02139c5468344e70ce88c726, type: 3}
 --- !u!4 &1299157287728971808 stripped
@@ -231,18 +237,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5060449427545612911}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2227276509972124645 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6400375786743443850, guid: 78972cac02139c5468344e70ce88c726,
-    type: 3}
-  m_PrefabInstance: {fileID: 5060449427545612911}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244d90a2fc25330428cc940f4998e7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6190568438709171927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,7 +421,7 @@ PrefabInstance:
     - target: {fileID: 7570363222144106135, guid: 9bae02743d6228649805ff817131f42b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7570363222144106135, guid: 9bae02743d6228649805ff817131f42b,
         type: 3}

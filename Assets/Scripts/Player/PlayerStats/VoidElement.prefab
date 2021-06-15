@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 2470649337690584055}
   - {fileID: 6610078558478816406}
-  - {fileID: 1881116667228514748}
+  - {fileID: 5168212468247293113}
   - {fileID: 6171609763683350742}
   - {fileID: 2673455168433726133}
   m_Father: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
+  IsActive: 1
   Def: 30
   Str: 15
   AtkSpeed: 1
@@ -57,7 +58,7 @@ MonoBehaviour:
   Skills:
   - {fileID: 3513570458496875414}
   - {fileID: 4431835732226269251}
-  - {fileID: 5517387173340422853}
+  - {fileID: 0}
   - {fileID: 4305787245824958741}
   - {fileID: 5852528894750350311}
   ElementWeapon: {fileID: 100000, guid: 6d5a0bc0860313841bc19d04b364d8c0, type: 3}
@@ -341,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a4fd98b414472468cc1e0e2d79bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4552600433222929826
+--- !u!1001 &7101096371250120871
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -406,28 +407,16 @@ PrefabInstance:
     - target: {fileID: 5719479182094418366, guid: 0a84108d847910c4dbd5b21fbcf26971,
         type: 3}
       propertyPath: m_Name
-      value: MissingVoidSkill
+      value: VoidTeleportation
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a84108d847910c4dbd5b21fbcf26971, type: 3}
---- !u!4 &1881116667228514748 stripped
+--- !u!4 &5168212468247293113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2681053951749661726, guid: 0a84108d847910c4dbd5b21fbcf26971,
     type: 3}
-  m_PrefabInstance: {fileID: 4552600433222929826}
+  m_PrefabInstance: {fileID: 7101096371250120871}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5517387173340422853 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8340569340311662439, guid: 0a84108d847910c4dbd5b21fbcf26971,
-    type: 3}
-  m_PrefabInstance: {fileID: 4552600433222929826}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244d90a2fc25330428cc940f4998e7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8068425187234580656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,6 +483,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MovementSpeedBuff
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942999898190538995, guid: 906c349360bb71644ac88daf53946e62,
+        type: 3}
+      propertyPath: SkillBind
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906c349360bb71644ac88daf53946e62, type: 3}

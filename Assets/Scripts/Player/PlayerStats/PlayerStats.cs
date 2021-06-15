@@ -30,11 +30,11 @@ public class PlayerStats : EntityStat
         ActualElement = Elements.SingleOrDefault(element => element.Type == EElements.Void);
         ActualElement.ElementWeapon.SetActive(true);
 
-        if (SceneManagementSystem.Instance.GetActualSceneName().Equals("Tutorial"))
-        {
-            foreach (Element elem in Elements)
-                elem.IsActive = false;
-        }
+        //if (SceneManagementSystem.Instance.GetActualSceneName().Equals("Tutorial"))
+        //{
+        //    foreach (Element elem in Elements)
+        //        elem.IsActive = false;
+        //}
             
     }
 

@@ -59,7 +59,15 @@
                     "id": "4c7b5744-c6af-4b7d-b0d6-7236c7f157b7",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)"
+                    "interactions": "Press"
+                },
+                {
+                    "name": "FirstSpellRelease",
+                    "type": "Button",
+                    "id": "447dfc2b-b8d6-412e-85ec-5370235f8ba7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 },
                 {
                     "name": "SecondSpell",
@@ -333,6 +341,17 @@
                     "processors": "",
                     "groups": "Computer",
                     "action": "LeftClickRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2460794b-2398-4ec9-9153-8114651ebf08",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstSpellRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
