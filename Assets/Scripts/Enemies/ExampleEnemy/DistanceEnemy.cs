@@ -32,7 +32,7 @@ public class DistanceEnemy : BasicEnemy
     {
         _disengagePosition = this.transform.position + Random.insideUnitSphere * (Random.Range(MinDisengageDistance, MaxDisengageDistance));
         
-        this.Agent.SetDestination(new Vector3(_disengagePosition.x, 0f, _disengagePosition.y));
+        TrySetDestination(new Vector3(_disengagePosition.x, 0f, _disengagePosition.y));
     }
     public void SetNextPlacement()
     {
@@ -42,7 +42,7 @@ public class DistanceEnemy : BasicEnemy
                 _adjustingPlacement = leftHit.collider.transform.position.sqrMagnitude < rightHit.transform.position.sqrMagnitude ? leftHit.transform.position : rightHit.transform.position;
             }
         }
-        this.Agent.SetDestination(_adjustingPlacement);
+        TrySetDestination(_adjustingPlacement);
     }
 
 
@@ -58,7 +58,7 @@ public class DistanceEnemy : BasicEnemy
             if (Physics.Raycast(SpellAnchor.transform.position, direction, out RaycastHit hit) && !hit.collider.CompareTag("Player")) {
                 SetNextPlacement();
             } else {
-                this.Agent.SetDestination(this.transform.position);
+                TrySetDestination(this.transform.position);
                 _adjustingPlacement = Vector3.zero;
                 RangeAttack();
             }

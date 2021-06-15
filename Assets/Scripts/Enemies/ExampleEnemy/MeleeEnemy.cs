@@ -34,15 +34,7 @@ public class MeleeEnemy : BasicEnemy
     }
     public void SetNextPlacement()
     {
-        try
-        {
-            this.Agent.SetDestination(Target.transform.position);
-        }
-        catch(Exception e)
-        {
-            Debug.LogWarning("There aren't any navmesh ; " + e.Message);
-        }
-        
+        TrySetDestination(Target.transform.position);   
     }
 
 
@@ -75,7 +67,7 @@ public class MeleeEnemy : BasicEnemy
             if ((Target.transform.position - this.transform.position).sqrMagnitude / 2.5f >= _attackRange) {
                 SetNextPlacement();
             } else {
-                this.Agent.SetDestination(this.transform.position);
+                TrySetDestination(this.transform.position);
                 if (_attackingCor == null)
                     _attackingCor = StartCoroutine(MeleeAttack());
             }

@@ -48,5 +48,14 @@ public class BasicEnemy : EnemyStats
         EnemyAnimator.SetTrigger("Hitted");
     }
 
+    public void TrySetDestination(Vector3 target)
+    {
+        NavMeshPath path = new NavMeshPath();
+        this.Agent.CalculatePath(target, path);
+        if (path.status == NavMeshPathStatus.PathComplete)
+        {
+            this.Agent.SetDestination(target);
+        }
+    }
 
 }
