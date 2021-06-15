@@ -498,6 +498,7 @@ MonoBehaviour:
   fullMug: {fileID: 8204547341916985615}
   emptyMug: {fileID: 8204547343984432891}
   completionCondition: 0
+  overviewDatas: {fileID: 0}
 --- !u!1 &8204547342778458705
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +612,7 @@ MonoBehaviour:
   fullMug: {fileID: 8204547341916985615}
   emptyMug: {fileID: 8204547343984432891}
   completionCondition: 0
+  overviewDatas: {fileID: 11400000, guid: e961701bf06525f4f9f57a946d7ebced, type: 2}
 --- !u!65 &8204547343554580415
 BoxCollider:
   m_ObjectHideFlags: 0

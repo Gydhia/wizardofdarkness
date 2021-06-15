@@ -9,6 +9,10 @@ public class MainMenuScript : MonoBehaviour
     {
         GameUIController.Instance.FadeOut();
     }
+    public void SkipTutorial()
+    {
+        SceneManager.LoadScene("DungeonScene");
+    }
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
