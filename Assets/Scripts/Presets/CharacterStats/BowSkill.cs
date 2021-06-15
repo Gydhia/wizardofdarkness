@@ -8,6 +8,7 @@ public class BowSkill : AttackSkill
     [HideInInspector]
     public Vector3 ArrowStartPostion;
     private float _bendDistance;
+    public bool RemindArrow = false;
 
     private LineRenderer _lineRenderer;
     public ArrowProjectile ArrowProjectile;
@@ -29,6 +30,8 @@ public class BowSkill : AttackSkill
 
         _currentArrow = Instantiate(ArrowProjectile, _bow.ArrowPoint.transform);
         _currentArrow.BasePosition = _currentArrow.transform.localPosition;
+        _currentArrow.Reminded = RemindArrow;
+        _currentArrow.LinkedEntity = this.EntityHolder;
         _bendDistance = _bow.BackArrowPoint.position.z - _bow.ArrowPoint.position.z;
 
         StartCoroutine(BendBow());
@@ -65,6 +68,11 @@ public class BowSkill : AttackSkill
     public void ThrowProjectile()
     {
         _currentArrow.transform.parent = GameController.Instance.ProjectilePool.transform;
+        if (RemindArrow)
+            _bow.RemindedArrows.Add(_currentArrow);
+
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity))
+            _currentArrow.transform.rotation = Quaternion.LookRotation(hit.point - ((WindElement)(PlayerController.Instance.PlayerStats.ActualElement)).ElementWeapon.transform.position);
 
         //if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity)){
         //    _currentArrow.transform.rotation = Quaternion.LookRotation(hit.point - this.transform.position);

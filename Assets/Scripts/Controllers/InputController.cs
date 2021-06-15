@@ -100,6 +100,7 @@ namespace ED.Controllers
 
             this.PlayerInputs.actions[PlayerBindings.Interact.ToString()].performed += this.OnInteract;
             this.PlayerInputs.actions[PlayerBindings.FirstSpell.ToString()].performed += this.OnCastFirstSpell;
+            this.PlayerInputs.actions[PlayerBindings.FirstSpellRelease.ToString()].performed += this.OnReleaseFirstSpell;
             this.PlayerInputs.actions[PlayerBindings.SecondSpell.ToString()].performed += this.OnCastSecondSpell;
             this.PlayerInputs.actions[PlayerBindings.ThirdSpell.ToString()].performed += this.OnCastThirdSpell;
             this.PlayerInputs.actions[PlayerBindings.FirstClass.ToString()].performed += this.OnChangeToFirstClass;
@@ -122,6 +123,7 @@ namespace ED.Controllers
 
             this.PlayerInputs.actions[PlayerBindings.Interact.ToString()].performed -= this.OnInteract;
             this.PlayerInputs.actions[PlayerBindings.FirstSpell.ToString()].performed -= this.OnCastFirstSpell;
+            this.PlayerInputs.actions[PlayerBindings.FirstSpellRelease.ToString()].performed -= this.OnReleaseFirstSpell;
             this.PlayerInputs.actions[PlayerBindings.SecondSpell.ToString()].performed -= this.OnCastSecondSpell;
             this.PlayerInputs.actions[PlayerBindings.ThirdSpell.ToString()].performed -= this.OnCastThirdSpell;
             this.PlayerInputs.actions[PlayerBindings.FirstClass.ToString()].performed -= this.OnChangeToFirstClass;
@@ -162,10 +164,11 @@ namespace ED.Controllers
         }
         public void OnCastFirstSpell(InputAction.CallbackContext ctx)
         {
-            if (ctx.performed)
-                _castSpell(2, true);
-            else if (ctx.canceled)
-                _castSpell(2, false);
+            _castSpell(2, true);   
+        }
+        public void OnReleaseFirstSpell(InputAction.CallbackContext ctx)
+        {
+            _castSpell(2, false);
         }
         public void OnCastSecondSpell(InputAction.CallbackContext ctx)
         {
@@ -241,6 +244,7 @@ namespace ED.Controllers
         Interact,
 
         FirstSpell,
+        FirstSpellRelease,
         SecondSpell,
         ThirdSpell,
         FirstClass,

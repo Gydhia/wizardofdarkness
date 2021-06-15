@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillBind: 1
+  SkillElement: -1
   EntityHolder: {fileID: 0}
   IsBeingCast: 0
   CanLaunch: 1
   HasReleased: 0
   CooldownTimer: 0
   Cooldown: 0
-  SpellParticles: {fileID: 0}
   IsAoe: 0
   AoeRadius: 0
   IsCasted: 1
@@ -58,5 +58,6 @@ MonoBehaviour:
   IsPiercing: 0
   Damages: 10
   ArrowStartPostion: {x: 0, y: 0, z: 0}
+  RemindArrow: 1
   ArrowProjectile: {fileID: 4536756993250138521, guid: b8f2a2d53bfcf6e47b5f8f680f3d157c,
     type: 3}

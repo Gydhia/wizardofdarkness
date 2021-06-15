@@ -31,10 +31,9 @@ public class Skill : MonoBehaviour
 
     public float Cooldown;
 
-    public ParticleSystem SpellParticles;
-
     private void Awake()
     {
+        this.EntityHolder = this.GetComponentInParent<EntityStat>();
         CooldownTimer = Cooldown;
         CanLaunch = true;
     }

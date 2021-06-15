@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2608538431626375872}
-  - {fileID: 2017295134157992801}
   - {fileID: 3639110414169800036}
+  - {fileID: 2017295134157992801}
   - {fileID: 5094308459443001043}
   - {fileID: 6391167231128715632}
   m_Father: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
+  IsActive: 1
   Def: 10
   Str: 50
   AtkSpeed: 0.9
@@ -57,7 +58,7 @@ MonoBehaviour:
   Skills:
   - {fileID: 5040631157338029144}
   - {fileID: 7129187804670733492}
-  - {fileID: 1507526548626424943}
+  - {fileID: 0}
   - {fileID: 7916717202108666946}
   - {fileID: 5356184668661148296}
   ElementWeapon: {fileID: 1160500651364054800, guid: 6f1a243a57ffa9441913e1a76ad96355,
@@ -83,12 +84,12 @@ PrefabInstance:
     - target: {fileID: 1477727416329288291, guid: 1ddb655eddf01b24dad85c1ba24576d5,
         type: 3}
       propertyPath: m_Name
-      value: MissingWindSkill
+      value: ArrowCallback
       objectReference: {fileID: 0}
     - target: {fileID: 2949182555210252606, guid: 1ddb655eddf01b24dad85c1ba24576d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2949182555210252606, guid: 1ddb655eddf01b24dad85c1ba24576d5,
         type: 3}
@@ -148,18 +149,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1904229123985112154}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1507526548626424943 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1046771509190506549, guid: 1ddb655eddf01b24dad85c1ba24576d5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1904229123985112154}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244d90a2fc25330428cc940f4998e7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7184800035705933456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,7 +333,7 @@ PrefabInstance:
     - target: {fileID: 7570363222144106135, guid: bfe64be45c2b3ae4e8db07d96a720eba,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7570363222144106135, guid: bfe64be45c2b3ae4e8db07d96a720eba,
         type: 3}

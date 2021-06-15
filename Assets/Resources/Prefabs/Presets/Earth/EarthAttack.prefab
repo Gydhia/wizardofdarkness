@@ -44,15 +44,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillBind: 1
+  SkillElement: -1
   EntityHolder: {fileID: 0}
+  IsBeingCast: 0
   CanLaunch: 1
   HasReleased: 0
   CooldownTimer: 0
   Cooldown: 0
-  SpellParticles: {fileID: 0}
   IsAoe: 0
   AoeRadius: 0
   IsCasted: 0
   CastTime: 0
   IsPiercing: 0
   Damages: 15
+  WeaponAnimator: {fileID: 0}
+  AnimationName: Hit
+  AttackParticle: {fileID: 0}

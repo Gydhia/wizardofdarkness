@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4192323605810232
 Transform:
   m_ObjectHideFlags: 0
@@ -109,8 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf35ad0a51880646a761922cf542731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damages: 10
-  MeleeAnimator: {fileID: 0}
+  Dmg: 0
+  attackRange: 0
+  BloodFXPrefab: {fileID: 0}
 --- !u!95 &894509307271211737
 Animator:
   serializedVersion: 3
