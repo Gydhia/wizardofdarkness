@@ -160,11 +160,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 296438398921572514, guid: 03d5e78177cdc114bb53fece485522ed,
-        type: 3}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 8400000, guid: cf4c8f014730357449ab24e74b666602, type: 2}
     - target: {fileID: 1770926876427669906, guid: 03d5e78177cdc114bb53fece485522ed,
         type: 3}
       propertyPath: m_Name
@@ -224,11 +219,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743113248568862878, guid: 03d5e78177cdc114bb53fece485522ed,
-        type: 3}
-      propertyPath: m_Name
-      value: MinimapCam
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03d5e78177cdc114bb53fece485522ed, type: 3}
@@ -414,7 +404,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1287777564}
   - component: {fileID: 1287777563}
-  - component: {fileID: 1287777562}
   - component: {fileID: 1287777561}
   - component: {fileID: 1287777560}
   m_Layer: 0
@@ -469,14 +458,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1287777562
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287777559}
-  m_Enabled: 1
 --- !u!20 &1287777563
 Camera:
   m_ObjectHideFlags: 0
@@ -486,8 +467,8 @@ Camera:
   m_GameObject: {fileID: 1287777559}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -504,7 +485,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 150
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1060,6 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251df83be0f53fb4da14b8a4f98cf113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActualRoom: {fileID: 0}
   Corridor: {fileID: 5831686434732179802, guid: 92f2caf8a824b47449d5c6b83fa81f1a,
     type: 3}
   CorridorsContainer: {fileID: 74288030}

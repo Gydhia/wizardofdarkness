@@ -63,9 +63,14 @@ public class Room : MonoBehaviour
         {
             bd.DoorComponent.DoorAnim.SetBool("OpenDoor", true);
         }
+        this.IsComplete = true;
     }
     public void RoomStart()
     {
+        DungeonManager.Instance.ActualRoom = this;
+        //this.RoomBounds.center.x
+        //this.RoomBounds.center.z
+        //MapCamPos = new Vector3(DungeonManager.Instance.ActualRoom.RoomBounds.center.x, 30, DungeonManager.Instance.ActualRoom.RoomBounds.center.z);
         if (this.IsComplete)
             return;
 

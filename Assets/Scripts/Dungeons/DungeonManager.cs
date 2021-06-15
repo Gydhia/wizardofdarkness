@@ -44,6 +44,7 @@ public class DungeonManager : MonoBehaviour
         { Orientation.Right, new Vector2(0, 1) },
     };
 
+    public Room ActualRoom;
     public GameObject Corridor;
     public GameObject CorridorsContainer;
     public DungeonParts DungeonParts;
@@ -508,14 +509,19 @@ public class DungeonManager : MonoBehaviour
     }
     private Orientation GetOppositeOrientation(Orientation orientation)
     {
-        return orientation switch
+        switch (orientation)
         {
-            Orientation.Top => Orientation.Bottom,
-            Orientation.Bottom => Orientation.Top,
-            Orientation.Left => Orientation.Right,
-            Orientation.Right => Orientation.Left,
-            _ => orientation,
-        };
+            case Orientation.Top:
+                return Orientation.Bottom;
+            case Orientation.Bottom:
+                return Orientation.Top;
+            case Orientation.Left:
+                return Orientation.Right;
+            case Orientation.Right:
+                return Orientation.Left;
+            default:
+                return orientation;
+        }
     }
 
     public string GetShapeFromOrientations(List<Orientation> orientations)
