@@ -15,6 +15,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        GameUIController.Instance.OnChangeSensibility += ChangeMouseSensivity;
     }
 
 
@@ -32,6 +33,10 @@ public class MouseLook : MonoBehaviour
             transform.localRotation = Quaternion.Euler(-_xCamRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * lookInput.x * Time.deltaTime * mouseSensitivity);
         }
-        
+    }
+
+    public void ChangeMouseSensivity(int value)
+    {
+        mouseSensitivity = value;
     }
 }

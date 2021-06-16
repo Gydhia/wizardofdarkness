@@ -9,6 +9,7 @@ public class GameUIController : MonoBehaviour
     // DELEGATES
     public delegate void InteractOverviewChange(InteractableDatas Overview);
     public delegate void InteractOverviewCancel();
+    public delegate void ChangeSensibility(int value);
 
     public delegate void DamageTaken(int value);
     public delegate void StaminaChange();
@@ -16,6 +17,7 @@ public class GameUIController : MonoBehaviour
     // EVENTS
     public event InteractOverviewChange OnInteractOverviewChange;
     public event InteractOverviewCancel OnInteractOverviewCancel;
+    public event ChangeSensibility OnChangeSensibility;
 
     public event DamageTaken OnDamageTaken;
     public event StaminaChange OnStaminaChange;
@@ -70,6 +72,12 @@ public class GameUIController : MonoBehaviour
     {
         if (OnInteractOverviewCancel != null)
             OnInteractOverviewCancel.Invoke();
+    }
+
+    public void FireOnChangeSensibility(int value)
+    {
+        if (OnChangeSensibility != null)
+            OnChangeSensibility.Invoke(value);
     }
     public void FireOnDamageTaken(int value)
     {

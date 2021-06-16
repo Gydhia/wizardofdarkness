@@ -237,6 +237,8 @@ GameObject:
   - component: {fileID: 1770926878555534599}
   - component: {fileID: 7466164034755127555}
   - component: {fileID: 3262102928929492754}
+  - component: {fileID: 6889011898210545488}
+  - component: {fileID: 8818849465592093768}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -368,6 +370,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 142ff471025de4c4ab4f5efd983c2091, type: 2}
+--- !u!114 &6889011898210545488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770926878555534715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1770926878555534598}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &8818849465592093768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770926878555534715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: d2f4d50d461df354493d1dbcb202ef0b, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &2793890620220250455
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,18 +828,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44025f59903fe4041b497358c5b09ca0, type: 3}
---- !u!114 &5685752467086498071 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7918436337231796328, guid: 44025f59903fe4041b497358c5b09ca0,
-    type: 3}
-  m_PrefabInstance: {fileID: 2523201458661409151}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03475a75c65fe5042bcfc6905440b319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &280089515662776822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2370905190403856521, guid: 44025f59903fe4041b497358c5b09ca0,
@@ -777,6 +844,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c881908e18e5e7e409becc2b704150ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5685752467086498071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7918436337231796328, guid: 44025f59903fe4041b497358c5b09ca0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2523201458661409151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03475a75c65fe5042bcfc6905440b319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1315246331970134455 stripped
