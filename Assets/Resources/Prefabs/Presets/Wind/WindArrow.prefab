@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5222415342806926430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5870674324724964130}
+  - component: {fileID: 3510656546890683834}
+  m_Layer: 0
+  m_Name: WindArrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5870674324724964130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222415342806926430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3510656546890683834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222415342806926430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00905241c44b784f88a3f745399c7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillBind: 1
+  SkillElement: -1
+  EntityHolder: {fileID: 0}
+  IsBeingCast: 0
+  CanLaunch: 1
+  HasReleased: 0
+  CooldownTimer: 0
+  Cooldown: 0
+  IsAoe: 0
+  AoeRadius: 0
+  IsCasted: 1
+  CastTime: 0.7
+  IsPiercing: 0
+  Damages: 10
+  ArrowStartPostion: {x: 0, y: 0, z: 0}
+  RemindArrow: 1
+  ArrowProjectile: {fileID: 4536756993250138521, guid: b8f2a2d53bfcf6e47b5f8f680f3d157c,
+    type: 3}

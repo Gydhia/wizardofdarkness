@@ -12,7 +12,6 @@ public enum EnemyType
 public class BasicEnemy : EnemyStats
 {
     public EnemyType Type;
-    private bool IsDead = false;
 
     // Aggro attributes
     public NavMeshAgent Agent;
@@ -26,30 +25,16 @@ public class BasicEnemy : EnemyStats
         Agent = this.GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        EnemyAnimator.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
-        EnemyAnimator.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
-    }
-
-    public override IEnumerator Flashing()
-    {
-        EnemyAnimator.SetTrigger("Hitted");
-        base.Flashing();
-        yield return null;
+        EnemyAnimator.SetBool("IsMoving", Agent.velocity.z > 0f || Agent.velocity.x > 0f);
     }
 
     public void TriggerAggro(PlayerStats target)
     {
         Target = target;
         TriggeredAggro = true;
-        BeginChase();
         StartCoroutine(StartBehaviour());
-    }
-
-    public void BeginChase()
-    {
-        Agent.SetDestination(Target.transform.position);
     }
 
     public virtual IEnumerator StartBehaviour()
@@ -57,5 +42,11 @@ public class BasicEnemy : EnemyStats
         yield return null;
     }
 
-    
+    public override void TakeDamage(int value)
+    {
+        base.TakeDamage(value);
+        EnemyAnimator.SetTrigger("Hitted");
+    }
+
+
 }

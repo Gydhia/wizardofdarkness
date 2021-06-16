@@ -33,24 +33,12 @@ public class Fireball : MonoBehaviour
         yield return new WaitForSeconds(CastingTime);
         
         Destroy(ChargingSpell);
-        Debug.Log(Target.transform.position);
+
         ThrowingSpell = Instantiate(ThrowingParticle, this.transform);
         ThrowingSpell.transform.rotation = Quaternion.LookRotation(Target.transform.position - this.transform.position);
+
+        ThrowingSpell.GetComponent<FireballCollision>().ProjectileDamages = this.ProjectileDamages;
     }
 
-    private void OnParticleCollision(GameObject other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if(TryGetComponent(out PlayerStats player)) {
-                player.TakeDamage(ProjectileDamages);
-            }
-        }
-
-        Invoke("DelayDestroy", 1.5f);
-    }
-    private void DelayDestroy()
-    {
-        Destroy(gameObject);
-    }
+    
 }

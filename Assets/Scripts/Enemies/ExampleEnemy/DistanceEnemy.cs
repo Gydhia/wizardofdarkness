@@ -4,47 +4,78 @@ using UnityEngine;
 
 public class DistanceEnemy : BasicEnemy
 {
+    // Behaviour 
+    public float PreferedDistance = 50f;
+    public float DangerDistance = 20f;
+    public float MinDisengageDistance = 20f;
+    public float MaxDisengageDistance = 30f;
+    private Vector3 _disengagePosition;
+    private Vector3 _adjustingPlacement;
+
     private float _castingTime = 0.5f;
     public GameObject Spell;
     public GameObject SpellAnchor;
+
+    protected override void Update()
+    {
+        EnemyAnimator.SetFloat("VerticalSpeed", Agent.velocity.z);
+        EnemyAnimator.SetFloat("HorizontalSpeed", Agent.velocity.x);
+    }
 
     public void RangeAttack()
     {
         GameObject spell = Instantiate(Spell, SpellAnchor.transform);
         spell.GetComponent<Fireball>().CastSpell(Target.AimPoint.gameObject, _castingTime);
+        EnemyAnimator.SetTrigger("Attacked");
     }
     public void Disengage()
     {
-
-    }
-    public void AdjustPlacement()
-    {
-        Vector3 newDestination = new Vector3();
-
-
-    }
-
-    public void CheckToAttack()
-    {
-        Vector3 direction = Target.AimPoint.transform.position - this.SpellAnchor.transform.position;
+        _disengagePosition = this.transform.position + Random.insideUnitSphere * (Random.Range(MinDisengageDistance, MaxDisengageDistance));
         
-        if(Physics.Raycast(SpellAnchor.transform.position, direction, out RaycastHit hit) && !hit.collider.CompareTag("Player")){
-            Debug.DrawRay(SpellAnchor.transform.position, direction, Color.green, 1f);
-            Debug.Log("Need to adjust placement");
-            AdjustPlacement();    
-        } else {
-            Debug.DrawRay(SpellAnchor.transform.position, direction, Color.green, 1f);
-            Debug.Log("Can attack player");
-            RangeAttack();
+        this.Agent.SetDestination(new Vector3(_disengagePosition.x, 0f, _disengagePosition.y));
+    }
+    public void SetNextPlacement()
+    {
+        if (Physics.Raycast(SpellAnchor.transform.position, (transform.forward / 2 - transform.right).normalized, out RaycastHit leftHit))
+        {
+            if(Physics.Raycast(SpellAnchor.transform.position, (transform.forward / 2 + transform.right).normalized, out RaycastHit rightHit)){
+                _adjustingPlacement = leftHit.collider.transform.position.sqrMagnitude < rightHit.transform.position.sqrMagnitude ? leftHit.transform.position : rightHit.transform.position;
+            }
+        }
+        this.Agent.SetDestination(_adjustingPlacement);
+    }
+
+
+    public IEnumerator CheckToAttack()
+    {
+        while(TriggeredAggro && !Target.IsDead)
+        {
+            yield return new WaitForSeconds(AttackDelay + _castingTime);
+
+            this.transform.rotation = Quaternion.LookRotation(Target.transform.position - this.transform.position);
+            Vector3 direction = Target.AimPoint.transform.position - this.SpellAnchor.transform.position;
+
+            if (Physics.Raycast(SpellAnchor.transform.position, direction, out RaycastHit hit) && !hit.collider.CompareTag("Player")) {
+                SetNextPlacement();
+            } else {
+                this.Agent.SetDestination(this.transform.position);
+                _adjustingPlacement = Vector3.zero;
+                RangeAttack();
+            }
         }
     }
 
     public override IEnumerator StartBehaviour()
     {
+        StartCoroutine(CheckToAttack());
+
         while (TriggeredAggro && !Target.IsDead)
         {
-            yield return new WaitForSeconds(AttackDelay);
-            CheckToAttack();
+            yield return new WaitForSeconds(0.3f);
+            if((Target.transform.position - this.transform.position).sqrMagnitude / 5f <= DangerDistance) {
+                if(this.Agent.remainingDistance < 0.5f)
+                    Disengage();
+            }
         }
 
         yield return null;

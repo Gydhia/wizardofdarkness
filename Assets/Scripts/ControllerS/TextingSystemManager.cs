@@ -55,13 +55,13 @@ public class TextingSystemManager : MonoBehaviour
                         else//Si c'est un ² (playercanmove true)
                         {
 
-                            PlayerMovement.Instance.canMove = true;
+                            PlayerController.Instance.PlayerMovement.CanMove = true;
                         }
                     }
                     else//Si c'est un ° (player can move false)
                     {
 
-                        PlayerMovement.Instance.canMove = false;
+                        PlayerController.Instance.PlayerMovement.CanMove = false;
                     }
                 }
                 else//Si c'est un @

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EarthElement : Element
 {
-    public override void ChangementFX()
+    [Header("Earth Variables")]
+    public GameObject FXPrefab;
+    public bool blocking;
+
+    public override void ChangementFX(ParticleSystem part)
     {
-        throw new System.NotImplementedException();
+        part.Play();
     }
 }
