@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33319649957108442}
   - component: {fileID: 23589686307637134}
   - component: {fileID: 2769523311683099819}
+  - component: {fileID: 987021605414027213}
   m_Layer: 0
   m_Name: SM_Env_Lava_Plane_01
   m_TagString: Untagged
@@ -96,3 +97,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrapMode: 1
   Damage: 1
+--- !u!64 &987021605414027213
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346690234660638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: a79e49069c3a5f34ea332a587ce4fe8a, type: 3}
