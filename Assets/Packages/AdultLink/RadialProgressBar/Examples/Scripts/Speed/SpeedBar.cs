@@ -61,28 +61,7 @@ public class SpeedBar : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.W)) {
-			status = Status.accel;
-			interpStartTime = Time.time;
-			targetColor = shiftValue(initialMaxColor, accelBrightness);
-			setRotation(rotationMultiplier);
-			setTextColor(accelDescriptionText);
-		}
-
-		if (Input.GetKeyDown(KeyCode.S)) {
-			status = Status.braking;
-			targetColor = shiftValue(initialMaxColor, brakeBrightness);
-			interpStartTime = Time.time;
-			setTextColor(brakeDescriptionText);
-		}
-
-		if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) {
-			status = Status.idle;
-			interpStartTime = Time.time;
-			targetColor = initialMaxColor;
-			setRotation(1f);
-			resetTextColor();
-		}
+		
 
 	}
 

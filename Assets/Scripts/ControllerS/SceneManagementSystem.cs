@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public delegate void LoadScene();
+public delegate void LoadSceneByName(string name);
+
 public class SceneManagementSystem : MonoBehaviour
 {
     public static SceneManagementSystem Instance;
     public event LoadScene LoadNextScene;
-    public List<string> sceneNames = new List<string>();
-    public int actualSceneIndex;
+    public event LoadSceneByName LoadSceneWithName;
+
+    [HideInInspector] public List<string> sceneNames = new List<string>();
+    [Tooltip("0 = main Menu, 1 = tutorial, 2 = donjon")] public int actualSceneIndex;
 
     public void Awake()
     {
@@ -17,16 +21,28 @@ public class SceneManagementSystem : MonoBehaviour
     }
     private void Start()
     {
-        
         sceneNames.Add("Tutorial");
-        sceneNames.Add("Dungeon");
+        sceneNames.Add("DungeonScene");
         sceneNames.Add("MainMenu");
+    }
+    public string GetActualSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
     }
     public void FireLoadSceneEvent()
     {
+        SceneManagementSystem_LoadNextScene();
         if (LoadNextScene != null)
         {
             LoadNextScene.Invoke();
+        }
+    }
+    public void FireLoadSceneEvent(string name)
+    {
+        SceneManagementSystem_LoadNextScene(name);
+        if (LoadNextScene != null)
+        {
+            LoadSceneWithName.Invoke(name);
         }
     }
     public void SceneManagementSystem_LoadNextScene()
@@ -47,20 +63,24 @@ public class SceneManagementSystem : MonoBehaviour
             actualSceneIndex = 0;
         }
     }
+    public void SceneManagementSystem_LoadNextScene(string name)
+    {
+        StartCoroutine(LoadYourAsyncScene(name));
+    }
     IEnumerator LoadYourAsyncScene(string sceneToLoad)
     {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
-
+        //Fade?
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
 
         // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone && PlayerUIManager.Instance.fadedOut)
+        while (!asyncLoad.isDone && GameUIController.Instance.FadedOut)
         {
             yield return null;
         }
-        
+
     }
 }

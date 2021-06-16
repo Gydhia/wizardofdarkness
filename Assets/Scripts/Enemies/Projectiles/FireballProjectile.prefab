@@ -47,6 +47,6 @@ MonoBehaviour:
     type: 3}
   ThrowingParticle: {fileID: 1239156983776194, guid: 9bdee3723a4e52c4ca2af5bc5b56474a,
     type: 3}
-  ProjectileDamages: 120
+  ProjectileDamages: 10
   CastingTime: 0.5
   Target: {fileID: 0}

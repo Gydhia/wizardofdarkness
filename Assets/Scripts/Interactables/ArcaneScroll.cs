@@ -1,36 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
+using ED.Interactable;
+using System.Linq;
 using UnityEngine;
 
 public class ArcaneScroll : MonoBehaviour, IInteractable
 {
     public GameObject[] elementsParticles;
-    public EElements scrollElement;
+    public EElements ScrollElement;
     public enum EScrollTypes { Tutorial, Spell }
     public EScrollTypes scrollType;
+    public bool completionCondition;
     [Header("Tutorial: (empty if scrollType = Spell)")]
     public Element elementToAdd;
+
+    public InteractableDatas overviewDatas;
+    public InteractableDatas OverviewDatas => this.overviewDatas;
+    public Room LinkedRoom;
+
     private void OnEnable()
     {
-        elementsParticles[(int)scrollElement].SetActive(true);
+        elementsParticles[(int)ScrollElement].SetActive(true);
     }
+
+    public void IsCompletionCondition()
+    {
+        return;
+    }
+    public void Hovered()
+    {
+        return;
+    }
+
+    public void Unhovered()
+    {
+        return;
+    }
+
     public void Interact()
     {
         if (scrollType == EScrollTypes.Tutorial)
         {
             TextingSystemManager.Instance.NextLine();
             Destroy(gameObject);
-            if (!PlayerUIManager.Instance.hudActive) PlayerUIManager.Instance.ToggleHud(true);
 
-            PlayerStats.Instance.elements.Add(elementToAdd);
-            elementToAdd.Init();
-            PlayerStats.Instance.ChangeElement(scrollElement);
-            PlayerStats.Instance.canOpenDoors = true;
+            PlayerController.Instance.PlayerStats.Elements.Single(elem => elem.Type == this.ScrollElement).IsActive = true;
+            PlayerController.Instance.PlayerStats.ChangeElement(ScrollElement);
+            if (completionCondition)
+            {
+                GameController.Instance.FireOnRoomComplete();
+            }
         }
-    }
-
-    public void Hovered(bool isHovered)
-    {
-        Debug.Log("Need to implement Hovering Scrolls -> need a crosshair");
+        LinkedRoom.RoomComplete();
     }
 }

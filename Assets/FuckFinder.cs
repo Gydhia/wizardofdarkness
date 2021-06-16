@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class FuckFinder : MonoBehaviour
 {
-    public PlayerUIManager toFind;
+    public SkillCooldown[] Found;
+
     public void Start()
     {
-        toFind = FindObjectOfType<PlayerUIManager>();
+        Found = FindObjectsOfType<SkillCooldown>();
     }
 }

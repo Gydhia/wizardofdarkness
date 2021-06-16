@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5719479182094418366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2681053951749661726}
+  - component: {fileID: 6897965564525028320}
+  m_Layer: 0
+  m_Name: VoidTeleportation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2681053951749661726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5719479182094418366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6897965564525028320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5719479182094418366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d065cef9e94e92747ac585476ab14267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillBind: 3
+  SkillElement: 0
+  EntityHolder: {fileID: 0}
+  IsBeingCast: 0
+  CanLaunch: 1
+  HasReleased: 0
+  CooldownTimer: 0
+  Cooldown: 8.5
+  IsTeleported: 1
+  TeleportAnchor: {fileID: 198156828135952296, guid: 057c0cb7dc5850543a3cc8ec80f478e8,
+    type: 3}
+  TeleportDistance: 50
+  TeleportTime: 1.2
+  IsStraight: 1
+  DashHeight: 0
+  DashLength: 0

@@ -7,7 +7,11 @@ public class MainMenuScript : MonoBehaviour
 {
     public void LaunchGame()
     {
-        PlayerUIManager.Instance.FadeOut();
+        GameUIController.Instance.FadeOut();
+    }
+    public void SkipTutorial()
+    {
+        SceneManager.LoadScene("DungeonScene");
     }
     public void Credits()
     {
@@ -16,6 +20,10 @@ public class MainMenuScript : MonoBehaviour
     public void RelaunchScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     public void Quit()
     {

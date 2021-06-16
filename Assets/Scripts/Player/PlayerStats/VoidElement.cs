@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class VoidElement : Element
 {
-    public override void ChangementFX()
+    [Header("Void Variables")]
+    public float MagicBallStaminaConsumption;
+    public Transform BallSpawnSpot;
+    public GameObject BallPrefab;
+    public GameObject BlackHolePrefab;
+    public GameObject TeleportPointPrefab;
+    [HideInInspector] public GameObject ActualTPPoint;
+    public GameObject projBarrier;
+    public GameObject AimPoint;
+    public float projBarrierStaminaConsumption;
+    public override void ChangementFX(ParticleSystem part)
     {
-        throw new System.NotImplementedException();
+        part.Play();
     }
 }

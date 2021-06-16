@@ -10,8 +10,12 @@ TagManager:
   - Enemy
   - Interactable
   - TextDialog
+  - MeleeWeapon
   - HUD
   - PlayerAnim
+  - Crosshair
+  - InteractText
+  - Roof
   layers:
   - Default
   - TransparentFX
@@ -25,8 +29,8 @@ TagManager:
   - WarpingPlayer
   - Interactable
   - TriggeredEnemy
-  - 
-  - 
+  - Wall
+  - Roof
   - 
   - 
   - 

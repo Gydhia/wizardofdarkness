@@ -1,3 +1,4 @@
+using ED.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,112 +6,123 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public CharacterController CharController;
 
-    public CharacterController controller;
+    //[HideInInspector]
+    public Vector3 Velocity;
+    public Vector3 MoveDirection;
+    public float sprintFactor = 2f;
 
-    public static PlayerMovement Instance;
-    public event SetSlider UpdateStamina;
-    public float sprintFactor;
-    private float walkSpeed;
-    private float actualSpeed;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3f;
-    public float maxStamina = 100f;
+    private float _actualSpeed;
+    private float _walkSpeed = 10f;
+
+    public float Gravity = -9.81f;
+    public float JumpHeight = 3f;
+    public float MaxStamina = 100f;
     [Range(0, 100)] public float stamina = 100f;
-    public Vector3 move;
+
     public Transform groundCheck;
     public float groundDistance = 0.5f;
     public LayerMask groundMask;
-    public Vector3 velocity;
+
     public bool isGrounded;
-    public bool canMove = true;
-    public float airControl;
-    float control;
-    CharacterController charController;
+    public bool CanMove = true;
+    public bool IsRunning = false;
     public float sprintingStaminaConsumption = 15f;
     private float staminaCooldownRate = 9f;
     private float depletedStaminaCooldownRate = 6f;
 
+    private Coroutine StaminaRegeneration;
+
 
     private void Awake()
     {
-        Instance = this;
-        charController = GetComponent<CharacterController>();
+        CharController = GetComponent<CharacterController>();
     }
     // Update is called once per frame
     public void Update()
     {
-        if (canMove)
+        if (CanMove)
         {
-            #region stamina
-            UseStamina(Input.GetKey(KeyCode.LeftShift));
-            UpdateStamina?.Invoke(stamina);
-            #endregion
-            #region Jumping and Gravity
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-            if (isGrounded && velocity.y < 0)
-                velocity.y = -2f;
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            if (isGrounded && Velocity.y < 0)
+                Velocity.y = -2f;
+            Vector3 localDir = MoveDirection.x * transform.right + MoveDirection.z * transform.forward;
+            CharController.Move(localDir * _actualSpeed * Time.deltaTime);
+
+            Velocity.y += Gravity * Time.deltaTime;
+            CharController.Move(Velocity * Time.deltaTime);
+
+            if (IsRunning && (MoveDirection.x != 0 || MoveDirection.z != 0))    //Pas le Y, sinon quand on saut on consommeras du stamina
             {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
+                float updatedStamina = 0f;
+
+                if (stamina > 0f)
+                {
+                    updatedStamina -= sprintingStaminaConsumption * Time.deltaTime;
+                    _actualSpeed = _walkSpeed * sprintFactor;
+                }
+                else
+                {
+                    _actualSpeed = _walkSpeed;
+                }
+
+                stamina += updatedStamina;
+                GameUIController.Instance.FireOnStaminaChange();
             }
-            #endregion
-            #region move
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-            #region Animation
+        }
+    }
+    public void PlayerJump()
+    {
+        if (isGrounded)
+            Velocity.y = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+    }
 
-            PlayerAnimationState.Instance.playerAnimator.SetFloat("DirX", x);
-            PlayerAnimationState.Instance.playerAnimator.SetFloat("DirZ", z);
-            PlayerAnimationState.Instance.playerAnimator.SetBool("isMoving", (move == Vector3.zero? false:true));
-            if(!PlayerAnimationState.Instance.playerAnimator.GetBool("isJumping"))
-                PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", !isGrounded);
-            else
-                PlayerAnimationState.Instance.playerAnimator.SetBool("isJumping", false);
-            #endregion
-            move = transform.right * x  + transform.forward * z ;
-            controller.Move(move * actualSpeed * Time.deltaTime);
-            velocity.y += gravity * Time.deltaTime;
-            controller.Move(velocity * Time.deltaTime);
-            #endregion
-
+    public void UnregenerateStamina()
+    {
+        if (StaminaRegeneration != null)
+        {
+            StopCoroutine(StaminaRegeneration);
+            StaminaRegeneration = null;
         }
     }
 
-    public void UseStamina(bool isRunning)
+    public void RegenerateStamina()
     {
-        walkSpeed = PlayerStats.Instance.moveSpeed;
-        if (isRunning)
-        {
-            if (stamina > 0f)
-            {
-                stamina -= sprintingStaminaConsumption * Time.deltaTime;
-                actualSpeed = walkSpeed*sprintFactor;
-            }
-            else
-            {
-                actualSpeed = walkSpeed;
-            }
-        }
-        else
+        if (StaminaRegeneration == null)
+            StaminaRegeneration = StartCoroutine(_regenerateStamina());
+    }
+
+    private IEnumerator _regenerateStamina()
+    {
+        _actualSpeed = _walkSpeed;
+
+        while (stamina < MaxStamina)
         {
             if (stamina <= 30f)
             {
                 stamina += staminaCooldownRate * Time.deltaTime;
+                GameUIController.Instance.FireOnStaminaChange();
             }
-
-            else if (stamina < maxStamina)
+            else if (stamina < MaxStamina)
             {
                 stamina += depletedStaminaCooldownRate * Time.deltaTime;
+                GameUIController.Instance.FireOnStaminaChange();
             }
-            actualSpeed = walkSpeed;
+            else
+            {
+                StaminaRegeneration = null;
+                yield break;
+            }
+            yield return null;
         }
     }
 
     public void Teleport(Vector3 pos)
     {
-        charController.enabled = false;
-        charController.transform.position = pos;
-        charController.enabled = true;
+        CharController.enabled = false;
+        CharController.transform.position = pos;
+        CharController.enabled = true;
     }
 }
