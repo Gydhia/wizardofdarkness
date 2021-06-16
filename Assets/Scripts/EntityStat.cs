@@ -37,6 +37,8 @@ public class EntityStat : MonoBehaviour
             HP = MaxHP;
         else
             HP += value;
+
+        GameUIController.Instance.FireOnDamageTaken((int)HP);
     }
 
     public virtual void Die()

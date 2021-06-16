@@ -3091,7 +3091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDead: 0
   IsStuned: 0
-  MaxHP: 100
+  MaxHP: 80
   MoveSpeed: 7
   AimPoint: {fileID: 0}
   ActualElement: 0

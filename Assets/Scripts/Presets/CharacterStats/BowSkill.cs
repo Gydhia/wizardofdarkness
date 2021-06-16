@@ -9,6 +9,7 @@ public class BowSkill : AttackSkill
     public Vector3 ArrowStartPostion;
     private float _bendDistance;
     public bool RemindArrow = false;
+    private Coroutine _bendingBow;
 
     private LineRenderer _lineRenderer;
     public ArrowProjectile ArrowProjectile;
@@ -22,6 +23,7 @@ public class BowSkill : AttackSkill
         _bow = windElement.ElementWeapon.GetComponent<Bow>();
 
         _lineRenderer = _bow._stringRenderer;
+        GameController.Instance.OnElementChange += DestroyArrow;
     }
 
     public override void ActivatedSkill()
@@ -34,11 +36,12 @@ public class BowSkill : AttackSkill
         _currentArrow.LinkedEntity = this.EntityHolder;
         _bendDistance = _bow.BackArrowPoint.position.z - _bow.ArrowPoint.position.z;
 
-        StartCoroutine(BendBow());
+        _bendingBow = StartCoroutine(BendBow());
     }
 
     public IEnumerator BendBow()
     {
+        HasReleased = false;
         float timer = 0f;
         float castTime = CastTime / PlayerController.Instance.PlayerStats.AtkSpeed;
         while (!HasReleased) 
@@ -59,6 +62,7 @@ public class BowSkill : AttackSkill
         if (timer < castTime) {
             Destroy(_currentArrow.gameObject);
             Destroy(_currentArrow);
+            _currentArrow = null;
             _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
         } else {
             _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
@@ -82,6 +86,20 @@ public class BowSkill : AttackSkill
         //}
 
         _currentArrow.LaunchProjectile();
+    }
+
+    public void DestroyArrow()
+    {
+        if(_currentArrow != null) {
+            Destroy(_currentArrow.gameObject);
+            Destroy(_currentArrow);
+
+            _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
+
+            StopCoroutine(_bendingBow);
+            _bendingBow = null;
+            this.HasReleased = false;
+        }
     }
 }
 

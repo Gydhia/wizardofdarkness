@@ -1564,6 +1564,7 @@ MonoBehaviour:
     type: 3}
   MeleeEnemy: {fileID: -9131817482686280204, guid: 2ce836e3331db1648a713013b30dd1cd,
     type: 3}
+  BossEnemy: {fileID: 0}
   ActualRoom: {fileID: 0}
   Corridor: {fileID: 0}
   CorridorsContainer: {fileID: 0}
@@ -4836,6 +4837,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6586616772191052066, guid: a498d8bc104b2de46b8ee32388a57e3b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586616772191052066, guid: a498d8bc104b2de46b8ee32388a57e3b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586616772191052066, guid: a498d8bc104b2de46b8ee32388a57e3b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8584906
+      objectReference: {fileID: 0}
     - target: {fileID: 7304681415609483995, guid: a498d8bc104b2de46b8ee32388a57e3b,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5294,6 +5310,7 @@ MonoBehaviour:
   GivenOrientations: 
   MeleeEnemies: []
   DistanceEnemies: []
+  BossEnemies: []
   Enemies: []
   RoomBounds:
     m_Center: {x: -74.497505, y: 9.342388, z: 420.51038}

@@ -46,8 +46,9 @@ public class SpellSkill : AttackSkill
                 yield break;
             }
         }
-  
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity))
+
+        int mask = LayerMask.GetMask("TriggeredEnemy", "Enemy", "Weapon");
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity, ~mask))
             _actualSpell.Target = hit.point;
         else
             _actualSpell.Target = Vector3.forward;

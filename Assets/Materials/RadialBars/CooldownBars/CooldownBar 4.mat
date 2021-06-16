@@ -146,9 +146,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Backgroundbordercolor: {r: 0.23529412, g: 0.36862746, b: 0.5294118, a: 1}
-    - _Backgroundfillcolor: {r: 0.5803922, g: 0.4, b: 0.65882355, a: 1}
-    - _Barmaxcolor: {r: 0.4862745, g: 0.25882354, b: 0.5764706, a: 1}
-    - _Barmincolor: {r: 0.5803922, g: 0.4, b: 0.65882355, a: 1}
+    - _Backgroundfillcolor: {r: 0.6782582, g: 1, b: 0.4481132, a: 1}
+    - _Barmaxcolor: {r: 0.35235342, g: 0.7075472, b: 0.09678713, a: 1}
+    - _Barmincolor: {r: 0.6784314, g: 1, b: 0.44705883, a: 1}
     - _Barsecondarymaxcolor: {r: 0, g: 1, b: 0.08965516, a: 1}
     - _Barsecondarymincolor: {r: 1, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
