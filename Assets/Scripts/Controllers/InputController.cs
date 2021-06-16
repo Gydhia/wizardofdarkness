@@ -214,7 +214,13 @@ namespace ED.Controllers
         }
         public void OnEscape(InputAction.CallbackContext ctx)
         {
-
+            if(PauseMenu.Instance != null)
+            {
+                if (PauseMenu.Instance.isPausable)
+                {
+                    PauseMenu.Instance.ToggleMenu();
+                }
+            }
         }
 
         private void _castSpell(int index, bool performed)
