@@ -47,8 +47,10 @@ public class PlayerController : MonoBehaviour
     {
         foreach(Collider enemy in enemies) {
             if(enemy.TryGetComponent(out BasicEnemy target)) {
-                target.TriggerAggro(this.PlayerStats);
-                target.gameObject.layer = _triggeredLayer;
+                if (DungeonManager.Instance.ActualRoom.Enemies.Contains(target)) {
+                    target.TriggerAggro(this.PlayerStats);
+                    target.gameObject.layer = _triggeredLayer;
+                }
             }
         }
     }

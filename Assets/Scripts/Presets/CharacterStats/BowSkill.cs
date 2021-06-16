@@ -43,7 +43,6 @@ public class BowSkill : AttackSkill
         float castTime = CastTime / PlayerController.Instance.PlayerStats.AtkSpeed;
         while (!HasReleased) 
         {
-            
             if(timer < castTime)
             {
                 timer += Time.deltaTime;
@@ -59,6 +58,7 @@ public class BowSkill : AttackSkill
         this.HasReleased = false;
         if (timer < castTime) {
             Destroy(_currentArrow.gameObject);
+            Destroy(_currentArrow);
             _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
         } else {
             _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
@@ -73,7 +73,8 @@ public class BowSkill : AttackSkill
         if (RemindArrow)
             _bow.RemindedArrows.Add(_currentArrow);
 
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity))
+        int mask = LayerMask.GetMask("TriggeredEnemy", "Enemy", "Weapon");
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity, ~mask))
             _currentArrow.transform.rotation = Quaternion.LookRotation(hit.point - ((WindElement)(PlayerController.Instance.PlayerStats.ActualElement)).ElementWeapon.transform.position);
 
         //if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity)){

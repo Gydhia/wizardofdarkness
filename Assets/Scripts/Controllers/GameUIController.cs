@@ -95,7 +95,7 @@ public class GameUIController : MonoBehaviour
     // Class methods
     public void FadeOut()
     {
-        StartCoroutine(_fadeOut());
+        //StartCoroutine(_fadeOut());
     }
     private IEnumerator _fadeOut()
     {

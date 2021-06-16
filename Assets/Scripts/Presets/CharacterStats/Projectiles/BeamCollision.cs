@@ -19,8 +19,6 @@ public class BeamCollision : MonoBehaviour
         if (!_canHit) return;
 
         if (other.TryGetComponent(out EntityStat entity)) {
-
-            Debug.Log("Inflicted damages : " + BeamDamages);
             entity.TakeDamage((int)BeamDamages);
             if(_tickCoroutine == null)
                 _tickCoroutine = StartCoroutine(_startTickDelay());

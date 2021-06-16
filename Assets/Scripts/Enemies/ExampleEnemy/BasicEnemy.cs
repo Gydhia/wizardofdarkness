@@ -61,5 +61,10 @@ public class BasicEnemy : EnemyStats
             this.Agent.SetDestination(target);
         }
     }
+    public override void Die()
+    {
+        base.Die();
+        PlayerController.Instance.PlayerStats.AddLife(3);
+    }
 
 }

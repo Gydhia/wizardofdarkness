@@ -34,7 +34,8 @@ public class Room : MonoBehaviour
     private void Start()
     {
         foreach (BooleanDoor bd in RoomDoors) {
-            bd.DoorComponent.DoorAnim.SetBool("OpenDoor", true);
+            if(bd.DoorComponent != null)
+                bd.DoorComponent.DoorAnim.SetBool("OpenDoor", true);
         }
 
         if (SpawnAtStart) {

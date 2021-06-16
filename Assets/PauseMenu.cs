@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         InputController.Instance.UnsetupInputEvents();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
     public void Reload()
     {

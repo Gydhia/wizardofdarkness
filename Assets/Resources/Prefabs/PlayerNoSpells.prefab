@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291d42604f9f393499c2fd98a0b52259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AggroRadius: 50
+  AggroRadius: 150
   PlayerStats: {fileID: 1371681455124981258}
   PlayerMovement: {fileID: 1770926876427669917}
 --- !u!1 &1770926877354960669
