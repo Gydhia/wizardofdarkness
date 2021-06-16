@@ -952,6 +952,8 @@ MonoBehaviour:
     type: 3}
   MeleeEnemy: {fileID: -9131817482686280204, guid: 2ce836e3331db1648a713013b30dd1cd,
     type: 3}
+  BossEnemy: {fileID: 2531373600742575506, guid: d09d46ba94499f64b81062693db86add,
+    type: 3}
   ActualRoom: {fileID: 0}
   Corridor: {fileID: 5831686434732179802, guid: 92f2caf8a824b47449d5c6b83fa81f1a,
     type: 3}
@@ -961,6 +963,7 @@ MonoBehaviour:
   UnlinkableRooms: 00000000010000000700000008000000
   NbOfRooms: 0100000001000000010000000600000003000000020000000100000003000000
   size: 4
+  ShouldBeActivated: 1
   DungeonJSON: {fileID: 4900000, guid: 04f8ed3e9005a6b49b4c0f0969f13337, type: 3}
 --- !u!1001 &6046699997654430122
 PrefabInstance:

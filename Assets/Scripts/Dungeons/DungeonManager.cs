@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,7 @@ public class DungeonManager : MonoBehaviour
 
     public DistanceEnemy DistanceEnemy;
     public MeleeEnemy MeleeEnemy;
+    public MeleeEnemy BossEnemy;
 
     public Room ActualRoom;
     public GameObject Corridor;
@@ -154,8 +156,8 @@ public class DungeonManager : MonoBehaviour
         // Place empty rooms at free spots
         for (int i = 0; i < emptyRooms; i++)
         {
-            int x = Random.Range(0, size);
-            int y = Random.Range(0, size);
+            int x = UnityEngine.Random.Range(0, size);
+            int y = UnityEngine.Random.Range(0, size);
 
             if (dungeonPath[x, y].roomType != DungeonRooms.None) {
                 i--;
@@ -170,7 +172,7 @@ public class DungeonManager : MonoBehaviour
 
         // Setup the spawn orientations
         SetRoomOrientation(dungeonPath[(int)SpawnLocation.x, (int)SpawnLocation.y], dungeonPath);
-        int pathToBeReward = Random.Range(0, dungeonPath[(int)SpawnLocation.x, (int)SpawnLocation.y].orientations.Count);
+        int pathToBeReward = UnityEngine.Random.Range(0, dungeonPath[(int)SpawnLocation.x, (int)SpawnLocation.y].orientations.Count);
 
         List<DungeonSpecification> ActualPath = new List<DungeonSpecification>();
 
@@ -242,7 +244,16 @@ public class DungeonManager : MonoBehaviour
         }
         Debug.Log(dungeonText);
 
-        StartCoroutine(GenerateDungeonPrefab());
+        try
+        {
+            StartCoroutine(GenerateDungeonPrefab());
+        }
+        catch(Exception e)
+        {
+            Debug.LogError("Couldn't generate dungeon : " + e.Message);
+            GenerateDungeonPath();
+        }
+        
     }
 
     // PREFAB GENERATOR
@@ -291,7 +302,7 @@ public class DungeonManager : MonoBehaviour
                         if (Rooms[k, l + 1].GivenOrientations.Contains(Orientation.Left) && Rooms[k, l].GivenOrientations.Contains(Orientation.Right)) {
                             xOffset = actualDoor.WorldPosition.y - nextDoor.WorldPosition.y;
                             Rooms[k, l + 1].gameObject.transform.position += new Vector3(0f, 0f, xOffset);
-                        }                        
+                        }
                     }
                 }
             }
@@ -308,14 +319,14 @@ public class DungeonManager : MonoBehaviour
                     {
                         BooleanDoor nextDoor = Rooms[m + 1, n].RoomDoors.Single(door => door.Orientation == Orientation.Top);
                         BooleanDoor actualDoor = Rooms[m, n].RoomDoors.SingleOrDefault(door => door.Orientation == Orientation.Bottom);
-                        if (Rooms[m + 1, n].GivenOrientations.Contains(Orientation.Top) && Rooms[m, n].GivenOrientations.Contains(Orientation.Bottom))  {
+                        if (Rooms[m + 1, n].GivenOrientations.Contains(Orientation.Top) && Rooms[m, n].GivenOrientations.Contains(Orientation.Bottom)) {
                             yOffset = actualDoor.WorldPosition.x - nextDoor.WorldPosition.x;
                             Rooms[m + 1, n].gameObject.transform.position += new Vector3(yOffset, 0f, 0f);
                             yield return null;
                             GenerateDungeonCorridors(actualDoor, nextDoor);
                         }
                     }
-                    
+
                 }
             }
         }
@@ -340,9 +351,9 @@ public class DungeonManager : MonoBehaviour
 
         for (int q = 0; q < size; q++)
         {
-            for (int r = 0; r < size - 1; r++)
+            for (int r = 0; r < size; r++)
             {
-                if(Rooms[q, r] != null)
+                if (Rooms[q, r] != null)
                     Rooms[q, r].SpawnEnemies();
             }
         }
@@ -418,7 +429,7 @@ public class DungeonManager : MonoBehaviour
         List<Orientation?> orientations = GetAvailableDirections(position, dungeon);
 
         if (orientations.Count > 0) {
-            Orientation? or = orientations[Random.Range(0, orientations.Count)];
+            Orientation? or = orientations[UnityEngine.Random.Range(0, orientations.Count)];
             return or;
         }
         else return null;
@@ -460,7 +471,7 @@ public class DungeonManager : MonoBehaviour
 
         while (room == DungeonRooms.None && iterations < 100)
         {
-            DungeonRooms randomRoom = (DungeonRooms)rooms.GetValue(Random.Range(0, rooms.Length - 1));
+            DungeonRooms randomRoom = (DungeonRooms)rooms.GetValue(UnityEngine.Random.Range(0, rooms.Length - 1));
             if (!UnobtainableRooms.Contains(randomRoom) && NbOfRoomsType[randomRoom] > 0) {
                 room = randomRoom;
                 NbOfRoomsType[randomRoom]--;
@@ -506,7 +517,7 @@ public class DungeonManager : MonoBehaviour
         int nbOfLinks = 0, linkedDone = 0;
 
         if (!OnlyOne) {
-            nbOfLinks = Random.Range(2, directions.Count);
+            nbOfLinks = UnityEngine.Random.Range(2, directions.Count);
         }
 
         foreach (Orientation or in directions)
@@ -564,7 +575,7 @@ public class DungeonManager : MonoBehaviour
         int column = orientation == Orientation.Left ? 0 : size - 1;
 
         // [x, 0] is the spawn room
-        int roomHeight = Random.Range(0, size);
+        int roomHeight = UnityEngine.Random.Range(0, size);
         dungeon[roomHeight, column].roomType = roomType;
         NbOfRoomsType[roomType]--;
         dungeon[roomHeight, column].position.Set(roomHeight, column);

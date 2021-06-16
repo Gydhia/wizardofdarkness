@@ -15,6 +15,7 @@ public class Room : MonoBehaviour
 
     public List<Transform> MeleeEnemies;
     public List<Transform> DistanceEnemies;
+    public List<Transform> BossEnemies;
 
     public List<EnemyStats> Enemies = new List<EnemyStats>();
 
@@ -99,6 +100,10 @@ public class Room : MonoBehaviour
         foreach (Transform t in DistanceEnemies)
         {
             Enemies.Add(Instantiate(DungeonManager.Instance.DistanceEnemy, t));
+        }
+        foreach (Transform t in BossEnemies)
+        {
+            Enemies.Add(Instantiate(DungeonManager.Instance.BossEnemy, t));
         }
     }
 }

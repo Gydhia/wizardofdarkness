@@ -3092,7 +3092,7 @@ MonoBehaviour:
   IsDead: 0
   IsStuned: 0
   MaxHP: 100
-  MoveSpeed: 0
+  MoveSpeed: 7
   AimPoint: {fileID: 0}
   ActualElement: 0
   EntityAnimator: {fileID: 0}
