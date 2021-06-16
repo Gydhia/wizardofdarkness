@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 452076136904048267}
   - component: {fileID: 500013244652857975}
   - component: {fileID: 2339298809812831740}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_Wep_Axe_Small_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8d04589f63c9c469417afb39df1294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponDamages: 0
+  CanHit: 0

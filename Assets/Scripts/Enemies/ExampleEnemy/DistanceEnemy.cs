@@ -18,6 +18,10 @@ public class DistanceEnemy : BasicEnemy
 
     protected override void Update()
     {
+        if (this.IsDead) {
+            Agent.isStopped = true;
+        }
+
         EnemyAnimator.SetFloat("VerticalSpeed", Agent.velocity.z);
         EnemyAnimator.SetFloat("HorizontalSpeed", Agent.velocity.x);
     }

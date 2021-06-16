@@ -42,6 +42,7 @@ public class ArcaneScroll : MonoBehaviour, IInteractable
             TextingSystemManager.Instance.NextLine();
             Destroy(gameObject);
 
+            PlayerController.Instance.PlayerStats.Elements.ForEach(elem => elem.IsActive = false);
             PlayerController.Instance.PlayerStats.Elements.Single(elem => elem.Type == this.ScrollElement).IsActive = true;
             PlayerController.Instance.PlayerStats.ChangeElement(ScrollElement);
             if (completionCondition)

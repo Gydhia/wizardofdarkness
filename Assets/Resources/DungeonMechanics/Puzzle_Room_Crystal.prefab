@@ -30306,7 +30306,7 @@ Transform:
   m_GameObject: {fileID: 4653086352858217072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4228002349722018989}
   - {fileID: 4653086354584595717}
@@ -30332,6 +30332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDefault: 0
   IsComplete: 0
+  SpawnAtStart: 0
   RoomDoors:
   - {fileID: 2811190722266376314}
   - {fileID: 5468020243754177408}
@@ -71310,7 +71311,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 943b4e0dfe7c9c442b8d42adc07235c5, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 823340c1e53a16441bb034b38fd5ee2b, type: 2}
 --- !u!1 &6597876779242616394
 GameObject:
   m_ObjectHideFlags: 0

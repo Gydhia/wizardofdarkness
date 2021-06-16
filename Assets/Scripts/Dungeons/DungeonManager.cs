@@ -75,6 +75,8 @@ public class DungeonManager : MonoBehaviour
     private int maxLinkedRooms = 3;
     private int emptyRooms = 2;
 
+    public bool ShouldBeActivated = true;
+
     public Dictionary<DungeonRooms, int> NbOfRoomsType = new Dictionary<DungeonRooms, int>();
 
 
@@ -134,6 +136,8 @@ public class DungeonManager : MonoBehaviour
 
     private void GenerateDungeonPath() // 4x4
     {
+        if (!ShouldBeActivated) return;
+
         dungeonPath = new DungeonSpecification[size, size];
 
         for (int i = 0; i < size; i++)

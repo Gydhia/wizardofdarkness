@@ -12,14 +12,15 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         GameUIController.Instance.OnDamageTaken += UpdateHealthBar;
+        UpdateHealthBar((int)PlayerController.Instance.PlayerStats.HP);
         FillText.text = "100" + "%";
         Bar.fillAmount = 1f;
     }
 
     public void UpdateHealthBar(int value)
     {
-        FillText.text = PlayerController.Instance.PlayerStats.HP.ToString("#") + "%";
-        Bar.fillAmount = (float)PlayerController.Instance.PlayerStats.HP / 100;
+        FillText.text = (PlayerController.Instance.PlayerStats.HP / PlayerController.Instance.PlayerStats.MaxHP * 100).ToString("#") + "%";
+        Bar.fillAmount = (float)PlayerController.Instance.PlayerStats.HP / PlayerController.Instance.PlayerStats.MaxHP;
     }
 
     private void OnDestroy()

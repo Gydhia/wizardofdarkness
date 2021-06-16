@@ -36,6 +36,7 @@ public class EnemyStats : EntityStat
     {
         base.Die();
         Destroy(gameObject, 1.5f);
+        EnemyAnimator.SetTrigger("Death");
         GameController.Instance.FireOnEnemyDeath();
     }
 }

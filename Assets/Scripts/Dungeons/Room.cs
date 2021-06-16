@@ -7,6 +7,7 @@ public class Room : MonoBehaviour
 {
     public bool IsDefault = false;
     public bool IsComplete = false;
+    public bool SpawnAtStart = false;
 
     public List<BooleanDoor> RoomDoors = new List<BooleanDoor>();
     public List<Animator> RoomDoorsAnim = new List<Animator>();
@@ -33,6 +34,10 @@ public class Room : MonoBehaviour
     {
         foreach (BooleanDoor bd in RoomDoors) {
             bd.DoorComponent.DoorAnim.SetBool("OpenDoor", true);
+        }
+
+        if (SpawnAtStart) {
+            SpawnEnemies();
         }
     }
 

@@ -15,5 +15,5 @@ MonoBehaviour:
   baseDef: 0
   baseStr: 0
   attackSpeed: 0
-  moveSpeed: 2.5
+  moveSpeed: 10
   skills: []

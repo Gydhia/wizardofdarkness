@@ -1177,6 +1177,8 @@ MonoBehaviour:
   - {fileID: 4301160610833590306}
   RoomDoorsAnim: []
   GivenOrientations: 
+  MeleeEnemies: []
+  DistanceEnemies: []
   Enemies: []
   RoomBounds:
     m_Center: {x: -38.27758, y: 6.989046, z: -0.64318466}
@@ -18539,6 +18541,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4229843089641370, guid: e3f48b83886267b4bab6b57ef8d6ec1a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229843089641370, guid: e3f48b83886267b4bab6b57ef8d6ec1a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229843089641370, guid: e3f48b83886267b4bab6b57ef8d6ec1a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229843089641370, guid: e3f48b83886267b4bab6b57ef8d6ec1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 64.699
       objectReference: {fileID: 0}
@@ -18548,7 +18562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4229843089641370, guid: e3f48b83886267b4bab6b57ef8d6ec1a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.08
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 4229843089641370, guid: e3f48b83886267b4bab6b57ef8d6ec1a, type: 3}
       propertyPath: m_LocalRotation.w

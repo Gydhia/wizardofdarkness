@@ -44,18 +44,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CanMove)
         {
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-            if (isGrounded && Velocity.y < 0)
-                Velocity.y = -2f;
-            Vector3 localDir = MoveDirection.x * transform.right + MoveDirection.z * transform.forward;
-            CharController.Move(localDir * _actualSpeed * Time.deltaTime);
-
-            Velocity.y += Gravity * Time.deltaTime;
-            CharController.Move(Velocity * Time.deltaTime);
-
+            _actualSpeed = _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
             if (IsRunning && (MoveDirection.x != 0 || MoveDirection.z != 0))    //Pas le Y, sinon quand on saut on consommeras du stamina
             {
-                _walkSpeed = PlayerController.Instance.PlayerStats.MoveSpeed;
                 float updatedStamina = 0f;
 
                 if (stamina > 0f)
@@ -71,6 +62,15 @@ public class PlayerMovement : MonoBehaviour
                 stamina += updatedStamina;
                 GameUIController.Instance.FireOnStaminaChange();
             }
+
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            if (isGrounded && Velocity.y < 0)
+                Velocity.y = -2f;
+            Vector3 localDir = MoveDirection.x * transform.right + MoveDirection.z * transform.forward;
+            CharController.Move(localDir * _actualSpeed * Time.deltaTime);
+
+            Velocity.y += Gravity * Time.deltaTime;
+            CharController.Move(Velocity * Time.deltaTime);
         }
     }
     public void PlayerJump()

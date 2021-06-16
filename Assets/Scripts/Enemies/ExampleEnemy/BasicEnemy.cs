@@ -27,7 +27,11 @@ public class BasicEnemy : EnemyStats
 
     protected virtual void Update()
     {
-        EnemyAnimator.SetBool("IsMoving", Agent.velocity.z > 0f || Agent.velocity.x > 0f);
+        if (this.IsDead) {
+            Agent.isStopped = true;
+        } else {
+            EnemyAnimator.SetBool("IsMoving", Agent.velocity.z > 0f || Agent.velocity.x > 0f);
+        }
     }
 
     public void TriggerAggro(PlayerStats target)

@@ -46,6 +46,8 @@ public class ArrowProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!_isLaunched) return;
+
         if (other.TryGetComponent(out EntityStat entity)) {
             if (entity != LinkedEntity)
                 entity.TakeDamage(_isCalledback ? (int)CallbackDamages : (int)PiercingDamages);
