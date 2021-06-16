@@ -1,3 +1,4 @@
+using ED.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,10 +38,22 @@ public class PauseMenu : MonoBehaviour
     }
     public void BackToMenu()
     {
+        Time.timeScale = 1f;
+        PausePanel.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        InputController.Instance.UnsetupInputEvents();
         SceneManager.LoadScene("MainMenu");
     }
     public void Reload()
     {
+        Time.timeScale = 1f;
+        PausePanel.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        InputController.Instance.UnsetupInputEvents();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

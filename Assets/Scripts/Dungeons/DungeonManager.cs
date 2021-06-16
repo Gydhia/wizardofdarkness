@@ -362,7 +362,7 @@ public class DungeonManager : MonoBehaviour
     }
     public void TeleportPlayer()
     {
-        PlayerController.Instance.transform.position = Rooms[(int)SpawnLocation.x, (int)SpawnLocation.y].transform.position;
+        PlayerController.Instance.PlayerMovement.Teleport(Rooms[(int)SpawnLocation.x, (int)SpawnLocation.y].transform.position + new Vector3(5f, 0f, 0f));
     }
 
     public void GenerateDungeonCorridors(BooleanDoor actualDoor, BooleanDoor nextDoor)

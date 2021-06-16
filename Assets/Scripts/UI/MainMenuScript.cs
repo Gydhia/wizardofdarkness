@@ -7,7 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public void LaunchGame()
     {
-        GameUIController.Instance.FadeOut();
+        //GameUIController.Instance.FadeOut();
     }
     public void SkipTutorial()
     {

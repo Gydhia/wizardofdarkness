@@ -55,6 +55,10 @@ public class SkillCooldown : MonoBehaviour
 
         GameController.Instance.OnElementChange += ChangeFocusedSkill;
         ChangeFocusedSkill();
+
+        if (ActualSkill.name.Contains("Missing")) {
+            this.gameObject.SetActive(false);
+        }
     }
 
     public void ChangeFocusedSkill()
@@ -66,5 +70,14 @@ public class SkillCooldown : MonoBehaviour
         CenterImage.material.color = SkillColor.CenterColor;
         SkillMaterial.SetColor("_Barmincolor", SkillColor.BarMinColor);
         SkillMaterial.SetColor("_Barmaxcolor", SkillColor.BarMaxColor);
+
+        if (MaxValue <= 0) {
+            FillPercentage = 1;
+            SkillMaterial.SetFloat("_Fillpercentage", FillPercentage);
+            CooldownText.text = "^";
+        }
+        else {
+            CooldownText.text = MaxValue.ToString();
+        }
     }
 }

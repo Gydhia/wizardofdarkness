@@ -9,6 +9,6 @@ public class MainMenuFade : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.Play("FadeIn");
+        anim.Play("FadeOut");
     }
 }

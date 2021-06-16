@@ -46,10 +46,10 @@ namespace ED.Controllers
             ActualColor = DefaultColor;
         }
 
-        private void OnDestroy()
-        {
-            UnsetupInputEvents();
-        }
+        //private void OnDestroy()
+        //{
+        //    UnsetupInputEvents();
+        //}
 
         private void Update()
         {

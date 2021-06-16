@@ -39,4 +39,8 @@ public class MouseLook : MonoBehaviour
     {
         mouseSensitivity = value;
     }
+    public void Aled()
+    {
+
+    }
 }
