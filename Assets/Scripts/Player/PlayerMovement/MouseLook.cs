@@ -17,21 +17,20 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-
-
     void LateUpdate()
     {
-        Vector2 lookInput = InputController.Instance.MouseSpeed;
-        
-        if (lookInput != Vector2.zero)
+        if (!PauseMenu.Instance.gameIsPaused)
         {
+            Vector2 lookInput = InputController.Instance.MouseSpeed;
 
-            _xCamRotation += lookInput.y * 0.2f;
-            _xCamRotation = Mathf.Clamp(_xCamRotation, -90f, 90f);
-         
-            transform.localRotation = Quaternion.Euler(-_xCamRotation, 0f, 0f);
-            playerBody.Rotate(Vector3.up * lookInput.x * Time.deltaTime * mouseSensitivity);
+            if (lookInput != Vector2.zero)
+            {
+                _xCamRotation += lookInput.y * 0.2f;
+                _xCamRotation = Mathf.Clamp(_xCamRotation, -90f, 90f);
+
+                transform.localRotation = Quaternion.Euler(-_xCamRotation, 0f, 0f);
+                playerBody.Rotate(Vector3.up * lookInput.x * Time.deltaTime * mouseSensitivity);
+            }
         }
-        
     }
 }
